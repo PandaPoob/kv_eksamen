@@ -1,6 +1,7 @@
 import { Box, Heading, Text, Flex, Divider } from "@chakra-ui/react";
 import Image from "next/image";
 import phone from "../../../assets/svgs/phone.svg";
+
 import mail from "../../../assets/svgs/mail.svg";
 
 function ContactBox({ internat }) {
