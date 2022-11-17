@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, Flex } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <Heading as="h1" size="heading1">
         heading1
       </Heading>
+
       <Heading as="h2" size="heading2">
         heading2
       </Heading>
@@ -23,6 +24,11 @@ export default function Home() {
       <Text fontSize={"md"}>medium tekst</Text>
       <Text fontSize={"lg"}>large tekst</Text>
       <Text fontSize={"xl"}>xlarge tekst</Text>
+      <Flex>
+        {" "}
+        <Button variant={"redBtn"}>Red button</Button>
+        <Button variant={"blueBtn"}>Blue button</Button>
+      </Flex>
     </Box>
   );
 }
