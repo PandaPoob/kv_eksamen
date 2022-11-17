@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Box, Heading, Text, Button, Flex } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { Box, Heading, Text, Button, Flex, Link } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -25,9 +26,12 @@ export default function Home() {
       <Text fontSize={"lg"}>large tekst</Text>
       <Text fontSize={"xl"}>xlarge tekst</Text>
       <Flex>
-        {" "}
-        <Button variant={"redBtn"}>Red button</Button>
-        <Button variant={"blueBtn"}>Blue button</Button>
+        <NextLink href={`/`} passHref legacyBehavior>
+          <Link variant={"redBtn"}>Red button</Link>
+        </NextLink>
+        <NextLink href={`/`} passHref legacyBehavior>
+          <Link variant={"blueBtn"}>Blue button</Link>
+        </NextLink>
       </Flex>
     </Box>
   );

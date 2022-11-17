@@ -2,6 +2,8 @@ import { extendTheme } from "@chakra-ui/react";
 
 import Heading from "./components/heading";
 import Button from "./components/button";
+import Link from "./components/link";
+
 import sizes from "./foundations/sizes";
 import colors from "./foundations/colors";
 import typography from "./foundations/typography";
@@ -10,6 +12,7 @@ import breakpoints from "./foundations/breakpoints";
 const components = {
   Heading,
   Button,
+  Link,
 };
 
 const foundations = {

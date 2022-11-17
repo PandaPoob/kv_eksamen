@@ -12,9 +12,13 @@ function Article({ acf, id }) {
       bg="brand.white"
       borderRadius={"0.2rem"}
       boxShadow="md"
+      transition="all .2s ease-in-out"
+      _hover={{
+        transform: "translateY(-0.5rem) translateX(0.2rem)",
+      }}
     >
       <NextLink href={`/adopter/adoptionskatte/${id}`} passHref legacyBehavior>
-        <Link>
+        <Link variant={"clean"}>
           <Box
             position="relative"
             height={"65%"}

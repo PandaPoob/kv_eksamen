@@ -11,17 +11,23 @@ function AdoptionsKattePage({ data }) {
       <Heading as={"h1"} size={"heading1"}>
         For de vilde katte
       </Heading>
-
-      <Flex
-        justifyContent={"center"}
-        flexWrap="wrap"
-        gap={"2rem"}
+      <Box
         bg="brand.lightGrey"
+        display={"grid"}
+        justifyContent="center"
+        py={"9.375rem"}
       >
-        {data.map((kat) => {
-          return <Article key={kat.id} {...kat}></Article>;
-        })}
-      </Flex>
+        <Flex
+          justifyContent={"center"}
+          flexWrap="wrap"
+          gap={"2rem"}
+          maxW={"container.xxl"}
+        >
+          {data.map((kat) => {
+            return <Article key={kat.id} {...kat}></Article>;
+          })}
+        </Flex>
+      </Box>
     </Box>
   );
 }
