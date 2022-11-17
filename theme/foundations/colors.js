@@ -2,6 +2,7 @@ const colors = {
   brand: {
     bg: "#FFFFFF",
     white: "#FFFFFF",
+    grey: "#737373",
     lightGrey: "#EEEEEE",
     darkGrey: "#242C38",
     redCta: "#D43B4D",
