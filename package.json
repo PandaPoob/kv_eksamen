@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.4.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@netlify/plugin-nextjs": "^4.29.1",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "framer-motion": "^6.5.1",
