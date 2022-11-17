@@ -41,9 +41,10 @@ const defaultProps = {
   size: "xl",
 };
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
+const heading = {
   baseStyle,
   sizes,
   defaultProps,
 };
+// eslint-disable-next-line import/no-anonymous-default-export
+export default heading;
