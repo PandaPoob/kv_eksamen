@@ -130,9 +130,9 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(Context) {
   const res = await fetch(
-    `https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte/${context.params.slug}`
+    `https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte/${Context.params.slug}`
   );
   const katData = await res.json();
 
