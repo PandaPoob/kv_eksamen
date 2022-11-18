@@ -36,33 +36,39 @@ function ContactBox({ internat }) {
 
   return (
     <Box
-      py={"1rem"}
+      pt={"1rem"}
       display={{ lg: "grid" }}
-      gridTemplateColumns={{ lg: "repeat(2, 1fr)" }}
+      gridTemplateColumns={{ lg: "1.4fr 1fr" }}
     >
-      <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
-        <Flex as="dt" alignItems={"center"}>
-          <Icon color="brand.redCta" w={8} h={8} as={BsTelephone} />
+      <Box>
+        <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
+          <Flex as="dt" alignItems={"center"}>
+            <Icon color="brand.redCta" w={8} h={8} as={BsTelephone} />
+          </Flex>
+
+          <Heading as="dd" size={"heading5"}>
+            {internatInfo.tlf}
+          </Heading>
         </Flex>
 
-        <Heading as="dd" size={"heading5"}>
-          {internatInfo.tlf}
-        </Heading>
-      </Flex>
-
-      <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
-        <Flex as="dt" alignItems={"center"}>
-          <Icon color="brand.redCta" w={8} h={8} as={BsEnvelope} />
+        <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
+          <Flex as="dt" alignItems={"center"}>
+            <Icon color="brand.redCta" w={8} h={8} as={BsEnvelope} />
+          </Flex>
+          <Heading as="dd" size={"heading5"}>
+            {internatInfo.email}
+          </Heading>
         </Flex>
-        <Heading as="dd" size={"heading5"}>
-          {internatInfo.email}
-        </Heading>
-      </Flex>
+      </Box>
 
-      <Divider orientation="horizontal" mb="1rem" />
+      <Divider
+        display={{ base: "block", lg: "none" }}
+        orientation="horizontal"
+        mb="1rem"
+      />
 
       <Box>
-        <Text fontSize={"smallH"} mb={"0.5rem"}>
+        <Text fontSize={"heading5"} mb={"0.5rem"}>
           Telefontider
         </Text>
 
@@ -70,9 +76,11 @@ function ContactBox({ internat }) {
           return (
             <Flex
               as={"dl"}
-              key={internatInfo.internat}
+              key={t.dage}
+              fontSize={"xxs"}
               justify="space-between"
               px={"0.2rem"}
+              mb={"0.2rem"}
             >
               <Text as="dt">{t.dage}:</Text>
               <Text as="dd" fontWeight={"bold"}>

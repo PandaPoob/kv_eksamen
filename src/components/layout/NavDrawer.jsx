@@ -31,19 +31,16 @@ function NavDrawer({ navData, isOpen, onClose }) {
               <Image src={logo} alt={"logo"} height={50} width={50} />
             </Link>
           </NextLink>
-          <NextLink href={`/`} passHref>
-            <Link>
-              <IconButton
-                bg={"none"}
-                color="brand.blue"
-                _hover={{ bg: "none" }}
-                _focus={{ bg: "none" }}
-                onClick={onClose}
-                aria-label="Close menu"
-                icon={<BsXLg />}
-              />
-            </Link>
-          </NextLink>
+
+          <IconButton
+            bg={"none"}
+            color="brand.blue"
+            _hover={{ bg: "none" }}
+            _focus={{ bg: "none" }}
+            onClick={onClose}
+            aria-label="Close menu"
+            icon={<BsXLg />}
+          />
         </DrawerHeader>
 
         <DrawerBody pt={0}>
@@ -55,6 +52,7 @@ function NavDrawer({ navData, isOpen, onClose }) {
 
           <NextLink href={"https://kattens-vaern-butik.dk/"} passHref>
             <Link
+              variant={"clean"}
               isExternal
               target="_blank"
               display={"flex"}
