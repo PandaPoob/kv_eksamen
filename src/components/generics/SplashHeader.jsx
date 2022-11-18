@@ -12,6 +12,7 @@ export default function SplashHeader({overskrift, undertekst, splashbillede, but
         <Flex width={["100%", "100%", "100%", "50%", "50%"]} position="absolute" left={["0", "0", "0", "50%", "50%"]} top="30%" align={"center"} justify="center" direction={"column"} color="brand.white">
           <Heading as={"h1"}>{overskrift}</Heading>
           <Text>{undertekst}</Text>
+          {/* skal have conditional på buttonurl ift om den har indhold eller ej, så den kun render link hvis der er */}
           <NextLink href={buttonurl} passHref legacyBehavior>
             <Link variant={"blueBtn"}>{buttontekst}</Link>
           </NextLink>
