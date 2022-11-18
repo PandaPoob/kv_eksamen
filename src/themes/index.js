@@ -1,8 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
 
-import Heading from "./components/heading";
-import Button from "./components/button";
-import Link from "./components/link";
+import Heading from "./components/Heading";
+import Button from "./components/Button";
+import Link from "./components/Link";
 
 import sizes from "./foundations/sizes";
 import colors from "./foundations/colors";
