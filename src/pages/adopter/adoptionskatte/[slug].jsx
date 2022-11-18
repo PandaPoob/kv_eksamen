@@ -14,7 +14,6 @@ function AdoptionsKatPage({ katData }) {
     kan_med_andre_katte,
     beskrivelse,
   } = katData.acf;
-  // console.log(navn)
 
   return (
     <Box
