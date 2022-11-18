@@ -25,7 +25,7 @@ const sizes = {
   },
 
   heading5: {
-    fontSize: "xs",
+    fontSize: ["smallH", null, null, null, "sm"],
     fontFamily: "body",
     fontWeight: "bold",
   },

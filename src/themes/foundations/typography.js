@@ -26,6 +26,7 @@ const typography = {
     xxl: "3.75rem",
     "3xl": "4.125rem",
     "4xl": "5.25rem",
+    smallH: "1.2rem",
   },
 };
 

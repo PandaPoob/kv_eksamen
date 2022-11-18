@@ -18,7 +18,7 @@ function AdoptionsKatPage({ katData }) {
 
   return (
     <Box>
-      <Box bg="brand.lightGrey" boxShadow="md">
+      <Box bg="brand.lightGrey" boxShadow="md" px={"1rem"} py={"2rem"}>
         <Heading as="h1" size="heading2">
           <Text as="span" color={"brand.grey"}>
             {tag}
@@ -34,7 +34,7 @@ function AdoptionsKatPage({ katData }) {
               as="dl"
               display="grid"
               gridTemplateColumns={"repeat(2, 1fr)"}
-              columnGap="2rem"
+              columnGap="1rem"
               rowGap={"1rem"}
             >
               <Text as="dt" fontWeight={"light"}>
@@ -56,7 +56,7 @@ function AdoptionsKatPage({ katData }) {
               as="dl"
               display="grid"
               gridTemplateColumns={"repeat(2, 1fr)"}
-              columnGap="2rem"
+              columnGap="1rem"
               rowGap={"1rem"}
             >
               <Text as="dt" fontWeight={"light"}>
@@ -83,22 +83,29 @@ function AdoptionsKatPage({ katData }) {
             </Text>
           </Flex>
         </Box>
-        <Text fontSize={"xxs"} fontWeight="light">
+        <Text fontSize={"xxs"} fontWeight="light" mt={"0.5rem"}>
           *Vi kan aldrig garantere at en kat kan med andre men vi vurderer udfra
           om kattens har kunne omgås andre på internatet. Dog er der mange andre
           forhold der kan påvirke dette når man får katten med hjem.
         </Text>
       </Box>
-      <Box>
-        <Box boxShadow="md">
-          <Heading as={"h2"} size="heading3">
+
+      <Box
+        bg={"lightyellow"}
+        px={"1rem"}
+        py={"2rem"}
+        display="grid"
+        gap={"2rem"}
+      >
+        <Box boxShadow="md" bg={"brand.white"} p={"1rem"}>
+          <Heading as={"h2"} size="heading3" mb={"0.5rem"}>
             Beskrivelse
           </Heading>
           <Text>{beskrivelse}</Text>
         </Box>
 
-        <Box boxShadow="md">
-          <Heading as={"h2"} size="heading3">
+        <Box boxShadow="md" bg={"brand.white"} p={"1rem"}>
+          <Heading as={"h2"} size="heading3" mb={"0.5rem"}>
             Vil du møde {navn}?
           </Heading>
           <Text>
@@ -107,7 +114,7 @@ function AdoptionsKatPage({ katData }) {
             hilse pa katten og se om det er det rigtige match. Se internatet
             her.
           </Text>
-          <Divider orientation="horizontal" />
+          <Divider orientation="horizontal" mt="1rem" />
           <ContactBox internat={internat}></ContactBox>
         </Box>
       </Box>
