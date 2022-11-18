@@ -12,13 +12,13 @@ function BlivMedlemPage({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  /*   const res = await fetch(
+/* export async function getStaticProps() {
+     const res = await fetch(
     "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
   );
-  const data = await res.json(); */
+  const data = await res.json(); 
 
   return { props: { data } };
 }
-
+ */
 export default BlivMedlemPage;

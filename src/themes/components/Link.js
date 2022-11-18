@@ -26,13 +26,13 @@ const link = {
     redBtn: {
       bg: "brand.redCta",
       fontSize: "xs",
-      borderRadius: "0.2rem",
+      borderRadius: "0.1rem",
       textAlign: "center",
       color: "brand.white",
       fontWeight: "semibold",
       transition: "all .2s ease-in-out",
       py: "0.5rem",
-      px: "1rem",
+      px: "1.5rem",
 
       _hover: {
         bg: "brand.redHover",

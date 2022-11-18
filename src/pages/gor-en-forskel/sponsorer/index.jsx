@@ -1,6 +1,6 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
 
-function BlivSponsorPage({ data }) {
+function SponsorerPage({ data }) {
   // console.log(data)
 
   return (
@@ -12,13 +12,13 @@ function BlivSponsorPage({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  /*   const res = await fetch(
+/* export async function getStaticProps() {
+     const res = await fetch(
     "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
   );
-  const data = await res.json(); */
+  const data = await res.json(); 
 
   return { props: { data } };
 }
-
-export default BlivSponsorPage;
+ */
+export default SponsorerPage;
