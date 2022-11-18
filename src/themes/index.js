@@ -3,6 +3,8 @@ import { extendTheme } from "@chakra-ui/react";
 import Heading from "./components/Heading";
 import Button from "./components/Button";
 import Link from "./components/Link";
+import List from "./components/List";
+import { menuTheme } from "./components/Menu";
 
 import sizes from "./foundations/sizes";
 import colors from "./foundations/colors";
@@ -13,6 +15,8 @@ const components = {
   Heading,
   Button,
   Link,
+  List,
+  Menu: menuTheme,
 };
 
 const foundations = {

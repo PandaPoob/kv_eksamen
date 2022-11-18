@@ -12,6 +12,10 @@ const button = {
   },
 
   variants: {
+    navTitle: {
+      fontWeight: "bold",
+    },
+
     redBtn: {
       bg: "brand.redCta",
       fontSize: "xs",
