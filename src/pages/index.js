@@ -8,7 +8,7 @@ export default function Home({data}) {
   console.log(data);
   return (
     <Box>
-      <SplashHeader/>
+      {/* <SplashHeader/> */}
       <Heading as="h1" size="heading1">
         heading1
       </Heading>
@@ -40,9 +40,9 @@ export default function Home({data}) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/forside");
-  const data = await res.json();
+// export async function getStaticProps() {
+//   const res = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/forside");
+//   const data = await res.json();
 
-  return { props: { data } };
-}
+//   return { props: { data } };
+// }
