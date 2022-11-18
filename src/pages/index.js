@@ -2,10 +2,13 @@ import Head from "next/head";
 import Image from "next/image";
 import NextLink from "next/link";
 import { Box, Heading, Text, Button, Flex, Link } from "@chakra-ui/react";
+import SplashHeader from "../components/generics/SplashHeader";
 
-export default function Home() {
+export default function Home({data}) {
+  console.log(data);
   return (
     <Box>
+      <SplashHeader/>
       <Heading as="h1" size="heading1">
         heading1
       </Heading>
@@ -35,4 +38,11 @@ export default function Home() {
       </Flex>
     </Box>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/forside");
+  const data = await res.json();
+
+  return { props: { data } };
 }
