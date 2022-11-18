@@ -1,32 +1,33 @@
 import Image from "next/image";
 import NextLink from "next/link";
 import fifth from "../../assets/svgs/fifth.svg";
-import { Box, Heading, Text, Link, Flex, Icon } from "@chakra-ui/react";
+import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
 
 function Article({ acf, id }) {
-  //netlify
   return (
     <Box
       as="article"
-      minH={"20rem"}
-      minW={"20rem"}
       bg="brand.white"
       borderRadius={"0.2rem"}
       boxShadow="md"
+      minH={"20rem"}
+      minW={"20rem"}
       transition="all .2s ease-in-out"
       _hover={{
         transform: "translateY(-0.5rem) translateX(0.2rem)",
       }}
     >
-      <NextLink href={`/adopter/adoptionskatte/${id}`} passHref legacyBehavior>
-        <Link variant={"clean"}>
-          <Box
-            position="relative"
-            height={"65%"}
-            width={"20rem"}
-            borderTopRadius="0.2rem"
-            overflow="hidden"
-          >
+      <NextLink href={`/adopter/adoptionskatte/${id}`} passHref>
+        <Link
+          h={"20rem"}
+          w={"20rem"}
+          flexGrow={1}
+          flexDir={"column"}
+          variant={"clean"}
+          borderTopRadius="0.2rem"
+          overflow="hidden"
+        >
+          <Box position="relative" minH={"14rem"} width={"100%"}>
             <Image
               src={acf.profil_billede}
               alt={acf.navn}
@@ -34,9 +35,11 @@ function Article({ acf, id }) {
               objectFit="cover"
             />
           </Box>
+
           <Flex
-            height="35%"
+            minH={"5rem"}
             justifyContent={"center"}
+            position="relative"
             flexDir="column"
             gap={"0.4rem"}
           >
