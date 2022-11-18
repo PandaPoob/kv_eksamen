@@ -1,5 +1,6 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
 import Article from "../../../components/generics/Article";
+import url from "../../../api/url";
 
 function AdoptionsKattePage({ data }) {
   return (
@@ -29,9 +30,7 @@ function AdoptionsKattePage({ data }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
+  const res = await fetch(`${url}adoptionskatte`);
   const data = await res.json();
 
   return { props: { data } };

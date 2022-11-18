@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Box, Heading, Text, Flex, Divider } from "@chakra-ui/react";
 import ContactBox from "./ContactBox";
+import url from "../../../api/url";
 
 function AdoptionsKatPage({ katData }) {
   const {
@@ -142,9 +143,7 @@ function AdoptionsKatPage({ katData }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
+  const res = await fetch(`${url}adoptionskatte`);
   const results = await res.json();
 
   return {
@@ -157,9 +156,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(Context) {
-  const res = await fetch(
-    `https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte/${Context.params.slug}`
-  );
+  const res = await fetch(`${url}adoptionskatte/${Context.params.slug}`);
   const katData = await res.json();
 
   return { props: { katData } };
