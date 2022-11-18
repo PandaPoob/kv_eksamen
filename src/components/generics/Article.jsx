@@ -4,6 +4,7 @@ import fifth from "../../assets/svgs/fifth.svg";
 import { Box, Heading, Text, Link, Flex, Icon } from "@chakra-ui/react";
 
 function Article({ acf, id }) {
+  //netlify
   return (
     <Box
       as="article"
