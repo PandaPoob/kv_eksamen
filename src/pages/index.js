@@ -7,7 +7,7 @@ import PageHead from "../components/layout/PageHead";
 
 
 function Home({data}) {
-  console.log(data);
+  
   return (
     <Box>
       <PageHead {...data}/>
