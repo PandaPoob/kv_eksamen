@@ -4,12 +4,14 @@ import Article from "../../../components/generics/Article";
 import url from "../../../api/url";
 
 import SplashHeader from "../../../components/generics/SplashHeader";
+import PageHead from "../../../components/layout/PageHead";
 
 function AdoptionsKattePage({ data, sideData }) {
 
 
   return (
     <Box>
+      <PageHead {...sideData}/>
       <SplashHeader {...sideData} />
       <Box
         bg="brand.lightGrey"

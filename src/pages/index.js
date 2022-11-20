@@ -2,12 +2,15 @@ import Head from "next/head";
 import Image from "next/image";
 import NextLink from "next/link";
 import { Box, Heading, Text, Button, Flex, Link } from "@chakra-ui/react";
-import SplashHeader from "../components/generics/SplashHeader";
+import url from "../api/url";
+import PageHead from "../components/layout/PageHead";
+
 
 function Home({data}) {
   console.log(data);
   return (
     <Box>
+      <PageHead {...data}/>
       <Box position="relative" height={"90vh"} width={"100vw"} overflow="hidden">
         <Image src={data.acf.splashbillede} alt="test-image" layout="fill" objectFit="cover" />
         <Box position="absolute" top={"0"} left={["0", "0", "0", "50%", "50%"]} width={["100%", "100%", "100%", "50%", "50%"]} height={"100%"} bgColor="brand.darkGrey" opacity={"50%"}></Box>
@@ -51,7 +54,7 @@ function Home({data}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/indholdsider/165");
+  const res = await fetch(`${url}indholdsider/165`);
   const data = await res.json();
 
   return {

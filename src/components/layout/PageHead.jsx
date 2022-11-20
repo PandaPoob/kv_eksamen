@@ -1,10 +1,10 @@
 import Head from "next/head"
 
-export default function PageHead ({sidetitel, metatekst}){
+export default function PageHead ({acf}){
     return (
         <Head>
-            <title>{sidetitel}</title>
-            <meta name="description" content={metatekst} />
+            <title>{acf.sidetitel}</title>
+            <meta name="description" content={acf.metatekst} />
         </Head>
     )
 }
