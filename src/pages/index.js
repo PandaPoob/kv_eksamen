@@ -4,11 +4,21 @@ import NextLink from "next/link";
 import { Box, Heading, Text, Button, Flex, Link } from "@chakra-ui/react";
 import SplashHeader from "../components/generics/SplashHeader";
 
-export default function Home({data}) {
+function Home({data}) {
   console.log(data);
   return (
     <Box>
-      {/* <SplashHeader/> */}
+      <Box position="relative" height={"90vh"} width={"100vw"} overflow="hidden">
+        <Image src={data.acf.splashbillede} alt="test-image" layout="fill" objectFit="cover" />
+        <Box position="absolute" top={"0"} left={["0", "0", "0", "50%", "50%"]} width={["100%", "100%", "100%", "50%", "50%"]} height={"100%"} bgColor="brand.darkGrey" opacity={"50%"}></Box>
+        <Flex width={["100%", "100%", "100%", "50%", "50%"]} position="absolute" left={["0", "0", "0", "50%", "50%"]} top="30%" align={"center"} justify="center" direction={"column"} color="brand.white">
+          <Heading as={"h1"}>{data.acf.overskrift}</Heading>
+          <Text>{data.acf.undertekst}</Text>
+          <NextLink href={""} passHref legacyBehavior>
+            <Link variant={"blueBtn"}>{""}</Link>
+          </NextLink>
+        </Flex>
+      </Box>
       <Heading as="h1" size="heading1">
         heading1
       </Heading>
@@ -40,9 +50,15 @@ export default function Home({data}) {
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/forside");
-//   const data = await res.json();
+export async function getStaticProps() {
+  const res = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/indholdsider/165");
+  const data = await res.json();
 
-//   return { props: { data } };
-// }
+  return {
+    props: {
+      data: data,
+    },
+  };
+}
+
+export default Home;
