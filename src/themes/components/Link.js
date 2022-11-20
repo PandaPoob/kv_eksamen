@@ -1,6 +1,8 @@
 const link = {
   variants: {
     clean: {
+      display: "flex",
+      alignItems: "center",
       textDecoration: "none",
       _hover: {
         textDecoration: "none",
@@ -24,15 +26,18 @@ const link = {
     },
 
     redBtn: {
+      display: "flex",
+      alignItems: "center",
       bg: "brand.redCta",
       fontSize: "xs",
-      borderRadius: "0.2rem",
+      borderRadius: "0.1rem",
       textAlign: "center",
       color: "brand.white",
       fontWeight: "semibold",
       transition: "all .2s ease-in-out",
       py: "0.5rem",
-      px: "1rem",
+      px: "1.5rem",
+      minH: "3rem",
 
       _hover: {
         bg: "brand.redHover",
@@ -41,6 +46,8 @@ const link = {
       },
     },
     blueBtn: {
+      display: "flex",
+      alignItems: "center",
       bg: "brand.blueCta",
       fontSize: "xs",
       borderRadius: "0.2rem",

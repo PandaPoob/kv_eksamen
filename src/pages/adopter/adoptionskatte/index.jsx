@@ -1,11 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
-import Article from "../../../components/generics/Article";
 import { Box, Heading, Flex } from "@chakra-ui/react";
+
+import Article from "../../../components/generics/Article";
+import url from "../../../api/url";
+
 import SplashHeader from "../../../components/generics/SplashHeader";
 
 function AdoptionsKattePage({ data, sideData }) {
-  console.log(sideData)
+
 
   return (
     <Box>
@@ -35,9 +36,7 @@ function AdoptionsKattePage({ data, sideData }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
+  const res = await fetch(`${url}adoptionskatte`);
   const data = await res.json();
   const res2 = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/indholdsider/166");
   const sideData = await res2.json()

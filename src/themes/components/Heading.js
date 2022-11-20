@@ -25,7 +25,7 @@ const sizes = {
   },
 
   heading5: {
-    fontSize: "xs",
+    fontSize: "smallH",
     fontFamily: "body",
     fontWeight: "bold",
   },
@@ -34,6 +34,10 @@ const sizes = {
     fontSize: "xs",
     fontFamily: "body",
     fontWeight: "bold",
+  },
+
+  svheading: {
+    fontSize: ["2rem", null, null, null, "lg"],
   },
 };
 
