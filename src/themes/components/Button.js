@@ -16,6 +16,14 @@ const button = {
       fontWeight: "bold",
     },
 
+    carouselBtn: {
+      bg: "none",
+
+      _hover: {
+        transform: "scale(1)",
+      },
+    },
+
     redBtn: {
       bg: "brand.redCta",
       fontSize: "xs",

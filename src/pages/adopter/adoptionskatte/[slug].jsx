@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Box, Heading, Text, Flex, Divider } from "@chakra-ui/react";
 import ContactBox from "./ContactBox";
 import url from "../../../api/url";
+import Carousel from "../../../components/features/Carousel";
+import CarouselImage from "../../../components/generics/CarouselImage";
 
 function AdoptionsKatPage({ katData }) {
   const {
@@ -14,7 +16,17 @@ function AdoptionsKatPage({ katData }) {
     internat,
     kan_med_andre_katte,
     beskrivelse,
+    billeder,
   } = katData.acf;
+
+  //fix what wp couldnt
+  const billedArr = Object.entries(billeder).map((e) => ({
+    alt: e[0],
+    url: e[1],
+  }));
+
+  //remove empty entries (false)
+  const cleanbilledArr = billedArr.filter((b) => b.url !== false);
 
   return (
     <Box
@@ -31,12 +43,30 @@ function AdoptionsKatPage({ katData }) {
             {navn}
           </Heading>
 
-          <Image
-            src={profil_billede}
-            alt={navn}
-            width={500}
-            height={300}
-          ></Image>
+          {cleanbilledArr.length === 1 ? (
+            cleanbilledArr.map((b) => (
+              <Box
+                key={b.alt}
+                position="relative"
+                minH={"22rem"}
+                width={"100%"}
+              >
+                <Image
+                  src={b.url}
+                  alt={b.alt}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Box>
+            ))
+          ) : (
+            <Carousel
+              listData={cleanbilledArr}
+              perPage={{ base: 1 }}
+              perMoveVal={{ base: 1 }}
+              CarouselListItem={CarouselImage}
+            />
+          )}
 
           <Box
             bg={"brand.darkGrey"}
