@@ -1,6 +1,8 @@
 import NextLink from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { useViewportScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import logo from "../../assets/svgs/logo.svg";
 import NavGroup from "./NavGroup";
 import { BsCart3, BsList } from "react-icons/bs";
@@ -10,7 +12,6 @@ import {
   Box,
   Link,
   useBreakpointValue,
-  Button,
   IconButton,
 } from "@chakra-ui/react";
 
@@ -81,15 +82,34 @@ function Nav({ children }) {
   const isMobile = useBreakpointValue({ base: true, navbp: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  //hide and show menu depending on scroll
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useViewportScroll();
+  useEffect(() => {
+    return scrollY.onChange(() => update());
+  });
+  function update() {
+    if (scrollY?.current < scrollY?.prev) {
+      setHidden(false);
+    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
+      setHidden(true);
+    }
+  }
+
   return (
     <>
       <Box
         as={"header"}
-        boxShadow="0 8px 6px -6px #EEEEEE"
+        boxShadow="0 1px 8px -4px #737373"
         px={{ base: "1rem", md: "2rem" }}
         py="0.6rem"
+        bg={"brand.white"}
         zIndex={"10"}
-        position="relative"
+        position={"fixed"}
+        w={"100%"}
+        top={hidden ? "-5rem" : "0"}
+        left={0}
+        transition={"top 0.3s"}
       >
         {isMobile ? (
           <Flex as={"nav"} justifyContent="space-between">
