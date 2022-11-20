@@ -38,7 +38,7 @@ function AdoptionsKattePage({ data, sideData }) {
 export async function getStaticProps() {
   const res = await fetch(`${url}adoptionskatte`);
   const data = await res.json();
-  const res2 = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/indholdsider/166");
+  const res2 = await fetch(`${url}indholdsider/166`);
   const sideData = await res2.json()
 
   return {
