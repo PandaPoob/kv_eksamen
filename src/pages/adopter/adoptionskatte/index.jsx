@@ -1,13 +1,18 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
+
 import Article from "../../../components/generics/Article";
 import url from "../../../api/url";
 
-function AdoptionsKattePage({ data }) {
+import SplashHeader from "../../../components/generics/SplashHeader";
+import PageHead from "../../../components/layout/PageHead";
+
+function AdoptionsKattePage({ data, sideData }) {
+
+
   return (
     <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        For de vilde katte
-      </Heading>
+      <PageHead {...sideData}/>
+      <SplashHeader {...sideData} />
       <Box
         bg="brand.lightGrey"
         display={"grid"}
@@ -32,8 +37,15 @@ function AdoptionsKattePage({ data }) {
 export async function getStaticProps() {
   const res = await fetch(`${url}adoptionskatte`);
   const data = await res.json();
+  const res2 = await fetch(`${url}indholdsider/166`);
+  const sideData = await res2.json()
 
-  return { props: { data } };
+  return {
+    props: {
+      data: data,
+      sideData: sideData,
+    },
+  };
 }
 
 export default AdoptionsKattePage;
