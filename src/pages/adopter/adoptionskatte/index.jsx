@@ -11,9 +11,6 @@ function AdoptionsKattePage({ data, sideData }) {
   return (
     <Box>
       <SplashHeader {...sideData} />
-      <Heading as={"h1"} size={"heading1"}>
-        For de vilde katte
-      </Heading>
       <Box
         bg="brand.lightGrey"
         display={"grid"}
