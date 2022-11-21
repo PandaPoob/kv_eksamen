@@ -12,7 +12,7 @@ function AdoptionsKattePage({ data, sideData }) {
   return (
     <Box>
       <PageHead {...sideData}/>
-      <SplashHeader {...sideData} />
+      <SplashHeader {...sideData} leftPos="50%" />
       <Box
         bg="brand.lightGrey"
         display={"grid"}
