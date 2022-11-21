@@ -32,10 +32,9 @@ function FilterDrawer({
   const [miljoMobileFilter, setMiljoMobileFilter] = useState("");
   const [alderMobileFilter, setAlderMobileFilter] = useState("");
 
-  console.log(kanMedAndreMobile);
-
   function resetFilter() {
     setKanMedAndre(false);
+    setKanMedAndreMobile(false);
     setInternatMobileFilter("");
     setMiljoMobileFilter("");
     setAlderMobileFilter("");
