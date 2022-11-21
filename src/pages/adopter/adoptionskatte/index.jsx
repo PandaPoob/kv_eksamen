@@ -2,7 +2,6 @@ import url from "../../../api/url";
 import AdoptionsKatte from "../../../views/adopter/adoptionskatte/AdoptionsKatte";
 
 function AdoptionsKattePage({ data, sideData }) {
-  console.log(data);
   return <AdoptionsKatte data={data} sideData={sideData} />;
 }
 
