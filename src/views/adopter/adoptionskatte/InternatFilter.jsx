@@ -1,6 +1,6 @@
 import { Stack, Button } from "@chakra-ui/react";
 
-function InternatFilter({ internatFilter, setInternatFilter }) {
+function InternatFilter({ internatFilter, setInternatFilter, internatOpt }) {
   return (
     <Stack direction="row" spacing={4} align="center">
       <Button
@@ -10,34 +10,18 @@ function InternatFilter({ internatFilter, setInternatFilter }) {
       >
         Alle
       </Button>
-      <Button
-        textDecor={internatFilter === "Aalborg" ? "underline" : "none"}
-        variant={"carouselBtn"}
-        onClick={() => setInternatFilter("Aalborg")}
-      >
-        Aalborg
-      </Button>
-      <Button
-        textDecor={internatFilter === "Billund" ? "underline" : "none"}
-        variant={"carouselBtn"}
-        onClick={() => setInternatFilter("Billund")}
-      >
-        Billund
-      </Button>
-      <Button
-        textDecor={internatFilter === "Brøndby" ? "underline" : "none"}
-        variant={"carouselBtn"}
-        onClick={() => setInternatFilter("Brøndby")}
-      >
-        Brøndby
-      </Button>
-      <Button
-        textDecor={internatFilter === "Slagelse" ? "underline" : "none"}
-        variant={"carouselBtn"}
-        onClick={() => setInternatFilter("Slagelse")}
-      >
-        Slagelse
-      </Button>
+      {internatOpt.map((btn) => {
+        return (
+          <Button
+            key={btn.value}
+            textDecor={internatFilter === btn.value ? "underline" : "none"}
+            variant={"carouselBtn"}
+            onClick={() => setInternatFilter(btn.value)}
+          >
+            {btn.value}
+          </Button>
+        );
+      })}
     </Stack>
   );
 }

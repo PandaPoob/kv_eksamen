@@ -1,6 +1,6 @@
 const button = {
   baseStyle: {
-    borderRadius: "0.2rem",
+    borderRadius: "0.1rem",
     textAlign: "center",
     color: "brand.white",
     fontWeight: "semibold",
@@ -35,9 +35,28 @@ const button = {
       },
     },
 
+    mobileFilterBtn: {
+      color: "brand.blue",
+      bg: "brand.white",
+      fontWeight: "normal",
+      py: "2.4rem",
+      px: "3.5rem",
+      fontSize: "smallH",
+      display: "flex",
+      alignItems: "center",
+      width: "100%",
+      textAlign: "left",
+      justifyContent: "space-between",
+
+      _hover: {
+        transform: "scale(1)",
+      },
+    },
+
     redBtn: {
       bg: "brand.redCta",
-      fontSize: "xs",
+      fontSize: "smallH",
+      py: "1.6rem",
 
       _hover: {
         bg: "brand.redHover",
@@ -45,7 +64,8 @@ const button = {
     },
     blueBtn: {
       bg: "brand.blueCta",
-      fontSize: "xs",
+      fontSize: "smallH",
+      py: "1.6rem",
 
       _hover: {
         bg: "brand.blueHover",

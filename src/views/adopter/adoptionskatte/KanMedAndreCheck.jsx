@@ -5,6 +5,7 @@ function KanMedAndreCheck({ kanMedAndre, setKanMedAndre }) {
     <Flex mr={"4rem"} minW={"12rem"} alignItems={"center"}>
       <Checkbox
         colorScheme="blueKv"
+        _focus={{ boxShadow: "none" }}
         onChange={() => {
           if (kanMedAndre === false) {
             setKanMedAndre(true);

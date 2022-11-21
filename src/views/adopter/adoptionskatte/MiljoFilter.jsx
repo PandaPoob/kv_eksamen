@@ -1,23 +1,13 @@
 import SelectDropdown from "../../../components/features/SelectDropdown";
 
-function MiljoFilter({ setMiljoFilter }) {
-  const options = [
-    {
-      value: "Indekat",
-    },
-
-    {
-      value: "Udekat",
-    },
-  ];
-
+function MiljoFilter({ setMiljoFilter, miljoOpt }) {
   const onCallback = (value) => {
     setMiljoFilter(value);
   };
 
   return (
     <SelectDropdown
-      options={options}
+      options={miljoOpt}
       placeholder={"Miljø"}
       onCallback={onCallback}
     />

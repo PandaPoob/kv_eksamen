@@ -1,7 +1,7 @@
 import NextLink from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useViewportScroll } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import logo from "../../assets/svgs/logo.svg";
 import NavGroup from "./NavGroup";
@@ -84,7 +84,7 @@ function Nav({ children }) {
 
   //hide and show menu depending on scroll
   const [hidden, setHidden] = useState(false);
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   useEffect(() => {
     return scrollY.onChange(() => update());
   });
