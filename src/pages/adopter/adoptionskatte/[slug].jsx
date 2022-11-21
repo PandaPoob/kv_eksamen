@@ -2,7 +2,7 @@ import url from "../../../api/url";
 import AdoptionsKat from "../../../views/adopter/adoptionskatte/AdoptionsKat";
 
 function AdoptionsKatPage({ katData }) {
-  return <AdoptionsKat katData={katData} />;
+  return <AdoptionsKat katData={katData} />
 }
 
 export async function getStaticPaths() {
