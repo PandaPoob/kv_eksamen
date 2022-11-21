@@ -1,36 +1,8 @@
-import { Box, Flex } from "@chakra-ui/react";
-
-import Article from "../../../components/generics/Article";
 import url from "../../../api/url";
-
-import SplashHeader from "../../../components/generics/SplashHeader";
-import PageHead from "../../../components/layout/PageHead";
-import PageLayout from "../../../components/layout/PageLayout";
+import AdoptionsKatte from "../../../views/adopter/adoptionskatte/AdoptionsKatte";
 
 function AdoptionsKattePage({ data, sideData }) {
-  return (
-    <PageLayout>
-      <PageHead {...sideData} />
-      <SplashHeader {...sideData} />
-      <Box
-        bg="brand.lightGrey"
-        display={"grid"}
-        justifyContent="center"
-        py={"9.375rem"}
-      >
-        <Flex
-          justifyContent={"center"}
-          flexWrap="wrap"
-          gap={"2rem"}
-          maxW={"container.xxl"}
-        >
-          {data.map((kat) => {
-            return <Article key={kat.id} {...kat}></Article>;
-          })}
-        </Flex>
-      </Box>
-    </PageLayout>
-  );
+  return <AdoptionsKatte data={data} sideData={sideData} />;
 }
 
 export async function getStaticProps() {
