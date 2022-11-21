@@ -9,6 +9,7 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
+import { BsChevronDown } from "react-icons/bs";
 
 function NavMobileGroup({ titel, subTitel, onClose }) {
   return (
@@ -17,7 +18,7 @@ function NavMobileGroup({ titel, subTitel, onClose }) {
         <Box flex="1" textAlign="left" fontWeight={"semibold"} fontSize={"sm"}>
           {titel}
         </Box>
-        <AccordionIcon />
+        <AccordionIcon as={BsChevronDown} color="brand.blue" w={8} h={8} />
       </AccordionButton>
 
       <AccordionPanel pb={"2rem"} fontSize={"1.2rem"}>
