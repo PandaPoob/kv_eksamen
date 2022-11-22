@@ -9,7 +9,7 @@ const baseStyle = definePartsStyle({
   // define the part you're going to style
   button: {
     // this will style the MenuButton component
-    fontWeight: "semibold",
+    fontWeight: "medium",
     bg: "none",
     color: "brand.blue",
     _hover: {
