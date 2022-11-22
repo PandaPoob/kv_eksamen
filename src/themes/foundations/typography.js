@@ -12,8 +12,8 @@ const typography = {
   },
 
   fonts: {
-    heading: `Fjalla One, sans-serif`,
-    body: `Inter, sans-serif`,
+    heading: `"Fjalla One", sans-serif`,
+    body: `"Inter", sans-serif`,
   },
 
   fontSizes: {
