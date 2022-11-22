@@ -13,7 +13,7 @@ export default function MaanedensKatte({katteData}){
     return (
       <Box as="section" display="grid" py={"3rem"} px="1rem" gap="1rem" bgColor={"brand.lightGrey"}>
         <Heading as="h2" size={"heading2"} textAlign="center">
-          Månedens katte
+          Månedens katte Test
         </Heading>
         <Text textAlign="center">Månedens katte er katte som har særligt udmærket sig i løbet af den forhenværende måned.</Text>
         <Box display={"grid"} gap="1rem" my="1rem" gridTemplateColumns={{ base: "1fr", lg: "4fr 1fr 4fr" }} gridTemplateRows={{ lg: "1fr" }}>
