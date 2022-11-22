@@ -8,7 +8,7 @@ function NyhedsSektion({nyhedsData}){
     return e.acf.udvalgtArtikel === true;
   });
     return (
-      <Box bgColor={"brand.darkGrey"} color="brand.white" py={"2rem"} px="1rem">
+      <Box bgColor={"brand.darkGrey"} color="brand.white" py={"3rem"} px="1rem">
         <Heading as="h2" size={"heading2"} textAlign="center">
           Seneste nyt
         </Heading>
@@ -18,7 +18,7 @@ function NyhedsSektion({nyhedsData}){
           ))}
         </Flex>
         <NextLink href="/nyheder" passHref>
-          <Link variant="redBtn" m={"auto"} maxW="12rem" textAlign={"center"} marginInline="auto" justifyContent="center">
+          <Link variant="redBtn" mx={"auto"} my="2rem" maxW="12rem" justifyContent="center">
             Se alle nyheder
           </Link>
         </NextLink>

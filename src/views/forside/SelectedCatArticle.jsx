@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function SelectedCatArticle({acf, id}){
     return (
       <NextLink href={`/adopter/adoptionskatte/${id}`} passHref>
-        <Link>
+        <Link variant={"clean"} display="grid">
           <Box
             position="relative"
             display={"grid"}

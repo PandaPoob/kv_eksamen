@@ -36,9 +36,7 @@ function SplashHeader({acf, textPos = "50%", imgPos = "center"}) {
           <Text>{acf.undertekst}</Text>
           {buttonChecker() && (
             <NextLink href={""} passHref>
-              <Link maxW={"8rem"} justifyContent="center" variant={"blueBtn"}>
-                {""}
-              </Link>
+              <Link maxW={"10rem"} justifyContent="center" variant={"blueBtn"}>{acf.buttontekst}</Link>
             </NextLink>
           )}
         </Flex>

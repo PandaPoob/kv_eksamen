@@ -30,14 +30,13 @@ const link = {
       alignItems: "center",
       bg: "brand.redCta",
       fontSize: "xs",
-      borderRadius: "0.1rem",
+      borderRadius: "0.2rem",
       textAlign: "center",
       color: "brand.white",
       fontWeight: "semibold",
       transition: "all .2s ease-in-out",
-      py: "0.5rem",
+      py: "0.7rem",
       px: "1.5rem",
-      minH: "3rem",
 
       _hover: {
         bg: "brand.redHover",
@@ -55,8 +54,8 @@ const link = {
       color: "brand.white",
       fontWeight: "semibold",
       transition: "all .2s ease-in-out",
-      py: "0.5rem",
-      px: "1rem",
+      py: "0.7rem",
+      px: "1.5rem",
 
       _hover: {
         bg: "brand.blueHover",
