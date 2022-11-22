@@ -6,7 +6,7 @@ function AdoptionsKatPage({ katData }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${url}adoptionskatte`);
+  const res = await fetch(`${url}adoptionskatte?per_page`);
   const results = await res.json();
 
   return {

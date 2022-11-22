@@ -1,31 +1,13 @@
 import SelectDropdown from "../../../components/features/SelectDropdown";
 
-function AlderFilter({ setAlderFilter }) {
-  const options = [
-    {
-      value: "Killing",
-    },
-
-    {
-      value: "Ungkat",
-    },
-
-    {
-      value: "Voksen",
-    },
-
-    {
-      value: "Senior",
-    },
-  ];
-
+function AlderFilter({ setAlderFilter, alderOpt }) {
   const onCallback = (value) => {
     setAlderFilter(value);
   };
 
   return (
     <SelectDropdown
-      options={options}
+      options={alderOpt}
       placeholder={"Alder"}
       onCallback={onCallback}
     />

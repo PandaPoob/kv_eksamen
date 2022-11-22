@@ -6,7 +6,7 @@ function AdoptionsKattePage({ data, sideData }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${url}adoptionskatte`);
+  const res = await fetch(`${url}adoptionskatte?per_page`);
   const data = await res.json();
   const res2 = await fetch(`${url}indholdsider/166`);
   const sideData = await res2.json();
