@@ -17,12 +17,28 @@ function SplashHeader({acf, textPos = "50%", imgPos = "center"}) {
       <Box position="relative" height={"70vh"} width={"100vw"} overflow="hidden" backgroundImage={acf.splashbillede} bgPosition={imgPos} bgSize="cover">
         {/* <Image src={acf.splashbillede} alt="test-image" layout="fill" objectFit="cover" /> */}
         <Box position="absolute" top={"0"} width="100%" height={"100%"} bgColor="brand.darkGrey" opacity={"50%"}></Box>
-        <Flex padding={"1rem"} width={["100%", "100%", "100%", "50%", "50%"]} position="absolute" left={["0", "0", "0", textPos, textPos]} top="40%" align={"center"} justify="center" direction={"column"} color="brand.white">
-          <Heading as={"h1"}>{acf.overskrift}</Heading>
+        <Flex
+          width={["auto", "auto", "auto", "50%", "50%"]}
+          position="absolute"
+          left={["0", "0", "0", textPos, textPos]}
+          top="30%"
+          align={"left"}
+          justifyContent="center"
+          direction={"column"}
+          color="brand.white"
+          gap="1rem"
+          py={"2rem"}
+          px="2rem"
+        >
+          <Heading as={"h1"} size="heading1">
+            {acf.overskrift}
+          </Heading>
           <Text>{acf.undertekst}</Text>
           {buttonChecker() && (
             <NextLink href={""} passHref>
-              <Link variant={"blueBtn"}>{""}</Link>
+              <Link maxW={"8rem"} justifyContent="center" variant={"blueBtn"}>
+                {""}
+              </Link>
             </NextLink>
           )}
         </Flex>

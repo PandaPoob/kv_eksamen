@@ -6,7 +6,7 @@ import SlArrowRight from "react-icons/bs";
 
 export default function Banner(props){
     return (
-      <Flex bg={"brand.lightGrey"} justifyContent="space-evenly" py="2rem">
+      <Flex bg={"brand.lightGrey"} justifyContent="space-evenly" gap="1rem" py="2rem" flexWrap={"wrap"}>
         <NextLink href={`${url}efterlysning/efterlys-kat`} passHref>
           <Link variant={"clean"}>
             <Text fontWeight={"semibold"}>Jeg har fundet en kat</Text>
