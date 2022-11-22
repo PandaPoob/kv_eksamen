@@ -7,8 +7,6 @@ function NyhedsSektion({nyhedsData}){
   let udvalgteArtikler = nyhedsData.filter((e)=> {
     return e.acf.udvalgtArtikel === true;
   });
-
-    console.log(nyhedsData)
     return (
       <Box bgColor={"brand.darkGrey"} color="brand.white" py={"2rem"} px="1rem">
         <Heading as="h2" size={"heading2"} textAlign="center">

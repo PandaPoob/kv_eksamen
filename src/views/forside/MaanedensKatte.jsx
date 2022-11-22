@@ -7,6 +7,8 @@ export default function MaanedensKatte({katteData}){
     let maanedensKatte = katteData.filter((e) => {
       return e.acf.udvalgt === true;
     });
+
+    console.log(katteData)
   
     return (
       <Box as="section" display="grid" py={"2rem"} px="1rem" gap="1rem" bgColor={"brand.lightGrey"}>
@@ -17,8 +19,8 @@ export default function MaanedensKatte({katteData}){
         <Box display={"grid"} gap="1rem" gridTemplateColumns={{ base: "1fr", lg: "4fr 1fr 4fr" }} gridTemplateRows={{ lg: "1fr" }}>
           {maanedensKatte.map((e, index) => (
             <>
-              {index == 1 && <Divider display={"flex"} justifySelf="center" borderColor={"brand.blueCta"} orientation={"vertical"} height="100%" />}
-              <SelectedCatArticle key={e.acf.navn} {...e} />
+              {index == 1 && <Divider key={index} display={"flex"} justifySelf="center" borderColor={"brand.blueCta"} orientation={"vertical"} height="100%" />}
+              <SelectedCatArticle key={e.id} {...e} />
             </>
           ))}
         </Box>

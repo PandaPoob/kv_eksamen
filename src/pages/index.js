@@ -7,6 +7,7 @@ import MaanedensKatte from "../views/forside/MaanedensKatte";
 import VoresArbejde from "../views/forside/VoresArbejde";
 import NyhedsSektion from "../views/forside/NyhedsSektion";
 import PageLayout from "../components/layout/PageLayout";
+import Banner from "../views/forside/Banner";
 
 function Home({sideData, katteData, nyhedsData}) {
 
@@ -16,9 +17,10 @@ function Home({sideData, katteData, nyhedsData}) {
       <Box>
         <PageHead {...sideData} />
         <ForsideSplash {...sideData} />
-          <VoresArbejde />
-          <NyhedsSektion nyhedsData={nyhedsData} />
-          <MaanedensKatte katteData={katteData} />
+        <Banner/>
+        <VoresArbejde />
+        <NyhedsSektion nyhedsData={nyhedsData} />
+        <MaanedensKatte katteData={katteData} />
       </Box>
     </PageLayout>
   );
@@ -27,7 +29,7 @@ function Home({sideData, katteData, nyhedsData}) {
 export async function getStaticProps() {
   const res = await fetch(`${url}indholdsider/165`);
   const sideData = await res.json();
-  const res2 = await fetch(`${url}adoptionskatte`);
+  const res2 = await fetch(`${url}adoptionskatte?per_page`);
   const katteData = await res2.json();
   const res3 = await fetch(`${url}nyhedsartikler`);
   const nyhedsData = await res3.json();
