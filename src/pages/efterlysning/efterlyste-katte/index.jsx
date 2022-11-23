@@ -1,24 +1,26 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
+import url from "../../../api/url";
+import EfterlysteKatte from "../../../views/efterlystekatte/EfterlysteKatte";
 
-function EfterlysteKattePage({ data }) {
-  // console.log(data)
+function EfterlysteKattePage({ efterlystData, sideData }) {
 
   return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Efterlyste Katte
-      </Heading>
-    </Box>
+    <EfterlysteKatte efterlystData={efterlystData} sideData={sideData}/>
   );
 }
 
-/* export async function getStaticProps() {
-     const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
+export async function getStaticProps() {
+  const res = await fetch(`${url}efterlystekatte`);
+  const efterlystData = await res.json(); 
+  const res2 = await fetch(`${url}indholdsider/328`);
+  const sideData = await res2.json();
 
-  return { props: { data } };
+   return {
+     props: {
+       efterlystData: efterlystData,
+       sideData: sideData,
+     },
+   };
 }
- */
+
 export default EfterlysteKattePage;
