@@ -1,28 +1,11 @@
-import { Box, Heading, Text, Button, Flex, Link, Grid, GridItem } from "@chakra-ui/react";
 import url from "../api/url";
-import PageHead from "../components/layout/PageHead";
-import SelectedCatArticle from "../views/forside/SelectedCatArticle";
-import ForsideSplash from "../views/forside/ForsideSplash";
-import MaanedensKatte from "../views/forside/MaanedensKatte";
-import VoresArbejde from "../views/forside/VoresArbejde";
-import NyhedsSektion from "../views/forside/NyhedsSektion";
-import PageLayout from "../components/layout/PageLayout";
-import Banner from "../views/forside/Banner";
+import ForsideIndhold from "../views/forside/ForsideIndhold";
 
 function Home({sideData, katteData, nyhedsData}) {
 
   
   return (
-    <PageLayout>
-      <Box>
-        <PageHead {...sideData} />
-        <ForsideSplash {...sideData} />
-        <Banner/>
-        <VoresArbejde />
-        <NyhedsSektion nyhedsData={nyhedsData} />
-        <MaanedensKatte katteData={katteData} />
-      </Box>
-    </PageLayout>
+    <ForsideIndhold sideData={sideData} katteData={katteData} nyhedsData={nyhedsData}/>
   );
 }
 

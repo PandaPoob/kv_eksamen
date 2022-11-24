@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import ArticleB from "../../components/generics/ArticleB";
+import ArticleEF from "../../components/generics/ArticleEF";
 
 export default function EfterlysteKatteListe({ efterlystData, landsdelsfilter, kon, maerket, chippet }) {
   
@@ -9,7 +9,7 @@ export default function EfterlysteKatteListe({ efterlystData, landsdelsfilter, k
     console.log(list)
     return list;
   }
-console.log(landsdelsfilter);
+
   let filteredEfterlysteKatte = filterCat(
     landsdelsfilter === "",
     (kat) => kat.acf.landsdel === landsdelsfilter,
@@ -27,7 +27,7 @@ console.log(landsdelsfilter);
     return (
       <Flex justifyContent={"center"} flexWrap="wrap" gap={"2rem"} maxW={"container.xxl"}>
         {filteredEfterlysteKatte.map((kat) => {
-          return <ArticleB key={kat.id} overtitel="Kat forsvundet fra" {...kat} />;
+          return <ArticleEF key={kat.id} url="/efterlysning/efterlyste-katte/" overtitel="Kat forsvundet fra" {...kat} />;
         })}
       </Flex>
     );

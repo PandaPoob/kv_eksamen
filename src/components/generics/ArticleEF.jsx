@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import fifth from "../../assets/svgs/fifth.svg";
 import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
 
-function ArticleB({ acf, id, overtitel="" }) {
+function ArticleEF({ acf, id, overtitel="", url }) {
 
 //if øremærket === ja, set string "er øremærket", if === "nej" set string "ikke øremærket", if ==="vides ikke" set til empty string eller null
 let oremaerkeString = () => {
@@ -31,7 +31,7 @@ let chippetString = () => {
         transform: "translateY(-0.5rem) translateX(0.2rem)",
       }}
     >
-      <NextLink href={`/adopter/adoptionskatte/${id}`} passHref>
+      <NextLink href={`${url}${id}`} passHref>
         <Link h={"20rem"} w={"20rem"} flexGrow={1} flexDir={"column"} variant={"clean"} borderTopRadius="0.2rem" overflow="hidden">
           <Box position="relative" minH={"14rem"} width={"100%"}>
             <Image src={acf.billede} alt={acf.navn} layout="fill" objectFit="cover" />
@@ -55,4 +55,4 @@ let chippetString = () => {
   );
 }
 
-export default ArticleB;
+export default ArticleEF;
