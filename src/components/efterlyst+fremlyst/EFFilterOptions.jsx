@@ -7,11 +7,11 @@ import OremaerkeCheck from "./OremaerkeCheck";
 import ChippetCheck from "./ChippetCheck";
 
 
-const MobileFilterDrawer = dynamic(() => import("./EfterlystFilterDrawer"), {
+const MobileFilterDrawer = dynamic(() => import("./EFFilterDrawer"), {
   ssr: false,
 });
 
-function EfterlystFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setKon, maerket, setMaerket, chippet, setChippet }) {
+function EFFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setKon, maerket, setMaerket, chippet, setChippet }) {
   const isMobile = useBreakpointValue({ base: true, navbp: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -92,4 +92,4 @@ function EfterlystFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setK
   );
 }
 
-export default EfterlystFilterOptions;
+export default EFFilterOptions;

@@ -1,4 +1,4 @@
-import SelectDropdown from "../../components/features/SelectDropdown";
+import SelectDropdown from "../features/SelectDropdown";
 
 function LandsdelFilter({ setLandsdelsfilter, landsdelOpt }) {
   const onCallback = (value) => {

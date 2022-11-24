@@ -13,9 +13,9 @@ import {
   } from "@chakra-ui/react";
   import { useState } from "react";
   import { BsChevronLeft } from "react-icons/bs";
-  import MobileFilterAccor from "../../components/features/MobileFilterAccor";
+  import MobileFilterAccor from "../features/MobileFilterAccor";
 
-  function EfterlystFilterDrawer({
+  function EFFilterDrawer({
     isOpen,
     onClose,
     landsdelOpt,
@@ -196,5 +196,5 @@ import {
     );
   }
   
-  export default EfterlystFilterDrawer;
+  export default EFFilterDrawer;
   
