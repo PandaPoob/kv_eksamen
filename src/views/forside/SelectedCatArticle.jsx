@@ -11,12 +11,19 @@ export default function SelectedCatArticle({acf, id}){
             position="relative"
             display={"grid"}
             gridTemplateRows="repeat(7, 1fr)"
-            transition="all .2s ease-in-out"
-            _hover={{
-              transform: "translateY(-0.5rem) translateX(0.2rem)",
-            }}
+            
           >
-            <Image gridRow={"span"} src={acf.profil_billede} alt={acf.navn} layout="fill" objectFit={"cover"} />
+            <Image 
+              gridrow={"span"} 
+              src={acf.profil_billede} 
+              alt={acf.navn} 
+              layout="fill" 
+              objectFit={"cover"} 
+              transition="all 0.2s ease-in"
+              _hover={{
+                transform: "scale(1.5)",
+              }}
+            />
             <Flex zIndex={10} gridRow={"6/7"} width="8rem" justifyContent={"space-evenly"} padding={"8px"} bgColor={"brand.blueCta"} borderRadius="2px" color="brand.white" gap="1rem">
               <Text>{acf.navn}</Text>
               <Text>{acf.miljo}</Text>
@@ -26,4 +33,3 @@ export default function SelectedCatArticle({acf, id}){
       </NextLink>
     );
 }
-// ratio={16/9} 

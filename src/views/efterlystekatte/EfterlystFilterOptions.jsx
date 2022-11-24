@@ -64,6 +64,8 @@ function EfterlystFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setK
           <MobileFilterDrawer
             isOpen={isOpen}
             onClose={onClose}
+            landsdelOpt={landsdelOpt}
+            konOpt={konOpt}
             landsdelsfilter={landsdelsfilter}
             setLandsdelsfilter={setLandsdelsfilter}
             kon={kon}
