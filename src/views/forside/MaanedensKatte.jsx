@@ -11,12 +11,12 @@ export default function MaanedensKatte({katteData}){
     });
   
     return (
-      <Box as="section" display="grid" py={"3rem"} px="1rem" gap="1rem" bgColor={"brand.lightGrey"}>
+      <Box as="section" display="grid" py={{base:"3rem", lg: "6rem"}} px="1rem" gap="1rem" bgColor={"brand.lightGrey"} placeContent={"center"}>
         <Heading as="h2" size={"heading2"} textAlign="center">
-          Månedens katte Test
+          Månedens katte
         </Heading>
         <Text textAlign="center">Månedens katte er katte som har særligt udmærket sig i løbet af den forhenværende måned.</Text>
-        <Box display={"grid"} gap="1rem" my="1rem" gridTemplateColumns={{ base: "1fr", lg: "4fr 1fr 4fr" }} gridTemplateRows={{ lg: "1fr" }}>
+        <Box display={"grid"} gap="1rem" my={{base:"1rem", lg: "3rem"}} gridTemplateColumns={{ base: "1fr", lg: "4fr 1fr 4fr" }} gridTemplateRows={{ lg: "1fr" }} width={{base: "container.base", lg: "container.lg"}}>
           {maanedensKatte.map((e, index) => (
             <>
               {index == 1 && <Divider key={index} display={"flex"} justifySelf="center" borderColor={"brand.blueCta"} orientation={"vertical"} height="100%" />}
