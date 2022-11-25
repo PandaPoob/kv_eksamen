@@ -8,11 +8,11 @@ function NyhedsSektion({nyhedsData}){
     return e.acf.udvalgtArtikel === true;
   });
     return (
-      <Box bgColor={"brand.darkGrey"} color="brand.white" py={"3rem"} px="1rem">
+      <Box as="section" display={"grid"} placeContent="center" bgColor={"brand.darkGrey"} color="brand.white" py={{base:"3rem", lg: "6rem"}} px="1rem">
         <Heading as="h2" size={"heading2"} textAlign="center">
           Seneste nyt
         </Heading>
-        <Flex justify={"center"} flexWrap="wrap" gap="1rem" py={"2rem"}>
+        <Flex justify={"center"} flexWrap="wrap" gap="1rem" py={"2rem"} maxW="container.xl">
           {udvalgteArtikler.map((artikel, i) => (
             <NewsArticle key={i} {...artikel} />
           ))}

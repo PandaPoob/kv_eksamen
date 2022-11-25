@@ -27,11 +27,11 @@ export default function Banner(props){
   const dividerOrientation = useBreakpointValue({ base: "horizontal", md: "vertical" })
 
     return (
-      <Box display={{ base: "grid", md: "flex" }} bg={"brand.lightGrey"} justifyContent="space-evenly" gap="1rem" py="2rem" flexWrap={"wrap"}>
+      <Box as="section" display={{ base: "grid", md: "flex" }} bg={"brand.lightGrey"} justifyContent="space-evenly" gap="1rem" py="2rem" flexWrap={"wrap"}>
         {bannerdata.map((bLink)=> (
           <>
             <NextLink key={bLink.name} href={`${url}${bLink.urlEndpoint}`} passHref>
-              <Link variant={"clean"} gap="1rem">
+              <Link variant={"clean"} gap="1rem" alignContent={"center"}>
                 <Text fontWeight={"semibold"}>{bLink.name}</Text>
                 <SlArrowRight/> 
               </Link>
@@ -39,7 +39,6 @@ export default function Banner(props){
             <Divider height={{ base: "0", md: "2rem" }} width={{ base: "90vw", md: "0" }} borderColor={"brand.blueCta"} orientation={dividerOrientation} />
           </>
         ))}
-    
       </Box>
     );
 }

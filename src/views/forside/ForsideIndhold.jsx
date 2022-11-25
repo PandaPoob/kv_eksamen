@@ -6,6 +6,7 @@ import VoresArbejde from "./VoresArbejde";
 import Banner from "./Banner";
 import NyhedsSektion from "./NyhedsSektion";
 import MaanedensKatte from "./MaanedensKatte";
+import HjaelpOversigt from "./HjaelpOversigt";
 
 
 
@@ -19,6 +20,7 @@ export default function ForsideIndhold({sideData, katteData, nyhedsData}) {
         <VoresArbejde />
         <NyhedsSektion nyhedsData={nyhedsData} />
         <MaanedensKatte katteData={katteData} />
+        <HjaelpOversigt/>
       </Box>
     </PageLayout>
   )
