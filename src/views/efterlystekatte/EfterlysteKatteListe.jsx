@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import ArticleEF from "../../components/generics/ArticleEF";
+import ArticleEF from "../../components/efterlyst+fremlyst/ArticleEF";
 
 export default function EfterlysteKatteListe({ efterlystData, landsdelsfilter, kon, maerket, chippet }) {
   

@@ -1,9 +1,25 @@
 import { Box, Heading, Text, Flex, Divider } from "@chakra-ui/react";
 import Image from "next/image";
 import PageLayout from "../layout/PageLayout";
-import ContactEF from "../generics/ContactEF";
+import ContactEF from "./ContactEF";
 
-function SingleViewKat({ efterlystKatData, type }) {
+function SingleViewKat({ EFdata, type }) {
+
+ /*  const {
+    navn,
+    kon,
+    beskrivelse,
+    dato,
+    postnummer,
+    by,
+    landsdel,
+    oremaerket,
+    oremaerkenr,
+    chippet,
+    chipnr,
+    billede,
+  } = efterlystKatData.acf  */
+  
   const {
     navn,
     kon,
@@ -16,9 +32,9 @@ function SingleViewKat({ efterlystKatData, type }) {
     oremaerkenr,
     chippet,
     chipnr,
-
     billede,
-  } = efterlystKatData.acf;
+  } = EFdata.acf; 
+  
 
   let checker = () => {
     if(type === "efterlysning") return true
@@ -124,7 +140,7 @@ function SingleViewKat({ efterlystKatData, type }) {
                             {checker()===true ? ("Kontakt efterlyseren") : ("Kontakt fremlyseren")}
                         </Text>
                         <Divider orientation="horizontal" mt="1rem" />
-                        <ContactEF efterlystKatData={efterlystKatData}/>
+                        <ContactEF EFdata={EFdata}/>
                     </Box>
                 </Box>
             </Box>
