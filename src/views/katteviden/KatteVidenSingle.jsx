@@ -5,7 +5,20 @@ import PageLayout from "../../components/layout/PageLayout";
 function KatteVidenSingle({ artikelData }) {
   const { acf } = artikelData;
   const { splash_billede, indhold, forfatter } = acf;
-  console.log(indhold);
+
+  /*   const billedArr = Object.entries(billeder).map((e) => ({
+    alt: e[0],
+    url: e[1],
+  }));
+
+  //remove empty entries (false)
+  const cleanbilledArr = billedArr.filter((b) => b.url !== false); */
+  const sektioner = Object.entries(indhold).map((e) => ({
+    sektioner: e[1],
+  }));
+
+  console.log(sektioner);
+
   return (
     <PageLayout>
       <Box width={"100vw"} height={{ base: "100vh", md: "50vh", xl: "60vh" }}>
@@ -42,6 +55,7 @@ function KatteVidenSingle({ artikelData }) {
       <Flex justify={"flex-end"} pt={"0.5rem"} px={"1rem"}>
         <Text fontSize={"xxs"}>af {forfatter}</Text>
       </Flex>
+      <Box></Box>
     </PageLayout>
   );
 }
