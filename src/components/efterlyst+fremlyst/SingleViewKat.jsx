@@ -43,11 +43,10 @@ function SingleViewKat({ EFdata, type }) {
 
   return (
     <PageLayout>
-        <Box as="main" bg="brand.lightGrey" display={"grid"} placeContent="center">
+        <Box as="main" bg="brand.lightGrey" display={"grid"} placeContent="center" px="1rem">
             <Box 
                 as="section" 
-                maxW={{ base: "container.base", sm: "container.sm" }}
-                px={"1rem"}
+                maxW={{ base: "container.sm" }}
                 py={"2rem"}
             >
                 <Heading as="h1" size="heading2">
@@ -58,8 +57,8 @@ function SingleViewKat({ EFdata, type }) {
                         {kon}
                 </Heading>
             </Box>
-            <Box display={"grid"} gridTemplateColumns={{ lg: "1fr 1fr" }} >
-                <Box maxW={{ base: "container.base", sm: "container.sm" }} px={"1rem"} py={"2rem"}>
+            <Box display={"grid"} gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }} placeContent="center">
+                <Box maxW={{ base: "container.sm" }} py={"2rem"}>
                     <Box position="relative" minH={"30rem"} width={"100%"} borderTopRadius="0.2rem" overflow="hidden">
                         <Image
                             src={billede}
@@ -117,7 +116,6 @@ function SingleViewKat({ EFdata, type }) {
                     maxW={{ base: "container.sm" }}
                     mx={{base:"0", lg: "auto"}}
                     mb="auto"
-                    px={"1rem"}
                     py={"2rem"}
                     display="grid"
                     gap={"2rem"}
