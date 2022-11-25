@@ -1,12 +1,12 @@
 import url from "../../../api/url";
 import SingleViewKat from "../../../components/efterlyst+fremlyst/SingleViewKat";
 
-function EfterlystKatPage({ efterlystKatData }) {
-  return <SingleViewKat EFdata={efterlystKatData} type="efterlysning" />
+function FremlystKatPage({ fremlystKatData }) {
+  return <SingleViewKat EFdata={fremlystKatData} type="fremlysning" />
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${url}efterlystekatte?per_page`);
+  const res = await fetch(`${url}fremlystekatte?per_page`);
   const results = await res.json();
 
   return {
@@ -19,10 +19,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(Context) {
-  const res = await fetch(`${url}efterlystekatte/${Context.params.slug}`);
-  const efterlystKatData = await res.json();
+  const res = await fetch(`${url}fremlystekatte/${Context.params.slug}`);
+  const fremlystKatData = await res.json();
 
-  return { props: { efterlystKatData } };
+  return { props: { fremlystKatData } };
 }
 
-export default EfterlystKatPage;
+export default FremlystKatPage;

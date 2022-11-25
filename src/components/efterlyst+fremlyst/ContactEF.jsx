@@ -2,14 +2,14 @@ import { Box, Heading, Text, Flex, Divider, Icon } from "@chakra-ui/react";
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
 import {AiOutlineFacebook} from "react-icons/ai"
 
-function ContactEF({ efterlystKatData }) {
+function ContactEF({ EFdata }) {
 
     const {
       kontaktmail,
       kontaktnavn,
       kontaktnummer,
       facebooklink
-      } = efterlystKatData.acf;
+      } = EFdata.acf;
 
   return (
     <Box
