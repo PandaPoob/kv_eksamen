@@ -5,7 +5,6 @@ import InfoArtikel from "../../components/articles/InfoArtikel";
 import { Box } from "@chakra-ui/react";
 
 function KatteViden({ data, sideData }) {
-  console.log(data);
   return (
     <PageLayout>
       <PageHead {...sideData} />

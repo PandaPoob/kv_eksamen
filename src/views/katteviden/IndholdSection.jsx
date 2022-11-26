@@ -3,7 +3,7 @@ import TekstBox from "./TekstBox";
 import BilledeBox from "./BilledeBox";
 import ListeBox from "./ListeBox";
 
-function Section({ venstre, hojre }) {
+function IndholdSection({ venstre, hojre }) {
   return (
     <Box
       _even={{ bg: "brand.darkGrey", color: "brand.white" }}
@@ -53,4 +53,4 @@ function Section({ venstre, hojre }) {
   );
 }
 
-export default Section;
+export default IndholdSection;

@@ -1,17 +1,18 @@
-import { Link, Box, Heading, Flex, Text } from "@chakra-ui/react";
+import { Box, Heading, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import PageLayout from "../../components/layout/PageLayout";
-import Section from "./Section";
+import IndholdSection from "./IndholdSection";
+import LinkSection from "./LinkSection";
 
 function KatteVidenSingle({ artikelData }) {
   const { acf } = artikelData;
-  const { splash_billede, indhold, forfatter } = acf;
+  const { splash_billede, indhold, forfatter, link, gallery } = acf;
 
   const sektioner = Object.entries(indhold).map((e) => e[1]);
   const cleansektioner = sektioner.filter((s) => {
     if (s.venstre.type) return s;
   });
-  console.log(cleansektioner);
+  console.log(gallery);
 
   return (
     <PageLayout>
@@ -50,8 +51,14 @@ function KatteVidenSingle({ artikelData }) {
         <Text fontSize={"xxs"}>af {forfatter}</Text>
       </Flex>
       {cleansektioner.map((s, index) => (
-        <Section key={index} {...s} />
+        <IndholdSection key={index} {...s} />
       ))}
+      {link.url ? <LinkSection link={link} /> : null}
+      {gallery.billede_1 !== false ? (
+        <Box>gallery er her</Box>
+      ) : (
+        <Box>gallery er her ikke</Box>
+      )}
     </PageLayout>
   );
 }
