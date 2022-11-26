@@ -1,24 +1,25 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
+import url from "../../../api/url";
+import Medarbejderne from "../../../views/om_os/medarbejdere/Medarbejderne";
 
-function MedarbejdernePage({ data }) {
-  // console.log(data)
+function MedarbejdernePage({ data, sideData }) {
+  console.log(sideData);
 
-  return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Medarbejderne
-      </Heading>
-    </Box>
-  );
+  return <Medarbejderne data={data} sideData={sideData} />;
 }
 
-/* export async function getStaticProps() {
-    const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
+export async function getStaticProps() {
+  const res = await fetch(`${url}medarbejdere?per_page`);
+  const data = await res.json();
+  const res2 = await fetch(`${url}indholdsider/461`);
+  const sideData = await res2.json();
 
-  return { props: { data } };
+  return {
+    props: {
+      data: data,
+      sideData: sideData,
+    },
+  };
 }
- */
+
 export default MedarbejdernePage;
