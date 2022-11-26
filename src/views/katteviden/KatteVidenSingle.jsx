@@ -7,20 +7,15 @@ function KatteVidenSingle({ artikelData }) {
   const { acf } = artikelData;
   const { splash_billede, indhold, forfatter } = acf;
 
-  /*   const billedArr = Object.entries(billeder).map((e) => ({
-    alt: e[0],
-    url: e[1],
-  }));
-
-  //remove empty entries (false)
-  const cleanbilledArr = billedArr.filter((b) => b.url !== false); */
   const sektioner = Object.entries(indhold).map((e) => e[1]);
-
-  //console.log(sektioner);
+  const cleansektioner = sektioner.filter((s) => {
+    if (s.venstre.type) return s;
+  });
+  console.log(cleansektioner);
 
   return (
     <PageLayout>
-      <Box width={"100vw"} height={{ base: "100vh", md: "50vh", xl: "60vh" }}>
+      <Box width={"100vw"} height={{ base: "50vh", md: "50vh", xl: "60vh" }}>
         <Box
           position="relative"
           height={"100%"}
@@ -54,7 +49,7 @@ function KatteVidenSingle({ artikelData }) {
       <Flex justify={"flex-end"} pt={"0.5rem"} px={"1rem"}>
         <Text fontSize={"xxs"}>af {forfatter}</Text>
       </Flex>
-      {sektioner.map((s, index) => (
+      {cleansektioner.map((s, index) => (
         <Section key={index} {...s} />
       ))}
     </PageLayout>

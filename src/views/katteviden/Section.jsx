@@ -1,40 +1,52 @@
-import { Link, Box, Heading, Flex, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import TekstBox from "./TekstBox";
 import BilledeBox from "./BilledeBox";
 import ListeBox from "./ListeBox";
 
 function Section({ venstre, hojre }) {
-  //render pa venstre type
-  //render pa hojre type
-  //const column = Object.entries(sektioner).map((e) => e[1]);
-
-  console.log(venstre);
   return (
     <Box
-      as="section"
-      display={"grid"}
-      gridTemplateColumns={{ md: "1fr 1fr" }}
-      gap={"2rem"}
+      _even={{ bg: "brand.darkGrey", color: "brand.white" }}
+      display="grid"
+      justifyContent={"center"}
       mb={"4rem"}
-      _even={{ bg: "gray.100" }}
-      justifySelf={"center"}
     >
-      <Box minH={"50vh"} w={"100%"} px={"1rem"}>
+      <Box
+        display={"grid"}
+        gridTemplateColumns={{ lg: "1fr 1fr" }}
+        justifyContent={"center"}
+        as="section"
+        gap={{ base: "4rem", lg: "2rem" }}
+        maxW={"container.xxl"}
+        p={"2rem"}
+        py={{ lg: "4rem" }}
+      >
         {venstre.type === "tekst" ? (
-          <TekstBox info={venstre.tekst} />
+          <Box>
+            <TekstBox info={venstre.tekst} />{" "}
+          </Box>
         ) : venstre.type === "billede" ? (
-          <BilledeBox info={venstre.billede} />
+          <Box>
+            <BilledeBox info={venstre.billede} />{" "}
+          </Box>
         ) : venstre.type === "liste" ? (
-          <ListeBox />
+          <Box>
+            <ListeBox info={venstre.liste} />{" "}
+          </Box>
         ) : null}
-      </Box>
-      <Box minH={"50vh"} w={"100%"} px={"1rem"}>
+
         {hojre.type === "tekst" ? (
-          <TekstBox info={hojre.tekst} />
+          <Box>
+            <TekstBox info={hojre.tekst} />
+          </Box>
         ) : hojre.type === "billede" ? (
-          <BilledeBox info={hojre.billede} />
+          <Box>
+            <BilledeBox info={hojre.billede} />
+          </Box>
         ) : hojre.type === "liste" ? (
-          <ListeBox />
+          <Box>
+            <ListeBox info={hojre.liste} />
+          </Box>
         ) : null}
       </Box>
     </Box>
