@@ -1,6 +1,7 @@
 import { Link, Box, Heading, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import PageLayout from "../../components/layout/PageLayout";
+import Section from "./Section";
 
 function KatteVidenSingle({ artikelData }) {
   const { acf } = artikelData;
@@ -13,11 +14,9 @@ function KatteVidenSingle({ artikelData }) {
 
   //remove empty entries (false)
   const cleanbilledArr = billedArr.filter((b) => b.url !== false); */
-  const sektioner = Object.entries(indhold).map((e) => ({
-    sektioner: e[1],
-  }));
+  const sektioner = Object.entries(indhold).map((e) => e[1]);
 
-  console.log(sektioner);
+  //console.log(sektioner);
 
   return (
     <PageLayout>
@@ -55,7 +54,9 @@ function KatteVidenSingle({ artikelData }) {
       <Flex justify={"flex-end"} pt={"0.5rem"} px={"1rem"}>
         <Text fontSize={"xxs"}>af {forfatter}</Text>
       </Flex>
-      <Box></Box>
+      {sektioner.map((s, index) => (
+        <Section key={index} {...s} />
+      ))}
     </PageLayout>
   );
 }
