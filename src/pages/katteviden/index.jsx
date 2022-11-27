@@ -2,6 +2,7 @@ import url from "../../api/url";
 import KatteViden from "../../views/katteviden/KatteViden";
 
 function KatteVidenPage({ data, sideData }) {
+  console.log(data);
   return <KatteViden data={data} sideData={sideData} />;
 }
 

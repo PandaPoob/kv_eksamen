@@ -13,7 +13,6 @@ function KatteVidenSingle({ artikelData }) {
   const cleansektioner = sektioner.filter((s) => {
     if (s.venstre.type) return s;
   });
-  console.log(gallery);
 
   return (
     <PageLayout>

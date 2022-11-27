@@ -1,5 +1,6 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Link } from "@chakra-ui/react";
 import Image from "next/image";
+import NextLink from "next/link";
 
 function BilledeBox({ info }) {
   return (
@@ -9,7 +10,7 @@ function BilledeBox({ info }) {
         h={"100%"}
         minH="24rem"
         maxW={"70ch"}
-        minW={{ lg: "40rem" }}
+        minW={{ xl: "40rem" }}
         borderRadius="0.2rem"
         overflow="hidden"
       >
@@ -20,7 +21,23 @@ function BilledeBox({ info }) {
           objectFit="cover"
         />
       </Box>
-      {info.billedtekst !== "" ? (
+      {info.billedtekst_er_link ? (
+        <NextLink href={info.link} passHref>
+          <Link
+            variant={"exLink"}
+            px={"1.1rem"}
+            py={"0.4rem"}
+            bg={"brand.white"}
+            maxW={"45rem"}
+            borderBottomRadius="0.2rem"
+            fontSize="xxs"
+            color={"brand.blue"}
+            isExternal
+          >
+            {info.billedtekst}
+          </Link>
+        </NextLink>
+      ) : info.billedtekst !== "" ? (
         <Text
           px={"1.1rem"}
           pt={"0.4rem"}
@@ -28,6 +45,7 @@ function BilledeBox({ info }) {
           maxW={"45rem"}
           borderBottomRadius="0.2rem"
           fontSize="xxs"
+          color={"brand.blue"}
         >
           {info.billedtekst}
         </Text>

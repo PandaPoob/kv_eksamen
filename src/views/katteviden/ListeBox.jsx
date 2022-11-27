@@ -23,7 +23,7 @@ function ListeBox({ info }) {
       <List fontSize="xxs" spacing={"1rem"} maxW={"70ch"}>
         {cleanList.map((li, index) => (
           <ListItem key={index} display="flex">
-            <ListIcon as={ImDiamonds} color="brand.blue" mt={"0.3rem"} />
+            <ListIcon as={ImDiamonds} color="brand.redCta" mt={"0.3rem"} />
             {li}
           </ListItem>
         ))}
