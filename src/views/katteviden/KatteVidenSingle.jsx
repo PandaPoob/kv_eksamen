@@ -3,6 +3,7 @@ import Image from "next/image";
 import PageLayout from "../../components/layout/PageLayout";
 import IndholdSection from "./IndholdSection";
 import LinkSection from "./LinkSection";
+import GallerySection from "./GallerySection";
 
 function KatteVidenSingle({ artikelData }) {
   const { acf } = artikelData;
@@ -55,10 +56,8 @@ function KatteVidenSingle({ artikelData }) {
       ))}
       {link.url ? <LinkSection link={link} /> : null}
       {gallery.billede_1 !== false ? (
-        <Box>gallery er her</Box>
-      ) : (
-        <Box>gallery er her ikke</Box>
-      )}
+        <GallerySection gallery={gallery} />
+      ) : null}
     </PageLayout>
   );
 }
