@@ -23,15 +23,15 @@ function IndholdSection({ venstre, hojre }) {
       >
         {venstre.type === "tekst" ? (
           <Box>
-            <TekstBox info={venstre.tekst} />{" "}
+            <TekstBox info={venstre.tekst} />
           </Box>
         ) : venstre.type === "billede" ? (
           <Box>
-            <BilledeBox info={venstre.billede} />{" "}
+            <BilledeBox info={venstre.billede} />
           </Box>
         ) : venstre.type === "liste" ? (
           <Box>
-            <ListeBox info={venstre.liste} />{" "}
+            <ListeBox info={venstre.liste} />
           </Box>
         ) : null}
 
