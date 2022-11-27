@@ -19,9 +19,10 @@ function Carousel({
   perMoveVal,
   listData,
   customP,
+  pos,
 }) {
   return (
-    <Box justifyContent={"start"}>
+    <Box justifyContent={pos}>
       <SplideChakra
         hasTrack={false}
         options={{

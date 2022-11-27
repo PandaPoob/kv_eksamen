@@ -13,7 +13,7 @@ function GallerySection({ gallery }) {
   //remove empty entries (false)
   const cleanbilledArr = billedArr.filter((b) => b.url !== false);
 
-  console.log(cleanbilledArr);
+  console.log(cleanbilledArr.length);
 
   return (
     <Box mb={"4rem"} mx={{ base: "1rem", lg: "4rem" }}>
@@ -26,10 +26,11 @@ function GallerySection({ gallery }) {
       ) : (
         <Carousel
           listData={cleanbilledArr}
-          perPage={{ base: 1, md: 1, lg: 2, xl: 3 }}
-          perMoveVal={{ base: 1 }}
+          perPage={{ base: 1, lg: 2, xl: 3 }}
+          perMoveVal={{ base: 1, lg: 1, xl: 1 }}
           CarouselListItem={CarouselImage}
-          customP={{ left: 0, right: "8rem" }}
+          customP={{ left: "0rem", right: "8rem" }}
+          pos={"start"}
         />
       )}
     </Box>
