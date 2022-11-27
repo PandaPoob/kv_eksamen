@@ -19,16 +19,26 @@ const button = {
     carouselBtn: {
       bg: "none",
       color: "brand.blue",
-      fontSize: "xxs",
 
       _hover: {
-        textDecoration: "underline",
+        textDecoration: "none",
         transform: "scale(1)",
+        color: "brand.blue",
       },
     },
 
     filterBtn: {
       bg: "none",
+
+      _hover: {
+        transform: "scale(1)",
+      },
+    },
+
+    clean: {
+      bg: "none",
+      color: "brand.blue",
+      fontSize: "xxs",
 
       _hover: {
         transform: "scale(1)",

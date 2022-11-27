@@ -26,9 +26,10 @@ function GallerySection({ gallery }) {
       ) : (
         <Carousel
           listData={cleanbilledArr}
-          perPage={{ base: 1, md: 2, lg: 3 }}
-          perMoveVal={{ base: 1, md: 2, lg: 3 }}
+          perPage={{ base: 1, md: 1, lg: 2, xl: 3 }}
+          perMoveVal={{ base: 1 }}
           CarouselListItem={CarouselImage}
+          customP={{ left: 0, right: "8rem" }}
         />
       )}
     </Box>

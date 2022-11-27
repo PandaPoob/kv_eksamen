@@ -6,21 +6,28 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { SplideSlide, Splide, SplideTrack } from "@splidejs/react-splide";
-import { BsChevronRight } from "react-icons/bs";
+import { BsChevronRight, BsArrowRight } from "react-icons/bs";
 import "@splidejs/react-splide/css";
 
 const SplideChakra = chakra(Splide);
 const SplideSlideChakra = chakra(SplideSlide);
 const SplideTrackChakra = chakra(SplideTrack);
 
-function Carousel({ CarouselListItem, perPage, perMoveVal, listData }) {
+function Carousel({
+  CarouselListItem,
+  perPage,
+  perMoveVal,
+  listData,
+  customP,
+}) {
   return (
-    <Box>
+    <Box justifyContent={"start"}>
       <SplideChakra
         hasTrack={false}
         options={{
           perPage: useBreakpointValue(perPage),
           perMove: useBreakpointValue(perMoveVal),
+          padding: customP,
           type: "loop",
           gap: 10,
           pagination: useBreakpointValue({ base: true, lg: false }),
@@ -30,28 +37,25 @@ function Carousel({ CarouselListItem, perPage, perMoveVal, listData }) {
       >
         <Box position={"relative"}>
           <Flex
-            sx={{ ".splide__arrow > svg": { width: "24px", height: "auto" } }}
+            sx={{ ".splide__arrow > svg": { width: "28px", height: "auto" } }}
             className="splide__arrows"
+            alignItems="center"
+            justifyContent={"flex-end"}
           >
             <IconButton
-              icon={<BsChevronRight width={"10rem"} height={"10rem"} />}
+              icon={<BsArrowRight />}
               className="splide__arrow splide__arrow--prev"
               aria-label="prev"
               transform="none"
               variant={"carouselBtn"}
-              position={"absolute"}
-              left={"-10%"}
-              top={"45%"}
             />
             <IconButton
-              icon={<BsChevronRight />}
+              icon={<BsArrowRight />}
               className="splide__arrow splide__arrow--next"
               aria-label="next"
               transform="none"
               variant={"carouselBtn"}
-              position={"absolute"}
-              right={"-10%"}
-              top={"45%"}
+              right={-4}
             />
           </Flex>
 
