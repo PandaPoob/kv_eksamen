@@ -1,4 +1,10 @@
-import { List, Heading, ListItem, ListIcon } from "@chakra-ui/react";
+import {
+  UnorderedList,
+  Heading,
+  ListItem,
+  ListIcon,
+  OrderedList,
+} from "@chakra-ui/react";
 import { ImDiamonds } from "react-icons/im";
 
 function ListeBox({ info }) {
@@ -11,8 +17,9 @@ function ListeBox({ info }) {
 
   //clean array
   const cleanList = makeArr.filter((li) => {
-    if (li !== undefined || "") return li;
+    if (li !== true || "") return li;
   });
+
   return (
     <>
       {info.list_overskrift !== "" ? (
@@ -20,14 +27,27 @@ function ListeBox({ info }) {
           {info.list_overskrift}
         </Heading>
       ) : null}
-      <List fontSize="xxs" spacing={"1rem"} maxW={"70ch"}>
-        {cleanList.map((li, index) => (
-          <ListItem key={index} display="flex">
-            <ListIcon as={ImDiamonds} color="brand.redCta" mt={"0.3rem"} />
-            {li}
-          </ListItem>
-        ))}
-      </List>
+      {info.liste_med_nummer ? (
+        <OrderedList
+          fontSize="xxs"
+          spacing={"1rem"}
+          maxW={"70ch"}
+          ml={"1.2rem"}
+        >
+          {cleanList.map((li, index) => (
+            <ListItem key={index}>{li}</ListItem>
+          ))}
+        </OrderedList>
+      ) : (
+        <UnorderedList fontSize="xxs" spacing={"1rem"} maxW={"70ch"}>
+          {cleanList.map((li, index) => (
+            <ListItem key={index} display="flex">
+              <ListIcon as={ImDiamonds} color="brand.redCta" mt={"0.3rem"} />
+              {li}
+            </ListItem>
+          ))}
+        </UnorderedList>
+      )}
     </>
   );
 }
