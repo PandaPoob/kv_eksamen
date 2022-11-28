@@ -7,7 +7,6 @@ export default function EFkatteliste({ EFdata, type, url, landsdelsfilter, kon, 
     function filterCat(state, filterFunction, oldListData) {
         let list = [];
         list = state ? oldListData : oldListData.filter(filterFunction);
-        console.log(list)
         return list;
       }
     
