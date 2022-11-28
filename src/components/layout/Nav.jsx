@@ -75,7 +75,7 @@ function Nav({ children }) {
         { navn: "Internater og åbningstider", link: "/om-os/internater" },
         { navn: "Vores arbejde", link: "/om-os/vores-arbejde" },
         { navn: "Hvad går pengene til?", link: "/om-os/penge-til" },
-        { navn: "Medarbejerne", link: "/om-os/medarbejderne" },
+        { navn: "Medarbejderne", link: "/om-os/medarbejderne" },
       ],
     },
   ];

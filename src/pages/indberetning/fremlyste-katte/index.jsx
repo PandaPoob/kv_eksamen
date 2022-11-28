@@ -1,24 +1,27 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
+import url from "../../../api/url";
+import EFKatte from "../../../components/efterlyst+fremlyst/EFKatte";
 
-function FremlysteKattePage({ data }) {
-  // console.log(data)
+function FremlysteKattePage({ fremlystData, sideData }) {
 
   return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Fremlyste Katte
-      </Heading>
-    </Box>
+    <EFKatte EFdata={fremlystData} sideData={sideData} url="/indberetning/fremlyste-katte/" type="fremlysning"/>
   );
 }
 
-/* export async function getStaticProps() {
-    const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
+export async function getStaticProps() {
+  const res = await fetch(`${url}fremlystekatte`);
+  const fremlystData = await res.json(); 
+  const res2 = await fetch(`${url}indholdsider/544`);
+  const sideData = await res2.json();
 
-  return { props: { data } };
-} */
+   return {
+     props: {
+       fremlystData: fremlystData,
+       sideData: sideData,
+     },
+   };
+}
 
 export default FremlysteKattePage;
+
