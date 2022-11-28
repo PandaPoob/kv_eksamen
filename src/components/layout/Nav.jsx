@@ -32,6 +32,7 @@ function Nav({ children }) {
       titel: "Gør en forskel",
       subTitel: [
         { navn: "Doner", link: "/gor-en-forskel/doner" },
+        { navn: "Støt fast", link: "/gor-en-forskel/stot-fast" },
         { navn: "Bliv medlem", link: "/gor-en-forskel/bliv-medlem" },
         {
           navn: "Bliv plejefamilie",
