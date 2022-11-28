@@ -3,7 +3,6 @@ import { BsEnvelope } from "react-icons/bs";
 import Image from "next/image";
 
 function PersonArticle({ acf }) {
-  console.log(acf.email);
   return (
     <Box
       as="article"
