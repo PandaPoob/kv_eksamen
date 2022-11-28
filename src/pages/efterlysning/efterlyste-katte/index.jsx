@@ -1,11 +1,11 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../../api/url";
-import EfterlysteKatte from "../../../views/efterlystekatte/EfterlysteKatte";
+import EFKatte from "../../../components/efterlyst+fremlyst/EFKatte";
 
 function EfterlysteKattePage({ efterlystData, sideData }) {
 
   return (
-    <EfterlysteKatte efterlystData={efterlystData} sideData={sideData}/>
+    <EFKatte EFdata={efterlystData} sideData={sideData} url="/efterlysning/efterlyste-katte/" type="efterlysning"/>
   );
 }
 

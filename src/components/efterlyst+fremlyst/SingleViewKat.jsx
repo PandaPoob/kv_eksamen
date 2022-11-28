@@ -57,7 +57,7 @@ function SingleViewKat({ EFdata, type }) {
                         {kon}
                 </Heading>
             </Box>
-            <Box display={"grid"} gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }} placeContent="center">
+            <Box display={"grid"} gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }} placeContent="center" gap={{lg: "2rem"}}>
                 <Box maxW={{ base: "container.sm" }} py={"2rem"}>
                     <Box position="relative" minH={"30rem"} width={"100%"} borderTopRadius="0.2rem" overflow="hidden">
                         <Image
