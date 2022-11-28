@@ -3,20 +3,25 @@ import NextLink from "next/link";
 import fifth from "../../assets/svgs/fifth.svg";
 import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
 
-function ArticleB({ acf, id, overtitel="" }) {
 
-//if øremærket === ja, set string "er øremærket", if === "nej" set string "ikke øremærket", if ==="vides ikke" set til empty string eller null
-let oremaerkeString = () => {
+
+function ArticleEF({ acf, id, type, url }) {
+
+  let checker = () => {
+    if(type === "efterlysning") return true
+    else if (type==="fremlysning") return false
+  }
+
+  let oremaerkeString = () => {
     if (acf.oremaerket === "Ja") return "Er øremærket";
     else if (acf.oremaerket === "Nej") return "Er ikke øremærket";
     else return null;
-}
-let chippetString = () => {
+  }
+  let chippetString = () => {
   if (acf.chippet === "Ja") return "Er chippet";
   else if (acf.chippet === "Nej") return "Er ikke chippet";
   else return null;
-};
-
+  };
 
   return (
     <Box
@@ -31,23 +36,19 @@ let chippetString = () => {
         transform: "translateY(-0.5rem) translateX(0.2rem)",
       }}
     >
-      <NextLink href={`/adopter/adoptionskatte/${id}`} passHref>
+      <NextLink href={`${url}${id}`} passHref>
         <Link h={"20rem"} w={"20rem"} flexGrow={1} flexDir={"column"} variant={"clean"} borderTopRadius="0.2rem" overflow="hidden">
           <Box position="relative" minH={"14rem"} width={"100%"}>
             <Image src={acf.billede} alt={acf.navn} layout="fill" objectFit="cover" />
           </Box>
           <Flex minH={"5rem"} w="100%" padding={"1rem"} justifyContent={"center"} align="left" position="relative" flexDir="column">
             <Text fontWeight={"normal"}>
-              {overtitel}
+              {checker() === true ? "Kat forsvundet fra" : "Kat fundet ved"}
             </Text>
             <Heading as="h4" size="heading4">
               {acf.by}
             </Heading>
-            <Flex gap="1rem" fontSize="xxs">
-              <Text>{oremaerkeString()}</Text>
-              <Image src={fifth} alt={"divider"} height={8} width={8} />
-              <Text>{chippetString()}</Text>
-            </Flex>
+            <StringDataChecker oremaerkeString={oremaerkeString()} chippetString={chippetString()}/> 
           </Flex>
         </Link>
       </NextLink>
@@ -55,4 +56,11 @@ let chippetString = () => {
   );
 }
 
-export default ArticleB;
+const StringDataChecker = ({oremaerkeString, chippetString}) => {
+  if (oremaerkeString === null && chippetString === null) return <></>
+  else if (oremaerkeString !== null && chippetString === null) return <Flex gap="1rem" fontSize="xxs"><Text>{oremaerkeString}</Text></Flex>;
+  else if (oremaerkeString === null && chippetString !== null ) return <Flex gap="1rem" fontSize="xxs"><Text>{chippetString}</Text></Flex>;
+  else if (oremaerkeString !== null && chippetString !== null) return <Flex gap="1rem" fontSize="xxs"><Text>{oremaerkeString}</Text><Image src={fifth} alt={"divider"} height={8} width={8} /><Text>{chippetString}</Text></Flex>;
+}
+
+export default ArticleEF;

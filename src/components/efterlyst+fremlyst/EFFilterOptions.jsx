@@ -5,13 +5,14 @@ import LandsdelFilter from "./LandsdelFilter";
 import KonFilter from "./KonFilter";
 import OremaerkeCheck from "./OremaerkeCheck";
 import ChippetCheck from "./ChippetCheck";
+import SearchBar from "./SearchBar";
 
 
-const MobileFilterDrawer = dynamic(() => import("./EfterlystFilterDrawer"), {
+const MobileFilterDrawer = dynamic(() => import("./EFFilterDrawer"), {
   ssr: false,
 });
 
-function EfterlystFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setKon, maerket, setMaerket, chippet, setChippet }) {
+function EFFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setKon, maerket, setMaerket, chippet, setChippet, setSearchInput, searchInput }) {
   const isMobile = useBreakpointValue({ base: true, navbp: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -54,9 +55,10 @@ function EfterlystFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setK
   ];
 
   return (
-    <Flex justify={{ base: "flex-end", navbp: "space-between" }} maxW={"container.xxl"} mx={"auto"} minH={"10vh"}>
+    <Flex justify={{ base: "space-between", navbp: "space-between" }} alignItems="center" maxW={"container.xxl"} px="1rem" mx={"auto"} minH={"10vh"}>
       {isMobile ? (
         <>
+          <SearchBar setSearchInput={setSearchInput} searchInput={searchInput}/>
           <Button onClick={onOpen} aria-label="Open menu" color={"brand.blue"} bg="none" fontSize={"sm"} _hover={{ bg: "none" }} _focus={{ bg: "none" }} alignSelf={"center"}>
             Filter
             <BsChevronRight size={24} />
@@ -64,6 +66,8 @@ function EfterlystFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setK
           <MobileFilterDrawer
             isOpen={isOpen}
             onClose={onClose}
+            landsdelOpt={landsdelOpt}
+            konOpt={konOpt}
             landsdelsfilter={landsdelsfilter}
             setLandsdelsfilter={setLandsdelsfilter}
             kon={kon}
@@ -77,6 +81,7 @@ function EfterlystFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setK
       ) : (
         <>
           <Flex align={"center"} gap="1rem" px="1rem">
+            <SearchBar setSearchInput={setSearchInput} searchInput={searchInput}/>
             <LandsdelFilter landsdelsfilter={landsdelsfilter} setLandsdelsfilter={setLandsdelsfilter} landsdelOpt={landsdelOpt} />
             <KonFilter kon={kon} setKon={setKon} konOpt={konOpt} />
             <Flex justifyContent={"flex-end"} align="flex-end">
@@ -90,4 +95,4 @@ function EfterlystFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setK
   );
 }
 
-export default EfterlystFilterOptions;
+export default EFFilterOptions;
