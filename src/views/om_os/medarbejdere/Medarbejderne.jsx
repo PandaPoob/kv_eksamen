@@ -18,7 +18,7 @@ function Medarbejderne({ data, sideData }) {
           justify={"center"}
           columnGap={"2rem"}
           flexWrap={"wrap"}
-          pt="2.5rem"
+          pt="5rem"
           maxW={"container.xxl"}
         >
           {sortedM.map((m) => {
