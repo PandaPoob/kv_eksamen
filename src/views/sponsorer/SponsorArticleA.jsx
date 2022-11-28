@@ -1,16 +1,17 @@
 import { Box, Flex, Text, Divider } from "@chakra-ui/react";
 import Image from "next/image";
 
-export default function SponsorArticle({ acf }) {
+export default function SponsorArticleA({ acf }) {
   return (
     <Box
       bgColor={"brand.white"}
-      borderRadius="5px"
       minW="23rem"
       maxW="25rem"
       minH="31rem"
       maxH="38rem"
       color="brand.darkGrey"
+      borderRadius={"0.2rem"}
+      boxShadow="md"
     >
       <Flex
         position={"relative"}
