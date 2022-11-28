@@ -5,7 +5,7 @@ function InternatFilter({ internatFilter, setInternatFilter, internatOpt }) {
     <Stack direction="row" spacing={4} align="center">
       <Button
         textDecor={internatFilter === "" ? "underline" : "none"}
-        variant={"carouselBtn"}
+        variant={"clean"}
         onClick={() => setInternatFilter("")}
       >
         Alle
@@ -15,7 +15,7 @@ function InternatFilter({ internatFilter, setInternatFilter, internatOpt }) {
           <Button
             key={btn.value}
             textDecor={internatFilter === btn.value ? "underline" : "none"}
-            variant={"carouselBtn"}
+            variant={"clean"}
             onClick={() => setInternatFilter(btn.value)}
           >
             {btn.value}

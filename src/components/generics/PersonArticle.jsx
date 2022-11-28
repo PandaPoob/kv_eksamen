@@ -3,7 +3,6 @@ import { BsEnvelope } from "react-icons/bs";
 import Image from "next/image";
 
 function PersonArticle({ acf }) {
-  console.log(acf.email);
   return (
     <Box
       as="article"
@@ -11,7 +10,8 @@ function PersonArticle({ acf }) {
       width={"20rem"}
       bgColor="white"
       marginBlock={"1rem"}
-      boxShadow="1px 1px 6px 1px #adacac"
+      boxShadow="1px 1px 6px 1px #b8b8b8"
+      color={"brand.blue"}
     >
       <Box
         position="relative"
