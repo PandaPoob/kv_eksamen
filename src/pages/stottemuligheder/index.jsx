@@ -1,24 +1,23 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
+import StøttemulighederIndhold from "../../views/støttemuligheder/StøttemulighederIndhold";
+import url from "../../api/url";
 
-function StottemulighederPage({ data }) {
+function StottemulighederPage({ sideData }) {
   // console.log(data)
 
   return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Støttemuligheder
-      </Heading>
-    </Box>
+    <StøttemulighederIndhold sideData={sideData}/>
   );
 }
 
-/* export async function getStaticProps() {
-   const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
+export async function getStaticProps() {
+  const res = await fetch(`${url}indholdsider/1111`);
+  const sideData = await res.json();
 
-  return { props: { data } };
+  return {
+    props: {
+      sideData: sideData,
+    },
+  };
 }
- */
 export default StottemulighederPage;
