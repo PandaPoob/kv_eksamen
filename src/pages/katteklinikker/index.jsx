@@ -1,5 +1,5 @@
 import url from "../../api/url";
-import KatteklinikkerIndhold from "../../views/katteklinikker/KatteKlinikkerIndhold";
+import KatteklinikkerIndhold from "../../views/katteklinikker/KatteklinikkerIndhold";
 
 function KatteklinikkerPage({ klinikData, sideData }) {
   return <KatteklinikkerIndhold klinikData={klinikData} sideData={sideData}/> ;

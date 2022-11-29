@@ -17,30 +17,7 @@ export default function KatteklinikkerIndhold({ sideData, klinikData }) {
             icon: icon,
         }
     ))
-/* 
-    const articleLinkData = [
-        {
-            name: "Aalborg",
-            urlEndpoint: `/adopter/adoptionskatte/${id}`,
-            icon: <IoPawOutline size={60} color="#D43B4D"/>,
-        },
-        {
-            name: "Billund",
-            urlEndpoint: `/adopter/adoptionskatte/${id}`,
-            icon: <IoPawOutline size={60} color="#D43B4D"/>,
-        },
-        {
-            name: "Brøndby",
-            urlEndpoint: `/adopter/adoptionskatte/${id}`,
-            icon: <IoPawOutline size={60} color="#D43B4D"/>,
-        },
-        {
-            name: "Slagelse",
-            urlEndpoint: `/adopter/adoptionskatte/${id}`,
-            icon: <IoPawOutline size={60} color="#D43B4D"/>,
-        },
-          
-    ] */
+
   return (
     <PageLayout>
       <PageHead {...sideData} />
