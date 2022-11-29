@@ -2,9 +2,9 @@ import React from 'react'
 import { Box, Text, Link } from '@chakra-ui/react';
 import NextLink from "next/link";
 
-export default function ArticleLinkGroup({data}) {
+export default function ArticleLinkGroup({data, lgGrid = "repeat(4, 1fr)"}) {
   return (
-    <Box display={"grid"} gridTemplateColumns={{ base: "1fr", md: "1fr 1fr", lg: "repeat(3, 1fr)" }} gap="1rem" py="2rem" maxW="container.lg">
+    <>
       {data.map((a) => (
         <NextLink key={a.name} href={a.urlEndpoint} passHref>
           <Link variant={"greyArticle"}>
@@ -15,6 +15,6 @@ export default function ArticleLinkGroup({data}) {
           </Link>
         </NextLink>
       ))}
-    </Box>
+    </>
   );
 }
