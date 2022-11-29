@@ -5,6 +5,7 @@ import Kliniksplash from './Kliniksplash';
 import KlinikBanner from './KlinikBanner';
 import KlinikIntroSektion from './KlinikIntroSektion';
 import KlinikKontaktinfo from './KlinikKontaktinfo';
+import Prisliste from './Prisliste';
 
 export default function KatteklinikSingle({klinikData}) {
     const acf = klinikData.acf;
@@ -15,6 +16,7 @@ export default function KatteklinikSingle({klinikData}) {
         <KlinikBanner acf={acf}/>
         <KlinikIntroSektion  acf={acf}/>
         <KlinikKontaktinfo acf={acf}/>
+        <Prisliste acf={acf} />
     </PageLayout>
   )
 }

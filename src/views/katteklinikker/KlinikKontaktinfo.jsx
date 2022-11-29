@@ -2,33 +2,20 @@ import React from 'react'
 import { Box, Flex, Text, Heading, Link, Icon, Divider } from '@chakra-ui/react'
 import Image from 'next/image'
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
+import TelefonMailSektion from './TelefonMailSektion';
+import AdressAabningSektion from './AdressAabningSektion';
 
 
 export default function KlinikKontaktinfo({acf}) {
   return (
-    <Box as="section" bg={"brand.lightGrey"} display="grid" placeContent={"center"}>
-        <Box maxW={"container.lg"}>
-            <Heading>Kontakt os</Heading>
-            <Box  display="grid" gridTemplateColumns={{base: "1fr", lg: "repeat(3, 1fr)"}}>
-                <Box bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
-                    <Heading as={"h3"} size="heading3">
-                        <Icon color="brand.redCta" w={8} h={8} as={BsTelephone} />
-                        {acf.kontaktoplysninger.telefonnummer}
-                    </Heading>
-                    <Divider></Divider>
-                    <Heading as="h3" size="heading3">Telefontider:</Heading>
-                    <Flex justifyContent={"space-between"} gap="1rem">
-                        <Text>{acf.kontaktoplysninger.telefontider.ugedage1}</Text>
-                        <Text fontWeight={"bold"}>{acf.kontaktoplysninger.telefontider.ugedage1_tider}</Text>
-                    </Flex>
-                    <Flex justifyContent={"space-between"} gap="1rem">
-                        <Text>{acf.kontaktoplysninger.telefontider.ugedage2}</Text>
-                        <Text fontWeight={"bold"}>{acf.kontaktoplysninger.telefontider.ugedage2_tider}</Text>
-                    </Flex>
-                    <Flex justifyContent={"space-between"} gap="1rem">
-                        <Text>{acf.kontaktoplysninger.telefontider.weekend}</Text>
-                        <Text fontWeight={"bold"}>{acf.kontaktoplysninger.telefontider.weekend_tider}</Text>
-                    </Flex>
+    <Box as="section" bg={"brand.lightGrey"} display="grid" placeContent={"center"} py={{base:"3rem", lg: "6rem"}} px="1rem">
+        <Box maxW={"container.xl"}>
+            <Heading as="h2" size="heading2">Kontakt os</Heading>
+            <Box as="section" display="grid" gridTemplateColumns={{base: "1fr", md:"1fr 1fr", lg: "repeat(3, 1fr)"}} gap="3rem" alignItems={"start"}  py="3rem">
+                <TelefonMailSektion data={acf.kontaktoplysninger}/>
+                <AdressAabningSektion data={acf.kontaktoplysninger}/>
+                <Box position="relative" minH={"25rem"} width="100%" borderRadius="0.3rem" overflow={"hidden"}>
+                    <Image src={acf.kontaktoplysninger.artikelbillede} alt="kattens værns app" layout='fill' objectFit='cover'/>
                 </Box>
             </Box>
         </Box>
