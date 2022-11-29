@@ -1,14 +1,14 @@
-import url from "../../../api/url";
-import ArticleLinkGroup from "../../components/layout/ArticleLinkGroup";
+import url from "../../api/url";
+import KatteklinikkerIndhold from "../../views/katteklinikker/KatteklinikkerIndhold";
 
 function KatteklinikkerPage({ klinikData, sideData }) {
-  return <ArticleLinkGroup data={klinikData} sideData={sideData} />;
+  return <KatteklinikkerIndhold klinikData={klinikData} sideData={sideData}/> ;
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${url}fremlystekatte`);
+  const res = await fetch(`${url}katteklinikker`);
   const klinikData = await res.json();
-  const res2 = await fetch(`${url}indholdsider/544`);
+  const res2 = await fetch(`${url}indholdsider/1129`);
   const sideData = await res2.json();
 
   return {

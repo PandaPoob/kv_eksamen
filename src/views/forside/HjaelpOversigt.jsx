@@ -44,7 +44,9 @@ export default function HjaelpOversigt() {
   return (
     <Box as="section" display="grid" py={{base:"3rem", lg: "6rem"}} px="1rem" gap="1rem" bgColor={"brand.white"} placeContent={"center"} >
         <Heading as={"h2"} size="heading2" textAlign={"center"}>Brug for hjælp?</Heading>
-        <ArticleLinkGroup data={OversigtData}/>
+        <Box display={"grid"} gridTemplateColumns={{ base: "1fr", md: "1fr 1fr", lg: "repeat(3, 1fr)" }} gap="1rem" py="2rem" maxW="container.lg">
+          <ArticleLinkGroup data={OversigtData} lgGrid="repeat(3, 1fr)"/>
+        </Box>
     </Box>
   )
 }
