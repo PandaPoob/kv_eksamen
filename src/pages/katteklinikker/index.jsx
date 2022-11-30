@@ -11,6 +11,7 @@ export async function getStaticProps() {
   const res2 = await fetch(`${url}indholdsider/1129`);
   const sideData = await res2.json();
 
+
   return {
     props: {
       klinikData: klinikData,

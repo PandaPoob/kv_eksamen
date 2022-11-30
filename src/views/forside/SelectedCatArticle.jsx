@@ -12,7 +12,7 @@ export default function SelectedCatArticle({acf, id}){
             position="relative"
             display={"grid"}
             gridTemplateRows="repeat(7, 1fr)"
-            
+            overflow={"hidden"}
           >
             <Image 
               gridrow={"span"} 

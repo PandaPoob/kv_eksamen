@@ -2,7 +2,7 @@ import { Box, Heading, Text, Icon, Flex } from "@chakra-ui/react";
 import { BsEnvelope } from "react-icons/bs";
 import Image from "next/image";
 
-function PersonArticle({ acf }) {
+function PersonArticle({ acf, boxshadow }) {
   return (
     <Box
       as="article"
@@ -10,8 +10,10 @@ function PersonArticle({ acf }) {
       width={"20rem"}
       bgColor="white"
       marginBlock={"1rem"}
-      boxShadow="1px 1px 6px 1px #b8b8b8"
+      boxShadow={boxshadow}
       color={"brand.blue"}
+      borderRadius="0.3rem"
+      overflow={"hidden"}
     >
       <Box
         position="relative"
