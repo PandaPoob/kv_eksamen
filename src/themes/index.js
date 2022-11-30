@@ -4,6 +4,9 @@ import Heading from "./components/Heading";
 import Button from "./components/Button";
 import Link from "./components/Link";
 import List from "./components/List";
+import FormLabel from "./components/FormLabel";
+import Input from "./components/Input";
+import Select from "./components/Select";
 import { menuTheme } from "./components/Menu";
 
 import sizes from "./foundations/sizes";
@@ -16,6 +19,9 @@ const components = {
   Button,
   Link,
   List,
+  FormLabel,
+  Input,
+  Select,
   Menu: menuTheme,
 };
 

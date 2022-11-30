@@ -22,6 +22,7 @@ const link = {
 
       _hover: {
         textDecoration: "none",
+        fontWeight: "medium",
       },
     },
 
