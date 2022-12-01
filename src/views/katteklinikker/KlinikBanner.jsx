@@ -15,7 +15,7 @@ const a = acf.banner;
       //remove empty entries (false)
       const cleanBannerdataArr = bannerdataArr.filter((b) => b.text !== false);
 
-      console.log(cleanBannerdataArr)
+    
     
   return (
     <Box bg="brand.lightGrey" p="2rem" display={"grid"} placeContent={"center"} >
