@@ -6,15 +6,15 @@ import Image from 'next/image';
 
 
 
-export default function FindOS({data}){
+export default function FindOs({data}){
     return (
-        <Box position="relative" as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
-           <Box display={"grid"} gap="1rem" pb={"1rem"}>
-                <Heading>{data.overskrift}</Heading>
-                <Text>{data.brodtekst}</Text>
+        <Box as="article" bg={"brand.white"} boxShadow="md" borderRadius="0.3rem" width="22rem" height={"auto"} >
+            <Box display={"grid"} gap="1rem" p="2rem">
+                <Heading as="h4" size="heading4">{data.overskrift}</Heading>
+                <Text>{data.adresse}</Text>
             </Box> 
-            <Box>
-                <Image src={data.mapsbillede} alt="maps" width="100%" height={"50%"}/>
+            <Box width="100%" height={"12rem"} position="relative">
+                <Image src={data.mapbillede} alt="maps" layout='fill' objectFit='cover'/>
             </Box>
         </Box>
     )

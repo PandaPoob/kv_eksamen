@@ -3,7 +3,6 @@ import { Box, Flex, Heading, Text, Link, Divider } from '@chakra-ui/react'
 import NextLink from "next/link";
 
 export default function BlivArticle({item}) {
-    console.log(item)
    
   return (
     <Box display={"grid"} gap="1rem" bg={"brand.white"} minH="22rem" borderRadius="0.3rem" boxShadow={"md"}p="2rem">
