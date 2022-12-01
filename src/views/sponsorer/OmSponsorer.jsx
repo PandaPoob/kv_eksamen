@@ -1,6 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import SponsorAccord from "./SponsorAccord";
-import InfoBoks from "./InfoBoks";
+import InfoBoks from "./Infoboks";
 
 export default function OmSponsorer() {
   return (
