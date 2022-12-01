@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { Box, Button, Heading, Flex, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  FormLabel,
+  Text,
+  FormControl,
+  RadioGroup,
+  FormErrorMessage,
+} from "@chakra-ui/react";
 import { Form, Formik, Field } from "formik";
 import { SelectControl } from "formik-chakra-ui";
 import * as Yup from "yup";
@@ -14,29 +23,37 @@ import {
   OremarkeFieldInitialValue,
   OremarkeFieldValidation,
 } from "./formFields/OremarkeField";
+import RadioCard from "./formFields/RadioCard";
 
 function EfterlysForm() {
-  const [step1FormState, setStep1FormState] = useState("");
+  const [formState, setFormState] = useState("");
   const [oremarke, setOremarke] = useState("Ja");
+  const [chippet, setChippet] = useState("Ja");
 
-  const initialValues = (step1FormState) => {
-    console.log("hej", step1FormState);
+  const initialValues = (formState) => {
+    console.log("hej", formState);
     return {
-      ...CatNameFieldInitialValue(step1FormState),
-      ...OremarkeFieldInitialValue(step1FormState),
-      kon: step1FormState?.kon || "",
-      oremaerket: step1FormState?.oremaerket || "",
+      ...CatNameFieldInitialValue(formState),
+      //  ...OremarkeFieldInitialValue(formState),
+      kon: formState?.kon || "",
+      // oremaerket: formState?.oremaerket || "",
+      chippet: formState?.chippet || "",
     };
   };
 
   const validationSchema = Yup.object({
     ...CatNameFieldValidation(),
-    ...OremarkeFieldValidation(),
+    // ...OremarkeFieldValidation(),
+    //oremaerket: Yup.string().required(),
+    chippet: Yup.string().required(),
   });
 
-  const oremarkeOptions = ["Ja", "Nej", "Ved ikke"];
+  const options = ["Ja", "Nej", "Ved ikke"];
   const onOremarkeCallback = (value) => {
     setOremarke(value);
+  };
+  const onChippetCallback = (value) => {
+    setChippet(value);
   };
 
   return (
@@ -45,14 +62,14 @@ function EfterlysForm() {
         Kattens informationer
       </Heading>
       <Formik
-        initialValues={initialValues(step1FormState)}
+        initialValues={initialValues(formState)}
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
           actions.setSubmitting(false);
           console.log(values);
         }}
       >
-        {({ handleSubmit, isSubmitting }) => (
+        {({ handleSubmit, isSubmitting, values, setFieldValue }) => (
           <Form onSubmit={handleSubmit} autoComplete={"off"}>
             <Box minH="6rem">
               <CatNameField />
@@ -67,9 +84,10 @@ function EfterlysForm() {
               <option value={"Hankat"}>Hankat</option>
             </SelectControl>
 
+            {/*            <FormLabel>Øremærket</FormLabel>
             <CustomRadioGroup
               name="oremaerket"
-              values={oremarkeOptions}
+              values={options}
               onCallback={onOremarkeCallback}
               label={"Oremaerket"}
             />
@@ -95,6 +113,34 @@ function EfterlysForm() {
                 </Text>
               </Box>
             ) : null}
+ */}
+            {/* <CustomRadioGroup
+              name="chippet"
+              values={options}
+              onCallback={onChippetCallback}
+              label={"Chipnummer"}
+            /> */}
+            <Field name={"chippet"}>
+              {({ field }) => (
+                <FormControl id={"chippet"}>
+                  <FormLabel>chippet Label</FormLabel>
+                  <RadioGroup {...field} value={values.chippet}>
+                    {options.map((value) => (
+                      <RadioCard
+                        key={value}
+                        {...field}
+                        value={value}
+                        isChecked={values.chippet === value}
+                        onChange={() => setFieldValue("chippet", value)}
+                      >
+                        {value}
+                      </RadioCard>
+                    ))}
+                  </RadioGroup>
+                </FormControl>
+              )}
+            </Field>
+
             <Box display={"grid"} justifySelf={"center"} mt={8}>
               <Button type="submit" variant="redBtn" isLoading={isSubmitting}>
                 Næste

@@ -24,7 +24,7 @@ function CustomRadioGroup({ values, onCallback, name }) {
       {values.map((value) => {
         const radio = getRadioProps({ value });
         return (
-          <RadioCard key={value} {...radio}>
+          <RadioCard key={value} {...radio} {...group}>
             {value}
           </RadioCard>
         );
