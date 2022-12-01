@@ -2,11 +2,7 @@ import React from 'react'
 import { Box, Flex, Text, Heading, Link, Icon, Divider } from '@chakra-ui/react'
 import PersonArticle from '../articles/PersonArticle';
 
-function Teamet({by, MedarbejdData}) {
-    
-    let teamet = MedarbejdData.filter((m)=>{
-        return m.acf.katteklinik === by;
-    })
+function Teamet({teamet}) {
    
 
     let arraychecker = () => {

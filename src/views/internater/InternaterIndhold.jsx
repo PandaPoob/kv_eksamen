@@ -8,8 +8,6 @@ import { Box } from "@chakra-ui/react";
 
 export default function InternaterIndhold({ sideData, internatData }) {
 
-   
-
     const icon = <IoPawOutline size={60} color="#D43B4D"/>
 
     const linkdata = internatData.map((k)=> (
@@ -19,7 +17,6 @@ export default function InternaterIndhold({ sideData, internatData }) {
             icon: icon,
         }
     ))
-    console.log(linkdata)
 
   return (
     <PageLayout>

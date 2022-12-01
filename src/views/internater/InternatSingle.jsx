@@ -4,16 +4,24 @@ import KISplash from '../../components/klinikker+internater/KISplash'
 import Teamet from '../../components/klinikker+internater/Teamet'
 import LinkBanner from './LinkBanner';
 import KontaktSektion from './KontaktSektion';
+import HjaelpTilSektion from './HjaelpTilSektion';
+import OmInternatet from './OmInternatet';
 
 export default function InternatSingle({internatData, MedarbejdData}) {
   const acf = internatData.acf;
+  const by= acf.bynavn;
+  let teamet = MedarbejdData.filter((m)=>{
+    return m.acf.internat === by;
+})
   return (
     <PageLayout>
         <KISplash acf={acf}/>
         <LinkBanner data={acf.banner}/>
-       
-        <Teamet by={acf.bynavn} MedarbejdData={MedarbejdData}/>
-        <KontaktSektion/>
+        <OmInternatet data={acf.intro_sektion}/>
+        <HjaelpTilSektion data={acf.hjaelp_til_sektion}/>
+        <KontaktSektion data={acf.kontaktoplysninger}/>
+        <Teamet teamet={teamet}/>
+        
     </PageLayout>
   )
 }

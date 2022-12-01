@@ -1,11 +1,9 @@
 import React from 'react'
-import { Box, Flex, Text, Heading, Link, Icon, Divider } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Flex, Heading, Icon, Divider, Text } from '@chakra-ui/react'
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
 
-export default function AdressAabningSektion({data}) {
-       //data = acf.kontaktoplysninger
-       const abningstider = data.abningstider
+export default function Abningstider({data}) {
+    const abningstider = data.tiderne;
        const abningstiderArr = Object.entries(abningstider).map((e) => ({
          id: e[0],
          tider: e[1],
@@ -13,16 +11,13 @@ export default function AdressAabningSektion({data}) {
      
        //remove empty entries (false)
        const cleanAbningstiderArr = abningstiderArr.filter((t) => t.tider !== false);
-     
+       console.log(cleanAbningstiderArr)
   return (
-    
-        <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
+    <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
             <Box display={"grid"} gap="1rem" pb={"1rem"}>
-                <Heading as={"h3"} size="heading4">Adresse</Heading>
+                <Heading as={"h3"} size="heading4">Åbningstider</Heading>
                 <Box>
-                    <Text>{data.adresse.navn}</Text>
-                    <Text>{data.adresse.vej_og_nr}</Text>
-                    <Text>{data.adresse.postnr_og_by}</Text>
+                    <Text>{data.introtekst}</Text>
                 </Box>
             </Box>
             <Divider></Divider>
@@ -36,6 +31,5 @@ export default function AdressAabningSektion({data}) {
                 ))}
             </Box>
         </Box> 
-
   )
 }

@@ -11,6 +11,10 @@ import KISplash from '../../components/klinikker+internater/KISplash';
 
 export default function KatteklinikSingle({klinikData, MedarbejdData}) {
     const acf = klinikData.acf;
+    const by= acf.bynavn;
+    let teamet = MedarbejdData.filter((m)=>{
+      return m.acf.katteklinik === by;
+  })
 
   return (
     <PageLayout>
@@ -19,7 +23,7 @@ export default function KatteklinikSingle({klinikData, MedarbejdData}) {
         <KlinikIntroSektion  acf={acf}/>
         <KlinikKontaktinfo acf={acf}/>
         <Prisliste acf={acf} />
-        <Teamet by={acf.bynavn} MedarbejdData={MedarbejdData}/>
+        <Teamet teamet={teamet}/>
         <HighlightSektion acf={acf}/>
     </PageLayout>
   )
