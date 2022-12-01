@@ -22,7 +22,7 @@ export default function KatteklinikkerIndhold({ sideData, klinikData }) {
     <PageLayout>
       <PageHead {...sideData} />
       <SplashHeader {...sideData} />
-      <Box display={"flex"} justifyContent="center" flexWrap={"wrap"} gap="1rem" mt={"3rem"}>
+      <Box display={"flex"} justifyContent="center" flexWrap={"wrap"} gap="1rem" py={"3rem"} px="1rem">
         <ArticleLinkGroup data={linkdata} />
       </Box>
     </PageLayout>

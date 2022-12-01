@@ -23,10 +23,10 @@ export default function Prisliste({acf}) {
             <Heading as="h2" size="heading2">Prisliste</Heading>
                     {isMobile ? 
                     <Box as="section" display="grid" gridTemplateColumns={{base: "1fr", md:"1fr 1fr"}} gap="3rem" alignItems={"start"}  py="3rem">
-                        <Box position={"relative"} height="62rem" width={"23rem"}>
+                        <Box position={"relative"} height="61rem" width={"22rem"}>
                             <Image src={acf.prisliste.prisliste_mobile_1} alt="prisliste" layout='fill' objectFit='contain'/>
                         </Box> 
-                        <Box position={"relative"} height="62rem" width={"23rem"}>
+                        <Box position={"relative"} height="61rem" width={"22rem"}>
                             <Image src={acf.prisliste.prisliste_mobile_2} alt="prisliste" layout='fill' objectFit='contain'/>
                         </Box>
                     </Box> 

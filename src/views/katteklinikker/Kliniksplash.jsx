@@ -17,7 +17,7 @@ export default function Kliniksplash({acf}) {
       py={"2rem"}
       px="2rem"
     >
-      <Heading as={"h1"} size="heading1">
+      <Heading as={"h1"} size={{base: "heading2", lg: "heading1"}}>
         {acf.overskrift}
       </Heading>
     </Flex>

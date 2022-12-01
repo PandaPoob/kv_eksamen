@@ -7,7 +7,7 @@ function Teamet({by, MedarbejdData}) {
     let teamet = MedarbejdData.filter((m)=>{
         return m.acf.katteklinik === by;
     })
-    console.log(teamet)
+   
 
     let arraychecker = () => {
         if (teamet.length === 0) return false;
