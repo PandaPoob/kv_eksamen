@@ -7,12 +7,12 @@ export default function Potesponsorer({ data }) {
   });
 
   return (
-    <Box as="section" bgColor={"brand.darkGrey"} py={"5rem"}>
+    <Box as="section" bgColor={"brand.darkGrey"} py={"5rem"} px={"2rem"}>
       <Heading
         as="h2"
         size="heading2"
         color={"brand.white"}
-        mb="5rem"
+        mb={{ base: "3rem", lg: "5rem" }}
         textAlign={"center"}
       >
         Potesponsorer

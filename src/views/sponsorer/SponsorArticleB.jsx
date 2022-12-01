@@ -15,8 +15,8 @@ export default function SponsorArticle({ acf }) {
   return (
     <Box
       bgColor={colorchecker()}
-      minW="18.75rem"
-      maxW="20rem"
+      minW={{ base: "18.75rem", md: "20rem" }}
+      maxW={{ base: "23.1rem", md: "22rem", lg: "23.1rem" }}
       minH="4.3rem"
       maxH="9.5rem"
       color="brand.darkGrey"

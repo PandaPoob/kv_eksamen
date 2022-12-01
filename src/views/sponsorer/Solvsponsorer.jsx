@@ -7,11 +7,11 @@ export default function Solvsponsorer({ data }) {
   });
 
   return (
-    <Box as="section" bgColor={"brand.lightGrey"} py={"5rem"}>
+    <Box as="section" bgColor={"brand.lightGrey"} py={"5rem"} px={"2rem"}>
       <Heading
         as="h2"
         size="heading2"
-        mb="5rem"
+        mb={{ base: "3rem", lg: "5rem" }}
         textAlign={"center"}
         color={"brand.darkGrey"}
       >
