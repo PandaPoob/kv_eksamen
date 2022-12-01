@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Box, Button, Heading, Input, Text } from "@chakra-ui/react";
-import { Form, Formik } from "formik";
-import { SelectControl } from "formik-chakra-ui";
+import { Form, Formik, Field, useField } from "formik";
+import { SelectControl, InputControl } from "formik-chakra-ui";
+
 import * as Yup from "yup";
 import {
   CatNameField,
@@ -44,17 +45,25 @@ import {
   ByFieldInitialValue,
   ByFieldValidation,
 } from "./formFields/ByField";
+import {
+  ImageField,
+  ImageFieldValidation,
+  ImageFieldInitialValue,
+} from "./formFields/ImageField";
 
 function KatteInfoForm({ onCallback }) {
   const [formState, setFormState] = useState("");
+  const [img, setImg] = useState("");
 
+  console.log(img);
   const initialValues = (formState) => {
     return {
       ...CatNameFieldInitialValue(formState),
       ...OremarkeFieldInitialValue(formState),
       ...ChipnummerFieldInitialValue(formState),
       ...DatoFieldInitialValue(formState),
-      ...FileFieldInitialValue(formState),
+      ...ImageFieldInitialValue(formState),
+      // ...FileFieldInitialValue(formState),
       ...DescripFieldInitialValue(formState),
       ...PostnummerFieldInitialValue(formState),
       ...ByFieldInitialValue(formState),
@@ -70,7 +79,8 @@ function KatteInfoForm({ onCallback }) {
     ...OremarkeFieldValidation(),
     ...ChipnummerFieldValidation(),
     ...DatoFieldValidation(),
-    ...FileFieldValidation(),
+    ...ImageFieldValidation(),
+    //...FileFieldValidation(),
     ...DescripFieldValidation(),
     ...PostnummerFieldValidation(),
     ...ByFieldValidation(),
@@ -169,8 +179,23 @@ function KatteInfoForm({ onCallback }) {
                 ) : null}
               </Box>
 
-              <FileField />
-
+              {/*           <Field name="file">
+                {({ field }) => (
+                  <input
+                    {...field}
+                    id="file"
+                    name="file"
+                    type="file"
+                    value={undefined}
+                    onChange={(event) => {
+                      console.log("file", event.currentTarget.files[0]);
+                      setFieldValue("file", event.currentTarget.files[0]);
+                    }}
+                  />
+                )}
+              </Field> */}
+              {/*    <FileField /> */}
+              <ImageField setFieldValue={setFieldValue} />
               <DescripField />
 
               <Heading as="h2" size={"heading3"}>
