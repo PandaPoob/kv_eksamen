@@ -37,7 +37,7 @@ function EfterlysForm() {
       //  ...OremarkeFieldInitialValue(formState),
       kon: formState?.kon || "",
       // oremaerket: formState?.oremaerket || "",
-      chippet: formState?.chippet || "",
+      chippet: formState?.chippet || "Ja",
     };
   };
 
