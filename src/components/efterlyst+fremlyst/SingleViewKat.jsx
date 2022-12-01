@@ -4,21 +4,6 @@ import PageLayout from "../layout/PageLayout";
 import ContactEF from "./ContactEF";
 
 function SingleViewKat({ EFdata, type }) {
-
- /*  const {
-    navn,
-    kon,
-    beskrivelse,
-    dato,
-    postnummer,
-    by,
-    landsdel,
-    oremaerket,
-    oremaerkenr,
-    chippet,
-    chipnr,
-    billede,
-  } = efterlystKatData.acf  */
   
   const {
     navn,

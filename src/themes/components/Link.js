@@ -63,6 +63,28 @@ const link = {
         textDecoration: "none",
       },
     },
+    greyArticle: {
+      display: "flex",
+      as: "article",
+      flexDirection: "column",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      bg: "brand.lightGrey",
+      width: "20rem",
+      heigth: "12rem",
+      fontSize: "xs",
+      borderRadius: "0.3rem",
+      textAlign: "center",
+      color: "brand.darkGrey",
+      gap: "1rem",
+      fontWeight: "bold",
+      transition: "all .2s ease-in-out",
+      p: "2rem",
+      _hover: {
+        transform: "scale(1.02)",
+        textDecoration: "none",
+      },
+    },
   },
 };
 

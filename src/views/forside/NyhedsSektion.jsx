@@ -1,5 +1,5 @@
 import { Box, Heading, Flex, Link } from "@chakra-ui/react";
-import NewsArticle from "../../components/generics/NewsArticle";
+import NewsArticle from "../../components/articles/NewsArticle";
 import NextLink from "next/link";
 
 function NyhedsSektion({nyhedsData}){

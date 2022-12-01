@@ -15,7 +15,7 @@ export default function ForsideIndhold({sideData, katteData, nyhedsData}) {
     <PageLayout>
         <Box>
         <PageHead {...sideData} />
-        <SplashHeader {...sideData} textPos="center" />
+        <SplashHeader {...sideData} textPos="center" imgPos="center top" height="80vh" />
         <Banner/>
         <VoresArbejde />
         <NyhedsSektion nyhedsData={nyhedsData} />
