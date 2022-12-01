@@ -18,7 +18,17 @@ const ImageFieldInitialValue = (formState) => {
 };
 const ImageFieldValidation = () => {
   return {
-    file: Yup.mixed().required("*Billede påkrævet"),
+    file: Yup.mixed()
+      .required("*Billede påkrævet")
+      .test("fileType", "*Filtype understøttes ikke", (value) => {
+        return (
+          value &&
+          (value.type === "image/jpeg" ||
+            value.type === "image/webp" ||
+            value.type === "image/png")
+        );
+      })
+      .test("fileSize", "*Max 5 MB", (value) => value && value.size <= 5000000),
   };
 };
 
