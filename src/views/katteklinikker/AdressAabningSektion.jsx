@@ -5,6 +5,15 @@ import { BsTelephone, BsEnvelope } from "react-icons/bs";
 
 export default function AdressAabningSektion({data}) {
        //data = acf.kontaktoplysninger
+       const abningstider = data.abningstider
+       const abningstiderArr = Object.entries(abningstider).map((e) => ({
+         id: e[0],
+         tider: e[1],
+       }));
+     
+       //remove empty entries (false)
+       const cleanAbningstiderArr = abningstiderArr.filter((t) => t.tider !== false);
+     
   return (
     <Box>
         <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
@@ -19,18 +28,12 @@ export default function AdressAabningSektion({data}) {
             <Divider></Divider>
             <Box py="1rem" display="grid" gap="1rem">
                 <Heading as="h3" size="heading4">Åbningstider:</Heading>
-                <Flex justifyContent={"space-between"} gap="2rem" mt="1rem">
-                    <Text>{data.abningstider.ugedage1}</Text>
-                    <Text fontWeight={"bold"}>{data.abningstider.ugedage1_tider}</Text>
-                </Flex>
-                <Flex justifyContent={"space-between"} gap="2rem">
-                    <Text>{data.abningstider.ugedage2}</Text>
-                    <Text fontWeight={"bold"}>{data.abningstider.ugedage2_tider}</Text>
-                </Flex>
-                <Flex justifyContent={"space-between"} gap="2rem">
-                    <Text>{data.abningstider.weekend}</Text>
-                    <Text fontWeight={"bold"}>{data.abningstider.weekend_tider}</Text>
-                </Flex>
+                {cleanAbningstiderArr.map((t)=> (
+                    <Flex key={t.id} justifyContent={"space-between"} gap="2rem">
+                        <Text>{t.tider.dage}</Text>
+                        <Text fontWeight={"bold"}>{t.tider.tider}</Text>
+                    </Flex>
+                ))}
             </Box>
         </Box> 
 </Box>

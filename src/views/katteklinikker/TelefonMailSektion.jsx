@@ -4,7 +4,16 @@ import Image from 'next/image'
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
 
 export default function TelefonMailSektion({data}) {
-    //data = acf.kontaktoplysninger
+  
+    const telefontider = data.telefontider
+    const telefontiderArr = Object.entries(telefontider).map((e) => ({
+        id: e[0],
+        tider: e[1],
+    }));
+
+  //remove empty entries (false)
+  const cleanTelefontiderArr = telefontiderArr.filter((t) => t.tider !== false);
+
   return (
     <Box display="grid" gap="1rem">
         <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
@@ -15,18 +24,12 @@ export default function TelefonMailSektion({data}) {
             <Divider></Divider>
             <Box py="1rem" display="grid" gap="1rem">
                 <Heading as="h3" size="heading4">Telefontider:</Heading>
-                <Flex justifyContent={"space-between"} gap="2rem" mt="1rem">
-                    <Text>{data.telefontider.ugedage1}</Text>
-                    <Text fontWeight={"bold"}>{data.telefontider.ugedage1_tider}</Text>
-                </Flex>
-                <Flex justifyContent={"space-between"} gap="2rem">
-                    <Text>{data.telefontider.ugedage2}</Text>
-                    <Text fontWeight={"bold"}>{data.telefontider.ugedage2_tider}</Text>
-                </Flex>
-                <Flex justifyContent={"space-between"} gap="2rem">
-                    <Text>{data.telefontider.weekend}</Text>
-                    <Text fontWeight={"bold"}>{data.telefontider.weekend_tider}</Text>
-                </Flex>
+                {cleanTelefontiderArr.map((t)=> (
+                    <Flex key={t.id} justifyContent={"space-between"} gap="2rem" >
+                        <Text>{t.tider.dage}</Text>
+                        <Text color="brand.darkGrey" fontWeight={"bold"}>{t.tider.tider}</Text>
+                    </Flex>
+                ))}
                 <Text as="i" fontSize={"xxs"}>Frokostlukket hver dag kl 12:30-13:00</Text>
             </Box>
         </Box>

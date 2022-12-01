@@ -1,6 +1,6 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import PageLayout from "../../../components/layout/PageLayout";
-import PersonArticle from "../../../components/generics/PersonArticle";
+import PersonArticle from "../../../components/articles/PersonArticle";
 import SplashHeader from "../../../components/generics/SplashHeader";
 
 function Medarbejderne({ data, sideData }) {
@@ -22,7 +22,7 @@ function Medarbejderne({ data, sideData }) {
           maxW={"container.xxl"}
         >
           {sortedM.map((m) => {
-            return <PersonArticle key={m.id} {...m}></PersonArticle>;
+            return <PersonArticle boxshadow={"1px 1px 6px 1px #b8b8b8"} key={m.id} {...m}></PersonArticle>;
           })}
         </Flex>
       </Box>
