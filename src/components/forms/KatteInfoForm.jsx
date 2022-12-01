@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Box, Button, Heading, Input, Text } from "@chakra-ui/react";
-import { Form, Formik, Field, useField } from "formik";
-import { SelectControl, InputControl } from "formik-chakra-ui";
-
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
+import { Form, Formik } from "formik";
+import { SelectControl } from "formik-chakra-ui";
 import * as Yup from "yup";
 import {
   CatNameField,
@@ -53,9 +52,7 @@ import {
 
 function KatteInfoForm({ onCallback }) {
   const [formState, setFormState] = useState("");
-  const [img, setImg] = useState("");
 
-  console.log(img);
   const initialValues = (formState) => {
     return {
       ...CatNameFieldInitialValue(formState),
@@ -105,7 +102,14 @@ function KatteInfoForm({ onCallback }) {
           onCallback(values);
         }}
       >
-        {({ handleSubmit, isSubmitting, values, setFieldValue }) => (
+        {({
+          handleSubmit,
+          isSubmitting,
+          values,
+          setFieldValue,
+          errors,
+          touched,
+        }) => (
           <Form onSubmit={handleSubmit} autoComplete={"off"}>
             <Box display="grid" gap={"1rem"}>
               <Box minH="6rem">
@@ -179,23 +183,11 @@ function KatteInfoForm({ onCallback }) {
                 ) : null}
               </Box>
 
-              {/*           <Field name="file">
-                {({ field }) => (
-                  <input
-                    {...field}
-                    id="file"
-                    name="file"
-                    type="file"
-                    value={undefined}
-                    onChange={(event) => {
-                      console.log("file", event.currentTarget.files[0]);
-                      setFieldValue("file", event.currentTarget.files[0]);
-                    }}
-                  />
-                )}
-              </Field> */}
-              {/*    <FileField /> */}
-              <ImageField setFieldValue={setFieldValue} />
+              <ImageField
+                setFieldValue={setFieldValue}
+                errors={errors}
+                touched={touched}
+              />
               <DescripField />
 
               <Heading as="h2" size={"heading3"}>
