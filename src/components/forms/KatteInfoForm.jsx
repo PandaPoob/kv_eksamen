@@ -187,6 +187,7 @@ function KatteInfoForm({ onCallback }) {
                 setFieldValue={setFieldValue}
                 errors={errors}
                 touched={touched}
+                values={values}
               />
               <DescripField />
 

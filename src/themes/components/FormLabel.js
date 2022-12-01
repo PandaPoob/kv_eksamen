@@ -1,8 +1,8 @@
 const FormLabel = {
   baseStyle: {
-    marginBottom: "0.2rem",
-    fontWeight: "normal",
-    fontSize: "xxs",
+    marginBottom: "0.4rem",
+    fontWeight: "light",
+    fontSize: "xs",
     color: "brand.darkGrey",
   },
 };

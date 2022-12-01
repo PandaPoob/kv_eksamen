@@ -1,6 +1,15 @@
 import { Field } from "formik";
-import { FormControl, Text, FormLabel, InputGroup } from "@chakra-ui/react";
+import {
+  FormControl,
+  Text,
+  FormLabel,
+  InputGroup,
+  FormHelperText,
+  Icon,
+  Flex,
+} from "@chakra-ui/react";
 import * as Yup from "yup";
+import { BiUpload } from "react-icons/bi";
 
 const ImageFieldInitialValue = (formState) => {
   return {
@@ -13,20 +22,60 @@ const ImageFieldValidation = () => {
   };
 };
 
-function ImageField({ setFieldValue, touched, errors }) {
+function ImageField({ setFieldValue, touched, errors, values }) {
   return (
     <Field name="file">
       {({ field }) => (
         <FormControl>
           <FormLabel>Billede</FormLabel>
-          <InputGroup>
+          <InputGroup
+            border={"1px solid #B8B8B8"}
+            borderColor={
+              errors.file && touched.file
+                ? "brand.errorMsg"
+                : "brand.borderGrey"
+            }
+            borderRadius={"0.2rem"}
+            position="relative"
+            fontSize={"xxs"}
+          >
+            <label
+              htmlFor="file"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                paddingBlock: "0.5rem",
+                width: "8rem",
+                gap: "0.2rem",
+                paddingRight: "0.5rem",
+                backgroundColor: "#EEEEEE",
+                color: "#001931",
+                borderRadius: "0.2rem",
+                borderRight: "1px solid #B8B8B8",
+                cursor: "pointer",
+                _hover: { bg: "brand.borderGrey" },
+              }}
+            >
+              <Icon as={BiUpload} />
+              Upload fil
+            </label>
+            <Text
+              color={"brand.grey"}
+              fontSize={"xs"}
+              alignSelf={"center"}
+              pl="1rem"
+            >
+              {!values.file ? null : values.file.name}
+            </Text>
             <input
               style={{
-                borderRadius: "0.2rem",
-                border: "1px solid #B8B8B8",
-                fontSize: "xs",
-                minHeight: "2rem",
-                flexGrow: "1",
+                background: "red",
+                opacity: "0",
+                overflow: "hidden",
+                position: "absolute",
+                width: " 0.1px",
+                height: "0.1px",
               }}
               {...field}
               id="file"
@@ -40,12 +89,25 @@ function ImageField({ setFieldValue, touched, errors }) {
               }}
             />
           </InputGroup>
-
-          {errors.file && touched.file ? (
-            <Text color={"brand.errorMsg"} fontSize={"xxs"}>
-              {errors.file}
-            </Text>
-          ) : null}
+          <Flex
+            alignItems={"center"}
+            justifyContent="space-between"
+            mt={"0.2rem"}
+          >
+            <FormHelperText fontSize={"xxs"} color="brand.grey" mt={0}>
+              Upload bredformat. Filer max 5 MB. Filtyper: .jpg .jpeg .png .webp
+            </FormHelperText>
+            {errors.file && touched.file ? (
+              <Text
+                fontStyle={"italic"}
+                textAlign={"right"}
+                color={"brand.errorMsg"}
+                fontSize={"xxs"}
+              >
+                {errors.file}
+              </Text>
+            ) : null}
+          </Flex>
         </FormControl>
       )}
     </Field>
