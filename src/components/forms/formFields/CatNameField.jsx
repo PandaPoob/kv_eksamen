@@ -9,7 +9,9 @@ const CatNameFieldInitialValue = (step1FormState) => {
 
 const CatNameFieldValidation = () => {
   return {
-    catname: Yup.string().required("Kattens navn er påkrævet"),
+    catname: Yup.string()
+      .required("*Kattens navn er påkrævet")
+      .max(16, `*Kan ikke være længere end 16 tegn`),
   };
 };
 

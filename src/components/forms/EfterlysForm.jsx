@@ -1,38 +1,43 @@
 import { useState } from "react";
-import { Box, Button, Heading, Flex, useRadioGroup } from "@chakra-ui/react";
-import { Form, Formik } from "formik";
+import { Box, Button, Heading, Flex, Text } from "@chakra-ui/react";
+import { Form, Formik, Field } from "formik";
 import { SelectControl } from "formik-chakra-ui";
 import * as Yup from "yup";
 import {
   CatNameField,
   CatNameFieldInitialValue,
   CatNameFieldValidation,
-} from "../forms/CatNameField";
-import RadioCard from "./RadioCard";
+} from "./formFields/CatNameField";
+import CustomRadioGroup from "./formFields/CustomRadioGroup";
+import {
+  OremarkeField,
+  OremarkeFieldInitialValue,
+  OremarkeFieldValidation,
+} from "./formFields/OremarkeField";
 
 function EfterlysForm() {
-  const [step1FormState, step2FormState] = useState("");
+  const [step1FormState, setStep1FormState] = useState("");
+  const [oremarke, setOremarke] = useState("Ja");
+  console.log(oremarke);
 
   const initialValues = (step1FormState) => {
     return {
       ...CatNameFieldInitialValue(step1FormState),
+      ...OremarkeFieldInitialValue(step1FormState),
       kon: step1FormState?.kon || "",
+      oremaerket: step1FormState?.oremaerket || "",
     };
   };
 
   const validationSchema = Yup.object({
     ...CatNameFieldValidation(),
+    ...OremarkeFieldValidation(),
   });
 
-  const options = ["Ja", "Nej", "Ved ikke"];
-
-  const { getRootProps, getRadioProps } = useRadioGroup({
-    name: "Øremærke",
-    defaultValue: "Ja",
-    onChange: console.log,
-  });
-
-  const group = getRootProps();
+  const oremarkeOptions = ["Ja", "Nej", "Ved ikke"];
+  const onOremarkeCallback = (value) => {
+    setOremarke(value);
+  };
 
   return (
     <Box bg={"brand.white"} p="2rem" boxShadow={"md"}>
@@ -49,29 +54,47 @@ function EfterlysForm() {
       >
         {({ handleSubmit, isSubmitting }) => (
           <Form onSubmit={handleSubmit} autoComplete={"off"}>
-            <CatNameField />
-
+            <Box minH="6rem">
+              <CatNameField />
+            </Box>
             <SelectControl
               name="kon"
               label="Kattens køn"
               variant={"outline"}
-              mt="1rem"
+              mb="2rem"
             >
               <option value={"Hunkat"}>Hunkat</option>
               <option value={"Hankat"}>Hankat</option>
             </SelectControl>
 
-            <Flex {...group} mt={4}>
-              {options.map((value) => {
-                const radio = getRadioProps({ value });
-                return (
-                  <RadioCard key={value} {...radio}>
-                    {value}
-                  </RadioCard>
-                );
-              })}
-            </Flex>
+            <CustomRadioGroup
+              name="oremaerket"
+              values={oremarkeOptions}
+              onCallback={onOremarkeCallback}
+              label={"Oremaerket"}
+            />
 
+            {oremarke === "Ja" ? (
+              <Box
+                borderBottom={"1px solid"}
+                borderLeft="1px solid"
+                borderRight="1px solid"
+                borderColor="brand.borderGrey"
+                minH="6rem"
+                px="1rem"
+              >
+                <OremarkeField />
+                <Text
+                  fontSize={"xxs"}
+                  color="brand.grey"
+                  ml="0.2rem"
+                  mt={"0.2rem"}
+                  mb="1rem"
+                >
+                  Hvis ikke du kan aflæse øremærket lad feltet stå tomt
+                </Text>
+              </Box>
+            ) : null}
             <Box display={"grid"} justifySelf={"center"} mt={8}>
               <Button type="submit" variant="redBtn" isLoading={isSubmitting}>
                 Næste

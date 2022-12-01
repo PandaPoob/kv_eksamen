@@ -14,6 +14,11 @@ const Input = {
           borderColor: "brand.borderGrey",
           boxShadow: "none",
         },
+        _invalid: {
+          borderColor: "brand.errorMsg",
+          boxShadow: "none",
+          fontSize: "xs",
+        },
       },
     },
   },

@@ -8,6 +8,7 @@ import FormLabel from "./components/FormLabel";
 import Input from "./components/Input";
 import Select from "./components/Select";
 import { menuTheme } from "./components/Menu";
+import { formErrorTheme } from "./components/FormError";
 
 import sizes from "./foundations/sizes";
 import colors from "./foundations/colors";
@@ -23,6 +24,7 @@ const components = {
   Input,
   Select,
   Menu: menuTheme,
+  FormError: formErrorTheme,
 };
 
 const foundations = {
