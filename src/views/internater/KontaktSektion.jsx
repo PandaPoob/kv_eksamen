@@ -19,7 +19,7 @@ export default function KontaktSektion({data}) {
                 </Flex>
            </Box>
            <Abningstider data={data.abningstider}/>
-           <FindOs/>
+           <FindOs data={data.findos}/>
         </Box>
     </Box>
 </Box>
