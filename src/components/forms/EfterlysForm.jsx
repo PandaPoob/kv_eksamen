@@ -18,9 +18,9 @@ import {
 function EfterlysForm() {
   const [step1FormState, setStep1FormState] = useState("");
   const [oremarke, setOremarke] = useState("Ja");
-  console.log(oremarke);
 
   const initialValues = (step1FormState) => {
+    console.log("hej", step1FormState);
     return {
       ...CatNameFieldInitialValue(step1FormState),
       ...OremarkeFieldInitialValue(step1FormState),
