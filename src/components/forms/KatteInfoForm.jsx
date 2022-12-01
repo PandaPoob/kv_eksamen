@@ -45,7 +45,7 @@ import {
   ByFieldValidation,
 } from "./formFields/ByField";
 
-function EfterlysForm() {
+function KatteInfoForm({ onCallback }) {
   const [formState, setFormState] = useState("");
 
   const initialValues = (formState) => {
@@ -54,7 +54,7 @@ function EfterlysForm() {
       ...OremarkeFieldInitialValue(formState),
       ...ChipnummerFieldInitialValue(formState),
       ...DatoFieldInitialValue(formState),
-      // ...FileFieldInitialValue(formState),
+      ...FileFieldInitialValue(formState),
       ...DescripFieldInitialValue(formState),
       ...PostnummerFieldInitialValue(formState),
       ...ByFieldInitialValue(formState),
@@ -70,7 +70,7 @@ function EfterlysForm() {
     ...OremarkeFieldValidation(),
     ...ChipnummerFieldValidation(),
     ...DatoFieldValidation(),
-    //...FileFieldValidation(),
+    ...FileFieldValidation(),
     ...DescripFieldValidation(),
     ...PostnummerFieldValidation(),
     ...ByFieldValidation(),
@@ -92,7 +92,7 @@ function EfterlysForm() {
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
           actions.setSubmitting(false);
-          setFormState(values);
+          onCallback(values);
         }}
       >
         {({ handleSubmit, isSubmitting, values, setFieldValue }) => (
@@ -169,7 +169,7 @@ function EfterlysForm() {
                 ) : null}
               </Box>
 
-              {/*  <FileField /> */}
+              <FileField />
 
               <DescripField />
 
@@ -216,4 +216,4 @@ function EfterlysForm() {
   );
 }
 
-export default EfterlysForm;
+export default KatteInfoForm;

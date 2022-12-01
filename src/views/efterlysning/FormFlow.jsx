@@ -6,6 +6,8 @@ import Step3 from "../../components/efterlyst+fremlyst/formsteps/Step3";
 
 function FormFlow() {
   const [currenStepIndex, setCurrentStepIndex] = useState(0);
+  const [flowState, setFlowState] = useState("");
+  console.log(flowState);
 
   const steps = [
     {
@@ -13,6 +15,7 @@ function FormFlow() {
         <Step1
           currenStepIndex={currenStepIndex}
           setCurrentStepIndex={setCurrentStepIndex}
+          setFlowState={setFlowState}
         />
       ),
     },

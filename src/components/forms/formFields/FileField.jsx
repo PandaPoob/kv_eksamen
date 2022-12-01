@@ -10,7 +10,7 @@ const FileFieldInitialValue = (formState) => {
 
 const FileFieldValidation = () => {
   return {
-    billede: Yup.mixed().nullable().required("Billede påkrævet"),
+    billede: Yup.mixed().required("Billede påkrævet"),
   };
 };
 
@@ -19,7 +19,11 @@ function FileField() {
     <InputControl
       name="billede"
       label="Billede"
-      inputProps={{ autoComplete: "off", type: "file", accept: "image/*" }}
+      inputProps={{
+        autoComplete: "off",
+        type: "file",
+        accept: ".jpg,.png,.jpeg,.webp",
+      }}
       labelProps={{ pb: 1 }}
       mt={4}
     />

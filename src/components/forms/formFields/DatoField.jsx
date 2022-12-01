@@ -8,10 +8,7 @@ const DatoFieldInitialValue = (formState) => {
   const yyyy = today.getFullYear();
 
   today = yyyy + "-" + mm + "-" + dd;
-  console.log(today);
 
-  // This arrangement can be altered based on how we want the date's format to appear.
-  //let currentDate = `${year}-${month}-${day}`;
   return {
     dato: formState?.dato || today,
   };
@@ -23,8 +20,7 @@ const DatoFieldValidation = () => {
   };
 };
 
-function DatoField({ values }) {
-  // console.log(values.dato);
+function DatoField() {
   return (
     <InputControl
       name="dato"
