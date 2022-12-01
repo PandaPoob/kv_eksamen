@@ -14,7 +14,8 @@ function RadioCard(props) {
         cursor="pointer"
         color={"brand.grey"}
         bg="brand.lightGrey"
-        borderBottom={"1px solid"}
+        borderBottom={{ base: "1px solid", md: "none" }}
+        borderRight={{ md: "1px solid" }}
         borderColor="brand.borderGrey"
         _checked={{
           bg: "brand.blueCta",

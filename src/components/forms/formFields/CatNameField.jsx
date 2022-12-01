@@ -1,9 +1,9 @@
 import { InputControl } from "formik-chakra-ui";
 import * as Yup from "yup";
 
-const CatNameFieldInitialValue = (step1FormState) => {
+const CatNameFieldInitialValue = (formState) => {
   return {
-    catname: step1FormState?.catname || "",
+    catname: formState?.catname || "",
   };
 };
 
@@ -11,7 +11,7 @@ const CatNameFieldValidation = () => {
   return {
     catname: Yup.string()
       .required("*Kattens navn er påkrævet")
-      .max(16, `*Kan ikke være længere end 16 tegn`),
+      .max(16, `*Max 16 tegn`),
   };
 };
 

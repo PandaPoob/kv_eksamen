@@ -1,9 +1,9 @@
 import { InputControl } from "formik-chakra-ui";
 import * as Yup from "yup";
 
-const OremarkeFieldInitialValue = (step1FormState) => {
+const OremarkeFieldInitialValue = (formState) => {
   return {
-    oremaerkenr: step1FormState?.oremaerkenr || "",
+    oremaerkenr: formState?.oremaerkenr || "",
   };
 };
 
@@ -12,7 +12,7 @@ const OremarkeFieldValidation = () => {
     oremaerkenr: Yup.string()
       .nullable()
       .notRequired()
-      .length(6, "Et øremærke er altid 6 tegn"),
+      .length(6, "*Et øremærke består af 6 tegn"),
   };
 };
 

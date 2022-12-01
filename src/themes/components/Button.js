@@ -81,6 +81,17 @@ const button = {
         bg: "brand.blueHover",
       },
     },
+
+    formSubmitBtn: {
+      bg: "brand.redCta",
+      fontSize: "smallH",
+      py: "1.6rem",
+
+      _hover: {
+        bg: "brand.redHover",
+        transform: "scale(1)",
+      },
+    },
   },
 };
 
