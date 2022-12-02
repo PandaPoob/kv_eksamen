@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import Article from "../../../components/generics/Article";
+import Article from "../../../components/articles/Article";
 
 function AdoptionKatteListe({
   data,

@@ -7,12 +7,16 @@ import { FifthElement } from "../../components/features/FifthElement";
 export default function SelectedCatArticle({acf, id}){
     return (
       <NextLink href={`/adopter/adoptionskatte/${id}`} passHref>
-        <Link variant={"clean"} display="grid">
+        <Link variant={"clean"} display="grid" overflow={"hidden"}>
           <Box
             position="relative"
             display={"grid"}
             gridTemplateRows="repeat(7, 1fr)"
-            
+            overflow={"hidden"}
+            transition="all 0.2s ease-in"
+              _hover={{
+                transform: "scale(1.02)",
+              }}
           >
             <Image 
               gridrow={"span"} 
@@ -20,10 +24,6 @@ export default function SelectedCatArticle({acf, id}){
               alt={acf.navn} 
               layout="fill" 
               objectFit={"cover"} 
-              transition="all 0.2s ease-in"
-              _hover={{
-                transform: "scale(1.5)",
-              }}
             />
             <Flex position={"relative"} gridRow={"6/7"} width="10rem" justifyContent={"space-evenly"} padding={"8px"} bgColor={"brand.blueCta"} borderRadius="2px" color="brand.white" gap="1rem">
               <Text>{acf.navn}</Text>

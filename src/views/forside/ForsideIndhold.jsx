@@ -11,6 +11,7 @@ import HjaelpOversigt from "./HjaelpOversigt";
 
 
 export default function ForsideIndhold({sideData, katteData, nyhedsData}) {
+  
   return (
     <PageLayout>
         <Box>

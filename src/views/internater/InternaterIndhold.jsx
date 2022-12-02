@@ -6,14 +6,14 @@ import ArticleLinkGroup from "../../components/layout/ArticleLinkGroup";
 import { IoPawOutline } from "react-icons/io5";
 import { Box } from "@chakra-ui/react";
 
-export default function KatteklinikkerIndhold({ sideData, klinikData }) {
+export default function InternaterIndhold({ sideData, internatData }) {
 
     const icon = <IoPawOutline size={60} color="#D43B4D"/>
 
-    const linkdata = klinikData.map((k)=> (
+    const linkdata = internatData.map((k)=> (
         {
             name: k.acf.bynavn,
-            urlEndpoint:`/katteklinikker/${k.id}`,
+            urlEndpoint:`/om-os/internater/${k.id}`,
             icon: icon,
         }
     ))
