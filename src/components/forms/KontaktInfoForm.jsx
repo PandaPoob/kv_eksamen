@@ -1,26 +1,46 @@
 import { useState } from "react";
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
-import { Form, Formik } from "formik";
-import { SelectControl } from "formik-chakra-ui";
+import {
+  Box,
+  Button,
+  Heading,
+  Text,
+  CheckboxGroup,
+  Checkbox,
+  FormControl,
+} from "@chakra-ui/react";
+import { CheckboxContainer } from "formik-chakra-ui";
+import { Form, Formik, FieldArray, Field } from "formik";
 import * as Yup from "yup";
 import {
   FullNameField,
   FullNameFieldInitialValue,
   FullNameFieldValidation,
 } from "./formFields/FullNameField";
-import { KontaktCheckGroup } from "./formFields/KontaktCheckGroup";
+import {
+  KontaktCheckGroup,
+  KontaktCheckGroupValidation,
+  KontaktCheckGroupInitialValue,
+} from "./formFields/KontaktCheckGroup";
 function KontaktInfoForm() {
   const [formState, setFormState] = useState("");
-
+  console.log(formState);
   const initialValues = (formState) => {
     return {
       ...FullNameFieldInitialValue(formState),
+      //...KontaktCheckGroupInitialValue(formState),
+      valgteMetoder: formState?.valgteMetoder || [],
     };
   };
 
   const validationSchema = Yup.object({
     ...FullNameFieldValidation(),
+    valgteMetoder: Yup.array()
+      .min(1, "*Vælg mindst en metode du kan kontaktes på")
+      .of(Yup.string().required())
+      .required("*Vælg mindst en metode du kan kontaktes på"),
   });
+
+  const options = ["Email", "Telefon", "Facebook"];
 
   return (
     <Box bg={"brand.white"} p="2rem" boxShadow={"md"}>
@@ -50,37 +70,54 @@ function KontaktInfoForm() {
                 <FullNameField />
               </Box>
 
-              <KontaktCheckGroup setFieldValue={setFieldValue} />
-              {/*               <Box>
-                <CustomRadioGroup
-                  setFieldValue={setFieldValue}
-                  label={"Øremærke"}
-                  name={"oremaerket"}
-                  options={options}
-                  values={values.oremaerket}
-                />
-                {values.oremaerket === "Ja" ? (
-                  <Box
-                    borderBottom={"1px solid"}
-                    borderLeft="1px solid"
-                    borderRight="1px solid"
-                    borderColor="brand.borderGrey"
-                    minH="6rem"
-                    px="1rem"
-                  >
-                    <OremarkeField />
-                    <Text
-                      fontSize={"xxs"}
-                      color="brand.grey"
-                      ml="0.2rem"
-                      mt={"0.2rem"}
-                      mb="1rem"
-                    >
-                      Hvis ikke du kan aflæse øremærket lad feltet stå tomt
-                    </Text>
-                  </Box>
-                ) : null}
-              </Box> */}
+              <Field name={"valgteMetoder"}>
+                {({ field }) => (
+                  <FormControl id={"valgteMetoder"}>
+                    {options.map((option) => (
+                      <Checkbox
+                        key={option}
+                        {...field}
+                        value={option}
+                        name={"valgteMetoder"}
+                      >
+                        {option}
+                      </Checkbox>
+                    ))}
+                    {errors.valgteMetoder && touched.valgteMetoder ? (
+                      <Text
+                        fontStyle={"italic"}
+                        textAlign={"right"}
+                        color={"brand.errorMsg"}
+                        fontSize={"xxs"}
+                      >
+                        {errors.valgteMetoder}
+                      </Text>
+                    ) : null}
+                  </FormControl>
+                )}
+              </Field>
+
+              {/*        <Field name={"checkboxOption"}>
+                {({ field }) => (
+                  <CheckboxGroup {...field} value={values.checkboxOption}>
+                    <Checkbox name={"checkboxOption"} value="email">
+                      Email
+                    </Checkbox>
+                    <Checkbox name={"checkboxOption"} value="tlf">
+                      Telefon
+                    </Checkbox>
+                    <Checkbox name={"checkboxOption"} value="Facebook">
+                      Facebook
+                    </Checkbox>
+                  </CheckboxGroup>
+                )}
+              </Field> */}
+
+              {/*            <KontaktCheckGroup
+                setFieldValue={setFieldValue}
+                options={options}
+                values={values}
+              /> */}
             </Box>
 
             <Box display={"grid"} justifySelf={"center"} mt={8}>

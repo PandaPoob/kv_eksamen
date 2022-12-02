@@ -1,37 +1,34 @@
 import { InputControl, CheckboxContainer } from "formik-chakra-ui";
 import * as Yup from "yup";
-import { Field } from "formik";
-import { Checkbox, Text, CheckboxGroup, useCheckbox } from "@chakra-ui/react";
+import { Field, useField } from "formik";
+import {
+  Checkbox,
+  Text,
+  CheckboxGroup,
+  FormControl,
+  FormLabel,
+} from "@chakra-ui/react";
+import CustomCheck from "./CustomCheck";
 
 const KontaktCheckGroupInitialValue = (formState) => {
   return {
-    descrip: formState?.descrip || "",
+    kontaktmetoder: formState?.kontaktmetoder || [],
   };
 };
 
 const KontaktCheckGroupValidation = () => {
   return {
-    descrip: Yup.string()
-      .required("*Beskrivelse er påkrævet")
-      .max(500, "*Max 500 tegn"),
+    kontaktmetoder: Yup.array().min(1).of(Yup.string().required()).required(),
   };
 };
 
-function KontaktCheckGroup({ setFieldValue }) {
+function KontaktCheckGroup({ setFieldValue, options, values }) {
   return (
-    <Field name="email">
+    <Field name={name}>
       {({ field }) => (
-        <CheckboxGroup {...field}>
-          <Checkbox
-            id="email"
-            name="email"
-            onChange={(e) => setFieldValue("email", e.target.checked)}
-          >
-            <Text fontSize="sm" textAlign="left">
-              Email
-            </Text>
-          </Checkbox>
-        </CheckboxGroup>
+        <FormControl id={name}>
+          <FormLabel>Kontakt</FormLabel>
+        </FormControl>
       )}
     </Field>
   );
