@@ -12,7 +12,7 @@ export default function Abningstider({data}) {
      
        //remove empty entries (false)
        const cleanAbningstiderArr = abningstiderArr.filter((t) => t.tider !== false);
-       console.log(cleanAbningstiderArr)
+
   return (
     <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
             <Box display={"grid"} gap="1rem" pb={"1rem"}>

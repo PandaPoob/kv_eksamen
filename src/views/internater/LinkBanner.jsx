@@ -32,6 +32,6 @@ export default function LinkBanner({data}) {
   )
 }
 export const LinkWrapper = ({data, children}) => {
-    if(data.samepagelink === "Ja") return <Link href={`${data.link}`} display="flex" gap="1rem" alignItems={"center"}>{children} </Link>
+    if(data.samepagelink === "Ja") return <Link href={data.link} display="flex" gap="1rem" alignItems={"center"}>{children} </Link>
     else if (data.samepagelink === "Nej") return <NextLink href={`${data.link}`} passHref><Link variant={"clean"} gap="1rem" alignContent={"center"}>{children}</Link></NextLink>
 }

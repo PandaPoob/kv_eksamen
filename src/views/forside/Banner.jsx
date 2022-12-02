@@ -24,19 +24,19 @@ export default function Banner({bannerData}){
    },
  ]
   
-  const dividerOrientation = useBreakpointValue({ base: "horizontal", md: "vertical" })
+  const dividerOrientation = useBreakpointValue({ base: "horizontal", md:"horizontal", lg: "vertical" })
 
     return (
-      <Box as="section" display={{ base: "grid", md: "flex" }} bg={"brand.lightGrey"} justifyContent="space-evenly" gap="1rem" py="2rem" flexWrap={"wrap"}>
+      <Box as="section" display={{ base: "grid", lg: "flex" }} bg={"brand.lightGrey"} justifyContent="space-evenly" gap="1rem" py="2rem" flexWrap={"wrap"}>
         {bannerdata.map((bLink)=> (
           <>
             <NextLink key={bLink.name} href={`${bLink.urlEndpoint}`} passHref>
-              <Link variant={"clean"} gap="1rem" alignContent={"center"}>
+              <Link variant={"clean"} gap="1rem" alignItems={"center"}>
                 <Text fontWeight={"semibold"}>{bLink.name}</Text>
                 <SlArrowRight/> 
               </Link>
             </NextLink>
-            <Divider height={{ base: "0", md: "2rem" }} width={{ base: "90vw", md: "0" }} borderColor={"brand.blueCta"} orientation={dividerOrientation} />
+            <Divider height={{ base: "0", lg: "2rem" }} width={{ base: "90vw", lg: "0" }} borderColor={"brand.blueCta"} orientation={dividerOrientation} />
           </>
         ))}
       </Box>
