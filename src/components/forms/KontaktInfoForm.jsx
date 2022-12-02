@@ -27,17 +27,14 @@ function KontaktInfoForm() {
   const initialValues = (formState) => {
     return {
       ...FullNameFieldInitialValue(formState),
-      //...KontaktCheckGroupInitialValue(formState),
-      valgteMetoder: formState?.valgteMetoder || [],
+      ...KontaktCheckGroupInitialValue(formState),
+      //valgteMetoder: formState?.valgteMetoder || [],
     };
   };
 
   const validationSchema = Yup.object({
     ...FullNameFieldValidation(),
-    valgteMetoder: Yup.array()
-      .min(1, "*Vælg mindst en metode du kan kontaktes på")
-      .of(Yup.string().required())
-      .required("*Vælg mindst en metode du kan kontaktes på"),
+    ...KontaktCheckGroupValidation(),
   });
 
   const options = ["Email", "Telefon", "Facebook"];
@@ -70,54 +67,11 @@ function KontaktInfoForm() {
                 <FullNameField />
               </Box>
 
-              <Field name={"valgteMetoder"}>
-                {({ field }) => (
-                  <FormControl id={"valgteMetoder"}>
-                    {options.map((option) => (
-                      <Checkbox
-                        key={option}
-                        {...field}
-                        value={option}
-                        name={"valgteMetoder"}
-                      >
-                        {option}
-                      </Checkbox>
-                    ))}
-                    {errors.valgteMetoder && touched.valgteMetoder ? (
-                      <Text
-                        fontStyle={"italic"}
-                        textAlign={"right"}
-                        color={"brand.errorMsg"}
-                        fontSize={"xxs"}
-                      >
-                        {errors.valgteMetoder}
-                      </Text>
-                    ) : null}
-                  </FormControl>
-                )}
-              </Field>
-
-              {/*        <Field name={"checkboxOption"}>
-                {({ field }) => (
-                  <CheckboxGroup {...field} value={values.checkboxOption}>
-                    <Checkbox name={"checkboxOption"} value="email">
-                      Email
-                    </Checkbox>
-                    <Checkbox name={"checkboxOption"} value="tlf">
-                      Telefon
-                    </Checkbox>
-                    <Checkbox name={"checkboxOption"} value="Facebook">
-                      Facebook
-                    </Checkbox>
-                  </CheckboxGroup>
-                )}
-              </Field> */}
-
-              {/*            <KontaktCheckGroup
-                setFieldValue={setFieldValue}
+              <KontaktCheckGroup
                 options={options}
-                values={values}
-              /> */}
+                errors={errors}
+                touched={touched}
+              />
             </Box>
 
             <Box display={"grid"} justifySelf={"center"} mt={8}>

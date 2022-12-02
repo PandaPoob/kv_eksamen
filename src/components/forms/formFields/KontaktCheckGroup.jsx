@@ -12,22 +12,44 @@ import CustomCheck from "./CustomCheck";
 
 const KontaktCheckGroupInitialValue = (formState) => {
   return {
-    kontaktmetoder: formState?.kontaktmetoder || [],
+    valgteMetoder: formState?.valgteMetoder || [],
   };
 };
 
 const KontaktCheckGroupValidation = () => {
   return {
-    kontaktmetoder: Yup.array().min(1).of(Yup.string().required()).required(),
+    valgteMetoder: Yup.array()
+      .min(1, "*Vælg mindst en metode du kan kontaktes på")
+      .of(Yup.string().required())
+      .required("*Vælg mindst en metode du kan kontaktes på"),
   };
 };
 
-function KontaktCheckGroup({ setFieldValue, options, values }) {
+function KontaktCheckGroup({ options, errors, touched }) {
   return (
-    <Field name={name}>
+    <Field name={"valgteMetoder"}>
       {({ field }) => (
-        <FormControl id={name}>
-          <FormLabel>Kontakt</FormLabel>
+        <FormControl id={"valgteMetoder"}>
+          {options.map((option) => (
+            <Checkbox
+              key={option}
+              {...field}
+              value={option}
+              name={"valgteMetoder"}
+            >
+              {option}
+            </Checkbox>
+          ))}
+          {errors.valgteMetoder && touched.valgteMetoder ? (
+            <Text
+              fontStyle={"italic"}
+              textAlign={"right"}
+              color={"brand.errorMsg"}
+              fontSize={"xxs"}
+            >
+              {errors.valgteMetoder}
+            </Text>
+          ) : null}
         </FormControl>
       )}
     </Field>
