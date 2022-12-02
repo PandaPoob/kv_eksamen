@@ -1,9 +1,9 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
-import SponsorArticle from "./SponsorArticleA";
+import SponsorArticle from "./SponsorArticleB";
 
-export default function Hovedsponsorer({ data }) {
-  let hovedsponsorer = data.filter((e) => {
-    return e.acf.sponsor_type === "hoved";
+export default function Potesponsorer({ data }) {
+  let potesponsorer = data.filter((e) => {
+    return e.acf.sponsor_type === "pote";
   });
 
   return (
@@ -15,16 +15,10 @@ export default function Hovedsponsorer({ data }) {
         mb={{ base: "3rem", lg: "5rem" }}
         textAlign={"center"}
       >
-        Hovedsponsorer
+        Potesponsorer
       </Heading>
-
-      <Flex
-        wrap="wrap"
-        gap="2rem"
-        justifyContent={"center"}
-        /*   px={{ base: "1rem", md: "2rem" }} */
-      >
-        {hovedsponsorer.map((sponsor) => {
+      <Flex wrap="wrap" gap="2rem" justifyContent={"center"}>
+        {potesponsorer.map((sponsor) => {
           return <SponsorArticle key={sponsor.id} {...sponsor} />;
         })}
       </Flex>
