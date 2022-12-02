@@ -50,7 +50,7 @@ import {
   ImageFieldInitialValue,
 } from "./formFields/ImageField";
 
-function KatteInfoForm({ onCallback }) {
+function EfterlysForm({ onCallback }) {
   const [formState, setFormState] = useState("");
 
   const initialValues = (formState) => {
@@ -60,7 +60,6 @@ function KatteInfoForm({ onCallback }) {
       ...ChipnummerFieldInitialValue(formState),
       ...DatoFieldInitialValue(formState),
       ...ImageFieldInitialValue(formState),
-      // ...FileFieldInitialValue(formState),
       ...DescripFieldInitialValue(formState),
       ...PostnummerFieldInitialValue(formState),
       ...ByFieldInitialValue(formState),
@@ -77,7 +76,6 @@ function KatteInfoForm({ onCallback }) {
     ...ChipnummerFieldValidation(),
     ...DatoFieldValidation(),
     ...ImageFieldValidation(),
-    //...FileFieldValidation(),
     ...DescripFieldValidation(),
     ...PostnummerFieldValidation(),
     ...ByFieldValidation(),
@@ -99,6 +97,7 @@ function KatteInfoForm({ onCallback }) {
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
           actions.setSubmitting(false);
+          setFormState(values);
           onCallback(values);
         }}
       >
@@ -234,4 +233,4 @@ function KatteInfoForm({ onCallback }) {
   );
 }
 
-export default KatteInfoForm;
+export default EfterlysForm;

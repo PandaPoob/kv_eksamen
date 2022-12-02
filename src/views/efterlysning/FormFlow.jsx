@@ -1,4 +1,10 @@
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  Button,
+  BreadcrumbSeparator,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import Step1 from "../../components/efterlyst+fremlyst/formsteps/Step1";
 import Step2 from "../../components/efterlyst+fremlyst/formsteps/Step2";
@@ -24,6 +30,7 @@ function FormFlow() {
         <Step2
           currenStepIndex={currenStepIndex}
           setCurrentStepIndex={setCurrentStepIndex}
+          setFlowState={setFlowState}
         />
       ),
     },
@@ -37,7 +44,24 @@ function FormFlow() {
     },
   ];
 
-  return <Box>{steps[currenStepIndex].component}</Box>;
+  return (
+    <>
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <Button onClick={() => setCurrentStepIndex(0)}>Step 1</Button>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem>
+          <Button onClick={() => setCurrentStepIndex(1)}>Step 2</Button>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          <Button onClick={() => setCurrentStepIndex(2)}>Step 3</Button>
+        </BreadcrumbItem>
+      </Breadcrumb>
+      <Box>{steps[currenStepIndex].component}</Box>
+    </>
+  );
 }
 
 export default FormFlow;

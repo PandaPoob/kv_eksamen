@@ -1,4 +1,4 @@
-import { InputControl, TextareaControl } from "formik-chakra-ui";
+import { TextareaControl } from "formik-chakra-ui";
 import * as Yup from "yup";
 
 const DescripFieldInitialValue = (formState) => {

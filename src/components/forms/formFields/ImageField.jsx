@@ -94,7 +94,7 @@ function ImageField({ setFieldValue, touched, errors, values }) {
               accept="image/png, image/jpeg, image/webp"
               value={undefined}
               onChange={(event) => {
-                console.log("file", event.currentTarget.files[0]);
+                //console.log("file", event.currentTarget.files[0]);
                 setFieldValue("file", event.currentTarget.files[0]);
               }}
             />
