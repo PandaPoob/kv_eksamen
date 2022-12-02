@@ -8,9 +8,9 @@ import {
   Checkbox,
   FormControl,
 } from "@chakra-ui/react";
-import { CheckboxContainer } from "formik-chakra-ui";
 import { Form, Formik, FieldArray, Field } from "formik";
 import * as Yup from "yup";
+import { CheckboxSingleControl, InputControl } from "formik-chakra-ui";
 import {
   FullNameField,
   FullNameFieldInitialValue,
@@ -21,22 +21,38 @@ import {
   KontaktCheckGroupValidation,
   KontaktCheckGroupInitialValue,
 } from "./formFields/KontaktCheckGroup";
+import {
+  EmailFieldInitialValue,
+  EmailFieldValidation,
+} from "./formFields/EmailField";
+
 function KontaktInfoForm() {
   const [formState, setFormState] = useState("");
-  console.log(formState);
+
   const initialValues = (formState) => {
     return {
       ...FullNameFieldInitialValue(formState),
-      ...KontaktCheckGroupInitialValue(formState),
+      emailValgt: formState?.emailValgt || false,
+      email: formState?.email || "",
+      //...KontaktCheckGroupInitialValue(formState),
+      //...EmailFieldInitialValue(formState),
       //valgteMetoder: formState?.valgteMetoder || [],
     };
   };
 
   const validationSchema = Yup.object({
     ...FullNameFieldValidation(),
-    ...KontaktCheckGroupValidation(),
+    emailValgt: Yup.boolean,
+    email: Yup.string()
+      .email()
+      .when("emailValgt", {
+        is: true,
+        then: Yup.string().required("Must enter email address"),
+      }),
+    //...KontaktCheckGroupValidation(),
+    //...EmailFieldValidation(formState.valgteMetoder),
   });
-
+  console.log(formState.fullName);
   const options = ["Email", "Telefon", "Facebook"];
 
   return (
@@ -67,11 +83,21 @@ function KontaktInfoForm() {
                 <FullNameField />
               </Box>
 
-              <KontaktCheckGroup
-                options={options}
+              <CheckboxSingleControl name="emailValgt" label="Email" />
+              {values.emailValgt ? (
+                <InputControl
+                  name="email"
+                  label="Emailfelt"
+                  inputProps={{ autoComplete: "off" }}
+                  labelProps={{ pb: 1, visibility: "hidden" }}
+                />
+              ) : null}
+
+              {/*      <KontaktCheckGroup
+                valgteMetoder={values.valgteMetoder}
                 errors={errors}
                 touched={touched}
-              />
+              /> */}
             </Box>
 
             <Box display={"grid"} justifySelf={"center"} mt={8}>

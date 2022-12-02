@@ -7,8 +7,10 @@ import {
   CheckboxGroup,
   FormControl,
   FormLabel,
+  Box,
 } from "@chakra-ui/react";
 import CustomCheck from "./CustomCheck";
+import { EmailField } from "./EmailField";
 
 const KontaktCheckGroupInitialValue = (formState) => {
   return {
@@ -25,34 +27,48 @@ const KontaktCheckGroupValidation = () => {
   };
 };
 
-function KontaktCheckGroup({ options, errors, touched }) {
+function KontaktCheckGroup({ valgteMetoder, errors, touched }) {
   return (
-    <Field name={"valgteMetoder"}>
-      {({ field }) => (
-        <FormControl id={"valgteMetoder"}>
-          {options.map((option) => (
-            <Checkbox
-              key={option}
-              {...field}
-              value={option}
-              name={"valgteMetoder"}
-            >
-              {option}
-            </Checkbox>
-          ))}
-          {errors.valgteMetoder && touched.valgteMetoder ? (
-            <Text
-              fontStyle={"italic"}
-              textAlign={"right"}
-              color={"brand.errorMsg"}
-              fontSize={"xxs"}
-            >
-              {errors.valgteMetoder}
-            </Text>
-          ) : null}
-        </FormControl>
-      )}
-    </Field>
+    <Box>
+      <Field name={"valgteMetoder"}>
+        {({ field }) => (
+          <FormControl id={"valgteMetoder"}>
+            <>
+              <Checkbox {...field} value={"email"} name={"valgteMetoder"}>
+                Email
+              </Checkbox>
+              {valgteMetoder.includes("email") ? (
+                <EmailField valgteMetoder={valgteMetoder} />
+              ) : (
+                console.log("no email")
+              )}
+            </>
+            <>
+              <Checkbox {...field} value={"telefon"} name={"valgteMetoder"}>
+                Telefon
+              </Checkbox>
+            </>
+
+            <>
+              <Checkbox {...field} value={"facebook"} name={"valgteMetoder"}>
+                Facebook
+              </Checkbox>
+            </>
+
+            {errors.valgteMetoder && touched.valgteMetoder ? (
+              <Text
+                fontStyle={"italic"}
+                textAlign={"right"}
+                color={"brand.errorMsg"}
+                fontSize={"xxs"}
+              >
+                {errors.valgteMetoder}
+              </Text>
+            ) : null}
+          </FormControl>
+        )}
+      </Field>
+    </Box>
   );
 }
 
