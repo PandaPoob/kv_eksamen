@@ -14,7 +14,7 @@ export default function RadioBelobCard(props) {
         <Box
           {...checkbox}
           bg="brand.lightGrey"
-          width={"22rem"}
+          width={{base: "20rem", md: "22rem"}}
           cursor='pointer'
           borderWidth='1px'
           borderRadius='md'

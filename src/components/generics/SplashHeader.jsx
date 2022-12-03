@@ -34,7 +34,7 @@ function SplashHeader({acf, imgPos = "center", textPos="left", height="70vh"}) {
           color="brand.white"
           gap="1rem"
           py={"2rem"}
-          px="2rem"
+          px={{base: "2rem", md: "4rem"}}
           textAlign={textPos}
         >
           {overtekstChecker() && (
