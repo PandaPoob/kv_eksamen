@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex } from "@chakra-ui/react";
-import ArticleEF from './ArticleEF';
+import ArticleEF from '../articles/ArticleEF';
 
 export default function EFkatteliste({ EFdata, type, url, landsdelsfilter, kon, maerket, chippet, searchInput, setSearchInput }) {
 

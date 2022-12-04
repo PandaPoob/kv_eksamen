@@ -1,5 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import NewsArticle from "../../components/generics/NewsArticle";
+import NewsArticle from "../../components/articles/NewsArticle";
 import url from "../../api/url";
 import PageLayout from "../../components/layout/PageLayout";
 

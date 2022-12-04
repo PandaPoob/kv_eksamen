@@ -66,6 +66,8 @@ function AdoptionsKat({ katData }) {
                 perPage={{ base: 1 }}
                 perMoveVal={{ base: 1 }}
                 CarouselListItem={CarouselImage}
+                customP={{ left: 0, right: "2rem" }}
+                pos={"center"}
               />
             )}
 
