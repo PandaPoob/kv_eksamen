@@ -18,11 +18,10 @@ const CatNameFieldValidation = () => {
 function CatNameField() {
   return (
     <InputControl
+      minH="5.8rem"
       name="catname"
       label="Kattens navn"
       inputProps={{ autoComplete: "off" }}
-      labelProps={{ pb: 1 }}
-      mt={4}
     />
   );
 }

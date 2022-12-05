@@ -23,6 +23,7 @@ const DatoFieldValidation = () => {
 function DatoField() {
   return (
     <InputControl
+      minH="5.8rem"
       name="dato"
       label="Dato"
       inputProps={{

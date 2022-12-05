@@ -16,6 +16,7 @@ const ByFieldValidation = () => {
 function ByField() {
   return (
     <InputControl
+      minH="5.8rem"
       name="by"
       label="By"
       inputProps={{ autoComplete: "off" }}

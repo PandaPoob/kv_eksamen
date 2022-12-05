@@ -20,6 +20,7 @@ const ChipnummerFieldValidation = () => {
 function ChipnummerField() {
   return (
     <InputControl
+      minH="5.8rem"
       name="chipnummer"
       label="Chipnummer"
       inputProps={{ autoComplete: "off" }}

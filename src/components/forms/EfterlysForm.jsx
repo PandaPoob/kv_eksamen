@@ -3,6 +3,7 @@ import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import { SelectControl } from "formik-chakra-ui";
 import * as Yup from "yup";
+import CatBreadCrumb from "../../components/efterlyst+fremlyst/formsteps/CatBreadCrumb";
 import {
   CatNameField,
   CatNameFieldInitialValue,
@@ -83,7 +84,8 @@ function EfterlysForm({ step1State, onCallback }) {
 
   return (
     <Box bg={"brand.white"} p="2rem" boxShadow={"md"} gridRow={{ lg: "1/2" }}>
-      <Heading as="h2" size={"heading4"} textAlign="center">
+      <CatBreadCrumb step={"step1"} />
+      <Heading as="h2" size={"heading3"} textAlign="center" py={"2rem"}>
         Kattens informationer
       </Heading>
       <Formik
@@ -104,17 +106,25 @@ function EfterlysForm({ step1State, onCallback }) {
           touched,
         }) => (
           <Form onSubmit={handleSubmit} autoComplete={"off"}>
-            <Box display="grid" gap={"1rem"}>
-              <Box minH="6rem">
+            <Box display="grid" gap={"0.5rem"}>
+              <Box
+                display="grid"
+                gap={"1rem"}
+                gridTemplateColumns={{ lg: "1fr 1fr" }}
+              >
                 <CatNameField />
-              </Box>
-              <SelectControl name="kon" label="Kattens køn" variant={"outline"}>
-                <option value={""}>Vælg køn</option>
-                <option value={"Hunkat"}>Hunkat</option>
-                <option value={"Hankat"}>Hankat</option>
-              </SelectControl>
 
-              <Box>
+                <SelectControl
+                  name="kon"
+                  label="Kattens køn"
+                  variant={"outline"}
+                >
+                  <option value={""}>Vælg køn</option>
+                  <option value={"Hunkat"}>Hunkat</option>
+                  <option value={"Hankat"}>Hankat</option>
+                </SelectControl>
+              </Box>
+              <Box mb={"1rem"}>
                 <CustomRadioGroup
                   setFieldValue={setFieldValue}
                   label={"Øremærke"}
@@ -145,7 +155,7 @@ function EfterlysForm({ step1State, onCallback }) {
                 ) : null}
               </Box>
 
-              <Box>
+              <Box mb={"1rem"}>
                 <CustomRadioGroup
                   setFieldValue={setFieldValue}
                   label={"Chipnummer"}
@@ -182,6 +192,7 @@ function EfterlysForm({ step1State, onCallback }) {
                 touched={touched}
                 values={values}
               />
+
               <DescripField />
 
               <Heading as="h2" size={"heading4"}>
@@ -195,6 +206,7 @@ function EfterlysForm({ step1State, onCallback }) {
               <ByField />
 
               <SelectControl
+                minH="5.8rem"
                 name="landsdel"
                 label="Landsdel"
                 variant={"outline"}

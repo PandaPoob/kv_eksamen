@@ -8,7 +8,6 @@ import {
   AccordionIcon,
   Heading,
   Text,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import Image from "next/image";
@@ -18,8 +17,6 @@ import GodkendtTxt from "../../../assets/images/cattxtright.webp";
 import IkkeGodkendtTxt from "../../../assets/images/cattxtwrong.webp";
 
 function Step1Notice() {
-  const isMobile = useBreakpointValue({ base: true, lg: false });
-
   return (
     <Box gridColumn={{ lg: "2/3" }}>
       <Accordion

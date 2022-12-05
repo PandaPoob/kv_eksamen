@@ -19,6 +19,7 @@ const PostnummerFieldValidation = () => {
 function PostnummerField() {
   return (
     <InputControl
+      minH="5.8rem"
       name="postnummer"
       label="Postnummer"
       inputProps={{ autoComplete: "off" }}

@@ -92,6 +92,21 @@ const button = {
         transform: "scale(1)",
       },
     },
+
+    breadcrumb: {
+      bg: "none",
+      color: "brand.blue",
+      fontSize: "xs",
+      fontWeight: "semibold",
+
+      _hover: {
+        transform: "scale(1)",
+      },
+
+      _disabled: {
+        cursor: "auto",
+      },
+    },
   },
 };
 

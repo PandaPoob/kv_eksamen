@@ -18,6 +18,7 @@ const DescripFieldValidation = () => {
 function DescripField() {
   return (
     <TextareaControl
+      minH="12rem"
       name="descrip"
       label="Beskrivelse"
       textareaProps={{ autoComplete: "off", variant: "form" }}

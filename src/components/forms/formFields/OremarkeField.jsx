@@ -19,6 +19,7 @@ const OremarkeFieldValidation = () => {
 function OremarkeField() {
   return (
     <InputControl
+      minH="5.8rem"
       name="oremaerkenr"
       label="Øremærke"
       inputProps={{ autoComplete: "off" }}
