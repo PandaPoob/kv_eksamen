@@ -8,38 +8,86 @@ import {
   AccordionIcon,
   Heading,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
+import { BsChevronDown } from "react-icons/bs";
+import Image from "next/image";
+import GodkendtImg from "../../../assets/images/catimgright.webp";
+import IkkeGodkendtImg from "../../../assets/images/catimgwrong.webp";
+import GodkendtTxt from "../../../assets/images/cattxtright.webp";
+import IkkeGodkendtTxt from "../../../assets/images/cattxtwrong.webp";
 
 function Step1Notice() {
+  const isMobile = useBreakpointValue({ base: true, lg: false });
+
   return (
-    <Box
-      bg={"brand.white"}
-      p="2rem"
-      boxShadow={"md"}
-      gridColumn={{ lg: "2/3" }}
-    >
-      <Accordion allowToggle maxW={"70ch"}>
-        <AccordionItem>
-          <AccordionButton>
+    <Box gridColumn={{ lg: "2/3" }}>
+      <Accordion
+        allowToggle
+        defaultIndex={[0]}
+        bg={"brand.white"}
+        boxShadow={"md"}
+      >
+        <AccordionItem border={"none"}>
+          <AccordionButton
+            fontSize={"sm"}
+            fontWeight="bold"
+            p="2rem"
+            justifyContent={"space-between"}
+          >
             Gode råd
-            <AccordionIcon />
+            <AccordionIcon as={BsChevronDown} color="brand.blue" w={6} h={6} />
           </AccordionButton>
 
-          <AccordionPanel>
-            <Heading as={"h3"} size="heading4">
+          <AccordionPanel px="2rem">
+            <Heading as={"h3"} size="heading5">
               Billeder
             </Heading>
-            <Text>
+            <Text maxW={"70ch"} mb="2rem">
               Nu bedre billede desto større chance er der for, at nogen
               genkender katten. Så for at øge dine chancer råder vi til at
               uploade et klart billede hvor man kan se hele katten. Sørg for at
               så meget af katten er synlig på billede. Hvis muligt så sørg også
               for at billedet er god kvalitet og ikke sløret.
             </Text>
-            <Heading as={"h3"} size="heading4">
+
+            <Box
+              display={"grid"}
+              gridTemplateColumns={"59% 41%"}
+              height={"100%"}
+              gap={"1rem"}
+              w={"100%"}
+            >
+              <Box
+                position="relative"
+                height={{ base: "8rem", img: "12rem", lg: "8rem", xl: "11rem" }}
+              >
+                <Image
+                  src={GodkendtImg}
+                  alt={"Eksempel på godt billede"}
+                  layout="fill"
+                  objectFit="contain"
+                  objectPosition="left top"
+                />
+              </Box>
+              <Box
+                position="relative"
+                height={{ base: "8rem", img: "12rem", lg: "8rem", xl: "11rem" }}
+              >
+                <Image
+                  src={IkkeGodkendtImg}
+                  alt={"Eksempel på dårligt billede"}
+                  layout="fill"
+                  objectFit="contain"
+                  objectPosition="left top"
+                />
+              </Box>
+            </Box>
+
+            <Heading as={"h3"} size="heading5" mt="2rem">
               Beskrivelser
             </Heading>
-            <Text>
+            <Text maxW={"70ch"} mb="2rem">
               Vi råder også til at give en god beskrivelse af kattens udseende,
               da dette også øger chancen for at katten bliver genkendt. Både
               pelstype, pelsfarve, øjenfarve mm. kan være afgørende. Tænk også
@@ -48,6 +96,32 @@ function Step1Notice() {
               eller hjælpsomme da katten kan være skræmt og i uvant territorium
               hvilket vil sige dens adfærd kan være anerledes.
             </Text>
+            <Box
+              display={"grid"}
+              gridTemplateColumns={{ md: "58% 42%" }}
+              gap={"0.5rem"}
+              width={"100%"}
+              height={"100%"}
+            >
+              <Box position="relative" height={{ base: "16rem", md: "14rem" }}>
+                <Image
+                  src={GodkendtTxt}
+                  alt={"Eksempel på en god beskrivelse"}
+                  layout="fill"
+                  objectFit="contain"
+                  objectPosition="left top"
+                />
+              </Box>
+              <Box position="relative" height={{ base: "16rem", md: "14rem" }}>
+                <Image
+                  src={IkkeGodkendtTxt}
+                  alt={"Eksempel på en dårlig beskrivelse"}
+                  layout="fill"
+                  objectFit="contain"
+                  objectPosition="left top"
+                />
+              </Box>
+            </Box>
           </AccordionPanel>
         </AccordionItem>
       </Accordion>

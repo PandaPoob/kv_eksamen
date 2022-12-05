@@ -83,7 +83,7 @@ function EfterlysForm({ step1State, onCallback }) {
 
   return (
     <Box bg={"brand.white"} p="2rem" boxShadow={"md"} gridRow={{ lg: "1/2" }}>
-      <Heading as="h2" size={"heading4"}>
+      <Heading as="h2" size={"heading4"} textAlign="center">
         Kattens informationer
       </Heading>
       <Formik
