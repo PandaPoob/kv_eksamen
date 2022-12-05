@@ -20,11 +20,6 @@ import {
   ChipnummerFieldValidation,
 } from "./formFields/ChipnummerField";
 import {
-  FileField,
-  FileFieldInitialValue,
-  FileFieldValidation,
-} from "./formFields/FileField";
-import {
   DescripField,
   DescripFieldInitialValue,
   DescripFieldValidation,
@@ -50,23 +45,22 @@ import {
   ImageFieldInitialValue,
 } from "./formFields/ImageField";
 
-function EfterlysForm({ onCallback }) {
-  const [formState, setFormState] = useState("");
-
-  const initialValues = (formState) => {
+function EfterlysForm({ step1State, onCallback }) {
+  //const [formState, setFormState] = useState("");
+  const initialValues = (step1State) => {
     return {
-      ...CatNameFieldInitialValue(formState),
-      ...OremarkeFieldInitialValue(formState),
-      ...ChipnummerFieldInitialValue(formState),
-      ...DatoFieldInitialValue(formState),
-      ...ImageFieldInitialValue(formState),
-      ...DescripFieldInitialValue(formState),
-      ...PostnummerFieldInitialValue(formState),
-      ...ByFieldInitialValue(formState),
-      kon: formState?.kon || "",
-      oremaerket: formState?.oremaerket || "Ja",
-      chippet: formState?.chippet || "Ja",
-      landsdel: formState?.landsdel || "",
+      ...CatNameFieldInitialValue(step1State),
+      ...OremarkeFieldInitialValue(step1State),
+      ...ChipnummerFieldInitialValue(step1State),
+      ...DatoFieldInitialValue(step1State),
+      ...ImageFieldInitialValue(step1State),
+      ...DescripFieldInitialValue(step1State),
+      ...PostnummerFieldInitialValue(step1State),
+      ...ByFieldInitialValue(step1State),
+      kon: step1State?.kon || "",
+      oremaerket: step1State?.oremaerket || "Ja",
+      chippet: step1State?.chippet || "Ja",
+      landsdel: step1State?.landsdel || "",
     };
   };
 
@@ -88,16 +82,16 @@ function EfterlysForm({ onCallback }) {
   const options = ["Ja", "Nej", "Ved ikke"];
 
   return (
-    <Box bg={"brand.white"} p="2rem" boxShadow={"md"}>
-      <Heading as="h2" size={"heading3"}>
+    <Box bg={"brand.white"} p="2rem" boxShadow={"md"} gridRow={{ lg: "1/2" }}>
+      <Heading as="h2" size={"heading4"}>
         Kattens informationer
       </Heading>
       <Formik
-        initialValues={initialValues(formState)}
+        initialValues={initialValues(step1State)}
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
+          console.log(values);
           actions.setSubmitting(false);
-          setFormState(values);
           onCallback(values);
         }}
       >
@@ -190,8 +184,8 @@ function EfterlysForm({ onCallback }) {
               />
               <DescripField />
 
-              <Heading as="h2" size={"heading3"}>
-                Kattens er sidst set
+              <Heading as="h2" size={"heading4"}>
+                Katten er sidst set
               </Heading>
 
               <DatoField values={values} />

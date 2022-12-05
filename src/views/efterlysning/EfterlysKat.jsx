@@ -69,15 +69,16 @@ function EfterlysKat() {
       </Head>
       <Box
         bg="brand.lightGrey"
-        display={"grid"}
-        justifyContent="center"
         py={"4rem"}
         px="1rem"
+        display="flex"
+        justifyContent={"center"}
       >
-        <Box pb={"4rem"}>
+        <Box pb={"4rem"} maxW={"container.xxl"} flexGrow={1}>
           <Heading as={"h1"} size={"heading2"}>
             Her kan du efterlyse din kat
           </Heading>
+
           <Text>
             Inden du efterlyser din kat er det en god idé at tjekke vores liste
             over fundne/fremlyste katte{" "}
@@ -85,8 +86,9 @@ function EfterlysKat() {
               <Link variant={"inLink"}>her</Link>
             </NextLink>
           </Text>
+
+          <FormFlow />
         </Box>
-        <FormFlow />
       </Box>
     </PageLayout>
   );

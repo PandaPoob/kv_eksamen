@@ -30,7 +30,6 @@ function DatoField() {
         type: "date",
       }}
       labelProps={{ pb: 1 }}
-      mt={4}
     />
   );
 }

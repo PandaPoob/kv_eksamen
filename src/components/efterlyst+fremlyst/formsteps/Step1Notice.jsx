@@ -12,7 +12,12 @@ import {
 
 function Step1Notice() {
   return (
-    <Box bg={"brand.white"} p="2rem" boxShadow={"md"}>
+    <Box
+      bg={"brand.white"}
+      p="2rem"
+      boxShadow={"md"}
+      gridColumn={{ lg: "2/3" }}
+    >
       <Accordion allowToggle maxW={"70ch"}>
         <AccordionItem>
           <AccordionButton>
