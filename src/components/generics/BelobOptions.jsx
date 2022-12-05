@@ -1,11 +1,18 @@
 import React from 'react'
 import RadioCard from './RadioBelobCard'
-import { VStack } from '@chakra-ui/react'
+import { Input, VStack } from '@chakra-ui/react'
 import { useRadioGroup } from '@chakra-ui/react'
 import { Text, Flex, Box } from '@chakra-ui/react'
 import { BsHeart } from 'react-icons/bs';
+import { useState } from 'react'
 
 export default function BelobOptions({data, display, columns}) {
+
+  const [andetValue, setAndetValue] = useState("");
+
+  const setValue = (e) => {
+    setAndetValue(e.target.value)
+  }
 
 
 const belobmulighederArr = Object.entries(data).map((e) => ({
@@ -51,6 +58,7 @@ let findVaerdi = findOptions.map(({vaerdi,...rest})=> {
                         {findVaerdi.find((v, index)=> (
                             index === optindex ? <Text key={v.id}>{v.vaerdi}</Text> : null
                         ))}
+                        {optindex === 5 ? <Input itemType='string' type="num" value={andetValue} onChange={setValue} fontSize={"smaller"} placeholder="Fx 800" bg="brand.white"/> : null}
                     </Box>
               </Flex>
             </RadioCard>
