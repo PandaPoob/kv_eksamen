@@ -20,10 +20,10 @@ function PostnummerField() {
   return (
     <InputControl
       minH="5.8rem"
+      gridColumn={{ lg: "2/3" }}
       name="postnummer"
       label="Postnummer"
       inputProps={{ autoComplete: "off" }}
-      labelProps={{ fontSize: "xxs" }}
     />
   );
 }

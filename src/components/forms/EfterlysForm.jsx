@@ -195,32 +195,43 @@ function EfterlysForm({ step1State, onCallback }) {
 
               <DescripField />
 
-              <Heading as="h2" size={"heading4"}>
+              <Heading as="h2" size={"heading4"} textAlign="center">
                 Katten er sidst set
               </Heading>
 
-              <DatoField values={values} />
-
-              <PostnummerField />
-
-              <ByField />
-
-              <SelectControl
-                minH="5.8rem"
-                name="landsdel"
-                label="Landsdel"
-                variant={"outline"}
+              <Box
+                display={"grid"}
+                mt="1rem"
+                gridTemplateColumns={{ lg: "1fr 1fr" }}
+                gap={"1rem"}
               >
-                <option value={""}>Vælg landsdel</option>
-                <option value={"København og omegn"}>København og omegn</option>
-                <option value={"Sjælland og øerne"}>Sjælland og øerne</option>
-                <option value={"Fyn og øerne"}>Fyn og øerne</option>
-                <option value={"Sønderjylland"}>Sønderjylland</option>
-                <option value={"Midtjylland"}>Midtjylland</option>
-                <option value={"Nordjylland"}>Nordjylland</option>
-                <option value={"Bornholm"}>Bornholm</option>
-                <option value={"Udlandet"}>Udlandet</option>
-              </SelectControl>
+                <DatoField values={values} />
+
+                <PostnummerField />
+
+                <ByField />
+
+                <SelectControl
+                  minH="5.8rem"
+                  name="landsdel"
+                  label="Landsdel"
+                  variant={"outline"}
+                  gridRow={{ lg: "1/2" }}
+                  gridColumn={{ lg: "2/3" }}
+                >
+                  <option value={""}>Vælg landsdel</option>
+                  <option value={"København og omegn"}>
+                    København og omegn
+                  </option>
+                  <option value={"Sjælland og øerne"}>Sjælland og øerne</option>
+                  <option value={"Fyn og øerne"}>Fyn og øerne</option>
+                  <option value={"Sønderjylland"}>Sønderjylland</option>
+                  <option value={"Midtjylland"}>Midtjylland</option>
+                  <option value={"Nordjylland"}>Nordjylland</option>
+                  <option value={"Bornholm"}>Bornholm</option>
+                  <option value={"Udlandet"}>Udlandet</option>
+                </SelectControl>
+              </Box>
             </Box>
 
             <Box display={"grid"} justifySelf={"center"} mt={8}>

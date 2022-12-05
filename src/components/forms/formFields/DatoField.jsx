@@ -30,7 +30,6 @@ function DatoField() {
         autoComplete: "off",
         type: "date",
       }}
-      labelProps={{ pb: 1 }}
     />
   );
 }

@@ -16,11 +16,11 @@ const ByFieldValidation = () => {
 function ByField() {
   return (
     <InputControl
+      gridRow={{ lg: "2/3" }}
       minH="5.8rem"
       name="by"
       label="By"
       inputProps={{ autoComplete: "off" }}
-      labelProps={{ pb: 1 }}
     />
   );
 }
