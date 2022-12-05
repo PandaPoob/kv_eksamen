@@ -10,7 +10,11 @@ import {
 } from "@chakra-ui/react";
 import { Form, Formik, FieldArray, Field } from "formik";
 import * as Yup from "yup";
-import { CheckboxSingleControl, InputControl } from "formik-chakra-ui";
+import {
+  CheckboxSingleControl,
+  InputControl,
+  CheckboxContainer,
+} from "formik-chakra-ui";
 import {
   FullNameField,
   FullNameFieldInitialValue,
@@ -34,23 +38,40 @@ function KontaktInfoForm() {
       ...FullNameFieldInitialValue(formState),
       emailValgt: formState?.emailValgt || false,
       email: formState?.email || "",
-      //...KontaktCheckGroupInitialValue(formState),
-      //...EmailFieldInitialValue(formState),
-      //valgteMetoder: formState?.valgteMetoder || [],
+      tlfValgt: formState?.tlfValgt || false,
+      tlf: formState?.tlf || "",
+      fbValgt: formState?.tlfValgt || false,
+      fbNavn: formState?.fbNavn || "",
+      fbLink: formState?.fbLink || "",
     };
   };
 
   const validationSchema = Yup.object({
     ...FullNameFieldValidation(),
-    emailValgt: Yup.boolean,
-    email: Yup.string()
-      .email()
-      .when("emailValgt", {
-        is: true,
-        then: Yup.string().required("Must enter email address"),
-      }),
-    //...KontaktCheckGroupValidation(),
-    //...EmailFieldValidation(formState.valgteMetoder),
+    emailValgt: Yup.boolean(),
+    email: Yup.string().when("emailValgt", {
+      is: (emailValgt) => emailValgt === true,
+      then: Yup.string()
+        .required("*Udfyld venligst din email")
+        .email("*Dette er ikke en gyldig email"),
+    }),
+    tlfValgt: Yup.boolean(),
+    tlf: Yup.string().when("tlfValgt", {
+      is: (tlfValgt) => tlfValgt === true,
+      then: Yup.string()
+        .required("*Udfyld venligst dit telefonnummer")
+        .matches(/^[0-9]+$/, "*Et telefonnummer består af tal")
+        .length(8, "*Et telefonnummer består af 8 cifre"),
+    }),
+    fbValgt: Yup.boolean(),
+    fbNavn: Yup.string().when("fbValgt", {
+      is: (fbValgt) => fbValgt === true,
+      then: Yup.string().required("*Udfyld venligst dit Facebook navn"),
+    }),
+    fbLink: Yup.string().when("fbValgt", {
+      is: (fbValgt) => fbValgt === true,
+      then: Yup.string().required("*Link venligst din Facebook profil"),
+    }),
   });
   console.log(formState.fullName);
   const options = ["Email", "Telefon", "Facebook"];
@@ -83,14 +104,65 @@ function KontaktInfoForm() {
                 <FullNameField />
               </Box>
 
+              <CheckboxContainer
+                label="Hvordan vil du kontaktes?"
+                name="oplysninger"
+              ></CheckboxContainer>
               <CheckboxSingleControl name="emailValgt" label="Email" />
               {values.emailValgt ? (
                 <InputControl
                   name="email"
                   label="Emailfelt"
-                  inputProps={{ autoComplete: "off" }}
-                  labelProps={{ pb: 1, visibility: "hidden" }}
+                  inputProps={{ placeholder: "example@gmail.com" }}
+                  labelProps={{
+                    pb: 1,
+                    visibility: "hidden",
+                    position: "absolute",
+                  }}
                 />
+              ) : null}
+
+              <CheckboxSingleControl name="tlfValgt" label="Telefon" />
+              {values.tlfValgt ? (
+                <InputControl
+                  name="tlf"
+                  label="Tlffelt"
+                  inputProps={{
+                    autoComplete: "off",
+                    placeholder: "00 00 00 00",
+                  }}
+                  labelProps={{
+                    pb: 1,
+                    visibility: "hidden",
+                    position: "absolute",
+                  }}
+                />
+              ) : null}
+
+              <CheckboxSingleControl name="fbValgt" label="Facebook" />
+              {values.fbValgt ? (
+                <>
+                  <InputControl
+                    name="fbNavn"
+                    label="Facebook navn"
+                    inputProps={{
+                      autoComplete: "off",
+                      placeholder: "Kattens Værn",
+                    }}
+                    labelProps={{
+                      pb: 1,
+                    }}
+                  />
+                  <InputControl
+                    name="fbLink"
+                    label="Facebook link"
+                    inputProps={{
+                      autoComplete: "off",
+                      placeholder: "https://www.facebook.com/KattensVaern",
+                    }}
+                    labelProps={{ pb: 1 }}
+                  />
+                </>
               ) : null}
 
               {/*      <KontaktCheckGroup
