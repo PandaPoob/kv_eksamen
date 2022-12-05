@@ -20,10 +20,12 @@ function Step1Notice() {
   return (
     <Box gridColumn={{ lg: "2/3" }}>
       <Accordion
+        maxW={{ lg: "31.8rem" }}
         allowToggle
         defaultIndex={[0]}
         bg={"brand.white"}
         boxShadow={"md"}
+        borderRadius={"0.2rem"}
       >
         <AccordionItem border={"none"}>
           <AccordionButton

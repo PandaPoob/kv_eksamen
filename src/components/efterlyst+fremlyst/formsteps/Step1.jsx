@@ -10,17 +10,10 @@ function Step1({ setStep1State, step1State, onAuthCallback }) {
   };
 
   return (
-    <Box
-      mx={{ md: "6rem", lg: 0 }}
-      px={"1rem"}
-      display="grid"
-      gap={{ base: "2rem", xl: "6rem" }}
-      gridTemplateColumns={{ lg: "1.2fr 1fr" }}
-      justifySelf="center"
-    >
+    <>
       <Step1Notice />
       <EfterlysForm step1State={step1State} onCallback={onCallback} />
-    </Box>
+    </>
   );
 }
 

@@ -1,10 +1,4 @@
-import {
-  Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  BreadcrumbSeparator,
-} from "@chakra-ui/react";
+import { Box, Breadcrumb, BreadcrumbItem, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import Step1 from "../../components/efterlyst+fremlyst/formsteps/Step1";
 import Step2 from "../../components/efterlyst+fremlyst/formsteps/Step2";
@@ -33,7 +27,7 @@ function FormFlow() {
     {
       component: (
         <Step1
-          currenStepIndex={currenStepIndex}
+          setCurrentStepIndex={setCurrentStepIndex}
           setStep1State={setStep1State}
           step1State={step1State}
           onAuthCallback={onAuthCallback}
@@ -43,7 +37,7 @@ function FormFlow() {
     {
       component: (
         <Step2
-          currenStepIndex={currenStepIndex}
+          setCurrentStepIndex={setCurrentStepIndex}
           setStep2State={setStep2State}
           step2State={step2State}
           onPostCallback={onPostCallback}
@@ -61,22 +55,16 @@ function FormFlow() {
   ];
 
   return (
-    <>
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <Button onClick={() => setCurrentStepIndex(0)}>Step 1</Button>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <Button onClick={() => setCurrentStepIndex(1)}>Step 2</Button>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem isCurrentPage>
-          <Button onClick={() => setCurrentStepIndex(2)}>Step 3</Button>
-        </BreadcrumbItem>
-      </Breadcrumb>
-      <Box>{steps[currenStepIndex].component}</Box>
-    </>
+    <Box
+      display={"grid"}
+      maxWidth={"container.xxl"}
+      gap={{ base: "2rem", xl: "6rem" }}
+      gridTemplateColumns={{ lg: "1.2fr 1fr" }}
+      mx={{ md: "6rem", lg: "auto" }}
+      px={{ lg: "1rem" }}
+    >
+      {steps[currenStepIndex].component}
+    </Box>
   );
 }
 

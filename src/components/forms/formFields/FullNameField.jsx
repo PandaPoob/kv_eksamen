@@ -16,6 +16,7 @@ const FullNameFieldValidation = () => {
 function FullNameField() {
   return (
     <InputControl
+      minH="6rem"
       name="fullName"
       label="Dit navn"
       inputProps={{ autoComplete: "off" }}

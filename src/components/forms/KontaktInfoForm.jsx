@@ -8,8 +8,9 @@ import {
   FullNameFieldInitialValue,
   FullNameFieldValidation,
 } from "./formFields/FullNameField";
+import CatBreadCrumb from "../efterlyst+fremlyst/formsteps/CatBreadCrumb";
 
-function KontaktInfoForm({ onCallback, step2State }) {
+function KontaktInfoForm({ onCallback, step2State, setCurrentStepIndex }) {
   //const [formState, setFormState] = useState("");
   const [error, setError] = useState(false);
 
@@ -55,8 +56,15 @@ function KontaktInfoForm({ onCallback, step2State }) {
   });
 
   return (
-    <Box bg={"brand.white"} p="2rem" boxShadow={"md"}>
-      <Heading as="h2" size={"heading3"}>
+    <Box
+      bg={"brand.white"}
+      p="2rem"
+      boxShadow={"md"}
+      gridRow={{ lg: "1/2" }}
+      borderRadius={"0.2rem"}
+    >
+      <CatBreadCrumb step={"step2"} setCurrentStepIndex={setCurrentStepIndex} />
+      <Heading as="h2" size={"heading3"} textAlign="center" py={"2rem"}>
         Dine oplysninger
       </Heading>
       <Formik
@@ -76,10 +84,9 @@ function KontaktInfoForm({ onCallback, step2State }) {
       >
         {({ handleSubmit, isSubmitting, values }) => (
           <Form onSubmit={handleSubmit} autoComplete={"off"}>
-            <Box minH="6rem">
-              <FullNameField />
-            </Box>
-            <Heading as="h3" size={"heading4"} mb="2rem">
+            <FullNameField />
+
+            <Heading as="h3" size={"heading4"} my="2rem" textAlign={"center"}>
               Hvordan vil du kontaktes?
             </Heading>
 

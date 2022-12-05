@@ -34,7 +34,7 @@ const Checkbox = {
     label: {
       fontWeight: "normal",
       color: "brand.blue",
-      fontSize: "sm",
+      fontSize: "xs",
 
       _checked: {
         color: "brand.white",

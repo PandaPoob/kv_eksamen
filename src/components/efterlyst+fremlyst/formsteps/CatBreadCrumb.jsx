@@ -1,12 +1,6 @@
-import {
-  Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  Button,
-  BreadcrumbSeparator,
-} from "@chakra-ui/react";
+import { Breadcrumb, BreadcrumbItem, Button } from "@chakra-ui/react";
 
-function CatBreadCrumb({ step }) {
+function CatBreadCrumb({ step, setCurrentStepIndex }) {
   return (
     <Breadcrumb display={"grid"} justifyContent="center">
       <BreadcrumbItem>

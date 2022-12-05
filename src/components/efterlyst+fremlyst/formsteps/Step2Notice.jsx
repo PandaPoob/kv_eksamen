@@ -1,20 +1,28 @@
-import { useState } from "react";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Heading, Text, Flex } from "@chakra-ui/react";
 
 function Step2Notice() {
   return (
-    <Box bg={"brand.white"} p="2rem" boxShadow={"md"}>
-      <Heading as={"h3"} size="heading4">
-        Billeder
+    <Flex
+      bg={"brand.blue"}
+      color="brand.white"
+      p="2rem"
+      boxShadow={"md"}
+      gridColumn={{ lg: "2/3" }}
+      maxH="25vh"
+      borderRadius={"0.2rem"}
+      flexDir="column"
+      justify={"center"}
+    >
+      <Heading as={"h3"} size="heading4" mb={"1rem"}>
+        Bemærk
       </Heading>
       <Text>
-        Nu bedre billede desto større chance er der for, at nogen genkender
-        katten. Så for at øge dine chancer råder vi til at uploade et klart
-        billede hvor man kan se hele katten. Sørg for at så meget af katten er
-        synlig på billede. Hvis muligt så sørg også for at billedet er god
-        kvalitet og ikke sløret.
+        Dine kontaktoplysninger vil være synlig på announcen sådan at du kan
+        kontaktes hvis nogen har fundet hvad du søger. Derfor anbefaler vi at du
+        overvejer hvilke oplysninger du vil give. Du skal mindst angive en måde
+        du kan kontaktes på.
       </Text>
-    </Box>
+    </Flex>
   );
 }
 

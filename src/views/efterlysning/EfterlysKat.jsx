@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
+import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
 import PageLayout from "../../components/layout/PageLayout";
 import Head from "next/head";
 import { useState } from "react";
@@ -67,18 +67,22 @@ function EfterlysKat() {
       <Head>
         <title>Efterlys din kat</title>
       </Head>
-      <Box
+      <Flex
         bg="brand.lightGrey"
         py={"4rem"}
-        px="1rem"
-        display="flex"
+        flexDir="column"
         justifyContent={"center"}
       >
-        <Box pb={"4rem"} maxW={"container.xxl"} flexGrow={1}>
-          <Heading as={"h1"} size={"heading2"}>
+        <Flex
+          minH={"40vh"}
+          flexDir="column"
+          justifyContent={"center"}
+          textAlign="center"
+          mx={{ md: "6rem", lg: "auto" }}
+        >
+          <Heading as={"h1"} size={"heading2"} mb="1rem">
             Her kan du efterlyse din kat
           </Heading>
-
           <Text>
             Inden du efterlyser din kat er det en god idé at tjekke vores liste
             over fundne/fremlyste katte{" "}
@@ -86,10 +90,10 @@ function EfterlysKat() {
               <Link variant={"inLink"}>her</Link>
             </NextLink>
           </Text>
+        </Flex>
 
-          <FormFlow />
-        </Box>
-      </Box>
+        <FormFlow />
+      </Flex>
     </PageLayout>
   );
 }

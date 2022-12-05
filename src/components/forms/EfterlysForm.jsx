@@ -83,7 +83,13 @@ function EfterlysForm({ step1State, onCallback }) {
   const options = ["Ja", "Nej", "Ved ikke"];
 
   return (
-    <Box bg={"brand.white"} p="2rem" boxShadow={"md"} gridRow={{ lg: "1/2" }}>
+    <Box
+      bg={"brand.white"}
+      p="1rem"
+      boxShadow={"md"}
+      gridRow={{ lg: "1/2" }}
+      borderRadius={"0.2rem"}
+    >
       <CatBreadCrumb step={"step1"} />
       <Heading as="h2" size={"heading3"} textAlign="center" py={"2rem"}>
         Kattens informationer
@@ -115,6 +121,7 @@ function EfterlysForm({ step1State, onCallback }) {
                 <CatNameField />
 
                 <SelectControl
+                  minH="5.8rem"
                   name="kon"
                   label="Kattens køn"
                   variant={"outline"}
