@@ -8,16 +8,13 @@ function Step2({
   onPostCallback,
   setCurrentStepIndex,
 }) {
-  const onCallback = (data) => {
-    setStep2State(data);
-    onPostCallback();
-  };
   return (
     <>
       <Step2Notice />
       <KontaktInfoForm
         step2State={step2State}
-        onCallback={onCallback}
+        setStep2State={setStep2State}
+        onCallback={onPostCallback}
         setCurrentStepIndex={setCurrentStepIndex}
       />
     </>

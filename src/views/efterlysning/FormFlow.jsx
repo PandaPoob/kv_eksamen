@@ -1,5 +1,5 @@
 import { Box, Breadcrumb, BreadcrumbItem, Flex } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Step1 from "../../components/efterlyst+fremlyst/formsteps/Step1";
 import Step2 from "../../components/efterlyst+fremlyst/formsteps/Step2";
 import Step3 from "../../components/efterlyst+fremlyst/formsteps/Step3";
@@ -10,10 +10,6 @@ function FormFlow() {
   const [step2State, setStep2State] = useState("");
   const [authToken, setAuthToken] = useState("");
   const [imgUrl, setImgUrl] = useState("");
-
-  //console.log(step1State);
-  //console.log(step2State);
-  //console.log(imgUrl);
 
   const onAuthCallback = () => {
     fetch(
@@ -36,45 +32,45 @@ function FormFlow() {
       })
       .then(function (user) {
         setAuthToken(user.token);
-        //localStorage.setItem("jwt", user.token);
       });
     setCurrentStepIndex(+1);
   };
 
-  const onPostCallback = () => {
+  const onPostCallback = (values) => {
     //post image
     if (authToken) {
-      uploadImg();
+      uploadImg(values);
     } else {
       alert("Noget gik galt");
     }
   };
-  async function uploadImg() {
+  async function uploadImg(values) {
     const formData = new FormData();
     formData.append("file", step1State.file);
 
-    fetch(
-      "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/wp/v2/media",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${authToken}`,
-        },
-        body: formData,
-      }
-    )
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (post) {
-        console.log(post);
-        setImgUrl(post);
-        postTest();
-      });
-  }
+    const endpoint =
+      "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/wp/v2/media";
+    const header = {
+      Authorization: `Bearer ${authToken}`,
+    };
 
-  async function postTest() {
-    //clean up formdata
+    const options = {
+      method: "POST",
+      body: formData,
+      headers: header,
+    };
+
+    const postResponse = await fetch(endpoint, options);
+
+    const result = await postResponse.json();
+    if (result.Message === "An error has occurred.") {
+      alert("unfortunately your order failed");
+    } else {
+      setImgUrl(result);
+      cleanedData(result, values);
+    }
+  }
+  function cleanedData(result, values) {
     const split = step1State.dato.split("-");
     const cleanDate = split[2] + "/" + split[1] + "/" + split[0];
 
@@ -93,31 +89,31 @@ function FormFlow() {
         chippet: step1State.chippet,
         chipnr: step1State.chipnummer,
         billede: {
-          ID: imgUrl.id,
-          id: imgUrl.id,
-          url: imgUrl.source_url,
+          ID: result.id,
+          id: result.id,
+          url: result.source_url,
         },
         by: step1State.by,
-        kontaktnavn: step2State.fullName,
+        kontaktnavn: values.fullName,
         kontakt: {
-          emailvalgt: step2State.emailValgt,
-          email: step2State.email,
-          tlfvalgt: step2State.tlfValgt,
-          tlf: step2State.tlf,
-          fbvalgt: step2State.fbValgt,
-          fblink: step2State.fbLink,
-          fbnavn: step2State.fbNavn,
+          emailvalgt: values.emailValgt,
+          email: values.email,
+          tlfvalgt: values.tlfValgt,
+          tlf: values.tlf,
+          fbvalgt: values.fbValgt,
+          fblink: values.fbLink,
+          fbnavn: values.fbNavn,
         },
       },
     };
-    console.log(data);
 
-    //postData(data);
+    postRequest(data);
   }
 
-  async function postData(data) {
-    // post here
-    const JSONdata = JSON.stringify(data);
+  async function postRequest(postData) {
+    console.log(postData);
+
+    const JSONdata = JSON.stringify(postData);
 
     const endpoint =
       "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/wp/v2/efterlystekatte";
@@ -133,14 +129,11 @@ function FormFlow() {
       headers: header,
     };
 
-    // Send the form data to our forms API on Vercel and get a response.
     const postResponse = await fetch(endpoint, options);
 
-    // Get the response data from server as JSON.
-    // If server returns the name submitted, that means the form works.
     const result = await postResponse.json();
     if (result.Message === "An error has occurred.") {
-      alert("unfortunately your order failed");
+      alert("Desværre skete der en fejl");
     } else {
       setCurrentStepIndex(currenStepIndex + 1);
       console.log(result);

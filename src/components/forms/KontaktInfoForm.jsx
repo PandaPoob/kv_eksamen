@@ -10,7 +10,12 @@ import {
 } from "./formFields/FullNameField";
 import CatBreadCrumb from "../efterlyst+fremlyst/formsteps/CatBreadCrumb";
 
-function KontaktInfoForm({ onCallback, step2State, setCurrentStepIndex }) {
+function KontaktInfoForm({
+  onCallback,
+  step2State,
+  setCurrentStepIndex,
+  setStep2State,
+}) {
   //const [formState, setFormState] = useState("");
   const [error, setError] = useState(false);
 
@@ -74,6 +79,7 @@ function KontaktInfoForm({ onCallback, step2State, setCurrentStepIndex }) {
           if (values.emailValgt || values.tlfValgt || values.fbValgt) {
             setError(false);
             actions.setSubmitting(false);
+            setStep2State(values);
             onCallback(values);
             //console.log(values);
           } else {
