@@ -3,6 +3,7 @@ import { Flex } from "@chakra-ui/react";
 import ArticleEF from '../articles/ArticleEF';
 
 export default function EFkatteliste({ EFdata, type, url, landsdelsfilter, kon, maerket, chippet, searchInput, setSearchInput }) {
+ 
 
     function filterCat(state, filterFunction, oldListData) {
         let list = [];
@@ -26,10 +27,14 @@ export default function EFkatteliste({ EFdata, type, url, landsdelsfilter, kon, 
 
       let searchedFilteredKatte = []
       filteredEFKatte.filter((kat) => {
-        if(searchInput==="") {
-            searchedFilteredKatte.push(kat)
+        if (searchInput === "") {
+          searchedFilteredKatte.push(kat);
         } else if (kat.acf.by.toLowerCase().includes(searchInput.toLowerCase())) {
-            searchedFilteredKatte.push(kat);
+          searchedFilteredKatte.push(kat);
+        } else if (kat.acf.chipnr !== undefined && kat.acf.chipnr.length !== 0 && kat.acf.chipnr.includes(searchInput)) {
+          searchedFilteredKatte.push(kat);
+        } else if (kat.acf.oremaerkenr !== undefined && kat.acf.oremaerkenr.length !== 0 && kat.acf.oremaerkenr.toLowerCase().includes(searchInput.toLowerCase())) {
+          searchedFilteredKatte.push(kat);
         }
         return searchedFilteredKatte;
     })

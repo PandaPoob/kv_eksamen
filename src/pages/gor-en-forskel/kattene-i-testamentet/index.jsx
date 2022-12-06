@@ -1,24 +1,26 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
+import KatteneITestamentet from "../../../views/kattene-i-testamentet/KatteneITestamentet";
+import url from "../../../api/url";
 
-function TestamentePage({ data }) {
+function TestamentePage({ sideData, imgData }) {
   // console.log(data)
 
   return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Skriv kattene i testamentet
-      </Heading>
-    </Box>
+    <KatteneITestamentet sideData={sideData} imgData={imgData} />
   );
 }
 
-/* export async function getStaticProps() {
-  const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
+export async function getStaticProps() {
+  const res = await fetch(`${url}indholdsider/1395`);
+  const sideData = await res.json();
+  const res2 = await fetch(`${url}indholdsbilleder/1392`);
+  const imgData = await res2.json();
 
-  return { props: { data } };
+  return {
+    props: {
+      sideData: sideData,
+      imgData: imgData,
+    },
+  };
 }
- */
 export default TestamentePage;

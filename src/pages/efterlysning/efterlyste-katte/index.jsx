@@ -10,7 +10,8 @@ function EfterlysteKattePage({ efterlystData, sideData }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${url}efterlystekatte`);
+  //const res = await fetch(`${url}efterlystekatte`);
+  const res = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/wp/v2/efterlystekatte");
   const efterlystData = await res.json(); 
   const res2 = await fetch(`${url}indholdsider/328`);
   const sideData = await res2.json();
