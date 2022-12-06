@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
+import { Box, Heading, Text, Link, Flex, Button } from "@chakra-ui/react";
 import PageLayout from "../../components/layout/PageLayout";
 import Head from "next/head";
 import { useState } from "react";
@@ -6,9 +6,10 @@ import NextLink from "next/link";
 import FormFlow from "./FormFlow";
 
 function EfterlysKat() {
-  const [authToken, setAuthToken] = useState("");
+  //const [imgTest, setImgTest] = useState("");
+  //console.log("image:", imgTest);
 
-  function getAuth() {
+  /*   function getAuth() {
     fetch(
       "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/jwt-auth/v1/token",
       {
@@ -33,10 +34,37 @@ function EfterlysKat() {
       });
   }
 
+  async function uploadImg() {
+    const formData = new FormData();
+    formData.append("file", imgTest);
+    //formData = imgTest;
+
+    fetch(
+      "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/wp/v2/media",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+        body: formData,
+      }
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (post) {
+        console.log(post);
+      });
+
+    //postTest()
+  }
+
   function postTest() {
     const data = JSON.stringify({
-      title: "Cleo",
+      title: "Jonas",
       status: "publish",
+      featured_media: 304,
+
       fields: {
         navn: "Cleo",
       },
@@ -61,7 +89,7 @@ function EfterlysKat() {
         console.log(post);
       });
   }
-
+ */
   return (
     <PageLayout>
       <Head>
@@ -73,6 +101,16 @@ function EfterlysKat() {
         flexDir="column"
         justifyContent={"center"}
       >
+        {/* <input
+          value={undefined}
+          id="img"
+          name="img"
+          onChange={(event) => setImgTest(event.currentTarget.files[0])}
+          type={"file"}
+        ></input>
+
+        <Button onClick={() => getAuth()}>get auth</Button>
+        <Button onClick={() => uploadImg()}>post</Button> */}
         <Flex
           minH={"40vh"}
           flexDir="column"
@@ -91,7 +129,6 @@ function EfterlysKat() {
             </NextLink>
           </Text>
         </Flex>
-
         <FormFlow />
       </Flex>
     </PageLayout>

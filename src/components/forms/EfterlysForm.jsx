@@ -212,7 +212,7 @@ function EfterlysForm({ step1State, onCallback }) {
                 gridTemplateColumns={{ lg: "1fr 1fr" }}
                 gap={"1rem"}
               >
-                <DatoField values={values} />
+                <DatoField values={values.dato} />
 
                 <PostnummerField />
 
