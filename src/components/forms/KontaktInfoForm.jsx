@@ -22,7 +22,7 @@ function KontaktInfoForm({ onCallback, step2State, setCurrentStepIndex }) {
       tlfValgt: step2State?.tlfValgt || false,
       tlf: step2State?.tlf || "",
       fbValgt: step2State?.tlfValgt || false,
-      bNavn: step2State?.fbNavn || "",
+      fbNavn: step2State?.fbNavn || "",
       fbLink: step2State?.fbLink || "",
     };
   };

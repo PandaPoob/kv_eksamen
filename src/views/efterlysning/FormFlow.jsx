@@ -18,6 +18,22 @@ function FormFlow() {
   };
 
   const onPostCallback = () => {
+    const postData = {
+      navn: step1State.catname,
+      kon: step1State.kon,
+      beskrivelse: step1State.descrip,
+      dato: "2022/10/",
+      postnummer: "4700",
+      landsdel: "Sjælland og øerne",
+      oremaerket: "Ja",
+      oremaerkenr: "",
+      chippet: "Ja",
+      chipnr: "208274000118155",
+      billede:
+        "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-content/uploads/2022/11/efterlyste_zarkarias.webp",
+      kontaktnavn: "Emmelie Hummelgaard",
+      by: "Næstved",
+    };
     //get post data ready
     //if post data succesful:
     setCurrentStepIndex(+1);
