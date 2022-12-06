@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Box,
   Accordion,
@@ -18,7 +17,7 @@ import IkkeGodkendtTxt from "../../../assets/images/cattxtwrong.webp";
 
 function Step1Notice() {
   return (
-    <Box gridColumn={{ lg: "2/3" }}>
+    <Box>
       <Accordion
         maxW={{ lg: "31.8rem" }}
         allowToggle

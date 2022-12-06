@@ -4,14 +4,18 @@ function CatBreadCrumb({ step, setCurrentStepIndex }) {
   return (
     <Breadcrumb display={"grid"} justifyContent="center">
       <BreadcrumbItem>
-        <Button variant={"breadcrumb"} onClick={() => setCurrentStepIndex(0)}>
+        <Button
+          disabled={step === "step3" ? true : false}
+          variant={"breadcrumb"}
+          onClick={() => setCurrentStepIndex(0)}
+        >
           1. Kattens info
         </Button>
       </BreadcrumbItem>
 
       <BreadcrumbItem>
         <Button
-          disabled={step === "step1" ? true : false}
+          disabled={step === "step1" || "step3" ? true : false}
           variant={"breadcrumb"}
           onClick={() => setCurrentStepIndex(1)}
         >
@@ -20,7 +24,10 @@ function CatBreadCrumb({ step, setCurrentStepIndex }) {
       </BreadcrumbItem>
 
       <BreadcrumbItem>
-        <Button variant={"breadcrumb"} disabled>
+        <Button
+          variant={"breadcrumb"}
+          disabled={step === "step3" ? false : true}
+        >
           3. Færdig
         </Button>
       </BreadcrumbItem>

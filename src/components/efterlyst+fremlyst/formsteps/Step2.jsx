@@ -1,4 +1,3 @@
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
 import KontaktInfoForm from "../../forms/KontaktInfoForm";
 import Step2Notice from "./Step2Notice";
 

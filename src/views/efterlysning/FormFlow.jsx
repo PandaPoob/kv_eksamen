@@ -1,4 +1,4 @@
-import { Box, Breadcrumb, BreadcrumbItem, Flex } from "@chakra-ui/react";
+import { Box, Button, BreadcrumbItem, Flex } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import Step1 from "../../components/efterlyst+fremlyst/formsteps/Step1";
 import Step2 from "../../components/efterlyst+fremlyst/formsteps/Step2";
@@ -164,24 +164,36 @@ function FormFlow() {
     {
       component: (
         <Step3
-          currenStepIndex={currenStepIndex}
           setCurrentStepIndex={setCurrentStepIndex}
+          setStep1State={setStep1State}
+          setStep2State={setStep2State}
+          setAuthToken={setAuthToken}
+          setImgUrl={setImgUrl}
         />
       ),
     },
   ];
 
   return (
-    <Box
-      display={"grid"}
-      maxWidth={"container.xxl"}
-      gap={{ base: "2rem", xl: "6rem" }}
-      gridTemplateColumns={{ lg: "1.2fr 1fr" }}
-      mx={{ md: "6rem", lg: "auto" }}
-      px={{ lg: "1rem" }}
-    >
-      {steps[currenStepIndex].component}
-    </Box>
+    <>
+      {" "}
+      <Button variant={"breadcrumb"} onClick={() => setCurrentStepIndex(+1)}>
+        next
+      </Button>
+      <Button variant={"breadcrumb"} onClick={() => setCurrentStepIndex(2)}>
+        3
+      </Button>
+      <Box
+        display={"grid"}
+        maxWidth={"container.xxl"}
+        gap={{ base: "2rem", xl: "6rem" }}
+        gridTemplateColumns={{ lg: "1.5fr 1fr" }}
+        mx={{ md: "6rem", lg: "auto" }}
+        px={{ base: "1rem" }}
+      >
+        {steps[currenStepIndex].component}
+      </Box>
+    </>
   );
 }
 

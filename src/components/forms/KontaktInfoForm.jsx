@@ -63,7 +63,7 @@ function KontaktInfoForm({
   return (
     <Box
       bg={"brand.white"}
-      p="2rem"
+      p={{ base: "1rem", xl: "3rem" }}
       boxShadow={"md"}
       gridRow={{ lg: "1/2" }}
       borderRadius={"0.2rem"}
@@ -249,7 +249,7 @@ function KontaktInfoForm({
                 *Vælg mindst en måde du kan kontaktes på
               </Text>
             ) : null}
-            <Box display={"grid"} justifySelf={"center"} mt={8}>
+            <Box display={"grid"} justifySelf={"center"} mt={"3rem"} mb="1rem">
               <Button
                 type="submit"
                 variant="formSubmitBtn"

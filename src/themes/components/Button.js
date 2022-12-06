@@ -89,7 +89,7 @@ const button = {
 
       _hover: {
         bg: "brand.redHover",
-        transform: "scale(1)",
+        transform: "none",
       },
     },
 

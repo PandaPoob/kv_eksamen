@@ -8,7 +8,7 @@ function Step2Notice() {
       p="2rem"
       boxShadow={"md"}
       gridColumn={{ lg: "2/3" }}
-      maxH="25vh"
+      maxH={{ lg: "25vh" }}
       borderRadius={"0.2rem"}
       flexDir="column"
       justify={"center"}

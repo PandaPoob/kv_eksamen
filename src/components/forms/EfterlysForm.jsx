@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import { SelectControl } from "formik-chakra-ui";
@@ -47,7 +46,6 @@ import {
 } from "./formFields/ImageField";
 
 function EfterlysForm({ step1State, onCallback }) {
-  //const [formState, setFormState] = useState("");
   const initialValues = (step1State) => {
     return {
       ...CatNameFieldInitialValue(step1State),
@@ -85,7 +83,7 @@ function EfterlysForm({ step1State, onCallback }) {
   return (
     <Box
       bg={"brand.white"}
-      p="1rem"
+      p={{ base: "1rem", xl: "3rem" }}
       boxShadow={"md"}
       gridRow={{ lg: "1/2" }}
       borderRadius={"0.2rem"}
@@ -241,7 +239,7 @@ function EfterlysForm({ step1State, onCallback }) {
               </Box>
             </Box>
 
-            <Box display={"grid"} justifySelf={"center"} mt={8}>
+            <Box display={"grid"} justifySelf={"center"} mt={"3rem"} mb="1rem">
               <Button
                 type="submit"
                 variant="formSubmitBtn"

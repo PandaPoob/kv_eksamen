@@ -1,36 +1,54 @@
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
+import { Box, Heading, Text, Link, Button } from "@chakra-ui/react";
 import NextLink from "next/link";
+import CatBreadCrumb from "./CatBreadCrumb";
 
-function Step3() {
+function Step3({
+  setCurrentStepIndex,
+  setStep1State,
+  setStep2State,
+  setAuthToken,
+  setImgUrl,
+}) {
+  function reset() {
+    setStep1State("");
+    setStep2State("");
+    setAuthToken("");
+    setImgUrl("");
+    setCurrentStepIndex(0);
+  }
+
   return (
-    <Box
-      display={"grid"}
-      gridTemplateColumns={{ xl: "1fr 1fr" }}
-      maxW="container.xxl"
-      gap={"4rem"}
-    >
+    <>
       <Box
         bg={"brand.white"}
         boxShadow={"md"}
         p="2rem"
         borderRadius={"0.1rem"}
         display="grid"
+        justifyContent={"center"}
+        mb={{ lg: "10rem" }}
       >
-        <Heading as={"h1"} size="heading3">
-          Tak for din henvendelse
+        <CatBreadCrumb step={"step3"} />
+        <Heading as={"h1"} size="heading3" textAlign={"center"} mt="2rem">
+          Tak for din henvendelse!
         </Heading>
-        <Text>
+        <Text maxW="60ch" textAlign={"center"}>
           Din efterlysning vil blive behandlet snarest muligt og vil blive vist
           på vores liste over efterlyste katte{" "}
           <NextLink href={"/efterlysning/efterlyste-katte"} passHref>
-            <Link variant={"inLink"}>her.</Link>
+            <Link onClick={() => reset()} variant={"inLink"}>
+              her.
+            </Link>
           </NextLink>
         </Text>
-        <NextLink href={"/efterlysning/mistet-kat"} passHref>
-          <Link variant={"redBtn"} px={"1.1rem"} py={"0.6rem"}>
-            Andre råd
-          </Link>
-        </NextLink>
+        <Button
+          mt="4rem"
+          mb="2rem"
+          variant={"formSubmitBtn"}
+          onClick={() => reset()}
+        >
+          Gå tilbage
+        </Button>
       </Box>
 
       <Box
@@ -39,8 +57,11 @@ function Step3() {
         boxShadow={"md"}
         p="2rem"
         borderRadius={"0.1rem"}
+        display="grid"
+        justifyContent={"center"}
+        maxH={{ lg: "12rem" }}
       >
-        <Heading as={"h2"} size="heading3" mb="0.8rem">
+        <Heading as={"h2"} size="heading4" mb="0.8rem">
           Andre råd til hvad du kan gøre?
         </Heading>
         <Text>
@@ -50,11 +71,13 @@ function Step3() {
           </Text>
 
           <NextLink href={"/efterlysning/mistet-kat"} passHref>
-            <Link variant={"inLink"}>her</Link>
+            <Link onClick={() => reset()} variant={"inLink"}>
+              her
+            </Link>
           </NextLink>
         </Text>
       </Box>
-    </Box>
+    </>
   );
 }
 export default Step3;
