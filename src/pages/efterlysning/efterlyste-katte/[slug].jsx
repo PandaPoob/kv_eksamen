@@ -2,6 +2,7 @@ import url from "../../../api/url";
 import SingleViewKat from "../../../components/efterlyst+fremlyst/SingleViewKat";
 
 function EfterlystKatPage({ efterlystKatData }) {
+  console.log(efterlystKatData)
   return <SingleViewKat EFdata={efterlystKatData} type="efterlysning" />
 }
 
@@ -19,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(Context) {
-  const res = await fetch(`${url}efterlystekatte/${Context.params.slug}`);
+  const res = await fetch(`https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/wp/v2/efterlystekatte/${Context.params.slug}`);
   const efterlystKatData = await res.json();
 
   return { props: { efterlystKatData } };

@@ -2,7 +2,7 @@ import { Box, Heading, Text, Flex, Link } from "@chakra-ui/react"
 import Image from "next/image";
 import NextLink from "next/link"
 
-function SplashHeader({acf, imgPos = "center", textPos="left", height="70vh"}) {
+function SplashHeader({acf, h1mobsize="heading1", imgPos = "center", textPos="left", height="70vh"}) {
 
     const buttonChecker = () => {
         if (acf.buttonurl === "") {
@@ -40,7 +40,7 @@ function SplashHeader({acf, imgPos = "center", textPos="left", height="70vh"}) {
           {overtekstChecker() && (
             <Heading as={"h1"} size="sm" px={"5px"}>{acf.overtekst}</Heading>
           )}
-          <Heading as={"h1"} size="heading1">
+          <Heading as={"h1"} size={{base: h1mobsize, lg: "heading1"}}>
             {acf.overskrift}
           </Heading>
           <Text>{acf.undertekst}</Text>
