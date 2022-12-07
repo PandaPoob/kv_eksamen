@@ -10,7 +10,7 @@ function FremlysteKattePage({ fremlystData, sideData }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${url}fremlystekatte`);
+  const res = await fetch("https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/wp/v2/fremlystekatte");
   const fremlystData = await res.json(); 
   const res2 = await fetch(`${url}indholdsider/544`);
   const sideData = await res2.json();

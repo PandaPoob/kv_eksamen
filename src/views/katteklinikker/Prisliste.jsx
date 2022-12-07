@@ -46,11 +46,3 @@ export default function Prisliste({acf}) {
     </Box>
   );
 }
-
-
-
- 
-//choose the screen size 
-
-
-// create an event listener

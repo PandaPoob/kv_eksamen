@@ -21,7 +21,7 @@ function ContactEF({ kontaktData }) {
         {fbvalgt === true ? (
           <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
             <Flex as="dt" alignItems={"center"}>
-              <Icon color="brand.redCta" w={8} h={8} as={BsTelephone} />
+              <Icon color="brand.redCta" w={{ base: 6, md: 8 }} h={{ base: 6, md: 8 }} as={BsTelephone} />
             </Flex>
 
             <Heading as="dd" size={"heading5"}>
@@ -34,9 +34,9 @@ function ContactEF({ kontaktData }) {
         {emailvalgt === true ? (
           <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
             <Flex as="dt" alignItems={"center"}>
-              <Icon color="brand.redCta" w={8} h={8} as={BsEnvelope} />
+              <Icon color="brand.redCta" w={{ base: 6, md: 8 }} h={{ base: 6, md: 8 }} as={BsEnvelope} />
             </Flex>
-            <Heading as="dd" size={"heading5"}>
+            <Heading as="dd" size={{ base: "heading6", md: "heading5" }}>
               {email}
             </Heading>
           </Flex>
@@ -48,7 +48,7 @@ function ContactEF({ kontaktData }) {
             <Link variant={"clean"}>
               <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
                 <Flex as="dt" alignItems={"center"}>
-                  <Icon color="brand.redCta" w={8} h={8} as={AiOutlineFacebook} />
+                  <Icon color="brand.redCta" w={{ base: 6, md: 8 }} h={{ base: 6, md: 8 }} as={AiOutlineFacebook} />
                 </Flex>
                 <Heading as="dd" size={"heading5"}>
                   {fbnavn}

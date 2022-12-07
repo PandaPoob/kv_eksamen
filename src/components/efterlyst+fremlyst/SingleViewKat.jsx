@@ -26,7 +26,7 @@ function SingleViewKat({ EFdata, type }) {
     else if (type==="fremlysning") return false
   }
 
-  const [shouldWrap, setShouldWrap] = useState(false);
+  /* const [shouldWrap, setShouldWrap] = useState(false);
   const handleWrap = () => {
     if (window.innerWidth < 388) {
       setShouldWrap(true);
@@ -36,17 +36,17 @@ function SingleViewKat({ EFdata, type }) {
   };
   useEffect(() => {
     window.addEventListener("resize", handleWrap);
-  });
+  }); */
 
   return (
     <PageLayout>
       <Box as="main" bg="brand.lightGrey" display={"grid"} placeContent="center" px="1rem">
         <Box as="section" maxW={{ base: "container.sm" }} pt={"2rem"}>
-          <Heading display={"flex"} flexWrap={shouldWrap ? "wrap" : "nowrap"} as="h1" size="heading2" gap={ shouldWrap ? "0" : "1.5rem"}>
+          <Heading display={"flex"} flexWrap="wrap" as="h1" fontSize={{base: "35px"}} size={{md: "heading2"}} gap={"1.5rem"}>
             <Text as="span" color={"brand.grey"}>
               {checker() === true ? "Efterlyste" : "Fremlyst"}
             </Text>{" "}
-            {checker() === true ? <Text>{navn}</Text> : <Text>{kon}</Text>}
+            {checker() === true ? <Text as="span">{navn}</Text> : <Text>{kon}</Text>}
           </Heading>
         </Box>
         <Box display={"grid"} gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }} placeContent="center" gap={{ lg: "2rem" }}>
@@ -94,7 +94,7 @@ function SingleViewKat({ EFdata, type }) {
                     {oremaerkenr.length === 0 ? <Text fontWeight={"bold"}>Vides ikke</Text> : <Text fontWeight={"bold"}>{oremaerkenr}</Text>}
                   </Flex>
                 )}
-                {(chipnr === undefined) | (chipnr.length === 0) ? (
+                {chipnr === undefined ? (
                   <></>
                 ) : (
                   <Flex flexWrap={"wrap"} gap="1rem">
