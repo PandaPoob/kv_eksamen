@@ -31,7 +31,7 @@ function SingleViewKat({ EFdata, type }) {
     <PageLayout>
       <Box as="main" bg="brand.lightGrey" display={"grid"} placeContent="center" px="1rem">
         <Box as="section" maxW={{ base: "container.sm" }} pt={"2rem"}>
-          <Heading display={"flex"} flexWrap="wrap" as="h1" fontSize={{base: "35px"}} size={{md: "heading2"}} gap={"1.5rem"}>
+          <Heading display={"flex"} flexWrap="wrap" as="h1" fontSize={{base: "35px"}} size={{md: "heading2"}} gap={{base: "0.8rem", md: "1.5rem"}}>
             <Text as="span" color={"brand.grey"}>
               {checker() === true ? "Efterlyste" : "Fremlyst"}
             </Text>{" "}

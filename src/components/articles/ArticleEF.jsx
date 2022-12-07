@@ -41,7 +41,7 @@ function ArticleEF({ acf, id, type, url }) {
             <Heading as="h4" size="heading4">
               {acf.by}
             </Heading>
-           <StringDataChecker oremaerkeString={oremaerkeString()} chippetString={oremaerkeString()}/>
+           <StringDataChecker oremaerkeString={oremaerkeString()} chippetString={chippetString()}/>
           </Flex>
         </Link>
       </NextLink>
