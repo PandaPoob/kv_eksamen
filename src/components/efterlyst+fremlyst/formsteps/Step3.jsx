@@ -14,7 +14,7 @@ function Step3({
     setStep2State("");
     setAuthToken("");
     setImgUrl("");
-    setCurrentStepIndex(0);
+    //setCurrentStepIndex(0);
   }
 
   return (
@@ -36,9 +36,7 @@ function Step3({
           Din efterlysning vil blive behandlet snarest muligt og vil blive vist
           på vores liste over efterlyste katte{" "}
           <NextLink href={"/efterlysning/efterlyste-katte"} passHref>
-            <Link onClick={() => reset()} variant={"inLink"}>
-              her.
-            </Link>
+            <Link variant={"inLink"}>her.</Link>
           </NextLink>
         </Text>
         <Button
@@ -71,9 +69,7 @@ function Step3({
           </Text>
 
           <NextLink href={"/efterlysning/mistet-kat"} passHref>
-            <Link onClick={() => reset()} variant={"inLink"}>
-              her
-            </Link>
+            <Link variant={"inLink"}>her</Link>
           </NextLink>
         </Text>
       </Box>

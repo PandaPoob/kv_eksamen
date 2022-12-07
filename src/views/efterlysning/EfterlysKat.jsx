@@ -22,7 +22,7 @@ function EfterlysKat() {
           flexDir="column"
           justifyContent={"center"}
           textAlign="center"
-          mx={{ md: "6rem", lg: "auto" }}
+          mx={{ md: "4rem", lg: "auto" }}
           px={{ base: "1rem" }}
         >
           <Heading as={"h1"} size={"heading2"} mb="1rem">

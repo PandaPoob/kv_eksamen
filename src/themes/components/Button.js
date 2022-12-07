@@ -95,7 +95,7 @@ const button = {
 
     breadcrumb: {
       bg: "none",
-      color: "brand.blue",
+      color: "brand.blueCta",
       fontSize: { base: "xxs", lg: "xs" },
       fontWeight: "semibold",
       px: { base: "0.2rem", lg: "1rem" },

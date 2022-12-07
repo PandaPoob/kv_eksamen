@@ -15,7 +15,7 @@ function CatBreadCrumb({ step, setCurrentStepIndex }) {
 
       <BreadcrumbItem>
         <Button
-          disabled={step === "step1" || "step3" ? true : false}
+          disabled={step === "step2" ? false : true}
           variant={"breadcrumb"}
           onClick={() => setCurrentStepIndex(1)}
         >

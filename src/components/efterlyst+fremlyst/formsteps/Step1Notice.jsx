@@ -7,6 +7,7 @@ import {
   AccordionIcon,
   Heading,
   Text,
+  Flex,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import Image from "next/image";
@@ -19,12 +20,13 @@ function Step1Notice() {
   return (
     <Box>
       <Accordion
-        maxW={{ lg: "31.8rem" }}
+        minW={{ lg: "29rem", xl: "32.8rem" }}
         allowToggle
         defaultIndex={[0]}
         bg={"brand.white"}
         boxShadow={"md"}
         borderRadius={"0.2rem"}
+        display="grid"
       >
         <AccordionItem border={"none"}>
           <AccordionButton

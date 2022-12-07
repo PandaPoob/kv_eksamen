@@ -45,7 +45,7 @@ import {
   ImageFieldInitialValue,
 } from "./formFields/ImageField";
 
-function EfterlysForm({ step1State, onCallback }) {
+function EfterlysForm({ step1State, onCallback, setCurrentStepIndex }) {
   const initialValues = (step1State) => {
     return {
       ...CatNameFieldInitialValue(step1State),
@@ -83,13 +83,19 @@ function EfterlysForm({ step1State, onCallback }) {
   return (
     <Box
       bg={"brand.white"}
-      p={{ base: "1rem", xl: "3rem" }}
+      p={{ base: "1rem", md: "2rem", xl: "3rem" }}
       boxShadow={"md"}
       gridRow={{ lg: "1/2" }}
       borderRadius={"0.2rem"}
+      minW={{ base: "90vw", md: "80vw", lg: "0" }}
     >
-      <CatBreadCrumb step={"step1"} />
-      <Heading as="h2" size={"heading3"} textAlign="center" py={"2rem"}>
+      <CatBreadCrumb setCurrentStepIndex={setCurrentStepIndex} step={"step1"} />
+      <Heading
+        as="h2"
+        size={"heading3"}
+        textAlign="center"
+        py={{ base: "2rem", lg: "3rem" }}
+      >
         Kattens informationer
       </Heading>
       <Formik

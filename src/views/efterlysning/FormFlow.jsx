@@ -186,7 +186,7 @@ function FormFlow() {
       <Box
         display={"grid"}
         maxWidth={"container.xxl"}
-        gap={{ base: "2rem", xl: "6rem" }}
+        gap={{ base: "2rem", xl: "4rem" }}
         gridTemplateColumns={{ lg: "1.5fr 1fr" }}
         mx={{ md: "6rem", lg: "auto" }}
         px={{ base: "1rem" }}
