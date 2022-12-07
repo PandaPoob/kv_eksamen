@@ -16,7 +16,7 @@ export default function Banner({bannerData}){
    },
    {
      name: "Bestil tid hos Katteklinikken",
-     urlEndpoint: "efterlysning/mistet-kat"
+     urlEndpoint: "katteklinikker"
    },
    {
      name: "Jeg kan ikke beholde min kat",

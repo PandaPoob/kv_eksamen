@@ -1,24 +1,25 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
-
-function BlivPlejefamiliePage({ data }) {
+import BlivPlejefamilie from "../../../views/bliv-plejefamilie/BlivPlejefamilie";
+import url from "../../../api/url";
+function BlivPlejefamiliePage({ sideData, imgData }) {
   // console.log(data)
 
   return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Bliv plejefamilie
-      </Heading>
-    </Box>
+   <BlivPlejefamilie sideData={sideData} imgData={imgData}/>
   );
 }
 
-/* export async function getStaticProps() {
-    const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
-
-  return { props: { data } };
-} */
+export async function getStaticProps() {
+  const res = await fetch(`${url}indholdsider/1382`)
+  const sideData = await res.json()
+  const res2 = await fetch(`${url}indholdsbilleder/1390`)
+  const imgData = await res2.json()
+ 
+  return {
+    props: {
+      sideData: sideData,
+      imgData: imgData,
+    },
+  };
+ }
 
 export default BlivPlejefamiliePage;

@@ -26,7 +26,7 @@ export default function HjaelpOversigt() {
         },
         {
           name: "Bestil tid hos Katteklinikken",
-          urlEndpoint: "/efterlysning/mistet-kat",
+          urlEndpoint: "/katteklinikker",
           icon: <HiOutlineClock size={60} color="#D43B4D"/>,
         },
         {
@@ -36,7 +36,7 @@ export default function HjaelpOversigt() {
         },
         {
           name: "Støttemuligheder",
-          urlEndpoint: "/adopter/adoptionskatte",
+          urlEndpoint: "/støttemuligheder",
           icon: <BsHeart size={60} color="#D43B4D"/>,
         },
       ]
