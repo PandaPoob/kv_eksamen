@@ -7,11 +7,6 @@ import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
 
 function ArticleEF({ acf, id, type, url }) {
 
-  let checker = () => {
-    if(type === "efterlysning") return true
-    else if (type==="fremlysning") return false
-  }
-
   let oremaerkeString = () => {
     if (acf.oremaerket === "Ja") return "Er øremærket";
     else if (acf.oremaerket === "Nej") return "Er ikke øremærket";
@@ -40,7 +35,7 @@ function ArticleEF({ acf, id, type, url }) {
             <Image src={acf.billede} alt={acf.navn} layout="fill" objectFit="cover" />
           </Box>
           <Flex minH={"5rem"} w="100%" padding={"1rem"} justifyContent={"center"} align="left" position="relative" flexDir="column">
-            <Text fontWeight={"normal"}>{checker() === true ? "Kat forsvundet fra" : "Kat fundet ved"}</Text>
+            <Text fontWeight={"normal"}>{type === "efterlystekatte" ? "Kat forsvundet fra" : "Kat fundet ved"}</Text>
             <Heading as="h4" size="heading4">
               {acf.by}
             </Heading>

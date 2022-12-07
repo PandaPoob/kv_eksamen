@@ -26,17 +26,6 @@ function SingleViewKat({ EFdata, type }) {
     else if (type==="fremlysning") return false
   }
 
-  /* const [shouldWrap, setShouldWrap] = useState(false);
-  const handleWrap = () => {
-    if (window.innerWidth < 388) {
-      setShouldWrap(true);
-    } else {
-      setShouldWrap(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("resize", handleWrap);
-  }); */
 
   return (
     <PageLayout>
