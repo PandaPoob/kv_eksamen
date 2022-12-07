@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 export default function Prisliste({acf}) {
-
+//test
     const [isMobile, setIsMobile] = useState(false)
     const handleResize = () => {
         if (window.innerWidth < 720) {
