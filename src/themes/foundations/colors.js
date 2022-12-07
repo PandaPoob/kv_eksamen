@@ -2,14 +2,16 @@ const colors = {
   brand: {
     bg: "#FFFFFF",
     white: "#FFFFFF",
-    grey: "#737373",
     lightGrey: "#EEEEEE",
+    borderGrey: "#B8B8B8",
+    grey: "#737373",
     darkGrey: "#242C38",
     blue: "#001931",
     redCta: "#D43B4D",
     redHover: "#B23E4B",
     blueCta: "#032C53",
     blueHover: "#0F2030",
+    errorMsg: "#E52E2E",
   },
 
   blueKv: {
