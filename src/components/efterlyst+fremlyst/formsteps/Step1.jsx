@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Box } from "@chakra-ui/react";
 import Step1Notice from "./Step1Notice";
+import FremlysForm from "../../forms/FremlysForm";
 import EfterlysForm from "../../forms/EfterlysForm";
 
 function Step1({
+  fremlysning,
   setStep1State,
   step1State,
   onAuthCallback,
@@ -17,11 +17,19 @@ function Step1({
   return (
     <>
       <Step1Notice />
-      <EfterlysForm
-        step1State={step1State}
-        onCallback={onCallback}
-        setCurrentStepIndex={setCurrentStepIndex}
-      />
+      {fremlysning ? (
+        <FremlysForm
+          step1State={step1State}
+          onCallback={onCallback}
+          setCurrentStepIndex={setCurrentStepIndex}
+        />
+      ) : (
+        <EfterlysForm
+          step1State={step1State}
+          onCallback={onCallback}
+          setCurrentStepIndex={setCurrentStepIndex}
+        />
+      )}
     </>
   );
 }

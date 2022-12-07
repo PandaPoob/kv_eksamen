@@ -4,7 +4,7 @@ import Step1 from "../../components/efterlyst+fremlyst/formsteps/Step1";
 import Step2 from "../../components/efterlyst+fremlyst/formsteps/Step2";
 import Step3 from "../../components/efterlyst+fremlyst/formsteps/Step3";
 
-function FormFlow() {
+function EfterlysFormFlow() {
   const [currenStepIndex, setCurrentStepIndex] = useState(0);
   const [step1State, setStep1State] = useState("");
   const [step2State, setStep2State] = useState("");
@@ -188,4 +188,4 @@ function FormFlow() {
   );
 }
 
-export default FormFlow;
+export default EfterlysFormFlow;

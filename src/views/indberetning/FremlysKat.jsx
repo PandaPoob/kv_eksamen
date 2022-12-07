@@ -2,13 +2,13 @@ import { Heading, Text, Link, Flex } from "@chakra-ui/react";
 import PageLayout from "../../components/layout/PageLayout";
 import Head from "next/head";
 import NextLink from "next/link";
-import EfterlysFormFlow from "./EfterlysFormFlow";
+import FremlysFormFlow from "./FremlysFormFlow";
 
-function EfterlysKat() {
+function FremlysKat() {
   return (
     <PageLayout>
       <Head>
-        <title>Efterlys din kat</title>
+        <title>Fremlys en kat</title>
       </Head>
       <Flex
         bg="brand.lightGrey"
@@ -26,20 +26,20 @@ function EfterlysKat() {
           px={{ base: "1rem" }}
         >
           <Heading as={"h1"} size={"heading2"} mb="1rem">
-            Her kan du efterlyse din kat
+            Her kan du fremlyse en kat
           </Heading>
           <Text>
-            Inden du efterlyser din kat er det en god idé at tjekke vores liste
-            over fundne/fremlyste katte{" "}
-            <NextLink href={`/indberetning/fremlyste-katte`} passHref>
+            Inden du fremlyser en kat er det en god idé at tjekke om der er
+            nogen der allerede har efterlyst den på vores liste{" "}
+            <NextLink href={`/efterlysning/efterlyste-katte`} passHref>
               <Link variant={"inLink"}>her</Link>
             </NextLink>
           </Text>
         </Flex>
-        <EfterlysFormFlow />
+        <FremlysFormFlow />
       </Flex>
     </PageLayout>
   );
 }
 
-export default EfterlysKat;
+export default FremlysKat;
