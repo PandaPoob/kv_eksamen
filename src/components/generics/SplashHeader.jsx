@@ -55,7 +55,7 @@ function SplashHeader({
         color="brand.white"
         gap="1rem"
         py={"2rem"}
-        px={{ base: "2rem", md: "4rem" }}
+        px={{ base: "1rem", md: "4rem" }}
         textAlign={textPos}
       >
         {overtekstChecker() && (

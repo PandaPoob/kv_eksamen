@@ -16,7 +16,7 @@ function AdoptionsKatte({ data, sideData }) {
   return (
     <PageLayout>
       <PageHead {...sideData} />
-      <SplashHeader {...sideData} />
+      <SplashHeader imgMobPos={"left"} {...sideData} />
 
       <FilterOptions
         internatFilter={internatFilter}

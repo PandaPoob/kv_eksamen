@@ -7,23 +7,27 @@ import { IoPawOutline } from "react-icons/io5";
 import { Box } from "@chakra-ui/react";
 
 export default function InternaterIndhold({ sideData, internatData }) {
+  const icon = <IoPawOutline size={60} color="#D43B4D" />;
 
-    const icon = <IoPawOutline size={60} color="#D43B4D"/>
-
-    const linkdata = internatData.map((k)=> (
-        {
-            name: k.acf.bynavn,
-            urlEndpoint:`/om-os/internater/${k.id}`,
-            icon: icon,
-        }
-    ))
+  const linkdata = internatData.map((k) => ({
+    name: k.acf.bynavn,
+    urlEndpoint: `/om-os/internater/${k.id}`,
+    icon: icon,
+  }));
 
   return (
     <PageLayout>
       <PageHead {...sideData} />
-      <SplashHeader {...sideData} />
+      <SplashHeader {...sideData} imgMobPos={"20%"} />
       <Box minH="50vh" display={"grid"} alignContent="center">
-        <Box display={"flex"} justifyContent="center" flexWrap={"wrap"} gap="1rem" py={"3rem"} px="1rem">
+        <Box
+          display={"flex"}
+          justifyContent="center"
+          flexWrap={"wrap"}
+          gap="1rem"
+          py={"3rem"}
+          px="1rem"
+        >
           <ArticleLinkGroup data={linkdata} />
         </Box>
       </Box>

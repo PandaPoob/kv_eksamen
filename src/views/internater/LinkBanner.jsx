@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Text, Divider, Link, useBreakpointValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { BsChevronRight } from "react-icons/bs";
+import { Fragment } from "react";
 
 export default function LinkBanner({ data }) {
   const bannerData = data;
@@ -29,8 +30,8 @@ export default function LinkBanner({ data }) {
       flexWrap={"wrap"}
     >
       {cleanBannerDataArr.map((bLink, index) => (
-        <>
-          <LinkWrapper key={bLink.id} data={bLink.item}>
+        <Fragment key={bLink.id}>
+          <LinkWrapper data={bLink.item}>
             <Text fontWeight={"semibold"}>{bLink.item.navn}</Text>
             <BsChevronRight />
           </LinkWrapper>
@@ -41,10 +42,8 @@ export default function LinkBanner({ data }) {
               borderColor={"brand.blueCta"}
               orientation={dividerOrientation}
             />
-          ) : (
-            <></>
-          )}
-        </>
+          ) : null}
+        </Fragment>
       ))}
     </Box>
   );

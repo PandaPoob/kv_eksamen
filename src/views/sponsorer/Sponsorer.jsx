@@ -11,7 +11,7 @@ export default function Sponsorer({ data, sideData }) {
   return (
     <PageLayout>
       <PageHead {...sideData} />
-      <SplashHeader {...sideData} />
+      <SplashHeader imgMobPos={"25%"} {...sideData} />
       <OmSponsorer />
 
       <Hovedsponsorer data={data} />

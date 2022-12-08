@@ -11,7 +11,11 @@ function Medarbejderne({ data, sideData }) {
 
   return (
     <PageLayout>
-      <SplashHeader {...sideData}></SplashHeader>
+      <SplashHeader
+        imgMobPos={"15%"}
+        h1mobsize={"heading2"}
+        {...sideData}
+      ></SplashHeader>
 
       <Box bgColor="brand.lightGrey" display={"grid"} justifyContent={"center"}>
         <Flex
@@ -22,7 +26,13 @@ function Medarbejderne({ data, sideData }) {
           maxW={"container.xxl"}
         >
           {sortedM.map((m) => {
-            return <PersonArticle boxshadow={"1px 1px 6px 1px #b8b8b8"} key={m.id} {...m}></PersonArticle>;
+            return (
+              <PersonArticle
+                boxshadow={"1px 1px 6px 1px #b8b8b8"}
+                key={m.id}
+                {...m}
+              ></PersonArticle>
+            );
           })}
         </Flex>
       </Box>

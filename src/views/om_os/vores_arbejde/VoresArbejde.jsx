@@ -1,15 +1,14 @@
 import PageLayout from "../../../components/layout/PageLayout";
 import SplashHeader from "../../../components/generics/SplashHeader";
-import { Box, Heading, Flex, Text, Link, Image } from "@chakra-ui/react";
+import { Box, Heading, Flex, Text, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 function VoresArbejde({ sideData }) {
   return (
     <PageLayout color={"brand.blue"}>
-      <SplashHeader {...sideData}></SplashHeader>
+      <SplashHeader {...sideData} imgMobPos={"10%"}></SplashHeader>
 
       <Box
-        // bgColor="brand.lightGrey"
         bgColor="lightyellow"
         display={"grid"}
         justifyContent={"center"}

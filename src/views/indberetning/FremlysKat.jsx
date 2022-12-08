@@ -24,6 +24,7 @@ function FremlysKat() {
           textAlign="center"
           mx={{ md: "4rem", lg: "auto" }}
           px={{ base: "1rem" }}
+          py={"2rem"}
         >
           <Heading as={"h1"} size={"heading2"} mb="1rem">
             Her kan du fremlyse en kat

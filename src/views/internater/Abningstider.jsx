@@ -1,30 +1,39 @@
-import React from 'react'
-import { Box, Flex, Heading, Link, Icon, Divider, Text } from '@chakra-ui/react'
-import { BsTelephone, BsEnvelope } from "react-icons/bs";
+import React from "react";
+import { Box, Heading, Link, Divider, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-export default function Abningstider({data}) {
-    const abningstider = data.tiderne;
-       const abningstiderArr = Object.entries(abningstider).map((e) => ({
-         id: e[0],
-         tider: e[1],
-       }));
-     
-       //remove empty entries (false)
-       const cleanAbningstiderArr = abningstiderArr.filter((t) => t.tider !== false && t.tider.dage !== "");
+export default function Abningstider({ data }) {
+  const abningstider = data.tiderne;
+  const abningstiderArr = Object.entries(abningstider).map((e) => ({
+    id: e[0],
+    tider: e[1],
+  }));
 
+  //remove empty entries (false)
+  const cleanAbningstiderArr = abningstiderArr.filter(
+    (t) => t.tider !== false && t.tider.dage !== ""
+  );
 
-        const butikstider = data.butiksabningstider;
-        const butikstiderArr = Object.entries(butikstider).map((e) => ({
-          id: e[0],
-          tider: e[1],
-        }));
+  const butikstider = data.butiksabningstider;
 
-        //remove empty entries (false)
-        const cleanButikstiderArr = butikstiderArr.filter((t) => t.tider !== false && t.tider.dage !== "");
-
+  const butikstiderArr = Object.entries(butikstider).map((e, index) => ({
+    id: index + "butikstider",
+    tider: e[1],
+  }));
+  console.log(abningstiderArr);
+  //remove empty entries (false)
+  const cleanButikstiderArr = butikstiderArr.filter(
+    (t) => t.tider !== false && t.tider.dage !== ""
+  );
+  console.log(cleanButikstiderArr);
   return (
-    <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
+    <Box
+      as="article"
+      bg={"brand.white"}
+      boxShadow="md"
+      p={"2rem"}
+      borderRadius="0.3rem"
+    >
       <Box display={"grid"} gap="1rem" pb={"1rem"}>
         <Heading as={"h3"} size="heading4">
           Åbningstider
@@ -45,7 +54,9 @@ export default function Abningstider({data}) {
         {cleanAbningstiderArr.map((t) => (
           <Box key={t.id} display="grid" gridTemplateColumns={"1fr 1fr"}>
             <Text>{t.tider.dage}:</Text>
-            <Text fontWeight={"semibold"} placeSelf="end">{t.tider.tider}</Text>
+            <Text fontWeight={"semibold"} placeSelf="end">
+              {t.tider.tider}
+            </Text>
           </Box>
         ))}
       </Box>
@@ -55,12 +66,22 @@ export default function Abningstider({data}) {
           <Heading as="h4" size="heading5" mb="1rem">
             Internatsbutik
           </Heading>
-          <Text>Disse tider gælder ikke for adoption af katte, det er udelukkende butikken</Text>
+          <Text>
+            Disse tider gælder ikke for adoption af katte, det er udelukkende
+            butikken
+          </Text>
 
           {cleanButikstiderArr.map((t) => (
-            <Box key={t} display={"grid"} gridTemplateColumns="1fr 1fr" mt="1rem">
+            <Box
+              key={t.id}
+              display={"grid"}
+              gridTemplateColumns="1fr 1fr"
+              mt="1rem"
+            >
               <Text>{t.tider.dage}:</Text>
-              <Text fontWeight={"semibold"} placeSelf="end">{t.tider.tider}</Text>
+              <Text fontWeight={"semibold"} placeSelf="end">
+                {t.tider.tider}
+              </Text>
             </Box>
           ))}
         </Box>

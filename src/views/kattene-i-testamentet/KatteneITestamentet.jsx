@@ -12,7 +12,7 @@ export default function KatteneITestamentet({ imgData, sideData }) {
   return (
     <PageLayout>
       <PageHead {...sideData} />
-      <SplashHeader h1mobsize="heading2" {...sideData} />
+      <SplashHeader h1mobsize="heading2" imgMobPos={"20%"} {...sideData} />
       <KTSectionOne acf={imgData.acf} />
       <KTSectionTwo />
       <KTSectionThree acf={imgData.acf} />
