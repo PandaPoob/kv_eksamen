@@ -1,24 +1,22 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
+import VoresArbejde from "../../../views/om_os/vores_arbejde/VoresArbejde";
+import url from "../../../api/url";
 
-function VoresArbejdePage({ data }) {
+function VoresArbejdePage({ sideData }) {
   // console.log(data)
 
-  return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Vores arbejde
-      </Heading>
-    </Box>
-  );
+  return <VoresArbejde sideData={sideData} />;
 }
 
-/* export async function getStaticProps() {
-     const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
+export async function getStaticProps() {
+  const res2 = await fetch(`${url}indholdsider/1119`);
+  const sideData = await res2.json();
 
-  return { props: { data } };
+  return {
+    props: {
+      sideData: sideData,
+    },
+  };
 }
- */
+
 export default VoresArbejdePage;
