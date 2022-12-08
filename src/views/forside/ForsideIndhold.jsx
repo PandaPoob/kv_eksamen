@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react";
 import PageLayout from "../../components/layout/PageLayout";
 import PageHead from "../../components/layout/PageHead";
 import SplashHeader from "../../components/generics/SplashHeader";
@@ -8,21 +8,23 @@ import NyhedsSektion from "./NyhedsSektion";
 import MaanedensKatte from "./MaanedensKatte";
 import HjaelpOversigt from "./HjaelpOversigt";
 
-
-
-export default function ForsideIndhold({sideData, katteData, nyhedsData}) {
-  
+export default function ForsideIndhold({ sideData, katteData, nyhedsData }) {
   return (
     <PageLayout>
-        <Box>
+      <Box>
         <PageHead {...sideData} />
-        <SplashHeader {...sideData} textPos="center" imgPos="center top" height="80vh" />
-        <Banner/>
+        <SplashHeader
+          {...sideData}
+          textPos="center"
+          imgPos="center top"
+          height={{ base: "80vh", xl: "83vh" }}
+        />
+        <Banner />
         <VoresArbejde />
         <NyhedsSektion nyhedsData={nyhedsData} />
         <MaanedensKatte katteData={katteData} />
-        <HjaelpOversigt/>
+        <HjaelpOversigt />
       </Box>
     </PageLayout>
-  )
+  );
 }

@@ -2,13 +2,16 @@ import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../../api/url";
 import PraktiskInfo from "../../../views/adopter/praktisk-info/PraktiskInfo";
 function PraktiskInfoPage({ sideData, articleData, imgData }) {
-  // console.log(data)
-  let adoptArticles = articleData.filter((a)=> {
+  let adoptArticles = articleData.filter((a) => {
     return a.acf.adoption === true;
-  })
+  });
 
   return (
-    <PraktiskInfo sideData={sideData} articleData={adoptArticles} imgData={imgData}/>
+    <PraktiskInfo
+      sideData={sideData}
+      articleData={adoptArticles}
+      imgData={imgData}
+    />
   );
 }
 

@@ -2,7 +2,9 @@ import url from "../../../api/url";
 import InternatSingle from "../../../views/internater/InternatSingle";
 
 function InternatPage({ internatData, MedarbejdData }) {
-  return <InternatSingle internatData={internatData} MedarbejdData={MedarbejdData} />;
+  return (
+    <InternatSingle internatData={internatData} MedarbejdData={MedarbejdData} />
+  );
 }
 
 export async function getStaticPaths() {
@@ -11,7 +13,6 @@ export async function getStaticPaths() {
 
   return {
     paths: results.map((a) => {
-      // console.log(k.id)
       return { params: { slug: String(a.id) } };
     }),
     fallback: false,

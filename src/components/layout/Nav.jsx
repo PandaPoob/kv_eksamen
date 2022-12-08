@@ -3,7 +3,6 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
-import logo from "../../assets/svgs/logo.svg";
 import NavGroup from "./NavGroup";
 import { BsCart3, BsList } from "react-icons/bs";
 import {
@@ -108,7 +107,7 @@ function Nav({ children }) {
         zIndex={"10"}
         position={"fixed"}
         w={"100%"}
-        top={hidden ? "-5rem" : "0"}
+        top={hidden ? "-5.1rem" : "0"}
         left={0}
         transition={"top 0.3s"}
       >
@@ -116,7 +115,7 @@ function Nav({ children }) {
           <Flex as={"nav"} justifyContent="space-between">
             <NextLink href={`/`} passHref>
               <Link>
-                <Image src={logo} alt={"logo"} height={50} width={50} />
+                <Image src={"/logo.svg"} alt={"logo"} height={50} width={50} />
               </Link>
             </NextLink>
 
@@ -144,10 +143,15 @@ function Nav({ children }) {
         ) : (
           <Flex as={"nav"} justifyContent="space-between" alignItems={"center"}>
             <Flex gap="1rem">
-              <Box pr={"1rem"}>
+              <Box pr={"1rem"} py="0.2rem">
                 <NextLink href={`/`} passHref>
                   <Link>
-                    <Image src={logo} alt={"logo"} height={50} width={50} />
+                    <Image
+                      src={"/logo.svg"}
+                      alt={"logo"}
+                      height={50}
+                      width={50}
+                    />
                   </Link>
                 </NextLink>
               </Box>

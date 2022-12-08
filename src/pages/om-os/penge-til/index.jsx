@@ -1,13 +1,8 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import PengeTil from "../../../views/om_os/penge-til/PengeTil";
 import url from "../../../api/url";
 
 function PengeTilPage({ sideData, imgData }) {
-  // console.log(data)
-
-  return (
-    <PengeTil sideData={sideData} imgData={imgData} />
-  );
+  return <PengeTil sideData={sideData} imgData={imgData} />;
 }
 
 export async function getStaticProps() {

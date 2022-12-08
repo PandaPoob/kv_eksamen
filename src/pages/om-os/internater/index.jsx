@@ -1,13 +1,8 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import InternaterIndhold from "../../../views/internater/InternaterIndhold";
 import url from "../../../api/url";
 
 function InternaterPage({ sideData, internatData }) {
-  // console.log(data)
-
-  return (
-    <InternaterIndhold sideData={sideData} internatData={internatData}/>
-  );
+  return <InternaterIndhold sideData={sideData} internatData={internatData} />;
 }
 
 export async function getStaticProps() {

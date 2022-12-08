@@ -2,7 +2,7 @@ import url from "../../../api/url";
 import SingleViewKat from "../../../components/efterlyst_fremlyst/SingleViewKat";
 
 function FremlystKatPage({ fremlystKatData }) {
-  return <SingleViewKat EFdata={fremlystKatData} type="fremlysning" />
+  return <SingleViewKat EFdata={fremlystKatData} type="fremlysning" />;
 }
 
 export async function getStaticPaths() {
@@ -11,7 +11,6 @@ export async function getStaticPaths() {
 
   return {
     paths: results.map((k) => {
-      // console.log(k.id)
       return { params: { slug: String(k.id) } };
     }),
     fallback: false,

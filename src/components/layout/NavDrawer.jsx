@@ -10,7 +10,6 @@ import {
   Link,
   IconButton,
 } from "@chakra-ui/react";
-import logo from "../../assets/svgs/logo.svg";
 import NavMobileGroup from "./NavMobileGroup";
 import { BsXLg, BsChevronRight } from "react-icons/bs";
 
@@ -28,7 +27,7 @@ function NavDrawer({ navData, isOpen, onClose }) {
         >
           <NextLink href={`/`} passHref>
             <Link alignItems={"center"} display="flex">
-              <Image src={logo} alt={"logo"} height={50} width={50} />
+              <Image src={"/logo.svg"} alt={"logo"} height={50} width={50} />
             </Link>
           </NextLink>
 

@@ -11,7 +11,6 @@ export async function getStaticPaths() {
 
   return {
     paths: results.map((a) => {
-      // console.log(k.id)
       return { params: { slug: String(a.id) } };
     }),
     fallback: false,

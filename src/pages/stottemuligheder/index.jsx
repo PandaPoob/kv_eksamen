@@ -3,11 +3,7 @@ import StøttemulighederIndhold from "../../views/støttemuligheder/Støttemulig
 import url from "../../api/url";
 
 function StottemulighederPage({ sideData }) {
-  // console.log(data)
-
-  return (
-    <StøttemulighederIndhold sideData={sideData}/>
-  );
+  return <StøttemulighederIndhold sideData={sideData} />;
 }
 
 export async function getStaticProps() {

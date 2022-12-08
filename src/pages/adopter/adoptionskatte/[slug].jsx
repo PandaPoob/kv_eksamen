@@ -2,7 +2,7 @@ import url from "../../../api/url";
 import AdoptionsKat from "../../../views/adopter/adoptionskatte/AdoptionsKat";
 
 function AdoptionsKatPage({ katData }) {
-  return <AdoptionsKat katData={katData} />
+  return <AdoptionsKat katData={katData} />;
 }
 
 export async function getStaticPaths() {
@@ -11,7 +11,6 @@ export async function getStaticPaths() {
 
   return {
     paths: results.map((k) => {
-      // console.log(k.id)
       return { params: { slug: String(k.id) } };
     }),
     fallback: false,

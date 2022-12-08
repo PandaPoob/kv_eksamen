@@ -111,7 +111,7 @@ function FremlysFormFlow() {
   }
 
   async function postRequest(postData) {
-    console.log(postData);
+    //console.log(postData);
 
     const JSONdata = JSON.stringify(postData);
 

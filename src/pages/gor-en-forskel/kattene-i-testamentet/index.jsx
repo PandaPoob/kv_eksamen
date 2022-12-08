@@ -3,11 +3,7 @@ import KatteneITestamentet from "../../../views/kattene-i-testamentet/KatteneITe
 import url from "../../../api/url";
 
 function TestamentePage({ sideData, imgData }) {
-  // console.log(data)
-
-  return (
-    <KatteneITestamentet sideData={sideData} imgData={imgData} />
-  );
+  return <KatteneITestamentet sideData={sideData} imgData={imgData} />;
 }
 
 export async function getStaticProps() {

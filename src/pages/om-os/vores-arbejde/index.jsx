@@ -1,10 +1,7 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import VoresArbejde from "../../../views/om_os/vores_arbejde/VoresArbejde";
 import url from "../../../api/url";
 
 function VoresArbejdePage({ sideData }) {
-  // console.log(data)
-
   return <VoresArbejde sideData={sideData} />;
 }
 

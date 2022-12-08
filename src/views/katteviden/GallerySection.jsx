@@ -13,8 +13,6 @@ function GallerySection({ gallery }) {
   //remove empty entries (false)
   const cleanbilledArr = billedArr.filter((b) => b.url !== false);
 
-  console.log(cleanbilledArr.length);
-
   return (
     <Box mb={"4rem"} mx={{ base: "1rem", lg: "4rem" }}>
       {cleanbilledArr.length === 1 ? (
