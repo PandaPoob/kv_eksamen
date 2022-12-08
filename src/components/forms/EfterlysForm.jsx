@@ -2,7 +2,7 @@ import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import { SelectControl } from "formik-chakra-ui";
 import * as Yup from "yup";
-import CatBreadCrumb from "../../components/efterlyst+fremlyst/formsteps/CatBreadCrumb";
+import CatBreadCrumb from "../../components/efterlyst_fremlyst/formsteps/CatBreadCrumb";
 import {
   CatNameField,
   CatNameFieldInitialValue,
