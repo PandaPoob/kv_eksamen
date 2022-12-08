@@ -20,12 +20,12 @@ export default function Abningstider({ data }) {
     id: index + "butikstider",
     tider: e[1],
   }));
-  console.log(abningstiderArr);
+
   //remove empty entries (false)
   const cleanButikstiderArr = butikstiderArr.filter(
     (t) => t.tider !== false && t.tider.dage !== ""
   );
-  console.log(cleanButikstiderArr);
+
   return (
     <Box
       as="article"

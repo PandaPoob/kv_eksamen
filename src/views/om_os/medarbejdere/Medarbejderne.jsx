@@ -17,7 +17,7 @@ function Medarbejderne({ data, sideData }) {
         {...sideData}
       ></SplashHeader>
 
-      <Box bgColor="brand.lightGrey" display={"grid"} justifyContent={"center"}>
+      <Box display={"grid"} justifyContent={"center"}>
         <Flex
           justify={"center"}
           columnGap={"2rem"}

@@ -32,34 +32,6 @@ function AdoptionKatteListe({
     )
   );
 
-  /*   //let internatFilteredKatte = [];
-  let internatFilteredKatte = filterCat(
-    internatFilter === "",
-    (kat) => kat.acf.internat === internatFilter,
-    data
-  );
-
-  //let kanMedAndreKatte = [];
-  let kanMedAndreKatte = filterCat(
-    !kanMedAndre,
-    (kat) => kat.acf.kan_med_andre_katte === "Ja",
-    internatFilteredKatte
-  );
-
-  //let miljoFilteredKatte = [];
-  let miljoFilteredKatte = filterCat(
-    miljoFilter === "",
-    (kat) => kat.acf.miljo === miljoFilter,
-    kanMedAndreKatte
-  );
-
-  //let filteredKatte = [];
-  let filteredKatte = filterCat(
-    alderFilter === "",
-    (kat) => kat.acf.alder === alderFilter,
-    miljoFilteredKatte
-  ); */
-
   return (
     <Flex
       justifyContent={"center"}
