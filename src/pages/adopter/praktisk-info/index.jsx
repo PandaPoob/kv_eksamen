@@ -1,24 +1,31 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
-
-function PraktiskInfoPage({ data }) {
+import url from "../../../api/url";
+import PraktiskInfo from "../../../views/adopter/praktisk-info/PraktiskInfo";
+function PraktiskInfoPage({ sideData, articleData, imgData }) {
   // console.log(data)
+  let adoptArticles = articleData.filter((a)=> {
+    return a.acf.adoption === true;
+  })
 
   return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Praktisk info
-      </Heading>
-    </Box>
+    <PraktiskInfo sideData={sideData} articleData={adoptArticles} imgData={imgData}/>
   );
 }
 
-/* export async function getStaticProps() {
-   const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
+export async function getStaticProps() {
+  const res = await fetch(`${url}indholdsider/1507`);
+  const sideData = await res.json();
+  const res2 = await fetch(`${url}infoartikler?per_page`);
+  const articleData = await res2.json();
+  const res3 = await fetch(`${url}indholdsbilleder/1509`);
+  const imgData = await res3.json();
 
-  return { props: { data } };
+  return {
+    props: {
+      sideData: sideData,
+      articleData: articleData,
+      imgData: imgData,
+    },
+  };
 }
- */
 export default PraktiskInfoPage;

@@ -64,10 +64,10 @@ function Nav({ children }) {
     {
       titel: "Katteklinikker",
       subTitel: [
-        { navn: "Aalborg", link: "/katteklinikker/aalborg" },
-        { navn: "Billund", link: "/katteklinikker/billund" },
-        { navn: "Brøndby", link: "/katteklinikker/brondby" },
-        { navn: "Slagelse", link: "/katteklinikker/slagelse" },
+        { navn: "Aalborg", link: "/katteklinikker/1258" },
+        { navn: "Billund", link: "/katteklinikker/1253" },
+        { navn: "Brøndby", link: "/katteklinikker/1169" },
+        { navn: "Slagelse", link: "/katteklinikker/1203" },
       ],
     },
     {
