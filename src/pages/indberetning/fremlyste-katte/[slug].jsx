@@ -1,5 +1,5 @@
 import url from "../../../api/url";
-import SingleViewKat from "../../../components/efterlyst+fremlyst/SingleViewKat";
+import SingleViewKat from "../../../components/efterlyst_fremlyst/SingleViewKat";
 
 function FremlystKatPage({ fremlystKatData }) {
   return <SingleViewKat EFdata={fremlystKatData} type="fremlysning" />
