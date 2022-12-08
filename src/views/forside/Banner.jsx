@@ -7,19 +7,19 @@ export default function Banner({ bannerData }) {
   let bannerdata = [
     {
       name: "Jeg har fundet en kat",
-      urlEndpoint: "efterlysning/efterlys-kat",
+      urlEndpoint: "/indberetning/fundet-kat",
     },
     {
       name: "Jeg har mistet en kat",
-      urlEndpoint: "efterlysning/mistet-kat",
+      urlEndpoint: "/efterlysning/mistet-kat",
     },
     {
       name: "Bestil tid hos Katteklinikken",
-      urlEndpoint: "katteklinikker",
+      urlEndpoint: "/katteklinikker",
     },
     {
       name: "Jeg kan ikke beholde min kat",
-      urlEndpoint: "efterlysning/mistet-kat",
+      urlEndpoint: "/efterlysning/mistet-kat",
     },
   ];
 
@@ -32,26 +32,36 @@ export default function Banner({ bannerData }) {
   return (
     <Box
       as="section"
-      display={{ base: "grid", lg: "flex" }}
-      bg={"brand.lightGrey"}
-      justifyContent="space-evenly"
-      gap="1rem"
-      py="2rem"
-      flexWrap={"wrap"}
+      display={"grid"}
+      bg={{ lg: "brand.lightGrey" }}
+      alignItems="center"
+      gridTemplateColumns={{ lg: "1fr 2px 1fr 2px 1fr 2px 1fr" }}
+      gap={{ base: "0.2rem", lg: "0.1rem" }}
+      py={{ base: "0", lg: "1rem" }}
     >
       {bannerdata.map((bLink, index) => (
         <Fragment key={index}>
           <NextLink key={bLink.name} href={`${bLink.urlEndpoint}`} passHref>
-            <Link variant={"clean"} gap="1rem" alignItems={"center"}>
-              <Text fontWeight={"semibold"}>{bLink.name}</Text>
+            <Link
+              variant={"inLink"}
+              display="flex"
+              gap={{ base: "1rem", lg: "0.2rem", xl: "2rem" }}
+              alignItems={"center"}
+              justifyContent={{ base: "space-between", lg: "center" }}
+              bg="brand.lightGrey"
+              py={{ base: "2rem", lg: "2rem" }}
+              px={{ base: "1rem", lg: "0" }}
+            >
+              <Text>{bLink.name}</Text>
               <BsChevronRight />
             </Link>
           </NextLink>
           {index !== 3 ? (
             <Divider
-              height={{ base: "0", lg: "2rem" }}
+              height={{ base: "0", lg: "4rem" }}
               width={{ base: "90vw", lg: "0" }}
               borderColor={"brand.blueCta"}
+              display={{ base: "none", lg: "block" }}
               orientation={dividerOrientation}
             />
           ) : null}

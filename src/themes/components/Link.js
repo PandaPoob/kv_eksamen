@@ -19,6 +19,7 @@ const link = {
 
     inLink: {
       fontWeight: "bold",
+      fontSize: "xs",
 
       _hover: {
         textDecoration: "none",
