@@ -194,7 +194,7 @@ function VoresArbejde({ sideData }) {
         <Heading as="h2" size={"heading2"} textAlign={"center"} pt="4rem">
           Kattens velfærd
         </Heading>
-        <Text as="p" size={"body"}>
+        <Text as="p" size={"body"} textAlign="center">
           Kattens Værns arbejder for bedre forhold for katten gennem disse
           mærkesager.{" "}
         </Text>
