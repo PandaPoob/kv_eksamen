@@ -14,7 +14,7 @@ export default function KTSectionFour({acf}) {
             Veterinærsygeplejerske Karina Dillon skriver Kattens Værn i testamentet
           </Heading>
           <Text>Veterinærsygeplejerske Karina Dillon fortæller i Go’ Morgen Danmark om at hun har testamenteret sine penge til Kattens Værn og om de overvejelser i forbindelse hermed.</Text>
-          <a href="https://nyheder.tv2.dk/2021-03-15-48-aarig-vil-efterlade-sin-arv-til-katte-og-hun-er-ikke-den-eneste-0"><Link variant="blueBtn" maxW={"14rem"} justifyContent="center"  mt="2rem">Se afsnittet her</Link></a>
+          <a href="https://nyheder.tv2.dk/2021-03-15-48-aarig-vil-efterlade-sin-arv-til-katte-og-hun-er-ikke-den-eneste-0"><Link variant="exLink" maxW={"14rem"} justifyContent="center"  mt="2rem">Se afsnittet her</Link></a>
         </Box>
       </Box>
     </Box>

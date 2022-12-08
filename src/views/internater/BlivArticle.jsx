@@ -5,22 +5,28 @@ import NextLink from "next/link";
 export default function BlivArticle({item}) {
    
   return (
-    <Box display={"grid"} gap="1rem" bg={"brand.white"} minH="22rem" borderRadius="0.3rem" boxShadow={"md"}p="2rem">
-        <Heading as={"h3"} size="heading3">{item.overskrift}</Heading>
-        <Divider/>
-        <Text>{item.brodtekst}</Text>
-        <Flex justifyContent={"center"} gap="1rem" mt={{base: "1rem", lg: "2rem"}}>
-            {item.overskrift === "Bliv plejefamilie" ? 
-            <NextLink href="/gor-en-forskel/bliv-plejefamilie" passHref><Link variant={"blueBtn"}>Læs mere</Link></NextLink>
-            :
-            <></>
-            }
-            {item.status === "Ja" ? 
-            <Link href="#kontaktos" variant={"redBtn"}>Kontakt os</Link>
-            :
-            <></>
-            }
-        </Flex>
+    <Box bg={"brand.white"} minH="100%" borderRadius="0.3rem" boxShadow={"md"} p="2rem">
+      <Heading as={"h3"} size="heading4" mb="1rem">
+        {item.overskrift}
+        <Divider borderColor={"brand.borderGray"} mt="0.5rem" />
+      </Heading>
+      <Text>{item.brodtekst}</Text>
+      <Flex justifyContent={"center"} gap="2rem" mt={{ base: "2rem", lg: "2rem" }}>
+        {item.overskrift === "Bliv plejefamilie" ? (
+          <NextLink href="/gor-en-forskel/bliv-plejefamilie" passHref>
+            <Link variant={"blueBtn"}>Læs mere</Link>
+          </NextLink>
+        ) : (
+          <></>
+        )}
+        {item.status === "Ja" ? (
+          <Link href="#kontaktos" variant={"redBtn"}>
+            Kontakt os
+          </Link>
+        ) : (
+          <></>
+        )}
+      </Flex>
     </Box>
-  )
+  );
 }

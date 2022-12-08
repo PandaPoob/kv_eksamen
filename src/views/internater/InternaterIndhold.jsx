@@ -22,8 +22,10 @@ export default function InternaterIndhold({ sideData, internatData }) {
     <PageLayout>
       <PageHead {...sideData} />
       <SplashHeader {...sideData} />
-      <Box display={"flex"} justifyContent="center" flexWrap={"wrap"} gap="1rem" py={"3rem"} px="1rem">
-        <ArticleLinkGroup data={linkdata} />
+      <Box minH="50vh" display={"grid"} alignContent="center">
+        <Box display={"flex"} justifyContent="center" flexWrap={"wrap"} gap="1rem" py={"3rem"} px="1rem">
+          <ArticleLinkGroup data={linkdata} />
+        </Box>
       </Box>
     </PageLayout>
   );

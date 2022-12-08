@@ -13,6 +13,7 @@ export default function SelectedCatArticle({acf, id}){
             display={"grid"}
             gridTemplateRows="repeat(7, 1fr)"
             overflow={"hidden"}
+            minH="22rem"
             transition="all 0.2s ease-in"
               _hover={{
                 transform: "scale(1.02)",
@@ -25,7 +26,7 @@ export default function SelectedCatArticle({acf, id}){
               layout="fill" 
               objectFit={"cover"} 
             />
-            <Flex position={"relative"} gridRow={"6/7"} width="10rem" justifyContent={"space-evenly"} padding={"8px"} bgColor={"brand.blueCta"} borderRadius="2px" color="brand.white" gap="1rem">
+            <Flex position={"absolute"} gridRow={"6/7"} width="10rem" justifyContent={"space-evenly"} padding={"8px"} bgColor={"brand.blueCta"} borderRadius="2px" color="brand.white" gap="1rem">
               <Text>{acf.navn}</Text>
               <Image src={fifthWhite} alt={"divider"} height={8} width={8} />
               {/* <FifthElement color={"brand.white"} boxSize={8}/> */}

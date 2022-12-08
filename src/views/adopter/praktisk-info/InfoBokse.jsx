@@ -4,9 +4,9 @@ import { ImDiamonds } from "react-icons/im";
 import NextLink from "next/link"
 export default function InfoBokse() {
   return (
-    <Box display={"grid"} gridTemplateColumns={{ lg: "1fr 1fr" }} gap={{ base: "2rem", lg: "4rem" }} maxW="container.xl" m="auto" pb="6rem">
-      <Box bg="brand.lightGrey" p="2rem" display={"grid"} gap="2rem" borderRadius={"0.3rem"}>
-        <Heading as="h3" size={{ base: "heading4", md: "heading3" }}>
+    <Box display={"grid"} gridTemplateColumns={{ lg: "1fr 1fr" }} gap={{ base: "2rem", lg: "4rem" }} maxW="container.xl" m="auto" pb="6rem" px="1rem">
+      <Box bg="brand.lightGrey" p={"2rem"} display={"grid"} gap="2rem" borderRadius={"0.3rem"}>
+        <Heading as="h3" size={{ base: "heading4", md: "heading4" }}>
           Royal Canin medlemsskab
         </Heading>
         <Text>Vi tilbyder også et medlemskab hos Royal Canin Klubben. Medlemsskabet er helt gratis og kan afmeldes, når som helst, man ønsker det.</Text>
@@ -17,7 +17,7 @@ export default function InfoBokse() {
         <Text>For hver tilmelding donerer Royal Canin også 25 kr. til Kattens Værns arbejde med Danmarks katte.</Text>
       </Box>
       <Box bg="brand.lightGrey" p="2rem" borderRadius={"0.3rem"}>
-        <Heading as="h3" size={{ base: "heading4", md: "heading3" }} mb="2rem">
+        <Heading as="h3" size={{ base: "heading4", md: "heading4" }} mb="2rem">
           Vær opmærksom på...
         </Heading>
         <List display={"grid"} gap="1.5rem">

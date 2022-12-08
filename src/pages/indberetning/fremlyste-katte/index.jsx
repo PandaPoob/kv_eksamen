@@ -1,6 +1,6 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../../api/url";
-import EFKatte from "../../../components/efterlyst+fremlyst/EFKatte";
+import EFKatte from "../../../components/efterlyst_fremlyst/EFKatte";
 
 function FremlysteKattePage({ fremlystData, sideData }) {
 

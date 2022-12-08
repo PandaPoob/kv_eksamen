@@ -19,11 +19,11 @@ export default function HighlightSektion({acf}) {
             py={"2rem"}
             px="2rem"
         >
-         <Heading as={"h3"} size="heading3">
+         <Heading as={"h3"} size="heading4">
             {a.overskrift}
             </Heading>
             <NextLink href={a.knaplink} passHref>
-                    <Link variant={"redBtn"} maxW="12rem" mx="auto" mt="3rem" justifyContent={"center"}>{a.knaptekst}</Link>
+                    <Link variant={"redBtn"} width="12rem" mx="auto" mt="3rem" justifyContent={"center"}>{a.knaptekst}</Link>
             </NextLink>
         </Flex>
     </Box>

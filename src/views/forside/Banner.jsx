@@ -28,7 +28,7 @@ export default function Banner({bannerData}){
 
     return (
       <Box as="section" display={{ base: "grid", lg: "flex" }} bg={"brand.lightGrey"} justifyContent="space-evenly" gap="1rem" py="2rem" flexWrap={"wrap"}>
-        {bannerdata.map((bLink)=> (
+        {bannerdata.map((bLink, index)=> (
           <>
             <NextLink key={bLink.name} href={`${bLink.urlEndpoint}`} passHref>
               <Link variant={"clean"} gap="1rem" alignItems={"center"}>
@@ -36,8 +36,12 @@ export default function Banner({bannerData}){
                 <SlArrowRight/> 
               </Link>
             </NextLink>
+            {index !== 3 ? 
             <Divider height={{ base: "0", lg: "2rem" }} width={{ base: "90vw", lg: "0" }} borderColor={"brand.blueCta"} orientation={dividerOrientation} />
-          </>
+          :
+          <></>
+          }
+            </>
         ))}
       </Box>
     );

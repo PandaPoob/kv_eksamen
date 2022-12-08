@@ -18,10 +18,10 @@ const a = acf.banner;
     
     
   return (
-    <Box bg="brand.lightGrey" p="2rem" display={"grid"} placeContent={"center"} >
+    <Box bg="brand.lightGrey" p="2rem" py={{base: "3rem", md: "4rem"}} display={"grid"} placeContent={"center"} >
         <List color="brand.darkGrey"display={"grid"} gridTemplateColumns={{base: "1fr", md: "1fr 1fr", lg:"repeat(3, 1fr)"}} gap="2rem" maxW={"container.xxl"}> 
             {cleanBannerdataArr.map((b)=>(
-            <ListItem key={b.label} display={"flex"} alignItems="center">
+            <ListItem key={b.label} display={"flex"} alignItems="center" fontWeight={"semibold"}>
                  <ListIcon as={ImDiamonds} color="brand.redCta"/>
                  {b.value}
             </ListItem>
