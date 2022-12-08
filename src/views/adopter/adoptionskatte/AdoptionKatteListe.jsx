@@ -1,5 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import Article from "../../../components/articles/Article";
+import GridLayout from "../../../components/layout/GridLayout";
 
 function AdoptionKatteListe({
   data,
@@ -33,16 +34,11 @@ function AdoptionKatteListe({
   );
 
   return (
-    <Flex
-      justifyContent={"center"}
-      flexWrap="wrap"
-      gap={"2rem"}
-      maxW={"container.xxl"}
-    >
+    <GridLayout>
       {filteredKatte.map((kat) => {
         return <Article key={kat.id} {...kat}></Article>;
       })}
-    </Flex>
+    </GridLayout>
   );
 }
 

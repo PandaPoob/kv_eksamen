@@ -1,7 +1,20 @@
-import { Container } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 function GridLayout({ children }) {
-  return <Container maxW={"container.xxl"}>{children}</Container>;
+  return (
+    <Box
+      maxW={"container.xxl"}
+      display="grid"
+      gap={"2rem"}
+      gridTemplateColumns={{
+        md: "1fr 1fr",
+        lbp: "1fr 1fr 1fr",
+        xxl: "1fr 1fr 1fr 1fr",
+      }}
+    >
+      {children}
+    </Box>
+  );
 }
 
 export default GridLayout;
