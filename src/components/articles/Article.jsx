@@ -1,7 +1,7 @@
 import Image from "next/image";
 import NextLink from "next/link";
-import fifth from "../../assets/svgs/fifth.svg";
-import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
+import { Box, Heading, Text, Link, Flex, Icon } from "@chakra-ui/react";
+import { ImDiamonds } from "react-icons/im";
 
 function Article({ acf, id }) {
   return (
@@ -49,11 +49,16 @@ function Article({ acf, id }) {
               </Text>{" "}
               {acf.navn}
             </Heading>
-            <Flex justifyContent={"center"} gap="1rem" fontSize="xxs">
+            <Flex
+              justifyContent={"center"}
+              alignItems="center"
+              gap="1rem"
+              fontSize="xxs"
+            >
               <Text>{acf.kon}</Text>
-              <Image src={fifth} alt={"divider"} height={8} width={8} />
+              <Icon as={ImDiamonds} width="0.9rem" height="0.8rem" />
               <Text>{acf.alder}</Text>
-              <Image src={fifth} alt={"divider"} height={8} width={8} />
+              <Icon as={ImDiamonds} width="0.9rem" height="0.8rem" />
               <Text>{acf.internat}</Text>
             </Flex>
           </Flex>

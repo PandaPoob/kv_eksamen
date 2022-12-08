@@ -27,12 +27,7 @@ function AdoptionsKatte({ data, sideData }) {
         setAlderFilter={setAlderFilter}
       />
 
-      <Box
-        bg="brand.lightGrey"
-        display={"grid"}
-        justifyContent="center"
-        py={"4rem"}
-      >
+      <Box bg="brand.lightGrey">
         <AdoptionKatteListe
           data={data}
           internatFilter={internatFilter}

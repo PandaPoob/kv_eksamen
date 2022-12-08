@@ -1,7 +1,7 @@
-import { Box, Flex, Text, Link } from "@chakra-ui/react";
+import { Box, Flex, Text, Link, Icon } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Image from "next/image";
-//import fifthWhite from "../../assets/svgs/fifthWhite.svg";
+import { ImDiamonds } from "react-icons/im";
 
 export default function SelectedCatArticle({ acf, id }) {
   return (
@@ -35,10 +35,10 @@ export default function SelectedCatArticle({ acf, id }) {
             borderRadius="2px"
             color="brand.white"
             gap="1rem"
+            alignItems={"center"}
           >
             <Text>{acf.navn}</Text>
-            {/*  <Image src={fifthWhite} alt={"divider"} height={8} width={8} /> */}
-            {/* <FifthElement color={"brand.white"} boxSize={8}/> */}
+            <Icon as={ImDiamonds} width="1rem" height="1rem"></Icon>
             <Text>{acf.miljo}</Text>
           </Flex>
         </Box>

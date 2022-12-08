@@ -29,12 +29,7 @@ export default function EFKatte({ EFdata, sideData, url, type, imgMobilePos }) {
         setSearchInput={setSearchInput}
         searchInput={searchInput}
       />
-      <Box
-        bg="brand.lightGrey"
-        display={"grid"}
-        justifyContent="center"
-        py={"4rem"}
-      >
+      <Box bg="brand.lightGrey">
         <EFkatteliste
           EFdata={EFdata}
           url={url}

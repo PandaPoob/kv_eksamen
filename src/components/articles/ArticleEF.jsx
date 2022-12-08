@@ -1,20 +1,17 @@
 import Image from "next/image";
 import NextLink from "next/link";
-import fifth from "../../assets/svgs/fifth.svg";
-import { Box, Heading, Text, Link, Flex } from "@chakra-ui/react";
-
-
+import { Box, Heading, Text, Link, Flex, Icon } from "@chakra-ui/react";
+import { ImDiamonds } from "react-icons/im";
 
 function ArticleEF({ acf, id, type, url }) {
-
   let oremaerkeString = () => {
-    if (acf.oremaerket === "Ja") return "Er øremærket";
-    else if (acf.oremaerket === "Nej") return "Er ikke øremærket";
+    if (acf.oremaerket === "Ja") return "Øremærket";
+    else if (acf.oremaerket === "Nej") return "Ikke øremærket";
     else return null;
   };
   let chippetString = () => {
-    if (acf.chippet === "Ja") return "Er chippet";
-    else if (acf.chippet === "Nej") return "Er ikke chippet";
+    if (acf.chippet === "Ja") return "Chippet";
+    else if (acf.chippet === "Nej") return "Ikke chippet";
     else return null;
   };
 
@@ -32,16 +29,44 @@ function ArticleEF({ acf, id, type, url }) {
       }}
     >
       <NextLink href={`${url}${id}`} passHref>
-        <Link h={"20rem"} w={"20rem"} flexGrow={1} flexDir={"column"} variant={"clean"} borderTopRadius="0.2rem" overflow="hidden">
-          <Box position="relative" minH={"14rem"} width={"100%"}>
-            <Image src={acf.billede} alt={acf.navn} layout="fill" objectFit="cover" />
+        <Link
+          h={"20rem"}
+          w={"20rem"}
+          flexGrow={1}
+          flexDir={"column"}
+          variant={"clean"}
+          borderTopRadius="0.2rem"
+          overflow="hidden"
+        >
+          <Box position="relative" minH={"13rem"} width={"100%"}>
+            <Image
+              src={acf.billede}
+              alt={acf.navn}
+              layout="fill"
+              objectFit="cover"
+            />
           </Box>
-          <Flex minH={"5rem"} w="100%" padding={"1rem"} justifyContent={"center"} align="left" position="relative" flexDir="column">
-            <Text fontWeight={"normal"}>{type === "efterlystekatte" ? "Kat forsvundet fra" : "Kat fundet ved"}</Text>
-            <Heading as="h4" size="heading4">
+          <Flex
+            minH={"5rem"}
+            w="100%"
+            padding={"1rem"}
+            justifyContent={"center"}
+            align="left"
+            position="relative"
+            flexDir="column"
+          >
+            <Text fontWeight={"normal"}>
+              {type === "efterlystekatte"
+                ? `${acf.kon} forsvundet fra`
+                : `${acf.kon} fundet ved`}
+            </Text>
+            <Heading as="h4" size="heading4" mt="-0.2rem">
               {acf.by}
             </Heading>
-           <StringDataChecker oremaerkeString={oremaerkeString()} chippetString={chippetString()}/>
+            <StringDataChecker
+              oremaerkeString={oremaerkeString()}
+              chippetString={chippetString()}
+            />
           </Flex>
         </Link>
       </NextLink>
@@ -52,21 +77,21 @@ function ArticleEF({ acf, id, type, url }) {
 const StringDataChecker = ({ oremaerkeString, chippetString }) => {
   if (oremaerkeString === null && chippetString === null)
     return (
-      <Flex gap="1rem" fontSize="xxs">
+      <Flex gap="1rem" fontSize="xxs" mt="0.5rem" alignItems={"center"}>
         <Text>{oremaerkeString}</Text>
       </Flex>
     );
   else if (oremaerkeString === null && chippetString !== null)
     return (
-      <Flex gap="1rem" fontSize="xxs">
+      <Flex gap="1rem" fontSize="xxs" mt="0.5rem" alignItems={"center"}>
         <Text>{chippetString}</Text>
       </Flex>
     );
-  else if (oremaerkeString !== null && chippetString !== null) 
+  else if (oremaerkeString !== null && chippetString !== null)
     return (
-      <Flex gap="1rem" fontSize="xxs">
+      <Flex gap="1rem" fontSize="xxs" mt="0.5rem" alignItems={"center"}>
         <Text>{oremaerkeString}</Text>
-        <Image src={fifth} alt={"divider"} height={8} width={8} />
+        <Icon as={ImDiamonds} width="0.9rem" height="0.8rem" />
         <Text>{chippetString}</Text>
       </Flex>
     );
