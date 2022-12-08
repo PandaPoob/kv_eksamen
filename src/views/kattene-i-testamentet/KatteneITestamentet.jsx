@@ -16,7 +16,7 @@ export default function KatteneITestamentet({imgData, sideData}) {
         <KTSectionOne acf={imgData.acf} />
         <KTSectionTwo/>
         <KTSectionThree acf={imgData.acf} />
-        <KTSectionFour/>
+        <KTSectionFour {...imgData}/>
         <KTKontaktSection/>
     </PageLayout>
   )
