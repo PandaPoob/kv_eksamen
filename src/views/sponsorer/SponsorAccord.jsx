@@ -26,7 +26,6 @@ export default function SponsorAccord() {
   return (
     <Box borderRadius={"0.2rem"} boxShadow="md" gridColumn={{ lg: "1" }}>
       <Accordion
-        defaultIndex={[0]}
         allowMultiple
         minW={{
           base: "18.75rem",
