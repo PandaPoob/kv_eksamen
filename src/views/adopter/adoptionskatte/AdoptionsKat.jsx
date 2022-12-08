@@ -30,12 +30,12 @@ function AdoptionsKat({ katData }) {
   return (
     <PageLayout>
       <Box display={"grid"} gridTemplateColumns={{ lg: "1fr 1fr" }}>
-        <Box bg="brand.lightGrey" boxShadow="md">
+        <Box bg="brand.lightGrey" boxShadow="md" minHeight={{ lg: "100vh" }}>
           <Box
             maxW={{ base: "container.sm" }}
             m={"auto"}
             px={"1rem"}
-            py={"2rem"}
+            py={"4rem"}
           >
             <Heading as="h1" size="heading2">
               <Text as="span" color={"brand.grey"}>
@@ -74,7 +74,7 @@ function AdoptionsKat({ katData }) {
             <Box
               bg={"brand.darkGrey"}
               color="brand.white"
-              px={"1rem"}
+              px={{ base: "1rem", lg: "2rem" }}
               py="1.6rem"
             >
               <Flex justifyContent={"space-between"} mb="2rem">
@@ -82,8 +82,9 @@ function AdoptionsKat({ katData }) {
                   as="dl"
                   display="grid"
                   gridTemplateColumns={"repeat(2, 1fr)"}
-                  columnGap="1rem"
+                  columnGap={{ base: "1rem", md: "2rem" }}
                   rowGap={"1rem"}
+                  fontSize={{ base: "xs", lg: "smallH" }}
                 >
                   <Text as="dt" fontWeight={"light"}>
                     Miljø
@@ -104,8 +105,9 @@ function AdoptionsKat({ katData }) {
                   as="dl"
                   display="grid"
                   gridTemplateColumns={"repeat(2, 1fr)"}
-                  columnGap="1rem"
+                  columnGap={{ base: "1rem", md: "2rem" }}
                   rowGap={"1rem"}
+                  fontSize={{ base: "xs", lg: "smallH" }}
                 >
                   <Text as="dt" fontWeight={"light"}>
                     Køn
@@ -122,7 +124,12 @@ function AdoptionsKat({ katData }) {
                   </Text>
                 </Box>
               </Flex>
-              <Flex as="dl" justifyContent={"space-between"} pt="1rem">
+              <Flex
+                as="dl"
+                justifyContent={"space-between"}
+                pt="1rem"
+                fontSize={{ base: "xs", lg: "smallH" }}
+              >
                 <Text as="dt" fontWeight={"light"}>
                   Kan med andre katte?*
                 </Text>
@@ -140,35 +147,41 @@ function AdoptionsKat({ katData }) {
           </Box>
         </Box>
 
-        <Box bg={"lightyellow"}>
+        <Box
+          maxW={{ base: "container.sm" }}
+          m={"auto"}
+          px={"1rem"}
+          py={"4rem"}
+          display="grid"
+          gap={"2rem"}
+        >
           <Box
-            maxW={{ base: "container.sm" }}
-            m={"auto"}
-            px={"1rem"}
-            py={"2rem"}
-            display="grid"
-            gap={"2rem"}
+            boxShadow="1px 2px 6px 1px #B8B8B8"
+            bg={"brand.white"}
+            p={"2rem"}
           >
-            <Box boxShadow="md" bg={"brand.white"} p={"2rem"}>
-              <Heading as={"h2"} size="svheading" mb={"0.5rem"}>
-                Beskrivelse
-              </Heading>
-              <Text>{beskrivelse}</Text>
-            </Box>
+            <Heading as={"h2"} size="svheading" mb={"0.5rem"}>
+              Beskrivelse
+            </Heading>
+            <Text>{beskrivelse}</Text>
+          </Box>
 
-            <Box boxShadow="md" bg={"brand.white"} p={"2rem"}>
-              <Heading as={"h2"} size="svheading" mb={"0.5rem"}>
-                Vil du møde {navn}?
-              </Heading>
-              <Text>
-                Du kan ikke reservere en kat men du er altid velkommen til at
-                ringe og få mere information eller aftale et møde med internatet
-                så du kan hilse pa katten og se om det er det rigtige match. Se
-                internatet her.
-              </Text>
-              <Divider orientation="horizontal" mt="1rem" />
-              <ContactBox internat={internat}></ContactBox>
-            </Box>
+          <Box
+            boxShadow="1px 2px 6px 1px #B8B8B8"
+            bg={"brand.white"}
+            p={"2rem"}
+          >
+            <Heading as={"h2"} size="svheading" mb={"0.5rem"}>
+              Vil du møde {navn}?
+            </Heading>
+            <Text>
+              Du kan ikke reservere en kat men du er altid velkommen til at
+              ringe og få mere information eller aftale et møde med internatet
+              så du kan hilse pa katten og se om det er det rigtige match. Se
+              internatet her.
+            </Text>
+            <Divider orientation="horizontal" mt="1rem" />
+            <ContactBox internat={internat}></ContactBox>
           </Box>
         </Box>
       </Box>

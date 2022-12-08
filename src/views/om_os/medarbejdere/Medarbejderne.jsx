@@ -28,7 +28,7 @@ function Medarbejderne({ data, sideData }) {
           {sortedM.map((m) => {
             return (
               <PersonArticle
-                boxshadow={"1px 1px 6px 1px #b8b8b8"}
+                boxshadow={"1px 2px 6px 1px #B8B8B8"}
                 key={m.id}
                 {...m}
               ></PersonArticle>

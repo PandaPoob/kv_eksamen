@@ -40,24 +40,34 @@ function ContactBox({ internat }) {
       gridTemplateColumns={{ lg: "1.4fr 1fr" }}
     >
       <Box>
-        <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
+        <Flex as={"dl"} alignItems={"center"} gap="0.5rem" mb={"1rem"}>
           <Flex as="dt" alignItems={"center"}>
-            <Icon color="brand.redCta" w={8} h={8} as={BsTelephone} />
+            <Icon
+              aria-label="Telefonnummer"
+              color="brand.redCta"
+              w={"1.8rem"}
+              h={"1.8rem"}
+              as={BsTelephone}
+            />
           </Flex>
 
-          <Heading as="dd" size={"heading5"}>
+          <Heading as="dd" size={"heading6"}>
             {getKontaktInfo().tlf}
-            {/*   {internatInfo.tlf} */}
           </Heading>
         </Flex>
 
-        <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
+        <Flex as={"dl"} alignItems={"center"} gap="0.5rem">
           <Flex as="dt" alignItems={"center"}>
-            <Icon color="brand.redCta" w={8} h={8} as={BsEnvelope} />
+            <Icon
+              aria-label="Email"
+              color="brand.redCta"
+              w={"1.8rem"}
+              h={"1.8rem"}
+              as={BsEnvelope}
+            />
           </Flex>
-          <Heading as="dd" size={"heading5"}>
+          <Heading as="dd" size={"heading6"}>
             {getKontaktInfo().email}
-            {/*  {internatInfo.email} */}
           </Heading>
         </Flex>
       </Box>

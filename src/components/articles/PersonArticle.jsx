@@ -12,7 +12,7 @@ function PersonArticle({ acf, boxshadow }) {
       marginBlock={"1rem"}
       boxShadow={boxshadow}
       color={"brand.blue"}
-      borderRadius="0.3rem"
+      borderRadius="0.2rem"
       overflow={"hidden"}
     >
       <Box

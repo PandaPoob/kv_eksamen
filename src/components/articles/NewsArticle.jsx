@@ -6,7 +6,7 @@ export default function NewsArticle({ acf, id }) {
     <LinkWrapper acf={acf} id={id}>
       <Box
         bgColor={"brand.white"}
-        borderRadius="5px"
+        borderRadius="0.2rem"
         width="18rem"
         height={"20.5rem"}
         color="brand.darkGrey"
@@ -16,7 +16,7 @@ export default function NewsArticle({ acf, id }) {
         }}
       >
         <Image
-          borderTopRadius={"5px"}
+          borderTopRadius={"0.2rem"}
           alt="artikel-billede"
           src={acf.featuredimage}
           width="18rem"
