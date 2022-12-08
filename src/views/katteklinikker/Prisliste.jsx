@@ -19,8 +19,8 @@ export default function Prisliste({acf}) {
 
   return (
     <Box as="section" display="grid" placeContent={"center"} py={{ base: "3rem", lg: "6rem" }} px="1rem">
-      <Box maxW={"container.lg"}>
-        <Heading as="h2" size="heading2">
+      <Box maxW={"container.xl"}>
+        <Heading as="h2" size="heading2" textAlign={"center"}>
           Prisliste
         </Heading>
         {isMobile ? (

@@ -19,14 +19,18 @@ export default function LinkBanner({data}) {
 
   return (
     <Box as="section" display={{ base: "grid", md: "flex" }} bg={"brand.lightGrey"} justifyContent="space-evenly" gap="1rem" py="2rem" flexWrap={"wrap"}>
-    {cleanBannerDataArr.map((bLink)=> (
+    {cleanBannerDataArr.map((bLink, index)=> (
       <>
         <LinkWrapper key={bLink.id} data={bLink.item}> 
             <Text fontWeight={"semibold"}>{bLink.item.navn}</Text>
             <SlArrowRight/> 
         </LinkWrapper>
+        {index !== 3 ? 
         <Divider height={{ base: "0", md: "2rem" }} width={{ base: "90vw", md: "0" }} borderColor={"brand.blueCta"} orientation={dividerOrientation} />
-      </>
+        :
+        <></>
+        }
+        </>
     ))}
   </Box>
   )

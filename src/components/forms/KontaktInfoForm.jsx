@@ -8,7 +8,7 @@ import {
   FullNameFieldInitialValue,
   FullNameFieldValidation,
 } from "./formFields/FullNameField";
-import CatBreadCrumb from "../efterlyst+fremlyst/formsteps/CatBreadCrumb";
+import CatBreadCrumb from "../efterlyst_fremlyst/formsteps/CatBreadCrumb";
 
 function KontaktInfoForm({
   onCallback,

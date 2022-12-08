@@ -12,13 +12,13 @@ function NyhedsSektion({nyhedsData}){
         <Heading as="h2" size={"heading2"} textAlign="center">
           Seneste nyt
         </Heading>
-        <Flex justify={"center"} flexWrap="wrap" gap="1rem" py={"2rem"} maxW="container.xl">
+        <Flex justify={"center"} flexWrap="wrap" gap={{base: "1rem", lg: "2rem"}} py={"2rem"} maxW="container.xl">
           {udvalgteArtikler.map((artikel, i) => (
             <NewsArticle key={i} {...artikel} />
           ))}
         </Flex>
         <NextLink href="/nyheder" passHref>
-          <Link variant="redBtn" mx={"auto"} my="2rem" maxW="12rem" justifyContent="center">
+          <Link variant="redBtn" mx={"auto"} my="2rem" width="12rem" justifyContent="center">
             Se alle nyheder
           </Link>
         </NextLink>

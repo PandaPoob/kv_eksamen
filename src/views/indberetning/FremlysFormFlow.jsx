@@ -1,8 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
-import Step1 from "../../components/efterlyst+fremlyst/formsteps/Step1";
-import Step2 from "../../components/efterlyst+fremlyst/formsteps/Step2";
-import Step3 from "../../components/efterlyst+fremlyst/formsteps/Step3";
+import Step1 from "../../components/efterlyst_fremlyst/formsteps/Step1";
+import Step2 from "../../components/efterlyst_fremlyst/formsteps/Step2";
+import Step3 from "../../components/efterlyst_fremlyst/formsteps/Step3";
 
 function FremlysFormFlow() {
   const [currenStepIndex, setCurrentStepIndex] = useState(0);

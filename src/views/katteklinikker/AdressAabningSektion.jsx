@@ -29,10 +29,10 @@ export default function AdressAabningSektion({data}) {
             <Box py="1rem" display="grid" gap="1rem">
                 <Heading as="h3" size="heading4">Åbningstider:</Heading>
                 {cleanAbningstiderArr.map((t)=> (
-                    <Flex key={t.id} justifyContent={"space-between"} gap="2rem">
-                        <Text>{t.tider.dage}</Text>
-                        <Text fontWeight={"bold"}>{t.tider.tider}</Text>
-                    </Flex>
+                    <Box key={t.id} display="grid" gridTemplateColumns={"1fr 1fr"}>
+                        <Text>{t.tider.dage}:</Text>
+                        <Text fontWeight={"semibold"} placeSelf="end">{t.tider.tider}</Text>
+                    </Box>
                 ))}
             </Box>
         </Box> 
