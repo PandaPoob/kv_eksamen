@@ -46,6 +46,7 @@ function Footer({ children }) {
         <Flex
           flexDir={{ base: "column", lg: "row", xl: "row" }}
           columnGap={{ base: "2rem", lg: "4rem" }}
+          rowGap={{ base: "2rem", lg: "0" }}
           flexWrap={"wrap"}
           justifyContent={{ xxl: "space-evenly" }}
         >
@@ -116,7 +117,7 @@ function Footer({ children }) {
             </Flex>
           </Box>
 
-          <Box>
+          <Box maxW={"18rem"}>
             <Text
               mb={"1rem"}
               fontWeight={"bold"}
@@ -160,7 +161,7 @@ function Footer({ children }) {
               as={"dl"}
               display="grid"
               gap="0.8rem"
-              mt={{ md: "1.5rem" }}
+              mt={{ base: "2rem", md: "1.5rem" }}
               mb={"0.8rem"}
             >
               <Text
