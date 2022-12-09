@@ -172,7 +172,7 @@ function Nav({ children }) {
                     _hover={{ bg: "none" }}
                     _focus={{ bg: "none" }}
                     aria-label="Go webshop"
-                    icon={<BsCart3 />}
+                    icon={<BsCart3 stroke="white" strokeWidth={"0.2px"} />}
                   />
                 </Link>
               </NextLink>
