@@ -54,7 +54,7 @@ export default function MaanedensKatte({ katteData }) {
           </Fragment>
         ))}
       </Box>
-      <NextLink href={`${url}adoptionskatte`}>
+      <NextLink href={`/adopter/adoptionskatte`} passHref>
         <Link
           width={"12rem"}
           mx="auto"
@@ -62,7 +62,6 @@ export default function MaanedensKatte({ katteData }) {
           justifyContent="center"
           variant={"blueBtn"}
         >
-          {" "}
           Se alle katte
         </Link>
       </NextLink>
