@@ -15,11 +15,11 @@ export default function StotFast({ sideData, data }) {
           <Box
             display={"grid"}
             bg="brand.white"
-            boxShadow={"md"}
+            boxShadow={"1px 2px 6px 1px #B8B8B8"}
             p="1rem"
             gap="1rem"
           >
-            <Heading as="h2" size="heading4" m="auto">
+            <Heading as="h2" size="heading3" m="auto">
               Doner med betalingskort
             </Heading>
             <Text m="auto">Vælg beløb (DKK)</Text>

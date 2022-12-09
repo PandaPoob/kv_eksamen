@@ -31,7 +31,7 @@ export default function BlivMedlem({ sideData }) {
           gap="3rem"
           placeContent="center"
           bg={"brand.white"}
-          boxShadow="md"
+          boxShadow={"1px 2px 6px 1px #B8B8B8"}
           maxW={"container.md"}
           p="2rem"
           m="auto"

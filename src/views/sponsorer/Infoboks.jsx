@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Divider, Icon } from "@chakra-ui/react";
-import { BsTelephone, BsEnvelope } from "react-icons/bs";
+import { BsEnvelope } from "react-icons/bs";
 
 //mobile sizes: 360px - 760px
 //tablet sizes: 770px - 1000

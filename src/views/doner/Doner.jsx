@@ -12,27 +12,32 @@ export default function Doner({ data, sideData }) {
     <PageLayout>
       <PageHead {...sideData} />
       <SplashHeader textPos="center" imgMobPos={"30%"} {...sideData} />
-      <Box display={"grid"} placeContent="center" px="1rem" py="6rem">
+      <Box
+        display={"grid"}
+        placeContent="center"
+        px="1rem"
+        py={{ base: "2rem", lg: "6rem" }}
+      >
         <Box
           display={"grid"}
-          gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+          gridTemplateColumns={{ base: "1fr", lg: "1.5fr 1fr" }}
           gridTemplateRows={{ lg: "1fr 1fr" }}
           gap="2rem"
-          maxW="container.lg"
+          maxW="container.xl"
         >
           <SMSogMobile />
           <Box
             display={"grid"}
-            gridRow={"1/3"}
+            gridRow={{ lg: "1/3" }}
             bg="brand.white"
-            boxShadow={"md"}
-            p="1rem"
+            boxShadow={"1px 2px 6px 1px #B8B8B8"}
+            p={{ base: "1rem", lg: "2rem" }}
             gap="1rem"
           >
-            <Heading as="h2" size="heading4" m="auto">
+            <Heading as="h2" size="heading3" m="auto" mb="1rem">
               Doner med betalingskort
             </Heading>
-            <Text m="auto">Vælg beløb (DKK)</Text>
+            {/*    <Text m="auto">Vælg beløb (DKK)</Text> */}
             {data.map((optList) => (
               <BelobOptions
                 display={"grid"}
@@ -47,6 +52,7 @@ export default function Doner({ data, sideData }) {
                 justifyContent={"center"}
                 maxW="10rem"
                 m="auto"
+                mt="1rem"
               >
                 Gå til betaling
               </Link>

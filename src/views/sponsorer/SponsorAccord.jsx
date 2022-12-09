@@ -9,18 +9,9 @@ import {
   List,
   ListItem,
   ListIcon,
-  Flex,
 } from "@chakra-ui/react";
 import { ImDiamonds } from "react-icons/im";
 import { BsChevronDown } from "react-icons/bs";
-
-//mobile sizes: 360px - 760px
-//tablet sizes: 770px - 1000
-//desktop: 1025px - 1430px
-
-//base: minimum 20rem, maks 45rem
-//tablet: minimum 20, maks 30rem
-//desktop: minimum 31.25rem, maks 50rem
 
 export default function SponsorAccord() {
   return (

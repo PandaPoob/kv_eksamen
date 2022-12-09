@@ -43,6 +43,7 @@ export default function KTSectionFour({ acf }) {
                 maxW={"14rem"}
                 justifyContent="center"
                 mt="2rem"
+                isExternal
               >
                 Se afsnittet her
               </Link>
