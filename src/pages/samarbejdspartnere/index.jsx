@@ -1,8 +1,8 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../api/url";
 
-function LedigeStillingerPage({ sideData }) {
-  return <Box mt={"6rem"}>Ledige stillinger</Box>;
+function SamarbejdspartnerePage({ sideData }) {
+  return <Box mt={"6rem"}>Samarbejdspartnere</Box>;
 }
 
 /* export async function getStaticProps() {
@@ -15,4 +15,4 @@ function LedigeStillingerPage({ sideData }) {
     },
   };
 } */
-export default LedigeStillingerPage;
+export default SamarbejdspartnerePage;
