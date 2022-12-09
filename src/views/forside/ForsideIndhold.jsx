@@ -17,7 +17,7 @@ export default function ForsideIndhold({ sideData, katteData, nyhedsData }) {
           {...sideData}
           textPos="center"
           imgPos="center top"
-          height={{ base: "80vh", xl: "83vh" }}
+          height={"80vh"}
         />
         <Banner />
         <VoresArbejde />
