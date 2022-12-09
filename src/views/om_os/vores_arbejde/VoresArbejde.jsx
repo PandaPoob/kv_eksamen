@@ -224,7 +224,7 @@ function VoresArbejde({ sideData }) {
             <br />
             <br />
             Læs mere om genudsætning og foderværter{" "}
-            <NextLink href={`/bliv-fodervaert`} passHref>
+            <NextLink href={`/indberetning/bliv-fodervaert`} passHref>
               <Link variant={"inLink"}> her</Link>
             </NextLink>
           </Text>

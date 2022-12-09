@@ -1,5 +1,5 @@
 import { Box, Heading, Flex } from "@chakra-ui/react";
-import url from "../../api/url";
+//import url from "../../api/url";
 
 function BlivFodervartPage({ sideData }) {
   return <Box mt={"6rem"}>Bliv fodervært</Box>;
