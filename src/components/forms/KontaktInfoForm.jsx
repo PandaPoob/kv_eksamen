@@ -113,6 +113,7 @@ function KontaktInfoForm({
                   gap: "1rem",
                   justifyContent: "space-between",
                   flexGrow: "1",
+                  variant: "formCheck",
                 }}
               />
 
@@ -158,6 +159,7 @@ function KontaktInfoForm({
                   gap: "1rem",
                   justifyContent: "space-between",
                   flexGrow: "1",
+                  variant: "formCheck",
                 }}
               />
               {values.tlfValgt ? (
@@ -203,6 +205,7 @@ function KontaktInfoForm({
                   gap: "1rem",
                   justifyContent: "space-between",
                   flexGrow: "1",
+                  variant: "formCheck",
                 }}
               />
               {values.fbValgt ? (

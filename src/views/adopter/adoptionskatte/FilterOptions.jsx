@@ -4,7 +4,7 @@ import {
   Button,
   useDisclosure,
 } from "@chakra-ui/react";
-import { BsChevronRight } from "react-icons/bs";
+import { BsSliders } from "react-icons/bs";
 import dynamic from "next/dynamic";
 import InternatFilter from "./InternatFilter";
 import KanMedAndreCheck from "./KanMedAndreCheck";
@@ -75,24 +75,22 @@ function FilterOptions({
   return (
     <Flex
       justify={{ base: "flex-end", navbp: "space-between" }}
+      alignItems="center"
       maxW={"container.xxl"}
+      px={{ base: "1rem", navbp: "2rem" }}
       mx={"auto"}
-      minH={"10vh"}
+      minH={{ base: "10vh", navbp: "16vh" }}
     >
       {isMobile ? (
         <>
           <Button
+            variant={"openFilter"}
             onClick={onOpen}
             aria-label="Open menu"
-            color={"brand.blue"}
-            bg="none"
-            fontSize={"sm"}
-            _hover={{ bg: "none" }}
-            _focus={{ bg: "none" }}
-            alignSelf={"center"}
+            gap="2rem"
           >
             Filter
-            <BsChevronRight size={24} />
+            <BsSliders size={20} />
           </Button>
           <MobileFilterDrawer
             isOpen={isOpen}

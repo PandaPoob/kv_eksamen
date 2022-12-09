@@ -12,7 +12,7 @@ import {
   DrawerFooter,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { BsChevronLeft } from "react-icons/bs";
+import { BsXLg } from "react-icons/bs";
 import MobileFilterAccor from "../../../components/features/MobileFilterAccor";
 
 function FilterDrawer({
@@ -38,6 +38,9 @@ function FilterDrawer({
     setInternatMobileFilter("");
     setMiljoMobileFilter("");
     setAlderMobileFilter("");
+    setInternatFilter("");
+    setMiljoFilter("");
+    setAlderFilter("");
   }
 
   function onCancel() {
@@ -82,8 +85,7 @@ function FilterDrawer({
             alignSelf={"center"}
             gap={"1rem"}
           >
-            <BsChevronLeft size={24} />
-            Filter
+            <BsXLg size={24} />
           </Button>
 
           <Button
@@ -104,10 +106,10 @@ function FilterDrawer({
 
         <DrawerBody p={0} bg={"brand.lightGrey"}>
           <Box display={"grid"} gap={"1rem"} mt={"4rem"} mb={"2rem"}>
-            <Flex bg={"brand.white"}>
+            <Flex bg={"brand.white"} mb="1rem">
               <Checkbox
                 isChecked={kanMedAndreMobile}
-                size={"lg"}
+                iconSize="1rem"
                 py="1.5rem"
                 pr={"2.1rem"}
                 pl={"1.5rem"}
@@ -128,10 +130,7 @@ function FilterDrawer({
                   }
                 }}
               >
-                <Text
-                  fontWeight={"medium"}
-                  fontSize={{ base: "smallH", sm: "sm" }}
-                >
+                <Text fontWeight={"medium"} fontSize={"smallH"}>
                   Kan med andre katte
                 </Text>
               </Checkbox>

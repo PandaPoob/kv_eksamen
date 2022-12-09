@@ -1,5 +1,10 @@
-import { Flex, useBreakpointValue, Button, useDisclosure } from "@chakra-ui/react";
-import { BsChevronRight } from "react-icons/bs";
+import {
+  Flex,
+  useBreakpointValue,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { BsSliders } from "react-icons/bs";
 import dynamic from "next/dynamic";
 import LandsdelFilter from "./LandsdelFilter";
 import KonFilter from "./KonFilter";
@@ -7,25 +12,35 @@ import OremaerkeCheck from "./OremaerkeCheck";
 import ChippetCheck from "./ChippetCheck";
 import SearchBar from "./SearchBar";
 
-
 const MobileFilterDrawer = dynamic(() => import("./EFFilterDrawer"), {
   ssr: false,
 });
 
-function EFFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setKon, maerket, setMaerket, chippet, setChippet, setSearchInput, searchInput }) {
+function EFFilterOptions({
+  landsdelsfilter,
+  setLandsdelsfilter,
+  kon,
+  setKon,
+  maerket,
+  setMaerket,
+  chippet,
+  setChippet,
+  setSearchInput,
+  searchInput,
+}) {
   const isMobile = useBreakpointValue({ base: true, navbp: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   //filteroption data hardcoded
   const landsdelOpt = [
     {
-      value: "København og omegn",    
+      value: "København og omegn",
     },
     {
-      value: "Sjælland og øerne",   
+      value: "Sjælland og øerne",
     },
     {
-      value: "Fyn og øerne",   
+      value: "Fyn og øerne",
     },
     {
       value: "Sønderjylland",
@@ -55,13 +70,32 @@ function EFFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setKon, mae
   ];
 
   return (
-    <Flex justify={{ base: "space-between", navbp: "space-between" }} alignItems="center" maxW={"container.xxl"} px="1rem" mx={"auto"} minH={"10vh"}>
+    <Flex
+      justify={{ base: "space-between", navbp: "space-between" }}
+      flexDir={{ base: "column-reverse", md: "row" }}
+      alignItems={{ md: "center" }}
+      maxW={"container.xxl"}
+      px={{ base: "1rem", navbp: "2rem" }}
+      py={{ base: "1rem", navbp: "0" }}
+      mx={"auto"}
+      minH={{ base: "10vh", navbp: "16vh" }}
+    >
       {isMobile ? (
         <>
-          <SearchBar setSearchInput={setSearchInput} searchInput={searchInput}/>
-          <Button onClick={onOpen} aria-label="Open menu" color={"brand.blue"} bg="none" fontSize={"sm"} _hover={{ bg: "none" }} _focus={{ bg: "none" }} alignSelf={"center"}>
+          <SearchBar
+            setSearchInput={setSearchInput}
+            searchInput={searchInput}
+          />
+          <Button
+            variant={"openFilter"}
+            onClick={onOpen}
+            aria-label="Open menu"
+            gap="2rem"
+            mb={{ base: "1rem", md: "0" }}
+            alignSelf={{ base: "flex-end", md: "unset" }}
+          >
             Filter
-            <BsChevronRight size={24} />
+            <BsSliders size={20} />
           </Button>
           <MobileFilterDrawer
             isOpen={isOpen}
@@ -80,13 +114,28 @@ function EFFilterOptions({ landsdelsfilter, setLandsdelsfilter, kon, setKon, mae
         </>
       ) : (
         <>
-          <Flex align={"center"} gap="1rem" px="1rem">
-            <SearchBar setSearchInput={setSearchInput} searchInput={searchInput}/>
-            <LandsdelFilter landsdelsfilter={landsdelsfilter} setLandsdelsfilter={setLandsdelsfilter} landsdelOpt={landsdelOpt} />
-            <KonFilter kon={kon} setKon={setKon} konOpt={konOpt} />
-            <Flex justifyContent={"flex-end"} align="flex-end">
+          <SearchBar
+            justifySelf="flex-start"
+            setSearchInput={setSearchInput}
+            searchInput={searchInput}
+          />
+          <Flex
+            align={"center"}
+            justifyContent="space-between"
+            gap="2rem"
+            px="1rem"
+          >
+            <Flex gap={"1rem"}>
               <OremaerkeCheck maerket={maerket} setMaerket={setMaerket} />
               <ChippetCheck chippet={chippet} setChippet={setChippet} />
+            </Flex>
+            <Flex gap={"1rem"}>
+              <LandsdelFilter
+                landsdelsfilter={landsdelsfilter}
+                setLandsdelsfilter={setLandsdelsfilter}
+                landsdelOpt={landsdelOpt}
+              />
+              <KonFilter kon={kon} setKon={setKon} konOpt={konOpt} />
             </Flex>
           </Flex>
         </>

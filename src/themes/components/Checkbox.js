@@ -11,6 +11,7 @@ const Checkbox = {
       h: "1.5rem",
       justifySelf: "flex-end",
       position: "relative",
+      bg: "brand.white",
       _disabled: {
         borderColor: "brand.borderGrey",
         bg: "gray.200",
@@ -36,8 +37,21 @@ const Checkbox = {
       color: "brand.blue",
       fontSize: "xs",
 
-      _checked: {
+      /*      _checked: {
         color: "brand.white",
+      }, */
+    },
+  },
+  variants: {
+    formCheck: {
+      label: {
+        fontWeight: "normal",
+        color: "brand.blue",
+        fontSize: "xs",
+
+        _checked: {
+          color: "brand.white",
+        },
       },
     },
   },

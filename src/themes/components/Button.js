@@ -34,7 +34,20 @@ const button = {
         transform: "scale(1)",
       },
     },
+    openFilter: {
+      bg: "brand.white",
+      border: "1px solid",
+      borderColor: "brand.blue",
+      color: "brand.blue",
+      fontSize: "smallH",
+      borderRadius: "0.2rem",
+      maxW: "8rem",
 
+      _hover: {
+        transform: "scale(1)",
+        bg: "brand.lightGrey",
+      },
+    },
     clean: {
       bg: "none",
       color: "brand.blue",

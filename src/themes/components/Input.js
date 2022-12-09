@@ -53,6 +53,31 @@ const Input = {
         },
       },
     },
+
+    clean: {
+      field: {
+        borderRadius: "0.2rem",
+        border: "none",
+        bg: "brand.white",
+        fontSize: "xxs",
+        color: "brand.blue",
+        _hover: {
+          boxShadow: "none",
+        },
+        _focus: {
+          boxShadow: "none",
+        },
+        _focusVisible: {
+          //borderColor: "brand.borderGrey",
+          boxShadow: "none",
+        },
+        _invalid: {
+          borderColor: "brand.errorMsg",
+          boxShadow: "none",
+          fontSize: "xxs",
+        },
+      },
+    },
   },
 };
 export default Input;
