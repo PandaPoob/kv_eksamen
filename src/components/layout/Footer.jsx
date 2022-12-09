@@ -42,7 +42,7 @@ function Footer({ children }) {
   return (
     <>
       {children}
-      <Box bg={"brand.darkGrey"} p="2rem">
+      <Box bg={"brand.darkGrey"} p="2rem" pt={{ lg: "3rem" }}>
         <Flex
           flexDir={{ base: "column", lg: "row", xl: "row" }}
           columnGap={{ base: "2rem", lg: "4rem" }}
