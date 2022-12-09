@@ -21,10 +21,13 @@ import { ImDiamonds } from "react-icons/im";
 function HvadDuKanGore() {
   return (
     <Box as="section" display={"grid"} justifyContent="center">
+      <Heading textAlign={"center"} as="h2" size="heading2" py={"4rem"}>
+        Hvad du kan gøre
+      </Heading>
       <Flex
         gap={"2rem"}
         maxW="container.xxl"
-        py="4rem"
+        pb="4rem"
         px={"1rem"}
         flexWrap="wrap"
         justifyContent={"center"}
@@ -33,7 +36,8 @@ function HvadDuKanGore() {
       >
         <Box>
           <Accordion
-            maxW="28rem"
+            minW={{ base: "95vw", md: "28rem" }}
+            maxW={{ md: "28rem" }}
             display={"grid"}
             allowToggle
             bg={"brand.white"}
@@ -89,7 +93,8 @@ function HvadDuKanGore() {
           </Accordion>
 
           <Accordion
-            maxW="28rem"
+            minW={{ base: "95vw", md: "28rem" }}
+            maxW={{ md: "28rem" }}
             mt={{ base: "2rem" }}
             display={"grid"}
             allowToggle
