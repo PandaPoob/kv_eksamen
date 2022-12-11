@@ -150,9 +150,19 @@ function HvadDuKanGore() {
               Hvis katten er tam og har mærke/chip
             </Heading>
             <Divider orientation="horizontal" mb="2rem" />
-            <List display={"grid"} gap="1.5rem">
-              <ListItem display={"flex"} alignItems="center" maxW="70ch">
-                <ListIcon as={ImDiamonds} color="brand.redCta"></ListIcon>
+            <List display={"grid"} gap={{ base: "2.5rem", lg: "1.5rem" }}>
+              <ListItem
+                display={"flex"}
+                flexDir={{ base: "column", lg: "row" }}
+                gap={{ base: "1rem", lg: "0" }}
+                alignItems="center"
+                maxW="70ch"
+              >
+                <ListIcon
+                  as={ImDiamonds}
+                  fontSize={{ base: "md", lg: "xs" }}
+                  color="brand.redCta"
+                />
                 <Text>
                   Kontakt Det Danske Katteregister på tlf. 70 27 04 47 eller på{" "}
                   <NextLink href="https://www.katteregister.dk/" passHref>
@@ -164,8 +174,18 @@ function HvadDuKanGore() {
                 </Text>
               </ListItem>
 
-              <ListItem display={"flex"} alignItems="center" maxW="70ch">
-                <ListIcon as={ImDiamonds} color="brand.redCta"></ListIcon>
+              <ListItem
+                display={"flex"}
+                flexDir={{ base: "column", lg: "row" }}
+                gap={{ base: "1rem", lg: "0" }}
+                alignItems="center"
+                maxW="70ch"
+              >
+                <ListIcon
+                  as={ImDiamonds}
+                  fontSize={{ base: "md", lg: "xs" }}
+                  color="brand.redCta"
+                />
                 <Text>
                   Hvis katten ikke findes i Det Danske Katteregister, kan man
                   prøve hos{" "}
@@ -178,8 +198,18 @@ function HvadDuKanGore() {
                   .
                 </Text>
               </ListItem>
-              <ListItem display={"flex"} alignItems="center" maxW="70ch">
-                <ListIcon as={ImDiamonds} color="brand.redCta"></ListIcon>
+              <ListItem
+                display={"flex"}
+                flexDir={{ base: "column", lg: "row" }}
+                gap={{ base: "1rem", lg: "0" }}
+                alignItems="center"
+                maxW="70ch"
+              >
+                <ListIcon
+                  as={ImDiamonds}
+                  fontSize={{ base: "md", lg: "xs" }}
+                  color="brand.redCta"
+                />
                 <Text>
                   Du kan også tage katten til nærmeste dyrelæge som også kan
                   hjælpe med at kontakte ejer.
@@ -205,9 +235,19 @@ function HvadDuKanGore() {
               Hvis katten er tam men ikke har mærke
             </Heading>
             <Divider orientation="horizontal" mb="2rem" />
-            <List display={"grid"} gap="1.5rem">
-              <ListItem display={"flex"} alignItems="center" maxW="70ch">
-                <ListIcon as={ImDiamonds} color="brand.redCta"></ListIcon>
+            <List display={"grid"} gap={{ base: "2.5rem", lg: "1.5rem" }}>
+              <ListItem
+                display={"flex"}
+                flexDir={{ base: "column", lg: "row" }}
+                gap={{ base: "1rem", lg: "0" }}
+                alignItems="center"
+                maxW="70ch"
+              >
+                <ListIcon
+                  as={ImDiamonds}
+                  fontSize={{ base: "md", lg: "xs" }}
+                  color="brand.redCta"
+                />
                 <Text>
                   Tjek om katten er efterlyst hos os{" "}
                   <NextLink href="/efterlysning/efterlyste-katte" passHref>
@@ -217,8 +257,18 @@ function HvadDuKanGore() {
                 </Text>
               </ListItem>
 
-              <ListItem display={"flex"} alignItems="center" maxW="70ch">
-                <ListIcon as={ImDiamonds} color="brand.redCta"></ListIcon>
+              <ListItem
+                display={"flex"}
+                flexDir={{ base: "column", lg: "row" }}
+                gap={{ base: "1rem", lg: "0" }}
+                alignItems="center"
+                maxW="70ch"
+              >
+                <ListIcon
+                  as={ImDiamonds}
+                  fontSize={{ base: "md", lg: "xs" }}
+                  color="brand.redCta"
+                />
                 <Text>
                   Hvis du ikke fandt en efterlysning der matchede den kat du har
                   fundet så overvej at lave en fremlysning hos os{" "}
@@ -229,16 +279,36 @@ function HvadDuKanGore() {
                 </Text>
               </ListItem>
 
-              <ListItem display={"flex"} alignItems="center" maxW="70ch">
-                <ListIcon as={ImDiamonds} color="brand.redCta"></ListIcon>
+              <ListItem
+                display={"flex"}
+                flexDir={{ base: "column", lg: "row" }}
+                gap={{ base: "1rem", lg: "0" }}
+                alignItems="center"
+                maxW="70ch"
+              >
+                <ListIcon
+                  as={ImDiamonds}
+                  fontSize={{ base: "md", lg: "xs" }}
+                  color="brand.redCta"
+                />
                 <Text>
                   Hæng opslag op i området, hvor du spørger om nogen kender
                   katten. Hør eventuelt også dine naboer om der er nogen der
                   genkender den.
                 </Text>
               </ListItem>
-              <ListItem display={"flex"} alignItems="center" maxW="70ch">
-                <ListIcon as={ImDiamonds} color="brand.redCta"></ListIcon>
+              <ListItem
+                display={"flex"}
+                flexDir={{ base: "column", lg: "row" }}
+                gap={{ base: "1rem", lg: "0" }}
+                alignItems="center"
+                maxW="70ch"
+              >
+                <ListIcon
+                  as={ImDiamonds}
+                  fontSize={{ base: "md", lg: "xs" }}
+                  color="brand.redCta"
+                />
                 <Text>
                   Brug internettet til at fremlyse katten. Bl.a. i diverse
                   Facebook eller hjemmesider som{" "}
@@ -249,7 +319,7 @@ function HvadDuKanGore() {
                   </NextLink>
                   , eller på{" "}
                   <NextLink
-                    href="https://www.dyrenesbeskyttelse.dk/efterlyste-dyr"
+                    href="https://www.dyrenesbeskyttelse.dk/fremlysning/opret"
                     passHref
                   >
                     <Link isExternal variant="exLink">
