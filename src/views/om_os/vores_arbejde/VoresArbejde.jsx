@@ -7,6 +7,7 @@ import img1 from "../../../assets/images/vores_arbejde_1.webp";
 import img2 from "../../../assets/images/vores_arbejde_2.webp";
 import img3 from "../../../assets/images/vores_arbejde_3.webp";
 import img4 from "../../../assets/images/vores_arbejde_4.webp";
+import FindKommuneDrawer from "../../../components/features/FindKommuneDrawer";
 
 function VoresArbejde({ sideData }) {
   return (
@@ -101,9 +102,8 @@ function VoresArbejde({ sideData }) {
           <iframe
             src="https://www.youtube.com/embed/aqWjIOCyt7M"
             title="Kattens Vaerns arbejde"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            border="0"
+            allowFullScreen
           ></iframe>
         </AspectRatio>
       </Box>
@@ -565,6 +565,7 @@ function VoresArbejde({ sideData }) {
             </NextLink>
             , og kan bruges frit.
           </Text>
+          <FindKommuneDrawer />
         </Box>
       </Box>
 
@@ -596,7 +597,7 @@ function VoresArbejde({ sideData }) {
             <Heading as={"h1"} size="heading2" color={"brand.white"}>
               Vil du være med til at gøre en forskel for Danmarks katte?
             </Heading>
-            <NextLink href={`/indberetning/fundet-kat`} passHref>
+            <NextLink href={`/stottemuligheder`} passHref>
               <Link
                 justifySelf={"center"}
                 variant={"redBtn"}
