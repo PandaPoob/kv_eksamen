@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavGroup from "./NavGroup";
-import { BsCart3, BsList } from "react-icons/bs";
+import { BsCart3, BsList, BsBoxArrowUpRight } from "react-icons/bs";
 import {
   useDisclosure,
   Flex,
@@ -174,15 +174,16 @@ function Nav({ children }) {
 
             <Flex gap={"1rem"}>
               <NextLink href={"https://kattens-vaern-butik.dk/"} passHref>
-                <Link isExternal target="_blank" alignSelf={"center"}>
-                  <IconButton
-                    bg={"none"}
-                    color="brand.blue"
-                    _hover={{ bg: "none" }}
-                    _focus={{ bg: "none" }}
-                    aria-label="Go webshop"
-                    icon={<BsCart3 stroke="white" strokeWidth={"0.2px"} />}
-                  />
+                <Link
+                  isExternal
+                  target="_blank"
+                  alignSelf={"center"}
+                  alignItems="center"
+                  gap="0.2rem"
+                  display="flex"
+                >
+                  Webshop
+                  <BsBoxArrowUpRight size={16} />
                 </Link>
               </NextLink>
 

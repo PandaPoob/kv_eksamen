@@ -11,7 +11,7 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import NavMobileGroup from "./NavMobileGroup";
-import { BsXLg, BsChevronRight } from "react-icons/bs";
+import { BsXLg, BsChevronRight, BsBoxArrowUpRight } from "react-icons/bs";
 
 function NavDrawer({ navData, isOpen, onClose, onCloseMenu }) {
   return (
@@ -61,16 +61,16 @@ function NavDrawer({ navData, isOpen, onClose, onCloseMenu }) {
               isExternal
               target="_blank"
               display={"flex"}
-              justifyContent={"space-between"}
+              gap="1rem"
               alignItems="center"
               fontWeight={"medium"}
-              fontSize={"sm"}
+              fontSize={"smallH"}
               py={"1.5rem"}
               px={"1rem"}
               mr={"0.4rem"}
             >
               Se webshoppen
-              <BsChevronRight size={24} />
+              <BsBoxArrowUpRight size={24} />
             </Link>
           </NextLink>
         </DrawerBody>
