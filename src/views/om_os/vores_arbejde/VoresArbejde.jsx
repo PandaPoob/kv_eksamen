@@ -319,7 +319,11 @@ function VoresArbejde({ sideData }) {
               <NextLink href={`/katteklinikker`} passHref>
                 <Link variant={"inLink"}> katteklinikker</Link>
               </NextLink>
-              . Du kan læse mere om neutralisering/steralisering her.
+              . <br /> <br /> Du kan læse mere om neutralisering/steralisering{" "}
+              <NextLink href={`/katteviden/1712`} passHref>
+                <Link variant={"inLink"}> her</Link>
+              </NextLink>
+              .
             </Text>
           </Box>
           <Box
