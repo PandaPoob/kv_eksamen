@@ -19,7 +19,7 @@ export default function Banner({ bannerData }) {
     },
     {
       name: "Jeg kan ikke beholde min kat",
-      urlEndpoint: "/efterlysning/mistet-kat",
+      urlEndpoint: "/indlevering-af-kat",
     },
   ];
 
