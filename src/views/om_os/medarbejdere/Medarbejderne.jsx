@@ -2,6 +2,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import PageLayout from "../../../components/layout/PageLayout";
 import PersonArticle from "../../../components/articles/PersonArticle";
 import SplashHeader from "../../../components/generics/SplashHeader";
+import PageHead from "../../../components/layout/PageHead";
 
 function Medarbejderne({ data, sideData }) {
   let copySortedMedarbejdere = JSON.parse(JSON.stringify(data));
@@ -11,6 +12,7 @@ function Medarbejderne({ data, sideData }) {
 
   return (
     <PageLayout>
+      <PageHead {...sideData} />
       <SplashHeader
         imgMobPos={"15%"}
         h1mobsize={"heading2"}

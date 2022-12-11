@@ -1,5 +1,6 @@
 import PageLayout from "../../../components/layout/PageLayout";
 import SplashHeader from "../../../components/generics/SplashHeader";
+import PageHead from "../../../components/layout/PageHead";
 import { Box, Heading, Flex, Text, Link, AspectRatio } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Image from "next/image";
@@ -12,6 +13,7 @@ import FindKommuneDrawer from "../../../components/features/FindKommuneDrawer";
 function VoresArbejde({ sideData }) {
   return (
     <PageLayout color={"brand.blue"}>
+      <PageHead {...sideData} />
       <SplashHeader {...sideData} imgMobPos={"10%"}></SplashHeader>
 
       <Box

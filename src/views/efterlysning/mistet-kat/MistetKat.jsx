@@ -1,12 +1,8 @@
 import PageLayout from "../../../components/layout/PageLayout";
-import PageHead from "../../../components/layout/PageHead";
 import SplashHeader from "../../../components/generics/SplashHeader";
-import Herrelos from "./Herrelos";
-import HvadDuKanGore from "./HvadDuKanGore";
-import VildKat from "./VildKat";
-import Itvivl from "./Itvivl";
+import PageHead from "../../../components/layout/PageHead";
 
-function FundetKat({ sideData }) {
+function MistetKat({ sideData }) {
   return (
     <PageLayout>
       <PageHead {...sideData} />
@@ -16,12 +12,8 @@ function FundetKat({ sideData }) {
         height={"75vh"}
         {...sideData}
       />
-      <Herrelos />
-      <HvadDuKanGore />
-      <VildKat />
-      <Itvivl />
     </PageLayout>
   );
 }
 
-export default FundetKat;
+export default MistetKat;
