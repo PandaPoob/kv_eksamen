@@ -7,6 +7,7 @@ const breakpoints = {
   lbp: "65.6rem",
   navbp: "69rem",
   img: "32rem",
+  drawer: "437px",
 };
 
 export default breakpoints;
