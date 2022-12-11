@@ -13,7 +13,7 @@ function InfoArtikel({ id, acf }) {
       w={"20rem"}
       transition="all .2s ease-in-out"
       _hover={{
-        transform: "translateY(-0.5rem) translateX(0.2rem)",
+        transform: "translateY(-0.5rem) ",
       }}
     >
       {" "}
@@ -36,7 +36,7 @@ function InfoArtikel({ id, acf }) {
               objectFit="cover"
             />
           </Box>
-          <Flex px={"1rem"}>
+          <Flex px={"1rem"} pt="0.5rem">
             <Heading as={"h2"} size="heading4">
               {acf.overskrift}
             </Heading>

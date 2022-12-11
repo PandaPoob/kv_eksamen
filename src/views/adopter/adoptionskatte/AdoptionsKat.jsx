@@ -68,6 +68,7 @@ function AdoptionsKat({ katData }) {
                 CarouselListItem={CarouselImage}
                 customP={{ left: 0, right: "2rem" }}
                 pos={"center"}
+                arrowColor={"brand.darkGrey"}
               />
             )}
 

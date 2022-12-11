@@ -24,11 +24,12 @@ function GallerySection({ gallery }) {
       ) : (
         <Carousel
           listData={cleanbilledArr}
+          CarouselListItem={CarouselImage}
           perPage={{ base: 1, lg: 2, xl: 3 }}
           perMoveVal={{ base: 1, lg: 1, xl: 1 }}
-          CarouselListItem={CarouselImage}
           customP={{ left: "0rem", right: "8rem" }}
           pos={"start"}
+          arrowColor={"brand.blueCta"}
         />
       )}
     </Box>

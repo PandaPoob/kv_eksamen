@@ -23,6 +23,7 @@ function KatteVidenSingle({ artikelData }) {
           width={"100%"}
           display="grid"
           alignItems={"center"}
+          px="10rem"
           justifyContent={{ base: "center", lg: splash_billede.tekst_position }}
         >
           <Box
@@ -41,7 +42,7 @@ function KatteVidenSingle({ artikelData }) {
             objectFit="cover"
           />
           <Box px={"2rem"} zIndex={1} position="relative">
-            <Heading as={"h1"} size="heading2" color={"brand.white"}>
+            <Heading as={"h1"} size="heading1" color={"brand.white"}>
               {acf.overskrift}
             </Heading>
           </Box>

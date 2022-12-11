@@ -6,7 +6,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { SplideSlide, Splide, SplideTrack } from "@splidejs/react-splide";
-import { BsChevronRight, BsArrowRight } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 import "@splidejs/react-splide/css";
 
 const SplideChakra = chakra(Splide);
@@ -20,7 +20,9 @@ function Carousel({
   listData,
   customP,
   pos,
+  arrowColor,
 }) {
+  console.log(CarouselListItem.name);
   return (
     <Box justifyContent={pos}>
       <SplideChakra
@@ -31,20 +33,27 @@ function Carousel({
           padding: customP,
           type: "loop",
           gap: 10,
-          pagination: useBreakpointValue({ base: true, lg: false }),
+          pagination: false, //useBreakpointValue({ base: true, lg: false }),
           width: "100%",
-          arrows: useBreakpointValue({ base: false, lg: true }),
+          arrows: true, //useBreakpointValue({ base: false, lg: true }),
         }}
       >
         <Box position={"relative"}>
           <Flex
-            sx={{ ".splide__arrow > svg": { width: "28px", height: "auto" } }}
+            sx={{
+              ".splide__arrow > svg": {
+                width: "28px",
+                height: "auto",
+                fill: arrowColor,
+              },
+            }}
             className="splide__arrows"
             alignItems="center"
             justifyContent={"flex-end"}
           >
             <IconButton
               icon={<BsArrowRight />}
+              colorScheme="pink"
               className="splide__arrow splide__arrow--prev"
               aria-label="prev"
               transform="none"
@@ -60,7 +69,11 @@ function Carousel({
             />
           </Flex>
 
-          <SplideTrackChakra transform={"none"}>
+          <SplideTrackChakra
+            transform={"none"}
+            minH={CarouselListItem.name === "InfoArtikel" ? "22rem" : 0}
+            pt={CarouselListItem.name === "InfoArtikel" ? "1rem" : 0}
+          >
             {listData.map((item, index) => (
               <SplideSlideChakra key={index}>
                 <CarouselListItem {...item}></CarouselListItem>

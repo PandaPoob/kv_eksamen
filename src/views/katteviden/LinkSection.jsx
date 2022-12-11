@@ -10,7 +10,7 @@ function LinkSection({ link }) {
       minH="8rem"
       px={"1rem"}
       mb={"4rem"}
-      bg="lightyellow"
+      bg="brand.lightGrey"
     >
       {link.eksternt_link ? (
         <Text>

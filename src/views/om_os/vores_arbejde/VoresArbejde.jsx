@@ -320,13 +320,6 @@ function VoresArbejde({ sideData }) {
                 <Link variant={"inLink"}> katteklinikker</Link>
               </NextLink>
               . Du kan læse mere om neutralisering/steralisering her.
-              {/*     <NextLink href={`/neutralisering`} passHref>
-              <Link fontWeight={"bold"} cursor="pointer">
-                {" "}
-                her
-              </Link>
-            </NextLink>
-            . */}
             </Text>
           </Box>
           <Box
@@ -338,7 +331,7 @@ function VoresArbejde({ sideData }) {
           >
             <Image
               src={img2}
-              alt={"Genudsætning"}
+              alt={"Neutralisering"}
               layout="fill"
               objectFit="cover"
             />
@@ -396,13 +389,6 @@ function VoresArbejde({ sideData }) {
                 <Link variant={"inLink"}> katteklinikker</Link>
               </NextLink>
               . Læs mere om øre- og chipmærkning og lovgivningen her.
-              {/*     <NextLink href={`/neutralisering`} passHref>
-              <Link fontWeight={"bold"} cursor="pointer">
-                {" "}
-                her
-              </Link>
-            </NextLink>
-            . */}
             </Text>
           </Box>
           <Box
@@ -412,7 +398,7 @@ function VoresArbejde({ sideData }) {
           >
             <Image
               src={img3}
-              alt={"Genudsætning"}
+              alt={"øre- og chipmærkning"}
               layout="fill"
               objectFit="cover"
             />
