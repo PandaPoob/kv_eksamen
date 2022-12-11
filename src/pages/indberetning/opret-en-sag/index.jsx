@@ -1,24 +1,17 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
+import url from "../../../api/url";
+import OpretSag from "../../../views/indberetning/opret-sag/OpretSag";
 
-function OpretSagPage({ data }) {
+function OpretSagPage({ sideData }) {
   // console.log(data)
 
-  return (
-    <Box>
-      <Heading mt="2rem" as={"h1"} size={"heading1"}>
-        OpretSagPage
-      </Heading>
-    </Box>
-  );
+  return <OpretSag sideData={sideData} />;
 }
 
-/* export async function getStaticProps() {
-     const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
+export async function getStaticProps() {
+  const res = await fetch(`${url}indholdsider/1679`);
+  const sideData = await res.json();
 
-  return { props: { data } };
+  return { props: { sideData } };
 }
- */
+
 export default OpretSagPage;
