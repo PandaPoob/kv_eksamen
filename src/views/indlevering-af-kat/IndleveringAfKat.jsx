@@ -1,7 +1,7 @@
 import PageLayout from "../../components/layout/PageLayout";
 import PageHead from "../../components/layout/PageHead";
 import SplashHeader from "../../components/generics/SplashHeader";
-import { Text, Heading, Flex, Link, Box } from "@chakra-ui/react";
+import { Text, Heading, Link, Box } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 function IndleveringAfKat({ sideData }) {

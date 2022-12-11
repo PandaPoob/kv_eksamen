@@ -51,7 +51,7 @@ function ContactEF({ kontaktData }) {
         )}
         {fbvalgt === true ? (
           <NextLink href={fblink} passHref>
-            <Link variant={"clean"}>
+            <Link variant={"clean"} isExternal>
               <Flex as={"dl"} mb="1rem" alignItems={"center"} gap="0.5rem">
                 <Flex as="dt" alignItems={"center"}>
                   <Icon

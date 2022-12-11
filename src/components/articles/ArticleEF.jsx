@@ -7,11 +7,13 @@ function ArticleEF({ acf, id, type, url }) {
   let oremaerkeString = () => {
     if (acf.oremaerket === "Ja") return "Øremærket";
     else if (acf.oremaerket === "Nej") return "Ikke øremærket";
+    else if (acf.oremaerket === "Ved ikke") return "Øremærke ukendt";
     else return null;
   };
   let chippetString = () => {
     if (acf.chippet === "Ja") return "Chippet";
     else if (acf.chippet === "Nej") return "Ikke chippet";
+    else if (acf.chippet === "Ved ikke") return "Chip ukendt";
     else return null;
   };
 

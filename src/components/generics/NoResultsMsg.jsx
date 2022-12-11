@@ -1,5 +1,4 @@
 import { Flex, Text, Icon } from "@chakra-ui/react";
-import { BsSearch } from "react-icons/bs";
 import { MdSearchOff } from "react-icons/md";
 
 function NoResultsMsg({ msg }) {

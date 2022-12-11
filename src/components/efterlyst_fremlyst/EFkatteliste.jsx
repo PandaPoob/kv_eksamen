@@ -1,7 +1,8 @@
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import ArticleEF from "../articles/ArticleEF";
 import GridLayout from "../layout/GridLayout";
+import NoResultsMsg from "../generics/NoResultsMsg";
 
 export default function EFkatteliste({
   EFdata,
@@ -57,10 +58,27 @@ export default function EFkatteliste({
   });
 
   return (
-    <GridLayout>
-      {searchedFilteredKatte.map((kat) => {
-        return <ArticleEF key={kat.id} url={url} type={type} {...kat} />;
-      })}
-    </GridLayout>
+    <>
+      {searchedFilteredKatte.length === 0 ? (
+        <Box py="4rem" px="1rem">
+          <NoResultsMsg
+            msg={"Der er desværre ingen katte der matcher din søgning"}
+          />
+        </Box>
+      ) : (
+        <GridLayout>
+          {searchedFilteredKatte.map((kat) => {
+            return (
+              <ArticleEF
+                key={kat.id}
+                url={url}
+                type={type}
+                {...kat}
+              ></ArticleEF>
+            );
+          })}
+        </GridLayout>
+      )}
+    </>
   );
 }

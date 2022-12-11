@@ -1,6 +1,7 @@
-import { Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Article from "../../../components/articles/Article";
 import GridLayout from "../../../components/layout/GridLayout";
+import NoResultsMsg from "../../../components/generics/NoResultsMsg";
 
 function AdoptionKatteListe({
   data,
@@ -34,11 +35,21 @@ function AdoptionKatteListe({
   );
 
   return (
-    <GridLayout>
-      {filteredKatte.map((kat) => {
-        return <Article key={kat.id} {...kat}></Article>;
-      })}
-    </GridLayout>
+    <>
+      {filteredKatte.length === 0 ? (
+        <Box py="4rem" px="1rem">
+          <NoResultsMsg
+            msg={"Vi har desværre ingen katte der matcher din søgning"}
+          />
+        </Box>
+      ) : (
+        <GridLayout>
+          {filteredKatte.map((kat) => {
+            return <Article key={kat.id} {...kat}></Article>;
+          })}
+        </GridLayout>
+      )}
+    </>
   );
 }
 
