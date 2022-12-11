@@ -17,6 +17,7 @@ import MobileFilterAccor from "../features/MobileFilterAccor";
 
 function EFFilterDrawer({
   isOpen,
+  onCloseComplete,
   onClose,
   landsdelOpt,
   konOpt,
@@ -60,7 +61,13 @@ function EFFilterDrawer({
   }
 
   return (
-    <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"full"}>
+    <Drawer
+      isOpen={isOpen}
+      placement="right"
+      onClose={onClose}
+      size={"full"}
+      onCloseComplete={onCloseComplete}
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader

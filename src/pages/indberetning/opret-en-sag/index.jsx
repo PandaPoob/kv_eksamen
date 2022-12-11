@@ -2,8 +2,6 @@ import url from "../../../api/url";
 import OpretSag from "../../../views/indberetning/opret-sag/OpretSag";
 
 function OpretSagPage({ sideData }) {
-  // console.log(data)
-
   return <OpretSag sideData={sideData} />;
 }
 

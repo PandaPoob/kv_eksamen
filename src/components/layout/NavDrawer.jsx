@@ -13,9 +13,15 @@ import {
 import NavMobileGroup from "./NavMobileGroup";
 import { BsXLg, BsChevronRight } from "react-icons/bs";
 
-function NavDrawer({ navData, isOpen, onClose }) {
+function NavDrawer({ navData, isOpen, onClose, onCloseMenu }) {
   return (
-    <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"full"}>
+    <Drawer
+      isOpen={isOpen}
+      placement="right"
+      onClose={onClose}
+      size={"full"}
+      onCloseMenu={onCloseMenu}
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader

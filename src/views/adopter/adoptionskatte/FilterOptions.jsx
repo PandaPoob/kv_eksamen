@@ -6,6 +6,7 @@ import {
 } from "@chakra-ui/react";
 import { BsSliders } from "react-icons/bs";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 import InternatFilter from "./InternatFilter";
 import KanMedAndreCheck from "./KanMedAndreCheck";
 import MiljoFilter from "./MiljoFilter";
@@ -25,6 +26,7 @@ function FilterOptions({
 }) {
   const isMobile = useBreakpointValue({ base: true, navbp: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   //filteroption data hardcoded
   const miljoOpt = [
@@ -85,25 +87,33 @@ function FilterOptions({
         <>
           <Button
             variant={"openFilter"}
-            onClick={onOpen}
+            onClick={() => {
+              setIsLoaded(true);
+              onOpen();
+            }}
             aria-label="Open menu"
             gap="2rem"
           >
             Filter
             <BsSliders size={20} />
           </Button>
-          <MobileFilterDrawer
-            isOpen={isOpen}
-            onClose={onClose}
-            miljoOpt={miljoOpt}
-            internatOpt={internatOpt}
-            alderOpt={alderOpt}
-            setInternatFilter={setInternatFilter}
-            setKanMedAndre={setKanMedAndre}
-            setMiljoFilter={setMiljoFilter}
-            setAlderFilter={setAlderFilter}
-            kanMedAndre={kanMedAndre}
-          />
+          {isLoaded && (
+            <MobileFilterDrawer
+              isOpen={isOpen}
+              onClose={onClose}
+              onCloseComplete={() => {
+                setIsLoaded(false);
+              }}
+              miljoOpt={miljoOpt}
+              internatOpt={internatOpt}
+              alderOpt={alderOpt}
+              setInternatFilter={setInternatFilter}
+              setKanMedAndre={setKanMedAndre}
+              setMiljoFilter={setMiljoFilter}
+              setAlderFilter={setAlderFilter}
+              kanMedAndre={kanMedAndre}
+            />
+          )}
         </>
       ) : (
         <>

@@ -81,6 +81,7 @@ function Nav({ children }) {
   ];
   const isMobile = useBreakpointValue({ base: true, navbp: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isMenuLoaded, setIsMenuLoaded] = useState(false);
 
   //hide and show menu depending on scroll
   const [hidden, setHidden] = useState(false);
@@ -125,7 +126,10 @@ function Nav({ children }) {
               </NextLink>
 
               <IconButton
-                onClick={onOpen}
+                onClick={() => {
+                  setIsMenuLoaded(true);
+                  onOpen();
+                }}
                 aria-label="Open menu"
                 color={"brand.blue"}
                 bg="none"
@@ -133,11 +137,16 @@ function Nav({ children }) {
                 _focus={{ bg: "none" }}
                 icon={<BsList size={45} />}
               />
-              <MobileMenuDrawer
-                navData={navData}
-                isOpen={isOpen}
-                onClose={onClose}
-              />
+              {isMenuLoaded && (
+                <MobileMenuDrawer
+                  navData={navData}
+                  isOpen={isOpen}
+                  onClose={onClose}
+                  onCloseMenu={() => {
+                    setIsMenuLoaded(false);
+                  }}
+                />
+              )}
             </Flex>
           </Flex>
         ) : (

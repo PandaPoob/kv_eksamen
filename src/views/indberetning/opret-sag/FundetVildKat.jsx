@@ -1,4 +1,5 @@
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import FindKommuneDrawer from "../../../components/features/FindKommuneDrawer";
 
 function FundetVildKat() {
   return (
@@ -18,9 +19,7 @@ function FundetVildKat() {
         eller kommunen, for at bestille en indfangning. Dette afhænger også af
         kommunens aftale med os.
       </Text>
-      <Button variant="redBtn" mt={"1.5rem"}>
-        Tjek din kommune
-      </Button>
+      <FindKommuneDrawer />
     </Box>
   );
 }

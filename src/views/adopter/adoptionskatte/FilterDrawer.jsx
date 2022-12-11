@@ -17,6 +17,7 @@ import MobileFilterAccor from "../../../components/features/MobileFilterAccor";
 
 function FilterDrawer({
   isOpen,
+  onCloseComplete,
   onClose,
   miljoOpt,
   internatOpt,
@@ -60,7 +61,13 @@ function FilterDrawer({
   }
 
   return (
-    <Drawer isOpen={isOpen} placement="right" onClose={onClose} size={"full"}>
+    <Drawer
+      isOpen={isOpen}
+      placement="right"
+      onClose={onClose}
+      size={"full"}
+      onCloseComplete={onCloseComplete}
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader

@@ -6,6 +6,7 @@ import SplashHeader from "../../../components/generics/SplashHeader";
 import FundetVildKat from "./FundetVildKat";
 import IndfangningsPris from "./IndfangningPris";
 import Fodervaert from "./Fodervaert";
+
 function OpretSag({ sideData }) {
   return (
     <PageLayout>

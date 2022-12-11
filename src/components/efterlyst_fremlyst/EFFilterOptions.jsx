@@ -6,6 +6,7 @@ import {
 } from "@chakra-ui/react";
 import { BsSliders } from "react-icons/bs";
 import dynamic from "next/dynamic";
+import { useState } from "react";
 import LandsdelFilter from "./LandsdelFilter";
 import KonFilter from "./KonFilter";
 import OremaerkeCheck from "./OremaerkeCheck";
@@ -30,7 +31,7 @@ function EFFilterOptions({
 }) {
   const isMobile = useBreakpointValue({ base: true, navbp: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const [isLoaded, setIsLoaded] = useState(false);
   //filteroption data hardcoded
   const landsdelOpt = [
     {
@@ -88,7 +89,10 @@ function EFFilterOptions({
           />
           <Button
             variant={"openFilter"}
-            onClick={onOpen}
+            onClick={() => {
+              setIsLoaded(true);
+              onOpen();
+            }}
             aria-label="Open menu"
             gap="2rem"
             mb={{ base: "1rem", md: "0" }}
@@ -97,20 +101,25 @@ function EFFilterOptions({
             Filter
             <BsSliders size={20} />
           </Button>
-          <MobileFilterDrawer
-            isOpen={isOpen}
-            onClose={onClose}
-            landsdelOpt={landsdelOpt}
-            konOpt={konOpt}
-            landsdelsfilter={landsdelsfilter}
-            setLandsdelsfilter={setLandsdelsfilter}
-            kon={kon}
-            setKon={setKon}
-            maerket={maerket}
-            setMaerket={setMaerket}
-            chippet={chippet}
-            setChippet={setChippet}
-          />
+          {isLoaded && (
+            <MobileFilterDrawer
+              isOpen={isOpen}
+              onClose={onClose}
+              onCloseComplete={() => {
+                setIsLoaded(false);
+              }}
+              landsdelOpt={landsdelOpt}
+              konOpt={konOpt}
+              landsdelsfilter={landsdelsfilter}
+              setLandsdelsfilter={setLandsdelsfilter}
+              kon={kon}
+              setKon={setKon}
+              maerket={maerket}
+              setMaerket={setMaerket}
+              chippet={chippet}
+              setChippet={setChippet}
+            />
+          )}
         </>
       ) : (
         <>

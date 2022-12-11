@@ -19,28 +19,37 @@ function IndfangningsPris() {
       </Heading>
       <Tabs
         isFitted
-        variant="enclosed"
+        variant="unstyled"
         bg={"brand.lightGrey"}
-        borderColor="brand.darkGrey"
         colorScheme="blueKv"
       >
-        <TabList mb="1em" color="brand.darkGrey">
+        <TabList p={"1rem"}>
           <Tab
+            pr="1rem"
+            pb="1rem"
+            bg="brand.lightGrey"
             fontSize={{ base: "xs", lg: "smallH" }}
-            py="1rem"
             fontWeight="bold"
+            borderRight={"1px solid"}
+            color="brand.grey"
+            borderBottom={"1px solid"}
+            _selected={{ borderBottom: "none", color: "brand.blue" }}
           >
             Hvis vi fanger ind
           </Tab>
           <Tab
+            pl="1rem"
+            pb="1rem"
             fontSize={{ base: "xs", lg: "smallH" }}
-            py="1rem"
             fontWeight="bold"
+            color="brand.grey"
+            borderBottom={"1px solid"}
+            _selected={{ borderBottom: "none", color: "brand.blue" }}
           >
             Hvis du fanger ind
           </Tab>
         </TabList>
-        <TabPanels>
+        <TabPanels px="2rem">
           <TabPanel>
             <Text>
               Indfangningspris: 550,00 kr. pr. kat, Dette beløb dækker både
