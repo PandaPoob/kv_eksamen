@@ -12,7 +12,7 @@ export default function AdressAabningSektion({data}) {
        }));
      
        //remove empty entries (false)
-       const cleanAbningstiderArr = abningstiderArr.filter((t) => t.tider !== false);
+       const cleanAbningstiderArr = abningstiderArr.filter((t) => t.tider !== false && t.tider.dage !== "");
      
   return (
     
