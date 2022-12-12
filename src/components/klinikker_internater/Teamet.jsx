@@ -12,7 +12,7 @@ function Teamet({teamet, type}) {
   return (
     <>
     {arraychecker() ? 
-        <Box bg="brand.darkGrey" px="1rem" py={{base: "3rem", lg: "6rem"}} display="grid" gap="2rem" borderBottom={type === "internat" ? "3px solid" : "none"} borderColor="brand.redCta">
+        <Box bg="brand.darkGrey" px="1rem" py={{base: "3rem", lg: "6rem"}} display="grid" gap="2rem" borderBottom={type === "internat" ? "2px solid" : "none"} borderColor="brand.redCta">
             <Heading color="brand.white" as="h2" size="heading2" textAlign={"center"}>Teamet</Heading>
             <Flex  justifyContent={"center"} gap="1rem" flexWrap="wrap" >
             {teamet.map((tm) => (
