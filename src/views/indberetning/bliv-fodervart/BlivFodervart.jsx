@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Flex, Link } from "@chakra-ui/react";
+import { Box, Heading, Text, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 import Image from "next/image";
 import PageLayout from "../../../components/layout/PageLayout";

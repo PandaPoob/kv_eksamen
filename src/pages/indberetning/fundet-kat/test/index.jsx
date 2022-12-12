@@ -1,24 +1,7 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
+import IndberetningTest from "../../../../views/indberetning/fundet-kat/test/IndberetningTest";
 
-function TestPage({ data }) {
-  // console.log(data)
-
-  return (
-    <Box>
-      <Heading as={"h1"} size={"heading1"}>
-        Få svar her i vores test
-      </Heading>
-    </Box>
-  );
+function TestPage() {
+  return <IndberetningTest />;
 }
 
-/* export async function getStaticProps() {
-     const res = await fetch(
-    "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/acf/v3/adoptionskatte"
-  );
-  const data = await res.json(); 
-
-  return { props: { data } };
-}
- */
 export default TestPage;

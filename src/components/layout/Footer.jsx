@@ -17,7 +17,7 @@ function Footer({ children }) {
         { navn: "Sponsorer", link: "/gor-en-forskel/sponsorer" },
         { navn: "Samarbejdspartnere", link: "/samarbejdspartnere" },
         { navn: "Ledige stillinger", link: "/ledige-stillinger" },
-        { navn: "Dokumenter & Foldere", link: "/dokumenter-foldere" },
+        { navn: "Dokumenter & Foldere", link: "/dokumenter-og-foldere" },
       ],
     },
     {
