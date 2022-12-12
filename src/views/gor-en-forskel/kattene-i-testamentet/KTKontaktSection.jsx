@@ -9,14 +9,9 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
-import { useBreakpointValue } from "@chakra-ui/react";
 
 export default function KTKontaktSection() {
-  const dividerOrientation = useBreakpointValue({
-    base: "horizontal",
-    md: "vertical",
-    lg: "vertical",
-  });
+
 
   return (
     <Box

@@ -1,5 +1,4 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
 import PageLayout from "../../../components/layout/PageLayout";
 import PageHead from "../../../components/layout/PageHead";
 import SplashHeader from "../../../components/generics/SplashHeader";

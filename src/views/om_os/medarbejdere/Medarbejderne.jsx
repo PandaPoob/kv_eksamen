@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import PageLayout from "../../../components/layout/PageLayout";
 import PersonArticle from "../../../components/articles/PersonArticle";
 import SplashHeader from "../../../components/generics/SplashHeader";

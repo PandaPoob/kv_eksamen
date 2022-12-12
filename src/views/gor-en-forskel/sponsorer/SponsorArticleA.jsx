@@ -5,7 +5,6 @@ export default function SponsorArticleA({ acf }) {
   return (
     <Box
       bgColor={"brand.white"}
-      /*  minW="23rem" */
       minW={{ base: "18.75rem", md: "20rem" }}
       maxW={{ base: "23.1rem", md: "22rem", lg: "23.1rem" }}
       minH="31rem"

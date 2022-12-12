@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import Image from 'next/image'
 
 export default function OmInternatet({data}) {

@@ -1,7 +1,6 @@
-import { Box, Heading, Text, Flex, Divider, Link } from "@chakra-ui/react";
+import { Box, Heading, Text, Divider, Link } from "@chakra-ui/react";
 import SelectedCatArticle from "./SelectedCatArticle";
 import NextLink from "next/link";
-import url from "../../api/url";
 import { Fragment } from "react";
 
 export default function MaanedensKatte({ katteData }) {

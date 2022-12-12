@@ -1,7 +1,5 @@
 import React from 'react'
-import { Box, Flex, Text, Heading, Link, Icon, Divider } from '@chakra-ui/react'
-import Image from 'next/image'
-import { BsTelephone, BsEnvelope } from "react-icons/bs";
+import { Box, Text, Heading, Divider } from '@chakra-ui/react'
 
 export default function AdressAabningSektion({data}) {
        //data = acf.kontaktoplysninger

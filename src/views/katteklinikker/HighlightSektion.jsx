@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Heading, Text, Icon, Flex, Link } from "@chakra-ui/react";
+import { Box, Heading, Flex, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 export default function HighlightSektion({acf}) {

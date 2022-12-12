@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 import { Fragment } from "react";
 
-export default function Banner({ bannerData }) {
+export default function Banner() {
   let bannerdata = [
     {
       name: "Jeg har fundet en kat",
