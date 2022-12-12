@@ -11,7 +11,7 @@ export default function OmInternatet({data}) {
                 <Text>{data.brodtekst}</Text>
             </Box>
             <Box minH={"22rem"} width="100%" position="relative">
-                <Image alt='internaet' src={data.artikelbillede} layout="fill" objectFit='cover'/>
+                <Image alt='internatet' src={data.artikelbillede} layout="fill" objectFit='cover'/>
             </Box>
         </Box>
     </Box>
