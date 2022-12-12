@@ -13,10 +13,10 @@ const ByFieldValidation = () => {
   };
 };
 
-function ByField() {
+function ByField({ pos }) {
   return (
     <InputControl
-      gridRow={{ lg: "2/3" }}
+      gridRow={{ lg: pos }}
       minH="5.8rem"
       name="by"
       label="By"

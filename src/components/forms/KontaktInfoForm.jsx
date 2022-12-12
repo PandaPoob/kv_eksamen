@@ -94,7 +94,7 @@ function KontaktInfoForm({
       >
         {({ handleSubmit, isSubmitting, values }) => (
           <Form onSubmit={handleSubmit} autoComplete={"off"}>
-            <FullNameField />
+            <FullNameField label="Dit navn" />
 
             <Heading as="h3" size={"heading4"} my="2rem" textAlign={"center"}>
               Hvordan vil du kontaktes?

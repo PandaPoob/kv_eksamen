@@ -1,7 +1,6 @@
-import React from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-export default function SMSogMobile() {
+function SMSogMobile() {
   return (
     <Box display={"grid"} gap="1rem" gridrow={"1/2"}>
       <Box
@@ -35,3 +34,4 @@ export default function SMSogMobile() {
     </Box>
   );
 }
+export default SMSogMobile;

@@ -4,7 +4,6 @@ import { Input } from "@chakra-ui/react";
 import { useRadioGroup } from "@chakra-ui/react";
 import { Text, Flex, Box } from "@chakra-ui/react";
 import { BsHeart } from "react-icons/bs";
-import { IoPawOutline } from "react-icons/io5";
 import { useState } from "react";
 
 export default function BelobOptions({ data, display, columns }) {
@@ -54,9 +53,9 @@ export default function BelobOptions({ data, display, columns }) {
       {options.map((value, optindex) => {
         const radio = getRadioProps({ value });
         return (
-          <RadioCard key={value} {...radio}>
+          <RadioCard key={value} {...radio} name>
             <Flex alignItems={"center"} gap="1rem" py="1rem">
-              <IoPawOutline size={40} color="brand.blue" />
+              <BsHeart size={40} color="brand.blue" />
               <Box>
                 <Text fontSize={"sm"} fontWeight={"bold"}>
                   {value}

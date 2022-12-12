@@ -16,11 +16,11 @@ const PostnummerFieldValidation = () => {
   };
 };
 
-function PostnummerField() {
+function PostnummerField({ pos }) {
   return (
     <InputControl
       minH="5.8rem"
-      gridColumn={{ lg: "2/3" }}
+      gridColumn={{ lg: pos }}
       name="postnummer"
       label="Postnummer"
       inputProps={{ autoComplete: "off" }}

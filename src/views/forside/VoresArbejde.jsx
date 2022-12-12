@@ -19,7 +19,7 @@ export default function VoresArbejde(props) {
       <Box
         mt={{ base: "2rem", lg: "0" }}
         position="relative"
-        minHeight={{ base: "50rem", lg: "18rem" }}
+        minHeight={{ base: "40rem", lg: "18rem" }}
         width={"100%"}
       >
         <Image

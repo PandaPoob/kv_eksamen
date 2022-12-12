@@ -1,75 +1,89 @@
-import React from "react";
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
-import BelobOptions from "../../../components/generics/BelobOptions";
+import { Box } from "@chakra-ui/react";
+import { useState } from "react";
 import PageLayout from "../../../components/layout/PageLayout";
 import PageHead from "../../../components/layout/PageHead";
-import SplashHeader from "../../../components/generics/SplashHeader";
-import NextLink from "next/link";
-import SMSogMobile from "./SMSogMobile";
+import Step1Dono from "../../../components/donorflow/Step1Dono";
+import Step2Dono from "../../../components/donorflow/Step2Dono";
+import Step3Dono from "../../../components/donorflow/Step3Dono";
+import Step4Dono from "../../../components/donorflow/Step4Dono";
+import Step5Dono from "../../../components/donorflow/Step5Dono";
+import DonoBreadCrumb from "../../../components/donorflow/DonoBreadCrumb";
 
-export default function Doner({ data, sideData }) {
+function Doner({ data, sideData }) {
+  const [currenStepIndex, setCurrentStepIndex] = useState(0);
+  const [step1Belob, setStep1Belob] = useState("");
+  const [step2Info, setStep2Info] = useState("");
+
+  const onBelobCallback = (values) => {
+    setStep1Belob(values);
+    setCurrentStepIndex(+1);
+  };
+
+  const onPostCallBack = () => {
+    console.log("PostData:", step1Belob, step2Info);
+    setCurrentStepIndex(3);
+  };
+  console.log(currenStepIndex);
+  const steps = [
+    {
+      component: (
+        <Step1Dono
+          data={data}
+          sideData={sideData}
+          step1Belob={step1Belob}
+          setStep1Belob={setStep1Belob}
+          onBelobCallback={onBelobCallback}
+        />
+      ),
+    },
+    {
+      component: (
+        <Step2Dono
+          step2Info={step2Info}
+          setStep2Info={setStep2Info}
+          currenStepIndex={currenStepIndex}
+          setCurrentStepIndex={setCurrentStepIndex}
+        />
+      ),
+    },
+    {
+      component: (
+        <Step3Dono
+          onPostCallBack={onPostCallBack}
+          step1Belob={step1Belob}
+          step2Info={step2Info}
+        />
+      ),
+    },
+    {
+      component: <Step4Dono setCurrentStepIndex={setCurrentStepIndex} />,
+    },
+    {
+      component: <Step5Dono setCurrentStepIndex={setCurrentStepIndex} />,
+    },
+  ];
+
   return (
     <PageLayout>
       <PageHead {...sideData} />
-      <SplashHeader textPos="center" imgMobPos={"30%"} {...sideData} />
+
       <Box
-        display={"grid"}
-        placeContent="center"
-        px="1rem"
-        py={{ base: "2rem", lg: "6rem" }}
+        minH="100vh"
+        bg={currenStepIndex === 0 ? "transparent" : "brand.lightGrey"}
       >
-        <Box
-          display={"grid"}
-          gridTemplateColumns={{ base: "1fr", lg: "1.5fr 1fr" }}
-          gridTemplateRows={{ lg: "1fr 1fr" }}
-          gap="2rem"
-          maxW="container.xl"
-        >
-          <SMSogMobile />
-          <Box
-            display={"grid"}
-            gridRow={{ lg: "1/3" }}
-            bg="brand.white"
-            boxShadow={"1px 2px 6px 1px #B8B8B8"}
-            p={{ base: "1rem", lg: "2rem" }}
-            gap="1rem"
-          >
-            <Heading as="h2" size="heading3" m="auto" mb="1rem">
-              Doner med betalingskort
-            </Heading>
-            {/*    <Text m="auto">Vælg beløb (DKK)</Text> */}
-            {data.map((optList) => (
-              <BelobOptions
-                display={"grid"}
-                columns={"1fr"}
-                key={optList.id}
-                data={optList.acf}
-              />
-            ))}
-            <NextLink href={""} passHref>
-              <Link
-                variant="redBtn"
-                justifyContent={"center"}
-                maxW="10rem"
-                m="auto"
-                mt="1rem"
-              >
-                Gå til betaling
-              </Link>
-            </NextLink>
-          </Box>
-          <Text
-            gridColumn={"1/2"}
-            m="auto"
-            placeSelf={"end"}
-            as={"i"}
-            fontSize="smaller"
-          >
-            *Hvis du ønsker at donere/støtte for mere end 17.000,- ialt årligt
-            kontakt vores administration om mere information om skat og fradrag.
-          </Text>
+        {" "}
+        <Box display="grid">
+          {currenStepIndex !== 0 && (
+            <DonoBreadCrumb
+              setCurrentStepIndex={setCurrentStepIndex}
+              currenStepIndex={currenStepIndex}
+              step2Info={step2Info}
+            />
+          )}
+          {steps[currenStepIndex].component}
         </Box>
       </Box>
     </PageLayout>
   );
 }
+export default Doner;

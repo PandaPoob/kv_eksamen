@@ -247,9 +247,9 @@ function EfterlysForm({ step1State, onCallback, setCurrentStepIndex }) {
               >
                 <DatoField values={values.dato} />
 
-                <PostnummerField />
+                <PostnummerField pos={"2/3"} />
 
-                <ByField />
+                <ByField pos={"2/3"} />
 
                 <SelectControl
                   minH="5.8rem"

@@ -1,4 +1,3 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import Doner from "../../../views/gor-en-forskel/doner/Doner";
 import url from "../../../api/url";
 
