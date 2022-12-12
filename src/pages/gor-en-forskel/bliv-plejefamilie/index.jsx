@@ -1,4 +1,4 @@
-import BlivPlejefamilie from "../../../views/bliv-plejefamilie/BlivPlejefamilie";
+import BlivPlejefamilie from "../../../views/gor-en-forskel/bliv-plejefamilie/BlivPlejefamilie";
 import url from "../../../api/url";
 function BlivPlejefamiliePage({ sideData, imgData }) {
   return <BlivPlejefamilie sideData={sideData} imgData={imgData} />;

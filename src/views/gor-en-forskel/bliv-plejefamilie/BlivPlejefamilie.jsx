@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Heading, Text, Link } from "@chakra-ui/react";
-import PageLayout from "../../components/layout/PageLayout";
-import PageHead from "../../components/layout/PageHead";
-import SplashHeader from "../../components/generics/SplashHeader";
+import PageLayout from "../../../components/layout/PageLayout";
+import PageHead from "../../../components/layout/PageHead";
+import SplashHeader from "../../../components/generics/SplashHeader";
 import FaaSucessBox from "./FaaSucessBox";
 import PraktiskInfoBox from "./PraktiskInfoBox";
 import GodeRaad from "./GodeRaad";
