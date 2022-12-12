@@ -6,6 +6,8 @@ function Step2({
   step2State,
   onPostCallback,
   setCurrentStepIndex,
+  setPostLoading,
+  postLoading,
 }) {
   return (
     <>
@@ -15,6 +17,8 @@ function Step2({
         setStep2State={setStep2State}
         onCallback={onPostCallback}
         setCurrentStepIndex={setCurrentStepIndex}
+        setPostLoading={setPostLoading}
+        postLoading={postLoading}
       />
     </>
   );

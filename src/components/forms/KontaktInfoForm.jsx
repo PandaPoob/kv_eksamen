@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Text, Spinner } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import { CheckboxSingleControl, InputControl } from "formik-chakra-ui";
@@ -15,6 +15,8 @@ function KontaktInfoForm({
   step2State,
   setCurrentStepIndex,
   setStep2State,
+  setPostLoading,
+  postLoading,
 }) {
   //const [formState, setFormState] = useState("");
   const [error, setError] = useState(false);
@@ -79,6 +81,7 @@ function KontaktInfoForm({
           if (values.emailValgt || values.tlfValgt || values.fbValgt) {
             setError(false);
             actions.setSubmitting(false);
+            setPostLoading(true);
             setStep2State(values);
             onCallback(values);
             //console.log(values);
@@ -256,9 +259,11 @@ function KontaktInfoForm({
               <Button
                 type="submit"
                 variant="formSubmitBtn"
-                isLoading={isSubmitting}
+                //isLoading={isSubmitting}
+                isLoading={postLoading}
               >
                 Næste
+                {/*     {postLoading ? <Spinner color="brand.white" /> : "Næste"} */}
               </Button>
             </Box>
           </Form>

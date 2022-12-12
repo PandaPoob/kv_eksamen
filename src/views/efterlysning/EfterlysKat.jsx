@@ -8,6 +8,7 @@ function EfterlysKat() {
   return (
     <PageLayout>
       <Head>
+        <link rel="icon" href="/favikon.ico" />
         <title>Efterlys din kat</title>
       </Head>
       <Flex

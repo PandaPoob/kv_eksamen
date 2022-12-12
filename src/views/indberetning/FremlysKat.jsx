@@ -8,6 +8,7 @@ function FremlysKat() {
   return (
     <PageLayout>
       <Head>
+        <link rel="icon" href="/favikon.ico" />
         <title>Fremlys en kat</title>
       </Head>
       <Flex

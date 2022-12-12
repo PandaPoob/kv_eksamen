@@ -10,37 +10,50 @@ function FremlysFormFlow() {
   const [step2State, setStep2State] = useState("");
   const [authToken, setAuthToken] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [postLoading, setPostLoading] = useState(false);
 
   const onAuthCallback = () => {
-    fetch(
-      "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/jwt-auth/v1/token",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-        },
-
-        body: JSON.stringify({
-          username: "admin",
-          password: "c8ofU7wAPfG$W&oC&STcAQ4g",
-        }),
-      }
-    )
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (user) {
-        setAuthToken(user.token);
-      });
-    setCurrentStepIndex(+1);
+    if (authToken) {
+      setCurrentStepIndex(+1);
+    } else {
+      fetchAuth();
+    }
   };
+  async function fetchAuth() {
+    const JSONdata = JSON.stringify({
+      username: "admin",
+      password: "c8ofU7wAPfG$W&oC&STcAQ4g",
+    });
 
+    const endpoint =
+      "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-json/jwt-auth/v1/token";
+    const header = {
+      "Content-Type": "application/json",
+      accept: "application/json",
+    };
+
+    const options = {
+      method: "POST",
+      body: JSONdata,
+      headers: header,
+    };
+
+    const postResponse = await fetch(endpoint, options);
+
+    const result = await postResponse.json();
+    if (result.token === undefined) {
+      alert("Desværre skete der en fejl");
+    } else {
+      setAuthToken(result.token);
+      setCurrentStepIndex(currenStepIndex + 1);
+    }
+  }
   const onPostCallback = (values) => {
     //post image
     if (authToken) {
       uploadImg(values);
     } else {
+      setPostLoading(false);
       alert("Noget gik galt");
     }
   };
@@ -63,8 +76,9 @@ function FremlysFormFlow() {
     const postResponse = await fetch(endpoint, options);
 
     const result = await postResponse.json();
-    if (result.Message === "An error has occurred.") {
-      alert("unfortunately your order failed");
+    if (result.id === undefined) {
+      setPostLoading(false);
+      alert("Desværre skete der en fejl");
     } else {
       setImgUrl(result);
       cleanedData(result, values);
@@ -74,11 +88,15 @@ function FremlysFormFlow() {
     const split = step1State.dato.split("-");
     const cleanDate = split[2] + "/" + split[1] + "/" + split[0];
 
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     const data = {
-      title: values.fullName,
+      title: capitalizeFirstLetter(values.fullName),
       status: "publish",
       fields: {
-        farve: step1State.farve,
+        farve: capitalizeFirstLetter(step1State.farve),
         kon: step1State.kon,
         beskrivelse: step1State.descrip,
         dato: cleanDate,
@@ -93,8 +111,8 @@ function FremlysFormFlow() {
           id: result.id,
           url: result.source_url,
         },
-        by: step1State.by,
-        kontaktnavn: values.fullName,
+        by: capitalizeFirstLetter(step1State.by),
+        kontaktnavn: capitalizeFirstLetter(values.fullName),
         kontakt: {
           emailvalgt: values.emailValgt,
           email: values.email,
@@ -111,8 +129,6 @@ function FremlysFormFlow() {
   }
 
   async function postRequest(postData) {
-    //console.log(postData);
-
     const JSONdata = JSON.stringify(postData);
 
     const endpoint =
@@ -132,11 +148,13 @@ function FremlysFormFlow() {
     const postResponse = await fetch(endpoint, options);
 
     const result = await postResponse.json();
-    if (result.Message === "An error has occurred.") {
+    if (result.id === undefined) {
+      setPostLoading(false);
       alert("Desværre skete der en fejl");
     } else {
+      setPostLoading(false);
       setCurrentStepIndex(currenStepIndex + 1);
-      console.log(result);
+      //console.log(result);
     }
   }
 
@@ -159,6 +177,8 @@ function FremlysFormFlow() {
           setStep2State={setStep2State}
           step2State={step2State}
           onPostCallback={onPostCallback}
+          setPostLoading={setPostLoading}
+          postLoading={postLoading}
         />
       ),
     },

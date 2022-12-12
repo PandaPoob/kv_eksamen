@@ -127,6 +127,14 @@ const button = {
       _hover: {
         bg: "brand.redHover",
         transform: "none",
+        _disabled: {
+          bg: "brand.redCta",
+        },
+      },
+      _disabled: {
+        opacity: 0.4,
+        cursor: "auto",
+        boxShadow: "none",
       },
     },
 
