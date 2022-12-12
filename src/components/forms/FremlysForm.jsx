@@ -2,6 +2,7 @@ import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import { SelectControl } from "formik-chakra-ui";
 import * as Yup from "yup";
+import { motion, AnimatePresence } from "framer-motion";
 import CatBreadCrumb from "../../components/efterlyst_fremlyst/formsteps/CatBreadCrumb";
 import CustomRadioGroup from "./formFields/CustomRadioGroup";
 import {
@@ -142,28 +143,44 @@ function FremlysForm({ step1State, onCallback, setCurrentStepIndex }) {
                   name={"oremaerket"}
                   options={options}
                   values={values.oremaerket}
-                />
-                {values.oremaerket === "Ja" ? (
-                  <Box
-                    borderBottom={"1px solid"}
-                    borderLeft="1px solid"
-                    borderRight="1px solid"
-                    borderColor="brand.borderGrey"
-                    minH="6rem"
-                    px="1rem"
-                  >
-                    <OremarkeField />
-                    <Text
-                      fontSize={"xxs"}
-                      color="brand.grey"
-                      ml="0.2rem"
-                      mt={"0.2rem"}
-                      mb="1rem"
+                />{" "}
+                <AnimatePresence>
+                  {values.oremaerket === "Ja" ? (
+                    <Box
+                      as={motion.div}
+                      initial={{ opacity: 0, y: "-50%" }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      key="oremaerket"
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "linear" }}
                     >
-                      Hvis ikke du kan aflæse øremærket lad feltet stå tomt
-                    </Text>
-                  </Box>
-                ) : null}
+                      <Box
+                        position="relative"
+                        zIndex={1}
+                        borderBottom={"1px solid"}
+                        borderLeft="1px solid"
+                        borderRight="1px solid"
+                        borderColor="brand.borderGrey"
+                        minH="6rem"
+                        px="1rem"
+                      >
+                        <OremarkeField />
+                        <Text
+                          fontSize={"xxs"}
+                          color="brand.grey"
+                          ml="0.2rem"
+                          mt={"0.2rem"}
+                          mb="1rem"
+                        >
+                          Hvis ikke du kan aflæse øremærket lad feltet stå tomt
+                        </Text>
+                      </Box>
+                    </Box>
+                  ) : null}{" "}
+                </AnimatePresence>
               </Box>
 
               <Box mb={"1rem"}>
@@ -174,27 +191,41 @@ function FremlysForm({ step1State, onCallback, setCurrentStepIndex }) {
                   options={options}
                   values={values.chippet}
                 />
-                {values.chippet === "Ja" ? (
-                  <Box
-                    borderBottom={"1px solid"}
-                    borderLeft="1px solid"
-                    borderRight="1px solid"
-                    borderColor="brand.borderGrey"
-                    minH="6rem"
-                    px="1rem"
-                  >
-                    <ChipnummerField />
-                    <Text
-                      fontSize={"xxs"}
-                      color="brand.grey"
-                      ml="0.2rem"
-                      mt={"0.2rem"}
-                      mb="1rem"
+                <AnimatePresence>
+                  {values.chippet === "Ja" ? (
+                    <Box
+                      as={motion.div}
+                      initial={{ opacity: 0, y: "-50%" }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      key="chippet"
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "linear" }}
                     >
-                      Hvis ikke du kender chipnummeret lad feltet stå tomt
-                    </Text>
-                  </Box>
-                ) : null}
+                      <Box
+                        borderBottom={"1px solid"}
+                        borderLeft="1px solid"
+                        borderRight="1px solid"
+                        borderColor="brand.borderGrey"
+                        minH="6rem"
+                        px="1rem"
+                      >
+                        <ChipnummerField />
+                        <Text
+                          fontSize={"xxs"}
+                          color="brand.grey"
+                          ml="0.2rem"
+                          mt={"0.2rem"}
+                          mb="1rem"
+                        >
+                          Hvis ikke du kender chipnummeret lad feltet stå tomt
+                        </Text>
+                      </Box>
+                    </Box>
+                  ) : null}{" "}
+                </AnimatePresence>
               </Box>
 
               <ImageField

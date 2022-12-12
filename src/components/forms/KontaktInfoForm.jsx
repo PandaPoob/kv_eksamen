@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Box, Button, Heading, Text, Spinner } from "@chakra-ui/react";
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
+import { motion, AnimatePresence } from "framer-motion";
 import { CheckboxSingleControl, InputControl } from "formik-chakra-ui";
 import {
   FullNameField,
@@ -119,30 +120,43 @@ function KontaktInfoForm({
                   variant: "formCheck",
                 }}
               />
-
-              {values.emailValgt ? (
-                <Box
-                  border={"1px solid"}
-                  borderColor="brand.borderGrey"
-                  minH={"6rem"}
-                  px="1rem"
-                  py={"0.5rem"}
-                >
-                  <InputControl
-                    name="email"
-                    label="Emailfelt"
-                    inputProps={{
-                      placeholder: "example@gmail.com",
-                      mt: "1rem",
+              <AnimatePresence>
+                {values.emailValgt ? (
+                  <Box
+                    as={motion.div}
+                    initial={{ opacity: 0, y: "-50%" }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
                     }}
-                    labelProps={{
-                      pb: 1,
-                      visibility: "hidden",
-                      position: "absolute",
-                    }}
-                  />{" "}
-                </Box>
-              ) : null}
+                    key="email"
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "linear" }}
+                  >
+                    <Box
+                      border={"1px solid"}
+                      borderColor="brand.borderGrey"
+                      minH={"6rem"}
+                      px="1rem"
+                      py={"0.5rem"}
+                    >
+                      <InputControl
+                        name="email"
+                        label="Emailfelt"
+                        inputProps={{
+                          placeholder: "example@gmail.com",
+                          mt: "1rem",
+                        }}
+                        labelProps={{
+                          pb: 1,
+                          visibility: "hidden",
+                          position: "absolute",
+                        }}
+                      />{" "}
+                    </Box>
+                  </Box>
+                ) : null}
+              </AnimatePresence>
             </Box>
 
             <Box mb={"2rem"}>
@@ -165,30 +179,44 @@ function KontaktInfoForm({
                   variant: "formCheck",
                 }}
               />
-              {values.tlfValgt ? (
-                <Box
-                  border={"1px solid"}
-                  borderColor="brand.borderGrey"
-                  minH={"6rem"}
-                  px="1rem"
-                  py={"0.5rem"}
-                >
-                  <InputControl
-                    name="tlf"
-                    label="Tlffelt"
-                    inputProps={{
-                      autoComplete: "off",
-                      placeholder: "00 00 00 00",
-                      mt: "1rem",
+              <AnimatePresence>
+                {values.tlfValgt ? (
+                  <Box
+                    as={motion.div}
+                    initial={{ opacity: 0, y: "-50%" }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
                     }}
-                    labelProps={{
-                      pb: 1,
-                      visibility: "hidden",
-                      position: "absolute",
-                    }}
-                  />
-                </Box>
-              ) : null}
+                    key="telefon"
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "linear" }}
+                  >
+                    <Box
+                      border={"1px solid"}
+                      borderColor="brand.borderGrey"
+                      minH={"6rem"}
+                      px="1rem"
+                      py={"0.5rem"}
+                    >
+                      <InputControl
+                        name="tlf"
+                        label="Tlffelt"
+                        inputProps={{
+                          autoComplete: "off",
+                          placeholder: "00 00 00 00",
+                          mt: "1rem",
+                        }}
+                        labelProps={{
+                          pb: 1,
+                          visibility: "hidden",
+                          position: "absolute",
+                        }}
+                      />
+                    </Box>
+                  </Box>
+                ) : null}{" "}
+              </AnimatePresence>
             </Box>
 
             <Box mb={"2rem"}>
@@ -211,38 +239,52 @@ function KontaktInfoForm({
                   variant: "formCheck",
                 }}
               />
-              {values.fbValgt ? (
-                <Box
-                  border={"1px solid"}
-                  borderColor="brand.borderGrey"
-                  minH={"14rem"}
-                  px="1rem"
-                  py={"0.5rem"}
-                >
-                  <InputControl
-                    name="fbNavn"
-                    label="Facebook navn"
-                    minH="6rem"
-                    inputProps={{
-                      autoComplete: "off",
-                      placeholder: "Kattens Værn",
+              <AnimatePresence>
+                {values.fbValgt ? (
+                  <Box
+                    as={motion.div}
+                    initial={{ opacity: 0, y: "-50%" }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
                     }}
-                    labelProps={{
-                      mt: "1rem",
-                    }}
-                  />
-                  <InputControl
-                    name="fbLink"
-                    label="Facebook link"
-                    minH="6rem"
-                    inputProps={{
-                      autoComplete: "off",
-                      placeholder: "https://www.facebook.com/KattensVaern",
-                    }}
-                    labelProps={{ pb: 1 }}
-                  />
-                </Box>
-              ) : null}
+                    key="facebook"
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "linear" }}
+                  >
+                    <Box
+                      border={"1px solid"}
+                      borderColor="brand.borderGrey"
+                      minH={"14rem"}
+                      px="1rem"
+                      py={"0.5rem"}
+                    >
+                      <InputControl
+                        name="fbNavn"
+                        label="Facebook navn"
+                        minH="6rem"
+                        inputProps={{
+                          autoComplete: "off",
+                          placeholder: "Kattens Værn",
+                        }}
+                        labelProps={{
+                          mt: "1rem",
+                        }}
+                      />
+                      <InputControl
+                        name="fbLink"
+                        label="Facebook link"
+                        minH="6rem"
+                        inputProps={{
+                          autoComplete: "off",
+                          placeholder: "https://www.facebook.com/KattensVaern",
+                        }}
+                        labelProps={{ pb: 1 }}
+                      />
+                    </Box>
+                  </Box>
+                ) : null}{" "}
+              </AnimatePresence>
             </Box>
 
             {error ? (

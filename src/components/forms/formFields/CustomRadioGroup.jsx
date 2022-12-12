@@ -6,7 +6,7 @@ function CustomRadioGroup({ values, setFieldValue, name, options, label }) {
   return (
     <Field name={name}>
       {({ field }) => (
-        <FormControl id={name}>
+        <FormControl id={name} position="relative" zIndex={2} bg="brand.white">
           <FormLabel>{label}</FormLabel>
           <RadioGroup
             {...field}
