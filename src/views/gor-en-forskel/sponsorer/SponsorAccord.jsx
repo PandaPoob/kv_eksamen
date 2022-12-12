@@ -15,7 +15,12 @@ import { BsChevronDown } from "react-icons/bs";
 
 export default function SponsorAccord() {
   return (
-    <Box borderRadius={"0.2rem"} boxShadow="md" gridColumn={{ lg: "1" }}>
+    <Box
+      borderRadius={"0.2rem"}
+      boxShadow={"1px 2px 6px 1px #B8B8B8"}
+      gridColumn={{ lg: "1" }}
+      bg="brand.white"
+    >
       <Accordion
         allowMultiple
         minW={{

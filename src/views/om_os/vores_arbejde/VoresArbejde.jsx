@@ -63,7 +63,7 @@ function VoresArbejde({ sideData }) {
         display={"grid"}
         gridTemplateColumns={{ lg: "1fr 1fr" }}
         justifyContent={"center"}
-        gap="1rem"
+        gap={{ base: "2rem", lg: "4rem" }}
         alignItems="center"
         px={{ base: "1rem", lg: "4rem" }}
         color={"brand.blue"}

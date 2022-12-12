@@ -6,7 +6,6 @@ export default function OmSponsorer() {
   return (
     <Box
       as="section"
-      bgColor={"brand.white"}
       py={"5rem"}
       px={"2rem"}
       display={"grid"}

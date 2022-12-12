@@ -7,7 +7,14 @@ export default function Potesponsorer({ data }) {
   });
 
   return (
-    <Box as="section" bgColor={"brand.darkGrey"} py={"5rem"} px={"2rem"}>
+    <Box
+      as="section"
+      bgColor={"brand.darkGrey"}
+      py={"5rem"}
+      px={"2rem"}
+      borderBottom="1px solid"
+      borderColor="brand.redCta"
+    >
       <Heading
         as="h2"
         size="heading2"

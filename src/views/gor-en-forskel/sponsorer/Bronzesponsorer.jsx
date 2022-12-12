@@ -7,7 +7,7 @@ export default function Bronzesponsorer({ data }) {
   });
 
   return (
-    <Box as="section" bgColor={"brand.white"} py={"5rem"} px={"2rem"}>
+    <Box as="section" py={"5rem"} px={"2rem"}>
       <Heading
         as="h2"
         size="heading2"

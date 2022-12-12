@@ -17,7 +17,7 @@ export default function Infoboks() {
     <Box
       bgColor={"brand.white"}
       borderRadius={"0.2rem"}
-      boxShadow="md"
+      boxShadow={"1px 2px 6px 1px #B8B8B8"}
       gridColumn={{ lg: "2" }}
       minW={{ base: "18.75rem", md: "16.75rem" }}
       maxW={{ base: "45rem", md: "23.1rem", lg: "40.6rem", xl: "43.75rem" }}
