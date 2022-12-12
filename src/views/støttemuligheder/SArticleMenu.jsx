@@ -66,8 +66,8 @@ export default function SArticleMenu() {
         maxW="container.xl"
         gap="2rem"
       >
-        {menuData.map((mp) => (
-          <SArticle key={mp.titel} {...mp} />
+        {menuData.map((mp, index) => (
+          <SArticle key={mp.titel} {...mp} index={index} />
         ))}
       </Box>
     </Box>
