@@ -19,6 +19,7 @@ export default function BlivArticle({ item }) {
       <Flex
         justifyContent={"center"}
         gap="2rem"
+        flexWrap={"wrap"}
         mt={{ base: "2rem", lg: "2rem" }}
       >
         {item.overskrift === "Bliv plejefamilie" ? (
