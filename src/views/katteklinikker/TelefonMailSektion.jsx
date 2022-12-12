@@ -23,8 +23,8 @@ export default function TelefonMailSektion({data}) {
           </Heading>
           {cleanTelefontiderArr.map((t) => (
             <Box key={t.id} display="grid" gridTemplateColumns={"1fr 1fr"}>
-              <Text>{t.tider.dage}:</Text>
-              <Text color="brand.darkGrey" fontWeight={"bold"} placeSelf="end">
+              <Text fontSize={{ base: "xxs", md: "xs" }}>{t.tider.dage}:</Text>
+              <Text fontSize={{ base: "xxs", md: "xs" }} color="brand.darkGrey" fontWeight={"bold"} placeSelf="end">
                 {t.tider.tider}
               </Text>
             </Box>
