@@ -73,7 +73,9 @@ export default function InfoBokse() {
               Du kan købe alt nødvendigt tilbehør på vores internater eller på
               vores webshop som har udvalgte varer{" "}
               <NextLink href="https://kattens-vaern-butik.dk/" passHref>
-                <Link variant="inLink">her</Link>
+                <Link isExternal variant="exLink">
+                  her
+                </Link>
               </NextLink>{" "}
             </Text>
           </ListItem>

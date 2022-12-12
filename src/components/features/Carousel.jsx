@@ -22,7 +22,6 @@ function Carousel({
   pos,
   arrowColor,
 }) {
-  console.log(CarouselListItem.name);
   return (
     <Box justifyContent={pos}>
       <SplideChakra

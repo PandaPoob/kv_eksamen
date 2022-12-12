@@ -1,5 +1,4 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
-import KatteneITestamentet from "../../../views/kattene-i-testamentet/KatteneITestamentet";
+import KatteneITestamentet from "../../../views/gor-en-forskel/kattene-i-testamentet/KatteneITestamentet";
 import url from "../../../api/url";
 
 function TestamentePage({ sideData, imgData }) {

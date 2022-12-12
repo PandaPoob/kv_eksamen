@@ -1,18 +1,15 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../api/url";
+import LedigeStillinger from "../../views/ledige-stillinger/LedigeStillinger";
 
 function LedigeStillingerPage({ sideData }) {
-  return <Box mt={"6rem"}>Ledige stillinger</Box>;
+  return <LedigeStillinger sideData={sideData} />;
 }
 
-/* export async function getStaticProps() {
-  const res = await fetch(`${url}indholdsider/1111`);
-  const sideData = await res.json();
+export async function getStaticProps() {
+  const res2 = await fetch(`${url}indholdsider/1753`);
+  const sideData = await res2.json();
 
-  return {
-    props: {
-      sideData: sideData,
-    },
-  };
-} */
+  return { props: { sideData } };
+}
+
 export default LedigeStillingerPage;

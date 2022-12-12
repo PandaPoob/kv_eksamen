@@ -3,6 +3,7 @@ import PageLayout from "../../../components/layout/PageLayout";
 import PersonArticle from "../../../components/articles/PersonArticle";
 import SplashHeader from "../../../components/generics/SplashHeader";
 import PageHead from "../../../components/layout/PageHead";
+import GridLayout from "../../../components/layout/GridLayout";
 
 function Medarbejderne({ data, sideData }) {
   let copySortedMedarbejdere = JSON.parse(JSON.stringify(data));
@@ -18,15 +19,8 @@ function Medarbejderne({ data, sideData }) {
         h1mobsize={"heading2"}
         {...sideData}
       ></SplashHeader>
-
-      <Box display={"grid"} justifyContent={"center"}>
-        <Flex
-          justify={"center"}
-          columnGap={"2rem"}
-          flexWrap={"wrap"}
-          pt="5rem"
-          maxW={"container.xxl"}
-        >
+      <Box py="2rem">
+        <GridLayout>
           {sortedM.map((m) => {
             return (
               <PersonArticle
@@ -36,7 +30,7 @@ function Medarbejderne({ data, sideData }) {
               ></PersonArticle>
             );
           })}
-        </Flex>
+        </GridLayout>
       </Box>
     </PageLayout>
   );

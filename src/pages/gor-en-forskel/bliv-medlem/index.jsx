@@ -1,4 +1,4 @@
-import BlivMedlem from "../../../views/bliv-medlem/BlivMedlem";
+import BlivMedlem from "../../../views/gor-en-forskel/bliv-medlem/BlivMedlem";
 import url from "../../../api/url";
 
 function BlivMedlemPage({ sideData }) {

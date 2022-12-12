@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Heading, Text, Link } from "@chakra-ui/react";
-import BelobOptions from "../../components/generics/BelobOptions";
-import PageLayout from "../../components/layout/PageLayout";
-import PageHead from "../../components/layout/PageHead";
-import SplashHeader from "../../components/generics/SplashHeader";
+import BelobOptions from "../../../components/generics/BelobOptions";
+import PageLayout from "../../../components/layout/PageLayout";
+import PageHead from "../../../components/layout/PageHead";
+import SplashHeader from "../../../components/generics/SplashHeader";
 import NextLink from "next/link";
 export default function StotFast({ sideData, data }) {
   return (

@@ -9,9 +9,9 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { ImDiamonds } from "react-icons/im";
-import PageLayout from "../../components/layout/PageLayout";
-import PageHead from "../../components/layout/PageHead";
-import SplashHeader from "../../components/generics/SplashHeader";
+import PageLayout from "../../../components/layout/PageLayout";
+import PageHead from "../../../components/layout/PageHead";
+import SplashHeader from "../../../components/generics/SplashHeader";
 import NextLink from "next/link";
 
 export default function BlivMedlem({ sideData }) {

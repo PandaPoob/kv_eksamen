@@ -24,6 +24,7 @@ export default function SponsorArticle({ acf }) {
       boxShadow="md"
     >
       <Flex
+        borderTopRadius={"5px"}
         position={"relative"}
         my={"auto"}
         justify={"center"}
@@ -33,7 +34,6 @@ export default function SponsorArticle({ acf }) {
         pl={"4.3rem"}
       >
         <Image
-          borderTopRadius={"5px"}
           alt="billede af sponsor logo"
           src={acf.billede}
           width={"250px"}

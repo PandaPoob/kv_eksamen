@@ -1,18 +1,15 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../api/url";
+import Medlemsblad from "../../views/medlemsblad/Medlemsblad";
 
 function MedlemsbladPage({ sideData }) {
-  return <Box mt={"6rem"}>Medlemsblad</Box>;
+  return <Medlemsblad sideData={sideData} />;
 }
 
-/* export async function getStaticProps() {
-  const res = await fetch(`${url}indholdsider/1111`);
-  const sideData = await res.json();
+export async function getStaticProps() {
+  const res2 = await fetch(`${url}indholdsider/1754`);
+  const sideData = await res2.json();
 
-  return {
-    props: {
-      sideData: sideData,
-    },
-  };
-} */
+  return { props: { sideData } };
+}
+
 export default MedlemsbladPage;

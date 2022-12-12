@@ -1,7 +1,5 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../../api/url";
-import Hovedsponsorer from "../../../views/sponsorer/Hovedsponsorer";
-import Sponsorer from "../../../views/sponsorer/Sponsorer";
+import Sponsorer from "../../../views/gor-en-forskel/sponsorer/Sponsorer";
 
 function SponsorerPage({ data, sideData }) {
   return <Sponsorer data={data} sideData={sideData} />;
