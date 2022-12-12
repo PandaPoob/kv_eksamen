@@ -1,6 +1,5 @@
 import React from "react";
 import PageLayout from "../../components/layout/PageLayout";
-import { Box, Flex, Heading, Text} from "@chakra-ui/react";
 import KlinikBanner from "./KlinikBanner";
 import KlinikIntroSektion from "./KlinikIntroSektion";
 import KlinikKontaktinfo from "./KlinikKontaktinfo";

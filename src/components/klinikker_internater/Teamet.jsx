@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Text, Heading, Link, Icon, Divider } from '@chakra-ui/react'
+import { Box, Flex, Heading } from '@chakra-ui/react'
 import PersonArticle from '../articles/PersonArticle';
 
 function Teamet({teamet}) {

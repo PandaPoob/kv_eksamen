@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Flex, Heading, Icon, Divider, Text } from '@chakra-ui/react'
-import { BsTelephone, BsEnvelope } from "react-icons/bs";
+import { BsTelephone } from "react-icons/bs";
 
 export default function Telefontider({data, tlfnr}) {
     const telefontider = data;

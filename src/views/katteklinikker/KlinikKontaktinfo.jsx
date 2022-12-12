@@ -1,7 +1,6 @@
 import React from 'react'
-import { Box, Flex, Text, Heading, Link, Icon, Divider } from '@chakra-ui/react'
+import { Box, Heading } from '@chakra-ui/react'
 import Image from 'next/image'
-import { BsTelephone, BsEnvelope } from "react-icons/bs";
 import TelefonMailSektion from './TelefonMailSektion';
 import AdressAabningSektion from './AdressAabningSektion';
 
