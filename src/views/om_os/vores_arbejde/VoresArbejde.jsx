@@ -71,7 +71,7 @@ function VoresArbejde({ sideData }) {
         py="4rem"
       >
         <Box display={"grid"} justifyContent="center" alignContent={"center"}>
-          <Heading as="h3" size={"heading3"} textAlign={"center"} pb="0.6rem">
+          <Heading as="h3" size={"heading3"} pb="0.6rem">
             Katteinspektørkorpset
           </Heading>
           <Text pt="1rem" as="p" size={"body"} maxW="70ch">
