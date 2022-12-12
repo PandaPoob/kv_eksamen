@@ -46,8 +46,8 @@ export default function SArticleMenu() {
   return (
     <Box as='section' display={"grid"} placeContent="center" py="3rem" px="1rem">
       <Box display={"grid"} gridTemplateColumns={{base: "1fr", md: "1fr 1fr", lg: "repeat(3, 1fr)"}} maxW="container.xl" gap="2rem">
-        {menuData.map((mp)=>(
-          <SArticle key={mp.titel} {...mp}/>
+        {menuData.map((mp, index)=>(
+          <SArticle key={mp.titel} {...mp} index={index}/>
         ))}
       </Box>
     </Box>

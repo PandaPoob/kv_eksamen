@@ -30,7 +30,7 @@ function SingleViewKat({ EFdata, type }) {
       <Head>
         <link rel="icon" href="/favikon.ico" />
         <title>
-          {checker()=== true ? `Efterlyste ${navn}` : `Fremlyst ${kon}`}
+          {checker()=== true ? `Efterlyst ${navn}` : `Fremlyst ${kon}`}
           </title>
         <meta name="description" content="Læs mere om den enkelte kat her" />
       </Head>
@@ -38,7 +38,7 @@ function SingleViewKat({ EFdata, type }) {
         <Box as="section" maxW={{ base: "container.sm" }} pt={"2rem"}>
           <Heading display={"flex"} flexWrap="wrap" as="h1" fontSize={{ base: "35px" }} size={{ md: "heading2" }} gap={{ base: "0.8rem", md: "1.5rem" }}>
             <Text as="span" color={"brand.grey"}>
-              {checker() === true ? "Efterlyste" : "Fremlyst"}
+              {checker() === true ? "Efterlyst" : "Fremlyst"}
             </Text>{" "}
             {checker() === true ? <Text as="span">{navn}</Text> : <Text>{kon}</Text>}
           </Heading>
