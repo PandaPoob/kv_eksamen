@@ -23,7 +23,7 @@ function Doner({ data, sideData }) {
     console.log("PostData:", step1Belob, step2Info);
     setCurrentStepIndex(3);
   };
-  console.log(currenStepIndex);
+
   const steps = [
     {
       component: (

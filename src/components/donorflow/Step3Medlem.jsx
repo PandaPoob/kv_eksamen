@@ -91,7 +91,12 @@ function Step3Medlem({ step1Belob, step2Info, onPostCallBack, type }) {
             {type === "medlem" ? "Årligt medlemsskab" : "Månedligt bidrag"}
           </Text>
           <Text as="dd" fontWeight={"bold"} fontSize="md" textAlign="right">
-            {step1Belob} kr.
+            {type === "medlem"
+              ? step1Belob
+              : step1Belob.belobRadioGroup === "Andet beløb*"
+              ? step1Belob.andetBelobTal
+              : step1Belob.belobRadioGroup}
+            kr.
           </Text>
         </Box>
 

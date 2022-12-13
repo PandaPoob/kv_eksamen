@@ -55,22 +55,8 @@ function BlivMedlem({ sideData }) {
     {
       component: <Step5Dono setCurrentStepIndex={setCurrentStepIndex} />,
     },
-    /*       {
-        component: (
-          <Step3Dono
-            onPostCallBack={onPostCallBack}
-            step1Belob={step1Belob}
-            step2Info={step2Info}
-          />
-        ),
-      },
-      {
-        component: <Step4Dono setCurrentStepIndex={setCurrentStepIndex} />,
-      },
-      {
-        component: <Step5Dono setCurrentStepIndex={setCurrentStepIndex} />,
-      }, */
   ];
+
   return (
     <PageLayout>
       <PageHead {...sideData} />
