@@ -1,68 +1,96 @@
-import React from "react";
-import {
-  Box,
-  Heading,
-  Text,
-  List,
-  ListItem,
-  ListIcon,
-  Link,
-} from "@chakra-ui/react";
-import { ImDiamonds } from "react-icons/im";
+import { Box } from "@chakra-ui/react";
+import { useState } from "react";
 import PageLayout from "../../../components/layout/PageLayout";
 import PageHead from "../../../components/layout/PageHead";
-import SplashHeader from "../../../components/generics/SplashHeader";
-import NextLink from "next/link";
+import DonoBreadCrumb from "../../../components/donorflow/DonoBreadCrumb";
+import Step1Medlem from "../../../components/donorflow/Step1Medlem";
+import Step2Medlem from "../../../components/donorflow/Step2Medlem";
+import Step3Medlem from "../../../components/donorflow/Step3Medlem";
+import Step4Dono from "../../../components/donorflow/Step4Dono";
+import Step5Dono from "../../../components/donorflow/Step5Dono";
 
-export default function BlivMedlem({ sideData }) {
-  const textArr = [
-    "10% rabat på ydelser og produkter (ikke medicin) hos  katteklinikken i Brøndby.",
-    "10% rabat på din kats forsikring hos Dyrekassen Danmark.",
-    "10% på foder og katteartikler hos Kattens Værns internater i Brøndby og Aalborg.",
-    "Vores blad Kattens Venner tilsendes fire gange om året.",
+function BlivMedlem({ sideData }) {
+  const [currenStepIndex, setCurrentStepIndex] = useState(0);
+  const [step1Belob, setStep1Belob] = useState("");
+  const [step2Info, setStep2Info] = useState("");
+
+  const onBelobCallback = () => {
+    setStep1Belob("240");
+    setCurrentStepIndex(+1);
+  };
+
+  const onPostCallBack = () => {
+    console.log("PostData:", step1Belob, step2Info);
+    setCurrentStepIndex(3);
+  };
+
+  const steps = [
+    {
+      component: (
+        <Step1Medlem sideData={sideData} onBelobCallback={onBelobCallback} />
+      ),
+    },
+    {
+      component: (
+        <Step2Medlem
+          step2Info={step2Info}
+          setStep2Info={setStep2Info}
+          setCurrentStepIndex={setCurrentStepIndex}
+        />
+      ),
+    },
+    {
+      component: (
+        <Step3Medlem
+          onPostCallBack={onPostCallBack}
+          step1Belob={step1Belob}
+          step2Info={step2Info}
+          type={"medlem"}
+        />
+      ),
+    },
+    {
+      component: <Step4Dono setCurrentStepIndex={setCurrentStepIndex} />,
+    },
+    {
+      component: <Step5Dono setCurrentStepIndex={setCurrentStepIndex} />,
+    },
+    /*       {
+        component: (
+          <Step3Dono
+            onPostCallBack={onPostCallBack}
+            step1Belob={step1Belob}
+            step2Info={step2Info}
+          />
+        ),
+      },
+      {
+        component: <Step4Dono setCurrentStepIndex={setCurrentStepIndex} />,
+      },
+      {
+        component: <Step5Dono setCurrentStepIndex={setCurrentStepIndex} />,
+      }, */
   ];
   return (
     <PageLayout>
       <PageHead {...sideData} />
-      <SplashHeader {...sideData} imgMobPos={"30%"} />
-      <Box py="6rem" px="1rem">
-        <Box
-          display={"grid"}
-          gap="3rem"
-          placeContent="center"
-          bg={"brand.white"}
-          boxShadow={"1px 2px 6px 1px #B8B8B8"}
-          maxW={"container.md"}
-          p="2rem"
-          m="auto"
-        >
-          <Heading as="h2" size="heading3">
-            For 240kr om året får du...
-          </Heading>
-          <List display={"grid"} gap="2rem">
-            {textArr.map((t, i) => (
-              <ListItem key={i}>
-                <ListIcon as={ImDiamonds} color="brand.redCta" />
-                {t}
-              </ListItem>
-            ))}
-          </List>
-          <NextLink href={""} passHref>
-            <Link
-              variant="redBtn"
-              justifyContent={"center"}
-              width="14rem"
-              m="auto"
-            >
-              Bliv medlem nu
-            </Link>
-          </NextLink>
-          <Text as={"i"} fontSize="smaller">
-            Medlemskontingentet kan ikke trækkes fra i Skat, men al yderligere
-            støtte op til 17.000 kroner årligt, er fradragsberettiget.
-          </Text>
+      <Box
+        minH="100vh"
+        bg={currenStepIndex === 0 ? "transparent" : "brand.lightGrey"}
+      >
+        {" "}
+        <Box display="grid">
+          {currenStepIndex !== 0 && (
+            <DonoBreadCrumb
+              setCurrentStepIndex={setCurrentStepIndex}
+              currenStepIndex={currenStepIndex}
+              step2Info={step2Info}
+            />
+          )}
+          {steps[currenStepIndex].component}
         </Box>
       </Box>
     </PageLayout>
   );
 }
+export default BlivMedlem;

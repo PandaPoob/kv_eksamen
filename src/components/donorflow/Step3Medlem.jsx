@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Divider, Button, Flex } from "@chakra-ui/react";
 
-function Step3Dono({ step1Belob, step2Info, onPostCallBack }) {
+function Step3Medlem({ step1Belob, step2Info, onPostCallBack, type }) {
   return (
     <Flex mb="2rem" flexDir="column" justifySelf="center">
       <Box
@@ -59,19 +59,39 @@ function Step3Dono({ step1Belob, step2Info, onPostCallBack }) {
         <Box
           as="dl"
           display="grid"
+          gridTemplateColumns={"repeat(2, 1fr)"}
+          columnGap="1rem"
+          rowGap={"1rem"}
+        >
+          <Text as="dt">CPR-nummer:</Text>
+          <Text as="dd" fontWeight={"medium"} textAlign="right">
+            {step2Info.cprnr}
+          </Text>
+
+          <Text as="dt">Reg. nummer:</Text>
+          <Text as="dd" fontWeight={"medium"} textAlign="right">
+            {step2Info.regnr}
+          </Text>
+
+          <Text as="dt">Kontonummer:</Text>
+          <Text as="dd" fontWeight={"medium"} textAlign="right">
+            {step2Info.kontonr}
+          </Text>
+        </Box>
+        <Divider orientation="horizontal" my="1.5rem" />
+        <Box
+          as="dl"
+          display="grid"
           alignItems="center"
           gridTemplateColumns={"repeat(2, 1fr)"}
           columnGap="1rem"
           rowGap={"1rem"}
         >
           <Text as="dt" fontWeight={"bold"} fontSize={{ base: "xs", lg: "sm" }}>
-            Engangsbeløb
+            {type === "medlem" ? "Årligt medlemsskab" : "Månedligt bidrag"}
           </Text>
           <Text as="dd" fontWeight={"bold"} fontSize="md" textAlign="right">
-            {step1Belob.belobRadioGroup === "Andet beløb*"
-              ? step1Belob.andetBelobTal
-              : step1Belob.belobRadioGroup}{" "}
-            kr.
+            {step1Belob} kr.
           </Text>
         </Box>
 
@@ -87,4 +107,4 @@ function Step3Dono({ step1Belob, step2Info, onPostCallBack }) {
     </Flex>
   );
 }
-export default Step3Dono;
+export default Step3Medlem;
