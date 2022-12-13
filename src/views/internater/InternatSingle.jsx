@@ -26,7 +26,7 @@ export default function InternatSingle({ internatData, MedarbejdData }) {
       <OmInternatet data={acf.intro_sektion} />
       <HjaelpTilSektion data={acf.hjaelp_til_sektion} />
       <KontaktSektion data={acf.kontaktoplysninger} />
-      <Teamet teamet={teamet} />
+      <Teamet teamet={teamet} type="internat" />
     </PageLayout>
   );
 }

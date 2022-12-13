@@ -1,4 +1,3 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../../api/url";
 import PraktiskInfo from "../../../views/adopter/praktisk-info/PraktiskInfo";
 function PraktiskInfoPage({ sideData, articleData, imgData }) {

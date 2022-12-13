@@ -1,7 +1,5 @@
 import React from 'react'
-import { Box, Flex, Text, Heading, Link, Icon, Divider } from '@chakra-ui/react'
-import Image from 'next/image'
-import { BsTelephone, BsEnvelope } from "react-icons/bs";
+import { Box, Text, Heading, Divider } from '@chakra-ui/react'
 
 export default function AdressAabningSektion({data}) {
        //data = acf.kontaktoplysninger
@@ -15,27 +13,31 @@ export default function AdressAabningSektion({data}) {
        const cleanAbningstiderArr = abningstiderArr.filter((t) => t.tider !== false && t.tider.dage !== "");
      
   return (
-    
-        <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
-            <Box display={"grid"} gap="1rem" pb={"1rem"}>
-                <Heading as={"h3"} size="heading4">Adresse</Heading>
-                <Box>
-                    <Text>{data.adresse.navn}</Text>
-                    <Text>{data.adresse.vej_og_nr}</Text>
-                    <Text>{data.adresse.postnr_og_by}</Text>
-                </Box>
-            </Box>
-            <Divider></Divider>
-            <Box py="1rem" display="grid" gap="1rem">
-                <Heading as="h3" size="heading4">Åbningstider:</Heading>
-                {cleanAbningstiderArr.map((t)=> (
-                    <Box key={t.id} display="grid" gridTemplateColumns={"1fr 1fr"}>
-                        <Text>{t.tider.dage}:</Text>
-                        <Text fontWeight={"semibold"} placeSelf="end">{t.tider.tider}</Text>
-                    </Box>
-                ))}
-            </Box>
-        </Box> 
-
-  )
+    <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
+      <Box display={"grid"} gap="1rem" pb={"1rem"}>
+        <Heading as={"h3"} size="heading4">
+          Adresse
+        </Heading>
+        <Box>
+          <Text>{data.adresse.navn}</Text>
+          <Text>{data.adresse.vej_og_nr}</Text>
+          <Text>{data.adresse.postnr_og_by}</Text>
+        </Box>
+      </Box>
+      <Divider></Divider>
+      <Box py="1rem" display="grid" gap="1rem">
+        <Heading as="h3" size="heading4">
+          Åbningstider:
+        </Heading>
+        {cleanAbningstiderArr.map((t) => (
+          <Box key={t.id} display="grid" gridTemplateColumns={"1fr 1fr"}>
+            <Text fontSize={{ base: "xxs", md: "xs" }}>{t.tider.dage}:</Text>
+            <Text fontSize={{ base: "xxs", md: "xs" }} fontWeight={"semibold"} placeSelf="end">
+              {t.tider.tider}
+            </Text>
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
 }

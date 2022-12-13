@@ -1,6 +1,5 @@
 import React from 'react'
-import { Box, Flex, Text, Heading, Link, Icon, Divider } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Flex, Text, Heading, Icon, Divider } from '@chakra-ui/react'
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
 
 export default function TelefonMailSektion({data}) {
@@ -23,8 +22,8 @@ export default function TelefonMailSektion({data}) {
           </Heading>
           {cleanTelefontiderArr.map((t) => (
             <Box key={t.id} display="grid" gridTemplateColumns={"1fr 1fr"}>
-              <Text>{t.tider.dage}:</Text>
-              <Text color="brand.darkGrey" fontWeight={"bold"} placeSelf="end">
+              <Text fontSize={{ base: "xxs", md: "xs" }}>{t.tider.dage}:</Text>
+              <Text fontSize={{ base: "xxs", md: "xs" }} color="brand.darkGrey" fontWeight={"bold"} placeSelf="end">
                 {t.tider.tider}
               </Text>
             </Box>

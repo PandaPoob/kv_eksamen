@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import Image from 'next/image'
 
 export default function OmInternatet({data}) {
@@ -11,7 +11,7 @@ export default function OmInternatet({data}) {
                 <Text>{data.brodtekst}</Text>
             </Box>
             <Box minH={"22rem"} width="100%" position="relative">
-                <Image alt='internaet' src={data.artikelbillede} layout="fill" objectFit='cover'/>
+                <Image alt='internatet' src={data.artikelbillede} layout="fill" objectFit='cover'/>
             </Box>
         </Box>
     </Box>
