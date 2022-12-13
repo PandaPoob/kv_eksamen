@@ -1,4 +1,4 @@
-import { Box, chakra, Flex, IconButton } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 
 function CarouselImage({ url, alt }) {

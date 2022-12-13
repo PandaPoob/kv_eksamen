@@ -6,7 +6,7 @@ import PageHead from "../../../components/layout/PageHead";
 import SplashHeader from "../../../components/generics/SplashHeader";
 import img from "../../../assets/images/bliv_fodervart.webp";
 import Carousel from "../../../components/features/Carousel";
-import InfoArtikel from "../../../components/articles/InfoArtikel";
+import CarouselArticle from "../../../components/articles/CarouselArticle";
 
 function BlivFodervart({ sideData, artikelData }) {
   console.log(artikelData);
@@ -98,7 +98,7 @@ function BlivFodervart({ sideData, artikelData }) {
           >
             <Carousel
               listData={fodervartArtikler}
-              CarouselListItem={InfoArtikel}
+              CarouselListItem={CarouselArticle}
               perPage={{ base: 1, md: 2, lbp: 3, xxl: 4 }}
               perMoveVal={{ base: 1, lbp: 1, xl: 1 }}
               customP={{ left: 0, right: 0 }}

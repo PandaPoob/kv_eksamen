@@ -70,8 +70,8 @@ function Carousel({
 
           <SplideTrackChakra
             transform={"none"}
-            minH={CarouselListItem.name === "InfoArtikel" ? "22rem" : 0}
-            pt={CarouselListItem.name === "InfoArtikel" ? "1rem" : 0}
+            minH={CarouselListItem.name === "CarouselArticle" ? "22rem" : 0}
+            pt={CarouselListItem.name === "CarouselArticle" ? "1rem" : 0}
           >
             {listData.map((item, index) => (
               <SplideSlideChakra key={index}>

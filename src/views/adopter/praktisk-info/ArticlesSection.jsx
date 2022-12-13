@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import Carousel from "../../../components/features/Carousel";
-import InfoArtikel from "../../../components/articles/InfoArtikel";
+import CarouselArticle from "../../../components/articles/CarouselArticle";
 
 export default function ArticlesSection({ articleData }) {
   return (
@@ -36,7 +36,7 @@ export default function ArticlesSection({ articleData }) {
         >
           <Carousel
             listData={articleData}
-            CarouselListItem={InfoArtikel}
+            CarouselListItem={CarouselArticle}
             perPage={{ base: 1, md: 2, lbp: 3, xxl: 4 }}
             perMoveVal={{ base: 1, lbp: 1, xl: 1 }}
             customP={{ left: 0, right: 0 }}
