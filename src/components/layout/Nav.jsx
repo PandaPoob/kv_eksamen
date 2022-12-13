@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavGroup from "./NavGroup";
-import { BsCart3, BsList, BsBoxArrowUpRight } from "react-icons/bs";
+import { BsList } from "react-icons/bs";
 import {
   useDisclosure,
   Flex,
@@ -181,9 +181,9 @@ function Nav({ children }) {
                   alignItems="center"
                   gap="0.2rem"
                   display="flex"
+                  variant="exLink"
                 >
                   Webshop
-                  <BsBoxArrowUpRight size={16} />
                 </Link>
               </NextLink>
 

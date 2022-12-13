@@ -57,7 +57,7 @@ function NavDrawer({ navData, isOpen, onClose, onCloseMenu }) {
 
           <NextLink href={"https://kattens-vaern-butik.dk/"} passHref>
             <Link
-              variant={"clean"}
+              variant={"exLink"}
               isExternal
               target="_blank"
               display={"flex"}
@@ -70,7 +70,6 @@ function NavDrawer({ navData, isOpen, onClose, onCloseMenu }) {
               mr={"0.4rem"}
             >
               Se webshoppen
-              <BsBoxArrowUpRight size={24} />
             </Link>
           </NextLink>
         </DrawerBody>
