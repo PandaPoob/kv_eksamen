@@ -15,6 +15,7 @@ function EfterlysFormFlow() {
   const onAuthCallback = () => {
     if (authToken) {
       setCurrentStepIndex(+1);
+      window.scrollTo(0, 0);
     } else {
       fetchAuth();
     }
@@ -47,6 +48,7 @@ function EfterlysFormFlow() {
     } else {
       setAuthToken(result.token);
       setCurrentStepIndex(currenStepIndex + 1);
+      window.scrollTo(0, 0);
     }
   }
 
@@ -157,6 +159,7 @@ function EfterlysFormFlow() {
     } else {
       setPostLoading(false);
       setCurrentStepIndex(currenStepIndex + 1);
+      window.scrollTo(0, 0);
       //console.log(result);
     }
   }

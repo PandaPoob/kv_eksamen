@@ -15,6 +15,7 @@ function FremlysFormFlow() {
   const onAuthCallback = () => {
     if (authToken) {
       setCurrentStepIndex(+1);
+      window.scrollTo(0, 0);
     } else {
       fetchAuth();
     }
@@ -46,6 +47,7 @@ function FremlysFormFlow() {
     } else {
       setAuthToken(result.token);
       setCurrentStepIndex(currenStepIndex + 1);
+      window.scrollTo(0, 0);
     }
   }
   const onPostCallback = (values) => {
@@ -154,6 +156,7 @@ function FremlysFormFlow() {
     } else {
       setPostLoading(false);
       setCurrentStepIndex(currenStepIndex + 1);
+      window.scrollTo(0, 0);
       //console.log(result);
     }
   }

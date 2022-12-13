@@ -15,6 +15,7 @@ function Step3({
     setStep2State("");
     setAuthToken("");
     setImgUrl("");
+    window.scrollTo(0, 0);
     setCurrentStepIndex(0);
   }
 
