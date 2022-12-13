@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Link } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { useState } from "react";
 import PageLayout from "../../../components/layout/PageLayout";
 import PageHead from "../../../components/layout/PageHead";
