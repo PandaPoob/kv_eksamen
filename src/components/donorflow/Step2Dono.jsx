@@ -70,9 +70,9 @@ function Step2Dono({ step2Info, setStep2Info, setCurrentStepIndex }) {
         initialValues={initialValues(step2Info)}
         validationSchema={validationSchema}
         onSubmit={(values, actions) => {
-          console.log(values);
           actions.setSubmitting(false);
           setStep2Info(values);
+          window.scrollTo(0, 0);
           setCurrentStepIndex(2);
         }}
       >

@@ -20,7 +20,10 @@ function Step4Dono({ setCurrentStepIndex }) {
         </Text>
         <Spinner color="brand.blue" />
         <Button
-          onClick={() => setCurrentStepIndex(4)}
+          onClick={() => {
+            setCurrentStepIndex(4);
+            window.scrollTo(0, 0);
+          }}
           mt="2rem"
           variant="redBtn"
           mb="1rem"

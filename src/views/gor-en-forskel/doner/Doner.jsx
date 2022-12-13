@@ -16,11 +16,13 @@ function Doner({ data, sideData }) {
 
   const onBelobCallback = (values) => {
     setStep1Belob(values);
+    window.scrollTo(0, 0);
     setCurrentStepIndex(+1);
   };
 
   const onPostCallBack = () => {
     console.log("PostData:", step1Belob, step2Info);
+    window.scrollTo(0, 0);
     setCurrentStepIndex(3);
   };
 

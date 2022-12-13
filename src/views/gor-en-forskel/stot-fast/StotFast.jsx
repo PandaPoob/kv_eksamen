@@ -17,11 +17,13 @@ function StotFast({ sideData, data }) {
   const onBelobCallback = (values) => {
     setStep1Belob(values);
     setCurrentStepIndex(+1);
+    window.scrollTo(0, 0);
   };
 
   const onPostCallBack = () => {
     console.log("PostData:", step1Belob, step2Info);
     setCurrentStepIndex(3);
+    window.scrollTo(0, 0);
   };
 
   const steps = [
