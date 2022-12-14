@@ -1,4 +1,4 @@
-import { Breadcrumb, BreadcrumbItem, Button, Flex } from "@chakra-ui/react";
+import { Breadcrumb, BreadcrumbItem, Button } from "@chakra-ui/react";
 
 function DonoBreadCrumb({ currenStepIndex, setCurrentStepIndex, step2Info }) {
   return (
