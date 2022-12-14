@@ -19,6 +19,8 @@ export default function SelectedCatArticle({ acf, id }) {
           }}
         >
           <Image
+            placeholder={"blur"}
+            blurDataURL={acf.profil_billede}
             gridrow={"span"}
             src={acf.profil_billede}
             alt={acf.navn}

@@ -30,6 +30,8 @@ function InfoArtikel({ id, acf }) {
         >
           <Box position="relative" minH={"14rem"} width={"100%"}>
             <Image
+              placeholder={"blur"}
+              blurDataURL={acf.splash_billede.billede}
               src={acf.splash_billede.billede}
               alt={acf.splash_billede.alt}
               layout="fill"

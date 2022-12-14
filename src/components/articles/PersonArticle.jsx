@@ -23,6 +23,8 @@ function PersonArticle({ acf, boxshadow }) {
       >
         {" "}
         <Image
+          placeholder={"blur"}
+          blurDataURL={acf.billede}
           src={acf.billede}
           alt={acf.navn}
           layout="fill"

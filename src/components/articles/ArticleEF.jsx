@@ -42,6 +42,8 @@ function ArticleEF({ acf, id, type, url }) {
         >
           <Box position="relative" minH={"13rem"} width={"100%"}>
             <Image
+              placeholder={"blur"}
+              blurDataURL={acf.billede}
               src={acf.billede}
               alt={acf.navn}
               layout="fill"

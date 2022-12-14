@@ -30,6 +30,8 @@ export default function NewsArticle({ acf, id }) {
         >
           <Box position="relative" minH={"10rem"} width={"100%"}>
             <Image
+              placeholder={"blur"}
+              blurDataURL={acf.featuredimage}
               alt="artikel-billede"
               src={acf.featuredimage}
               layout="fill"
