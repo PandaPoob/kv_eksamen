@@ -10,6 +10,10 @@ function FremlysKat() {
       <Head>
         <link rel="icon" href="/favikon.ico" />
         <title>Fremlys en kat</title>
+        <meta
+          name="description"
+          content="Her kan du fremlyse en vildtlevende kat, der mangler ejer hos Kattens Værn"
+        />
       </Head>
       <Flex
         bg="brand.lightGrey"

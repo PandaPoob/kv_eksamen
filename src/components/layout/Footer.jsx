@@ -192,6 +192,7 @@ function Footer({ children }) {
               <NextLink href={"https://www.facebook.com/KattensVaern"} passHref>
                 <Link isExternal justifyContent={"center"} alignItems="center">
                   <Icon
+                    aria-label="Facebook"
                     display={"flex"}
                     justifyContent={"center"}
                     alignItems="center"
@@ -214,6 +215,7 @@ function Footer({ children }) {
                   mr="4px"
                 >
                   <Icon
+                    aria-label="Instagram"
                     display={"flex"}
                     justifyContent={"center"}
                     alignItems="center"
@@ -234,6 +236,7 @@ function Footer({ children }) {
                   mr="4px"
                 >
                   <Icon
+                    aria-label="TikTok"
                     display={"flex"}
                     justifyContent={"center"}
                     alignItems="center"
@@ -252,6 +255,7 @@ function Footer({ children }) {
                   alignItems="center"
                 >
                   <Icon
+                    aria-label="Youtube"
                     display={"flex"}
                     justifyContent={"center"}
                     alignItems="center"

@@ -8,6 +8,10 @@ function IndberetningTest() {
       <Head>
         <link rel="icon" href="/favikon.ico" />
         <title>Indberetningstest</title>
+        <meta
+          name="description"
+          content="Her kan du efterlyse en kat, hvis du har mistet den."
+        />
       </Head>
       <Box py="4rem" px="1rem" display="grid" justifyContent="center">
         <Heading as="h1" size="heading1">
