@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Heading, Text, Link } from "@chakra-ui/react";
 import PageLayout from "../../../components/layout/PageLayout";
 import PageHead from "../../../components/layout/PageHead";

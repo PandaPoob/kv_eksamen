@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import FindKommuneDrawer from "../../../components/features/FindKommuneDrawer";
 
 function FundetVildKat() {

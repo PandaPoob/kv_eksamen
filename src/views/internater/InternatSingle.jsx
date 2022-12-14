@@ -1,4 +1,3 @@
-import React from "react";
 import PageLayout from "../../components/layout/PageLayout";
 import KISplash from "../../components/klinikker_internater/KISplash";
 import Teamet from "../../components/klinikker_internater/Teamet";
@@ -19,7 +18,10 @@ export default function InternatSingle({ internatData, MedarbejdData }) {
       <Head>
         <link rel="icon" href="/favikon.ico" />
         <title>{by} Internat</title>
-        <meta name="description" content={`Læs mere om ${by} internat her og find åbningstider, adresse og andre relevante oplysninger.`} />
+        <meta
+          name="description"
+          content={`Læs mere om ${by} internat her og find åbningstider, adresse og andre relevante oplysninger.`}
+        />
       </Head>
       <KISplash acf={acf} />
       <LinkBanner data={acf.banner} />

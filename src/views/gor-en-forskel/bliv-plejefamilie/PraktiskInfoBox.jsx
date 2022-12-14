@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Heading, Flex, Text, Divider } from "@chakra-ui/react";
+import { Box, Heading, Text, Divider } from "@chakra-ui/react";
 
 export default function PraktiskInfoBox() {
   return (

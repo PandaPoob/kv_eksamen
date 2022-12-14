@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import Carousel from "../../../components/features/Carousel";
 import CarouselArticle from "../../../components/articles/CarouselArticle";

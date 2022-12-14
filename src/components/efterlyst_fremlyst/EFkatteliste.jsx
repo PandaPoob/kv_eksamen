@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@chakra-ui/react";
 import ArticleEF from "../articles/ArticleEF";
 import GridLayout from "../layout/GridLayout";

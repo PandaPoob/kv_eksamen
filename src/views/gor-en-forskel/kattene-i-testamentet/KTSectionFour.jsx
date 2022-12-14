@@ -1,7 +1,7 @@
-import React from "react";
 import { Box, Heading, Text, Link } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
+
 export default function KTSectionFour({ acf }) {
   return (
     <Box bg="brand.lightGrey" px="1rem" py={{ base: "3rem", md: "6rem" }}>

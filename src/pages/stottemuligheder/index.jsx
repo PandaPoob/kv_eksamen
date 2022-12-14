@@ -1,4 +1,3 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import StøttemulighederIndhold from "../../views/støttemuligheder/StøttemulighederIndhold";
 import url from "../../api/url";
 

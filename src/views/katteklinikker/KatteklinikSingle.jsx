@@ -1,4 +1,3 @@
-import React from "react";
 import PageLayout from "../../components/layout/PageLayout";
 import KlinikBanner from "./KlinikBanner";
 import KlinikIntroSektion from "./KlinikIntroSektion";
@@ -21,7 +20,10 @@ export default function KatteklinikSingle({ klinikData, MedarbejdData }) {
       <Head>
         <link rel="icon" href="/favikon.ico" />
         <title>{by} Katteklinik</title>
-        <meta name="description" content={`Læs mere om ${by} katteklinik her og find åbningstider, adresse og andre relevante oplysninger.`} />
+        <meta
+          name="description"
+          content={`Læs mere om ${by} katteklinik her og find åbningstider, adresse og andre relevante oplysninger.`}
+        />
       </Head>
       <KISplash acf={acf} />
       <KlinikBanner acf={acf} />

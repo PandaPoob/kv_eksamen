@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Heading,
@@ -11,8 +10,6 @@ import {
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
 
 export default function KTKontaktSection() {
-
-
   return (
     <Box
       display={"grid"}

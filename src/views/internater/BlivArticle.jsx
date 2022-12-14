@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Flex, Heading, Text, Link, Divider } from "@chakra-ui/react";
 import NextLink from "next/link";
 

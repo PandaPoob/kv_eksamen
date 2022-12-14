@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Heading } from "@chakra-ui/react";
 import { BsHeart } from "react-icons/bs";
 import {

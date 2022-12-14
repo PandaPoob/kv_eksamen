@@ -1,4 +1,3 @@
-import React from "react";
 import { IoPawOutline } from "react-icons/io5";
 import { Box, Heading, List, ListItem, ListIcon } from "@chakra-ui/react";
 

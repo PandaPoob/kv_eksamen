@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: 
 Disallow: /src/views/efterlysning/EfterlysFormFlow
 Disallow: /src/views/indberetning/FremlysFormFlow
 

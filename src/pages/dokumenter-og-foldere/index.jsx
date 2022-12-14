@@ -1,4 +1,3 @@
-import { Box, Heading, Flex } from "@chakra-ui/react";
 import url from "../../api/url";
 import DokumenterFoldere from "../../views/dokumenter-og-foldere/DokumenterFoldere";
 
