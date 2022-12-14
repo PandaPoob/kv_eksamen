@@ -77,7 +77,7 @@ function MistetKat({ sideData }) {
         <Box
           bg="brand.white"
           boxShadow="md"
-          maxW="container.md"
+          maxW={{base:"70ch", lg:"container.md"}}
           py={{ base: "2rem", lg: "3rem" }}
           px={{ base: "1rem", md: "2rem", lg: "4rem" }}
         >

@@ -9,7 +9,7 @@ export default function PraktiskInfoBox() {
       bg={"brand.white"}
       borderRadius="0.3rem"
       boxShadow={"1px 2px 6px 1px #B8B8B8"}
-      maxH={{ md: "70%" }}
+      maxH={{ lg: "60%"}}
       p={{ base: "2rem", lg: "3rem" }}
     >
       <Heading as="h2" size="heading4">

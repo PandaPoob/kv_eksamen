@@ -37,7 +37,7 @@ function Step1Dono({ sideData, onBelobCallback }) {
           </Heading>
           <List display={"grid"} gap="2rem">
             {textArr.map((t, i) => (
-              <ListItem key={i}>
+              <ListItem display={"flex"} alignItems="center" key={i}>
                 <ListIcon as={ImDiamonds} color="brand.redCta" />
                 {t}
               </ListItem>

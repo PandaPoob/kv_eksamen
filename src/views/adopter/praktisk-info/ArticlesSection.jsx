@@ -19,7 +19,7 @@ export default function ArticlesSection({ articleData }) {
       >
         Godt at vide hvis du skal adoptere
       </Heading>
-      <Text pb={"3rem"} maxW="container.md" m="auto" color="brand.white">
+      <Text pb={"3rem"} maxW={{base: "60ch", lg:"70ch"}} m="auto" color="brand.white">
         Først og fremmest skal du tænke over, om du er klar til at engagere dig
         i en kat, der kan blive helt op til 20 år gammel, hvis du får en
         killing. Dernæst skal du tænke på, om din bolig er et passende sted at

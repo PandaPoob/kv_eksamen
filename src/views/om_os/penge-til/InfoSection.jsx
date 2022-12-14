@@ -12,8 +12,8 @@ export default function InfoSection({ acf }) {
     >
       <Box
         display={"grid"}
-        gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
-        maxW="container.xl"
+        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+        maxW={{base:"70ch", lg:"container.xl"}}
         m="auto"
         gap={{ base: "2rem", lg: "4rem" }}
       >

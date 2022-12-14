@@ -45,7 +45,7 @@ export default function Liste() {
         alignItems="baseline"
         gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
         gap={"3rem"}
-        maxW="container.xl"
+        maxW={{base:"70ch", lg: "container.xl"}}
         m={"auto"}
       >
         {listeData.map((l) => (

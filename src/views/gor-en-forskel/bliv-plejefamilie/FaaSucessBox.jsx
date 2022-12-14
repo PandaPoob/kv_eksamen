@@ -19,10 +19,10 @@ export default function FaaSucessBox() {
       <Heading as="h2" size="heading3">
         Få success som plejefamilie
       </Heading>
-      <Heading as="h4" size="heading5" mt="2rem">
+      <Heading as="h4" size="heading5" mt="2rem" mb="1rem">
         Kan du nikke ja til følgende punkter?
       </Heading>
-      <List paddingBlock={"1rem"} display="grid" gap="1rem">
+      <List display="grid" gap="2rem" mb="1rem">
         {textArr.map((t, i) => (
           <ListItem key={i} display="flex" alignItems={"center"}>
             <ListIcon fontSize={25} as={IoPawOutline} color="brand.redCta" />

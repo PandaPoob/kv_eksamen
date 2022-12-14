@@ -12,7 +12,7 @@ export default function KlinikIntroSektion({ acf }) {
       mx="1rem"
     >
       <Box
-        maxW={"container.xl"}
+        maxW={{base:"70ch", lg:"container.xl"}}
         display={"grid"}
         gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
         gap={{ base: "3rem", lg: "6rem" }}
@@ -36,6 +36,7 @@ export default function KlinikIntroSektion({ acf }) {
               w="12rem"
               mt="3rem"
               justifyContent={"center"}
+              mx={{base: "auto", md: "0"}}
             >
               {acf.introsektion.knap_tekst}
             </Link>

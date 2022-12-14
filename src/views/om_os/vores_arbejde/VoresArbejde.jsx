@@ -104,7 +104,7 @@ function VoresArbejde({ sideData }) {
 
       <Box bgColor="brand.lightGrey" color={"brand.blue"} as="section">
         <Box
-          maxW={"container.xxl"}
+          maxW={{base:"70ch", lg: "container.xxl"}}
           m="auto"
           display={"grid"}
           gridTemplateColumns={{ lg: "1fr 1fr" }}
@@ -269,7 +269,7 @@ function VoresArbejde({ sideData }) {
       <Box bg="brand.lightGrey">
         <Box
           display={"grid"}
-          maxW="container.xxl"
+          maxW={{base: "70ch", lg:"container.xxl"}}
           m="auto"
           justifyContent={"center"}
           gridTemplateColumns={{ lg: "1fr 1fr" }}
@@ -332,8 +332,8 @@ function VoresArbejde({ sideData }) {
         <Box position="relative" height={"100%"} width={"100%"} display="grid" alignItems={"center"} justifyContent={"center"}>
           <Box zIndex={1} position="absolute" top={"0"} width="100%" height={"100%"} bgColor="brand.darkGrey" opacity={{ base: "65%", lg: "50%" }}></Box>
           <Image src={img4} alt={"Kat i natur"} layout="fill" objectFit="cover" />
-          <Box px={"2rem"} zIndex={1} position="relative" display="grid">
-            <Heading as={"h2"} size="heading3" color={"brand.white"}>
+          <Box px={"2rem"} zIndex={1} position="relative" display="grid" maxW={{base: "70ch", lg:"container.xl"}} m="auto">
+            <Heading as={"h2"} size="heading3" color={"brand.white"} textAlign="center">
               Vil du være med til at gøre en forskel for Danmarks katte?
             </Heading>
             <NextLink href={`/stottemuligheder`} passHref prefetch={false}>

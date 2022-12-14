@@ -14,7 +14,7 @@ export default function KontaktSektion({ data }) {
       py={{ base: "3rem", lg: "6rem" }}
       px="1rem"
     >
-      <Box maxW={"container.xl"}>
+      <Box maxW={{base:"70ch", lg: "container.xl"}}>
         <Heading as="h2" size="heading2" textAlign={"center"}>
           Kontakt os
         </Heading>
@@ -23,7 +23,7 @@ export default function KontaktSektion({ data }) {
           display="grid"
           gridTemplateColumns={{
             base: "1fr",
-            md: "1fr 1fr",
+            //md: "1fr 1fr",
             lg: "repeat(3, 1fr)",
           }}
           gap="3rem"

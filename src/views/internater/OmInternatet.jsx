@@ -6,7 +6,7 @@ export default function OmInternatet({ data }) {
     <Box display={"grid"} placeContent={"center"}>
       <Box
         display={"grid"}
-        maxW="container.xl"
+        maxW={{base:"70ch", lg:"container.xl"}}
         gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
         gap="3rem"
         py={{ base: "3rem", lg: "6rem" }}

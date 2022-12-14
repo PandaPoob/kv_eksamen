@@ -12,8 +12,9 @@ export default function Infoboks() {
       minW={{ base: "18.75rem", md: "16.75rem" }}
       maxW={{ base: "45rem", md: "23.1rem", lg: "40.6rem", xl: "43.75rem" }}
       height={{
-        base: "17.6rem",
-        md: "23.6rem",
+        base: "20.6rem",
+        md: "20.6rem",
+        lg: "17,6rem",
         xl: "17.6rem",
       }}
       display={"flex"}

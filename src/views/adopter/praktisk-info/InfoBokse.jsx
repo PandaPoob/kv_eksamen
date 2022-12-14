@@ -15,7 +15,7 @@ export default function InfoBokse() {
       display={"grid"}
       gridTemplateColumns={{ lg: "1fr 1fr" }}
       gap={{ base: "2rem", lg: "4rem" }}
-      maxW="container.xl"
+      maxW={{base: "70ch", lg: "container.xl"}}
       m="auto"
       pb="6rem"
       px="1rem"
