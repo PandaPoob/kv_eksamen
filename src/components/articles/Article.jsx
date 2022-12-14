@@ -1,21 +1,9 @@
 import Image from "next/image";
 import NextLink from "next/link";
-import {
-  Box,
-  Heading,
-  Text,
-  Link,
-  Flex,
-  Icon,
-  Skeleton,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, Link, Flex, Icon } from "@chakra-ui/react";
 import { ImDiamonds } from "react-icons/im";
 
 function Article({ acf, id }) {
-  function getLoader() {
-    return "red";
-  }
-
   return (
     <Box
       as="article"
