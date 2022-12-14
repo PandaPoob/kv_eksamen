@@ -10,7 +10,7 @@ function EfterlysKat() {
   return (
     <PageLayout>
       <Head>
-        <link rel="icon" href="/favikon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <title>Efterlys din kat</title>
       </Head>
       <Flex

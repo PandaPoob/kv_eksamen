@@ -6,7 +6,7 @@ function IndberetningTest() {
   return (
     <PageLayout>
       <Head>
-        <link rel="icon" href="/favikon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <title>Indberetningstest</title>
         <meta
           name="description"

@@ -10,7 +10,7 @@ function FremlysKat() {
   return (
     <PageLayout>
       <Head>
-        <link rel="icon" href="/favikon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <title>Fremlys en kat</title>
         <meta
           name="description"

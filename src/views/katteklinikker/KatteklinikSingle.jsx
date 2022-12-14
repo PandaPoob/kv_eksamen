@@ -18,7 +18,7 @@ export default function KatteklinikSingle({ klinikData, MedarbejdData }) {
   return (
     <PageLayout>
       <Head>
-        <link rel="icon" href="/favikon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <title>{by} Katteklinik</title>
         <meta
           name="description"

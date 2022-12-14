@@ -16,7 +16,7 @@ export default function InternatSingle({ internatData, MedarbejdData }) {
   return (
     <PageLayout>
       <Head>
-        <link rel="icon" href="/favikon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <title>{by} Internat</title>
         <meta
           name="description"
