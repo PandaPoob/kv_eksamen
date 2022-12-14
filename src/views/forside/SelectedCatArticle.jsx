@@ -19,7 +19,6 @@ export default function SelectedCatArticle({ acf, id }) {
           }}
         >
           <Image
-            priority="true"
             gridrow={"span"}
             src={acf.profil_billede}
             alt={acf.navn}
