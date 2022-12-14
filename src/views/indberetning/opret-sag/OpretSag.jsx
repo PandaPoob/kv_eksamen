@@ -55,6 +55,7 @@ function OpretSag({ sideData }) {
           underskriftsindsamling og vi har lavet et udkast til hvordan sådan en
           blanket kan se ud. Den kan downloades{" "}
           <NextLink
+            prefetch={false}
             href={`https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-content/uploads/2022/12/underskriftsindsamling.pdf`}
             passHref
           >

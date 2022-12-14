@@ -65,7 +65,7 @@ export default function BlivPlejefamilie({ sideData, imgData }) {
             velkommen til at kontakte det internat, som ligger nærmest dig til
             en uforpligtende snak.
           </Text>
-          <NextLink href="/om-os/internater" passHref>
+          <NextLink href="/om-os/internater" passHref prefetch={false}>
             <Link
               variant="redBtn"
               width={"12rem"}

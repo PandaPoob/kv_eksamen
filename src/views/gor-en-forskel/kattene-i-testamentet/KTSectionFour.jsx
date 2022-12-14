@@ -33,6 +33,7 @@ export default function KTSectionFour({ acf }) {
           <Text mt={"1rem"}>
             {" "}
             <NextLink
+              prefetch={false}
               href={
                 "https://nyheder.tv2.dk/2021-03-15-48-aarig-vil-efterlade-sin-arv-til-katte-og-hun-er-ikke-den-eneste-0"
               }

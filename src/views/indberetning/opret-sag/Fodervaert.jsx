@@ -25,7 +25,11 @@ function Fodervaert() {
         løsning for de vilde katte i Danmark, og derfor anbefaler vi stærkt at
         overveje det.
       </Text>
-      <NextLink href={`/indberetning/bliv-fodervaert`} passHref>
+      <NextLink
+        href={`/indberetning/bliv-fodervaert`}
+        passHref
+        prefetch={false}
+      >
         <Link
           variant={"blueBtn"}
           textAlign={"center"}

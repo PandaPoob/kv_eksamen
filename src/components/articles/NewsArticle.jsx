@@ -17,7 +17,7 @@ export default function NewsArticle({ acf, id }) {
         transform: "translateY(-0.5rem) ",
       }}
     >
-      <NextLink href={`/nyheder/${id}`} passHref>
+      <NextLink href={`/nyheder/${id}`} passHref prefetch={false}>
         <Link
           h={"20.5rem"}
           w={"18rem"}

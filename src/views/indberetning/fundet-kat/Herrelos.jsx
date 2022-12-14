@@ -83,7 +83,7 @@ function Herrelos() {
             Har du ingen bukseelastik, kan du hos vores internater låne et
             halsbånd til formålet.
           </Text>
-          <NextLink href={`/om-os/internater`} passHref>
+          <NextLink href={`/om-os/internater`} passHref prefetch={false}>
             <Link
               variant={"blueBtn"}
               textAlign={"center"}

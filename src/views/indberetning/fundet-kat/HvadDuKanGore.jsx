@@ -165,7 +165,11 @@ function HvadDuKanGore() {
                 />
                 <Text>
                   Kontakt Det Danske Katteregister på tlf. 70 27 04 47 eller på{" "}
-                  <NextLink href="https://www.katteregister.dk/" passHref>
+                  <NextLink
+                    href="https://www.katteregister.dk/"
+                    passHref
+                    prefetch={false}
+                  >
                     <Link isExternal variant="exLink">
                       www.katteregister.dk
                     </Link>
@@ -189,7 +193,11 @@ function HvadDuKanGore() {
                 <Text>
                   Hvis katten ikke findes i Det Danske Katteregister, kan man
                   prøve hos{" "}
-                  <NextLink href="https://www.dansk-katteregister.dk/" passHref>
+                  <NextLink
+                    href="https://www.dansk-katteregister.dk/"
+                    passHref
+                    prefetch={false}
+                  >
                     <Link isExternal variant="exLink">
                       {" "}
                       Dansk Katteregister
@@ -250,7 +258,11 @@ function HvadDuKanGore() {
                 />
                 <Text>
                   Tjek om katten er efterlyst hos os{" "}
-                  <NextLink href="/efterlysning/efterlyste-katte" passHref>
+                  <NextLink
+                    href="/efterlysning/efterlyste-katte"
+                    passHref
+                    prefetch={false}
+                  >
                     <Link variant="inLink">her</Link>
                   </NextLink>
                   .
@@ -272,7 +284,11 @@ function HvadDuKanGore() {
                 <Text>
                   Hvis du ikke fandt en efterlysning der matchede den kat du har
                   fundet så overvej at lave en fremlysning hos os{" "}
-                  <NextLink href="/indberetning/fremlys-kat" passHref>
+                  <NextLink
+                    href="/indberetning/fremlys-kat"
+                    passHref
+                    prefetch={false}
+                  >
                     <Link variant="inLink">her</Link>
                   </NextLink>
                   .
@@ -312,7 +328,11 @@ function HvadDuKanGore() {
                 <Text>
                   Brug internettet til at fremlyse katten. Bl.a. i diverse
                   Facebook eller hjemmesider som{" "}
-                  <NextLink href="https://kattegale.dk/" passHref>
+                  <NextLink
+                    href="https://kattegale.dk/"
+                    passHref
+                    prefetch={false}
+                  >
                     <Link isExternal variant="exLink">
                       kattegale.dk
                     </Link>
@@ -321,6 +341,7 @@ function HvadDuKanGore() {
                   <NextLink
                     href="https://www.dyrenesbeskyttelse.dk/fremlysning/opret"
                     passHref
+                    prefetch={false}
                   >
                     <Link isExternal variant="exLink">
                       Dyrenes beskyttelse

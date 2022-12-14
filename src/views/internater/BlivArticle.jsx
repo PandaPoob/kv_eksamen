@@ -23,7 +23,11 @@ export default function BlivArticle({ item }) {
         mt={{ base: "2rem", lg: "2rem" }}
       >
         {item.overskrift === "Bliv plejefamilie" ? (
-          <NextLink href="/gor-en-forskel/bliv-plejefamilie" passHref>
+          <NextLink
+            href="/gor-en-forskel/bliv-plejefamilie"
+            passHref
+            prefetch={false}
+          >
             <Link variant={"blueBtn"}>Læs mere</Link>
           </NextLink>
         ) : (

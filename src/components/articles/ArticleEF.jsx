@@ -30,7 +30,7 @@ function ArticleEF({ acf, id, type, url }) {
         transform: "translateY(-0.5rem) translateX(0.2rem)",
       }}
     >
-      <NextLink href={`${url}${id}`} passHref>
+      <NextLink href={`${url}${id}`} passHref prefetch={false}>
         <Link
           h={"20rem"}
           w={"20rem"}

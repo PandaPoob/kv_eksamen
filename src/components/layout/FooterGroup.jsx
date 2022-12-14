@@ -21,7 +21,7 @@ function FooterGroup({ titel, subTitel }) {
               mb={"0.8rem"}
               display="flex"
             >
-              <NextLink href={li.link} passHref>
+              <NextLink href={li.link} passHref prefetch={false}>
                 <Link variant={"clean"}>{li.navn}</Link>
               </NextLink>
             </ListItem>

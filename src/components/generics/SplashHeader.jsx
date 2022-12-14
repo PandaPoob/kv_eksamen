@@ -77,7 +77,7 @@ function SplashHeader({
           )}
         </Text>
         {buttonChecker() && (
-          <NextLink href={acf.buttonurl} passHref>
+          <NextLink href={acf.buttonurl} passHref prefetch={false}>
             <Link
               maxW={"10rem"}
               alignSelf={textPos}

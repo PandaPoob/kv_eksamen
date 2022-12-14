@@ -39,7 +39,11 @@ function MistetKat({ sideData }) {
         <Text maxW="60ch" mb="1rem">
           Har du kigget vores liste over fundne/fremlyste katte igennem efter
           din kat? Hvis ikke kan du finde den lige{" "}
-          <NextLink href={`/indberetning/fremlyste-katte`} passHref>
+          <NextLink
+            href={`/indberetning/fremlyste-katte`}
+            passHref
+            prefetch={false}
+          >
             <Link variant={"inLink"}> her</Link>
           </NextLink>
           .
@@ -49,7 +53,7 @@ function MistetKat({ sideData }) {
           følg vores råd og overvej at opslå en announce i vores liste over
           efterlyste katte.
         </Text>
-        <NextLink href={`/efterlysning/efterlys-kat`} passHref>
+        <NextLink href={`/efterlysning/efterlys-kat`} passHref prefetch={false}>
           <Link
             variant={"blueBtn"}
             textAlign={"center"}
@@ -97,7 +101,11 @@ function MistetKat({ sideData }) {
               <Text>
                 Når din kat er mærket, skal du kontakte Det Danske Katteregister
                 og Dansk Katteregister og få katten efterlyst. På{" "}
-                <NextLink href="https://www.katteregister.dk/" passHref>
+                <NextLink
+                  href="https://www.katteregister.dk/"
+                  passHref
+                  prefetch={false}
+                >
                   <Link isExternal variant="exLink">
                     www.katteregister.dk
                   </Link>
@@ -213,7 +221,11 @@ function MistetKat({ sideData }) {
                 Du kan også kontakte internater og dyrlæger i dit lokalområde og
                 høre dem, om de har fået katten ind. Fremlyste katte hos Kattens
                 Værn finder du ved at trykke{" "}
-                <NextLink href="/indberetning/fremlyste-katte" passHref>
+                <NextLink
+                  href="/indberetning/fremlyste-katte"
+                  passHref
+                  prefetch={false}
+                >
                   <Link variant="inLink">her</Link>
                 </NextLink>
                 .
@@ -233,14 +245,22 @@ function MistetKat({ sideData }) {
               />
               <Text>
                 Brug diverse kattesider på internettet og på{" "}
-                <NextLink href="https://www.facebook.com/" passHref>
+                <NextLink
+                  href="https://www.facebook.com/"
+                  passHref
+                  prefetch={false}
+                >
                   <Link isExternal variant="exLink">
                     Facebook
                   </Link>
                 </NextLink>{" "}
                 til at efterlyse katten og hold øje med fremlysningerne på de
                 samme sider. F.eks. på{" "}
-                <NextLink href="https://kattegale.dk/" passHref>
+                <NextLink
+                  href="https://kattegale.dk/"
+                  passHref
+                  prefetch={false}
+                >
                   <Link isExternal variant="exLink">
                     kattegale.dk
                   </Link>
@@ -249,6 +269,7 @@ function MistetKat({ sideData }) {
                 <NextLink
                   href="https://www.dyrenesbeskyttelse.dk/efterlysning/opret"
                   passHref
+                  prefetch={false}
                 >
                   <Link isExternal variant="exLink">
                     Dyrenes Beskyttelse

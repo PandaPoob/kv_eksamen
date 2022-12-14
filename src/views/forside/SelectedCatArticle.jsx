@@ -5,7 +5,7 @@ import { ImDiamonds } from "react-icons/im";
 
 export default function SelectedCatArticle({ acf, id }) {
   return (
-    <NextLink href={`/adopter/adoptionskatte/${id}`} passHref>
+    <NextLink href={`/adopter/adoptionskatte/${id}`} passHref prefetch={false}>
       <Link variant={"clean"} display="grid" overflow={"hidden"}>
         <Box
           position="relative"

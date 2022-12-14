@@ -36,7 +36,7 @@ export default function InfoSection({ acf }) {
             taknemmelige for, at du har valgt at støtte os. For en mere
             detaljeret beskrivelse af, hvordan pengene bruges og hvordan
             økonomien ser ud, kan du se de seneste års regnskaber{" "}
-            <NextLink href="/dokumenter-og-foldere" passHref>
+            <NextLink href="/dokumenter-og-foldere" passHref prefetch={false}>
               <Link variant="inLink">her.</Link>
             </NextLink>
           </Text>
@@ -44,7 +44,7 @@ export default function InfoSection({ acf }) {
             Vil du også støtte vores arbejde og på samme tid være med til at
             gøre en forskel for kattene?{" "}
           </Text>
-          <NextLink href="/stottemuligheder" passHref>
+          <NextLink href="/stottemuligheder" passHref prefetch={false}>
             <Link variant="redBtn" maxW={"14rem"} justifyContent="center">
               Se støttemuligheder
             </Link>

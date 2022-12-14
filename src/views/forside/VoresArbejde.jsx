@@ -31,7 +31,7 @@ export default function VoresArbejde(props) {
         />
       </Box>
       <Flex justifyContent={"center"} gap="2rem" mt="2rem">
-        <NextLink href={`/stottemuligheder`} passHref>
+        <NextLink href={`/stottemuligheder`} passHref prefetch={false}>
           <Link
             variant={"redBtn"}
             textAlign={"center"}
@@ -42,7 +42,7 @@ export default function VoresArbejde(props) {
             Gør en forskel
           </Link>
         </NextLink>
-        <NextLink href={`/om-os/vores-arbejde`} passHref>
+        <NextLink href={`/om-os/vores-arbejde`} passHref prefetch={false}>
           <Link
             variant={"blueBtn"}
             textAlign={"center"}

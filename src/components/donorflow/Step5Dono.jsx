@@ -26,7 +26,7 @@ function Step5Dono() {
           Din støtte er nu gennemført. Tak fordi du hjælper os med at hjælpe
           kattene.
         </Text>
-        <NextLink href={`/`} passHref>
+        <NextLink href={`/`} passHref prefetch={false}>
           <Link
             variant={"redBtn"}
             textAlign={"center"}

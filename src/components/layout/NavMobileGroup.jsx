@@ -30,7 +30,7 @@ function NavMobileGroup({ titel, subTitel, onClose }) {
         <List variant="clean" display={"grid"} gap="2rem" pl={"1rem"}>
           {subTitel.map((li) => (
             <ListItem variant="clean" key={li.navn}>
-              <NextLink href={li.link} passHref>
+              <NextLink href={li.link} passHref prefetch={false}>
                 <Link variant={"clean"} onClick={onClose}>
                   {li.navn}
                 </Link>

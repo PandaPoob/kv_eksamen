@@ -1,8 +1,8 @@
-import React from 'react'
-import { Box, Link, Heading, Flex } from '@chakra-ui/react'
-import NextLink from "next/link"
+import React from "react";
+import { Box, Link, Heading, Flex } from "@chakra-ui/react";
+import NextLink from "next/link";
 
-export default function HighlightSection({acf}) {
+export default function HighlightSection({ acf }) {
   return (
     <Box
       position="relative"
@@ -16,13 +16,39 @@ export default function HighlightSection({acf}) {
       bgPosition={"center"}
       bgSize="cover"
     >
-      <Box position="absolute" top={"0"} width="100%" height={"100%"} bgColor="brand.darkGrey" opacity={"50%"}></Box>
-      <Flex gridRow="2/3" gridColumn={{ base: "1/3", lg: "1/2" }} alignItems={{base: "center", md: "left"}} zIndex={"1"} direction={"column"} color="brand.white" gap="1rem" py={"2rem"} px="3rem">
-        <Heading as={"h3"} size="heading3" textAlign={{base: "center", md: "left"}}>
+      <Box
+        position="absolute"
+        top={"0"}
+        width="100%"
+        height={"100%"}
+        bgColor="brand.darkGrey"
+        opacity={"50%"}
+      ></Box>
+      <Flex
+        gridRow="2/3"
+        gridColumn={{ base: "1/3", lg: "1/2" }}
+        alignItems={{ base: "center", md: "left" }}
+        zIndex={"1"}
+        direction={"column"}
+        color="brand.white"
+        gap="1rem"
+        py={"2rem"}
+        px="3rem"
+      >
+        <Heading
+          as={"h3"}
+          size="heading3"
+          textAlign={{ base: "center", md: "left" }}
+        >
           Er du klar til at adoptere?
         </Heading>
-        <NextLink href={"/adopter/adoptionskatte"} passHref>
-          <Link variant={"redBtn"} w="12rem" mt="1rem" justifyContent={"center"}>
+        <NextLink href={"/adopter/adoptionskatte"} passHref prefetch={false}>
+          <Link
+            variant={"redBtn"}
+            w="12rem"
+            mt="1rem"
+            justifyContent={"center"}
+          >
             Se vores katte
           </Link>
         </NextLink>

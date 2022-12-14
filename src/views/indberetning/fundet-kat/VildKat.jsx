@@ -21,7 +21,7 @@ function VildKat() {
         Hvis katten er så vild, at den er uhåndterbar skal du kontakte os i
         forbindelse med indfangning.
       </Text>
-      <NextLink href={`/indberetning/opret-en-sag`} passHref>
+      <NextLink href={`/indberetning/opret-en-sag`} passHref prefetch={false}>
         <Link
           variant={"redBtn"}
           textAlign={"center"}

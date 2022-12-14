@@ -29,7 +29,7 @@ function IndleveringAfKat({ sideData }) {
           derfor anbefaler vi at du kontakter det internat, du har tænkt dig at
           indlevere din kat til.
         </Text>
-        <NextLink href={`/om-os/internater`} passHref>
+        <NextLink href={`/om-os/internater`} passHref prefetch={false}>
           <Link
             justifySelf="center"
             variant={"blueBtn"}

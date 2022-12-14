@@ -53,7 +53,7 @@ export default function MaanedensKatte({ katteData }) {
           </Fragment>
         ))}
       </Box>
-      <NextLink href={`/adopter/adoptionskatte`} passHref>
+      <NextLink href={`/adopter/adoptionskatte`} passHref prefetch={false}>
         <Link
           width={"12rem"}
           mx="auto"

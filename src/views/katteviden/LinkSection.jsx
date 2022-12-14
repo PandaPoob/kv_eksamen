@@ -15,7 +15,7 @@ function LinkSection({ link }) {
       {link.eksternt_link ? (
         <Text>
           {link.link_tekst ? <Text as={"span"}>{link.link_tekst} </Text> : null}
-          <NextLink href={link.url} passHref>
+          <NextLink href={link.url} passHref prefetch={false}>
             <Link variant={"exLink"} isExternal>
               {link.url_tekst}
             </Link>
@@ -24,7 +24,7 @@ function LinkSection({ link }) {
       ) : (
         <Text>
           {link.link_tekst ? <Text as={"span"}>{link.link_tekst} </Text> : null}
-          <NextLink href={link.url} passHref>
+          <NextLink href={link.url} passHref prefetch={false}>
             <Link variant={"inLink"}>{link.url_tekst}</Link>
           </NextLink>
         </Text>

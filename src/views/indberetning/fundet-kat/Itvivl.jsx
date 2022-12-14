@@ -33,7 +33,11 @@ function Itvivl() {
           hvis du har nogen spørgsmål. Du kan også kontakte os angående vilde
           katte, hvis du skulle være i tvivl om noget.
         </Text>
-        <NextLink href={`/indberetning/fundet-kat/test`} passHref>
+        <NextLink
+          href={`/indberetning/fundet-kat/test`}
+          passHref
+          prefetch={false}
+        >
           <Link
             variant={"redBtn"}
             textAlign={"center"}

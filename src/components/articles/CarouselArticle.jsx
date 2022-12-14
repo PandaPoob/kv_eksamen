@@ -17,7 +17,7 @@ function CarouselArticle({ id, acf }) {
       }}
     >
       {" "}
-      <NextLink href={`/katteviden/${id}`} passHref>
+      <NextLink href={`/katteviden/${id}`} passHref prefetch={false}>
         <Link
           h={"20rem"}
           w={"20rem"}

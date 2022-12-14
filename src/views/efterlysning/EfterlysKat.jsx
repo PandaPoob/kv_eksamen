@@ -33,7 +33,11 @@ function EfterlysKat() {
           <Text>
             Inden du efterlyser din kat er det en god idé at tjekke vores liste
             over fundne/fremlyste katte{" "}
-            <NextLink href={`/indberetning/fremlyste-katte`} passHref>
+            <NextLink
+              href={`/indberetning/fremlyste-katte`}
+              passHref
+              prefetch={false}
+            >
               <Link variant={"inLink"}>her</Link>
             </NextLink>
           </Text>

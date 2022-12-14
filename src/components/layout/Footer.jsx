@@ -189,7 +189,11 @@ function Footer({ children }) {
               Følg os
             </Text>
             <Flex alignItems="center">
-              <NextLink href={"https://www.facebook.com/KattensVaern"} passHref>
+              <NextLink
+                href={"https://www.facebook.com/KattensVaern"}
+                passHref
+                prefetch={false}
+              >
                 <Link isExternal justifyContent={"center"} alignItems="center">
                   <Icon
                     aria-label="Facebook"
@@ -204,6 +208,7 @@ function Footer({ children }) {
                 </Link>
               </NextLink>
               <NextLink
+                prefetch={false}
                 href={"https://www.instagram.com/kattensvaern/"}
                 passHref
               >
@@ -226,7 +231,11 @@ function Footer({ children }) {
                   />
                 </Link>
               </NextLink>
-              <NextLink href={"https://www.tiktok.com/@kattensvaern"} passHref>
+              <NextLink
+                href={"https://www.tiktok.com/@kattensvaern"}
+                passHref
+                prefetch={false}
+              >
                 <Link
                   isExternal
                   borderRadius={"0.2rem"}
@@ -247,7 +256,11 @@ function Footer({ children }) {
                   />
                 </Link>
               </NextLink>
-              <NextLink href={"https://www.youtube.com/KattensVaern"} passHref>
+              <NextLink
+                href={"https://www.youtube.com/KattensVaern"}
+                passHref
+                prefetch={false}
+              >
                 <Link
                   isExternal
                   display={"flex"}
@@ -281,6 +294,7 @@ function Footer({ children }) {
         >
           <Flex gap={"1rem"}>
             <NextLink
+              prefetch={false}
               href={
                 "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-content/uploads/2022/12/persondata_forordning_maj_18_1.pdf"
               }
@@ -291,6 +305,7 @@ function Footer({ children }) {
               </Link>
             </NextLink>
             <NextLink
+              prefetch={false}
               href={
                 "https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-content/uploads/2022/12/cookies-politik.pdf"
               }

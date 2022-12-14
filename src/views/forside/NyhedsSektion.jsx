@@ -30,7 +30,7 @@ function NyhedsSektion({ nyhedsData }) {
           <NewsArticle key={i} {...artikel} />
         ))}
       </Flex>
-      <NextLink href="/nyheder" passHref>
+      <NextLink href="/nyheder" passHref prefetch={false}>
         <Link
           variant="redBtn"
           mx={"auto"}

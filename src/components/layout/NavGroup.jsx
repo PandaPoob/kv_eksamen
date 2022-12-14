@@ -24,7 +24,7 @@ function NavGroup({ titel, subTitel }) {
         onMouseLeave={onClose}
       >
         {subTitel.map((li) => (
-          <NextLink key={li.navn} href={li.link} passHref>
+          <NextLink key={li.navn} href={li.link} passHref prefetch={false}>
             <Link variant={"clean"} onClick={onClose}>
               <MenuItem>{li.navn}</MenuItem>
             </Link>

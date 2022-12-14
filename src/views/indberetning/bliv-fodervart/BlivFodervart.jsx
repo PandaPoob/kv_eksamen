@@ -61,7 +61,7 @@ function BlivFodervart({ sideData, artikelData }) {
             en plads i verdenen til de katte, som blev svigtet. <br />
             <br />
             Du kan læse mere om vilde katte{" "}
-            <NextLink href="/katteviden/553" passHref>
+            <NextLink href="/katteviden/553" passHref prefetch={false}>
               <Link variant="inLink">her</Link>
             </NextLink>
             .

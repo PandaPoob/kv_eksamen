@@ -17,7 +17,11 @@ function Article({ acf, id }) {
         transform: "translateY(-0.5rem) translateX(0.2rem)",
       }}
     >
-      <NextLink href={`/adopter/adoptionskatte/${id}`} passHref>
+      <NextLink
+        href={`/adopter/adoptionskatte/${id}`}
+        passHref
+        prefetch={false}
+      >
         <Link
           h={"20rem"}
           w={"20rem"}

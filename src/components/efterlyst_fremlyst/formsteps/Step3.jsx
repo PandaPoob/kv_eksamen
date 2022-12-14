@@ -45,6 +45,7 @@ function Step3({
             ? "Din fremlysning vil blive behandlet snarest muligt og vil blive vist på vores liste over fremlyste katte"
             : "Din efterlysning vil blive behandlet snarest muligt og vil blive vist på vores liste over efterlyste katte"}{" "}
           <NextLink
+            prefetch={false}
             href={
               fremlysning
                 ? "/indberetning/fremlyste-katte"

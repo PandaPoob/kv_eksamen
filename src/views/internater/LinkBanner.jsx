@@ -57,7 +57,7 @@ export const LinkWrapper = ({ data, children }) => {
     );
   else if (data.samepagelink === "Nej")
     return (
-      <NextLink href={`${data.link}`} passHref>
+      <NextLink href={`${data.link}`} passHref prefetch={false}>
         <Link variant={"clean"} gap="1rem" alignContent={"center"}>
           {children}
         </Link>

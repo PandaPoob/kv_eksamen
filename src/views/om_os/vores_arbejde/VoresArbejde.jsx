@@ -43,7 +43,11 @@ function VoresArbejde({ sideData }) {
         </Text>
         <Flex justifyContent={"center"}>
           <Box width={"16rem"}>
-            <NextLink href={`/indberetning/fundet-kat`} passHref>
+            <NextLink
+              href={`/indberetning/fundet-kat`}
+              passHref
+              prefetch={false}
+            >
               <Link
                 variant={"redBtn"}
                 textAlign={"center"}
@@ -91,7 +95,7 @@ function VoresArbejde({ sideData }) {
             hensigtsmæssigt for kattene at blive transporteret for langt. Vi har
             derfor samarbejdsaftaler med andre dyrlæger og internater, i de
             områder hvor vi ikke selv har til huse. Se vores samarbejdspartnere
-            <NextLink href={`/samarbejdspartnere`} passHref>
+            <NextLink href={`/samarbejdspartnere`} passHref prefetch={false}>
               <Link variant={"inLink"}> her.</Link>
             </NextLink>
             <br /> <br />
@@ -146,7 +150,7 @@ function VoresArbejde({ sideData }) {
           mt="2rem"
         >
           <Box>
-            <NextLink href={`/om-os/internater`} passHref>
+            <NextLink href={`/om-os/internater`} passHref prefetch={false}>
               <Link
                 variant={"blueBtn"}
                 textAlign={"center"}
@@ -226,7 +230,11 @@ function VoresArbejde({ sideData }) {
             <br />
             <br />
             Læs mere om genudsætning og foderværter{" "}
-            <NextLink href={`/indberetning/bliv-fodervaert`} passHref>
+            <NextLink
+              href={`/indberetning/bliv-fodervaert`}
+              passHref
+              prefetch={false}
+            >
               <Link variant={"inLink"}> her</Link>
             </NextLink>
           </Text>
@@ -261,6 +269,7 @@ function VoresArbejde({ sideData }) {
             Køge lige{" "}
             <NextLink
               href={`https://www.epaper.dk/dyrefondet/magasin/32/`}
+              prefetch={false}
               passHref
             >
               <Link variant={"exLink"} isExternal>
@@ -316,11 +325,11 @@ function VoresArbejde({ sideData }) {
               <br />
               Du kan få din kat steraliseret hos din dyrelæge eller på en af
               vores
-              <NextLink href={`/katteklinikker`} passHref>
+              <NextLink href={`/katteklinikker`} passHref prefetch={false}>
                 <Link variant={"inLink"}> katteklinikker</Link>
               </NextLink>
               . <br /> <br /> Du kan læse mere om neutralisering/steralisering{" "}
-              <NextLink href={`/katteviden/1712`} passHref>
+              <NextLink href={`/katteviden/1712`} passHref prefetch={false}>
                 <Link variant={"inLink"}> her</Link>
               </NextLink>
               .
@@ -389,7 +398,7 @@ function VoresArbejde({ sideData }) {
               dig, at dyrlægen har tilmeldt katten til Det Danske Katteregister.
               Du kan også få din kat øre- og chipmærket hos din dyrlæge eller på
               en af vores
-              <NextLink href={`/katteklinikker`} passHref>
+              <NextLink href={`/katteklinikker`} passHref prefetch={false}>
                 <Link variant={"inLink"}> katteklinikker</Link>
               </NextLink>
               . Læs mere om øre- og chipmærkning og lovgivningen her.
@@ -441,7 +450,7 @@ function VoresArbejde({ sideData }) {
         </Text>
 
         <Box mt="2rem">
-          <NextLink href={`/katteklinikker`} passHref>
+          <NextLink href={`/katteklinikker`} passHref prefetch={false}>
             <Link
               variant={"blueBtn"}
               textAlign={"center"}
@@ -506,7 +515,7 @@ function VoresArbejde({ sideData }) {
             det, vi gør bedst – nemlig at hjælpe kattene. <br /> <br />I dag har
             vi internat i Aalborg, Brøndby, Billund og Slagelse og du kan læse
             mere om dem{" "}
-            <NextLink href={`/om-os/internater`} passHref>
+            <NextLink href={`/om-os/internater`} passHref prefetch={false}>
               <Link variant={"inLink"}>her</Link>
             </NextLink>
             .
@@ -549,6 +558,7 @@ function VoresArbejde({ sideData }) {
             <NextLink
               href={`https://www.pandapoob.com/kea/17_finalexam/kv_database/wp-content/uploads/2022/12/underskriftsindsamling.pdf`}
               passHref
+              prefetch={false}
             >
               <Link isExternal variant={"exLink"}>
                 {" "}
@@ -589,7 +599,7 @@ function VoresArbejde({ sideData }) {
             <Heading as={"h1"} size="heading2" color={"brand.white"}>
               Vil du være med til at gøre en forskel for Danmarks katte?
             </Heading>
-            <NextLink href={`/stottemuligheder`} passHref>
+            <NextLink href={`/stottemuligheder`} passHref prefetch={false}>
               <Link
                 justifySelf={"center"}
                 variant={"redBtn"}

@@ -27,14 +27,20 @@ export default function Abningstider({ data }) {
   );
 
   return (
-    <Box as="article" bg={"brand.white"} boxShadow="md" p={"2rem"} borderRadius="0.3rem">
+    <Box
+      as="article"
+      bg={"brand.white"}
+      boxShadow="md"
+      p={"2rem"}
+      borderRadius="0.3rem"
+    >
       <Box display={"grid"} gap="1rem" pb={"1rem"}>
         <Heading as={"h3"} size="heading4">
           Åbningstider
         </Heading>
         <Text>
           {data.introtekst}{" "}
-          <NextLink href={data.linkurl} passhref>
+          <NextLink href={data.linkurl} passhref prefetch={false}>
             <Link variant={"inLink"}>{data.linktekst}</Link>
           </NextLink>
         </Text>
@@ -48,7 +54,11 @@ export default function Abningstider({ data }) {
         {cleanAbningstiderArr.map((t) => (
           <Box key={t.id} display="grid" gridTemplateColumns={"1fr 1fr"}>
             <Text fontSize={{ base: "xxs", md: "xs" }}>{t.tider.dage}:</Text>
-            <Text fontSize={{ base: "xxs", md: "xs" }} fontWeight={"semibold"} placeSelf="end">
+            <Text
+              fontSize={{ base: "xxs", md: "xs" }}
+              fontWeight={"semibold"}
+              placeSelf="end"
+            >
               {t.tider.tider}
             </Text>
           </Box>
@@ -60,12 +70,24 @@ export default function Abningstider({ data }) {
           <Heading as="h4" size="heading5" mb="1rem">
             Internatsbutik
           </Heading>
-          <Text>Disse tider gælder ikke for adoption af katte, det er udelukkende butikken</Text>
+          <Text>
+            Disse tider gælder ikke for adoption af katte, det er udelukkende
+            butikken
+          </Text>
 
           {cleanButikstiderArr.map((t) => (
-            <Box key={t.id} display={"grid"} gridTemplateColumns="1fr 1fr" mt="1rem">
+            <Box
+              key={t.id}
+              display={"grid"}
+              gridTemplateColumns="1fr 1fr"
+              mt="1rem"
+            >
               <Text fontSize={{ base: "xxs", md: "xs" }}>{t.tider.dage}:</Text>
-              <Text fontSize={{ base: "xxs", md: "xs" }} fontWeight={"semibold"} placeSelf="end">
+              <Text
+                fontSize={{ base: "xxs", md: "xs" }}
+                fontWeight={"semibold"}
+                placeSelf="end"
+              >
                 {t.tider.tider}
               </Text>
             </Box>

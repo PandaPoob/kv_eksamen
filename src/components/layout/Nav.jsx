@@ -114,14 +114,14 @@ function Nav({ children }) {
       >
         {isMobile ? (
           <Flex as={"nav"} justifyContent="space-between">
-            <NextLink href={`/`} passHref>
+            <NextLink href={`/`} passHref prefetch={false}>
               <Link>
                 <Image src={"/logo.svg"} alt={"logo"} height={50} width={50} />
               </Link>
             </NextLink>
 
             <Flex alignItems={"center"} gap="1rem">
-              <NextLink href={`/stottemuligheder`} passHref>
+              <NextLink href={`/stottemuligheder`} passHref prefetch={false}>
                 <Link variant={"redBtn"}>Støt kattene</Link>
               </NextLink>
 
@@ -153,7 +153,7 @@ function Nav({ children }) {
           <Flex as={"nav"} justifyContent="space-between" alignItems={"center"}>
             <Flex gap="1rem">
               <Box pr={"1rem"} py="0.2rem">
-                <NextLink href={`/`} passHref>
+                <NextLink href={`/`} passHref prefetch={false}>
                   <Link>
                     <Image
                       src={"/logo.svg"}
@@ -173,7 +173,11 @@ function Nav({ children }) {
             </Flex>
 
             <Flex gap={"1rem"}>
-              <NextLink href={"https://kattens-vaern-butik.dk/"} passHref>
+              <NextLink
+                href={"https://kattens-vaern-butik.dk/"}
+                passHref
+                prefetch={false}
+              >
                 <Link
                   isExternal
                   target="_blank"
@@ -187,7 +191,7 @@ function Nav({ children }) {
                 </Link>
               </NextLink>
 
-              <NextLink href={`/stottemuligheder`} passHref>
+              <NextLink href={`/stottemuligheder`} passHref prefetch={false}>
                 <Link variant={"redBtn"}>Støt kattene</Link>
               </NextLink>
             </Flex>

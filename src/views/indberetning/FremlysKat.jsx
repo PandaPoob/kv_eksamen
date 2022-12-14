@@ -37,7 +37,11 @@ function FremlysKat() {
           <Text>
             Inden du fremlyser en kat er det en god idé at tjekke om der er
             nogen der allerede har efterlyst den på vores liste{" "}
-            <NextLink href={`/efterlysning/efterlyste-katte`} passHref>
+            <NextLink
+              href={`/efterlysning/efterlyste-katte`}
+              passHref
+              prefetch={false}
+            >
               <Link variant={"inLink"}>her</Link>
             </NextLink>
           </Text>

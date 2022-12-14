@@ -64,7 +64,11 @@ function IndfangningsPris() {
               til katte, der skal genudsættes. Vores genudsætningsprogram er den
               eneste velfungerende løsning for de vilde katte i Danmark.
             </Text>
-            <NextLink href={`/indberetning/bliv-fodervaert`} passHref>
+            <NextLink
+              href={`/indberetning/bliv-fodervaert`}
+              passHref
+              prefetch={false}
+            >
               <Link
                 variant={"blueBtn"}
                 textAlign={"center"}
@@ -98,7 +102,11 @@ function IndfangningsPris() {
               aflivning. Vores genudsætningsprogram er den eneste velfungerende
               løsning for de vilde katte i Danmark.
             </Text>
-            <NextLink href={`/indberetning/bliv-fodervaert`} passHref>
+            <NextLink
+              href={`/indberetning/bliv-fodervaert`}
+              passHref
+              prefetch={false}
+            >
               <Link
                 variant={"blueBtn"}
                 textAlign={"center"}

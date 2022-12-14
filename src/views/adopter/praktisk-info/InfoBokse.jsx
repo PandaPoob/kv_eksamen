@@ -72,7 +72,11 @@ export default function InfoBokse() {
             <Text>
               Du kan købe alt nødvendigt tilbehør på vores internater eller på
               vores webshop som har udvalgte varer{" "}
-              <NextLink href="https://kattens-vaern-butik.dk/" passHref>
+              <NextLink
+                href="https://kattens-vaern-butik.dk/"
+                passHref
+                prefetch={false}
+              >
                 <Link isExternal variant="exLink">
                   her
                 </Link>

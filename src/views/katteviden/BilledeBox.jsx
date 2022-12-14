@@ -22,7 +22,7 @@ function BilledeBox({ info }) {
         />
       </Box>
       {info.billedtekst_er_link ? (
-        <NextLink href={info.link} passHref>
+        <NextLink href={info.link} passHref prefetch={false}>
           <Link
             variant={"exLink"}
             px={"1.1rem"}

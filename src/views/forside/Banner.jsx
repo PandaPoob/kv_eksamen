@@ -41,7 +41,12 @@ export default function Banner() {
     >
       {bannerdata.map((bLink, index) => (
         <Fragment key={index}>
-          <NextLink key={bLink.name} href={`${bLink.urlEndpoint}`} passHref>
+          <NextLink
+            key={bLink.name}
+            href={`${bLink.urlEndpoint}`}
+            passHref
+            prefetch={false}
+          >
             <Link
               variant={"inLink"}
               display="flex"

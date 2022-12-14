@@ -31,7 +31,7 @@ function NavDrawer({ navData, isOpen, onClose, onCloseMenu }) {
           px={"2rem"}
           py="0.6rem"
         >
-          <NextLink href={`/`} passHref>
+          <NextLink href={`/`} passHref prefetch={false}>
             <Link alignItems={"center"} display="flex">
               <Image src={"/logo.svg"} alt={"logo"} height={50} width={50} />
             </Link>
@@ -55,7 +55,11 @@ function NavDrawer({ navData, isOpen, onClose, onCloseMenu }) {
             ))}
           </Accordion>
 
-          <NextLink href={"https://kattens-vaern-butik.dk/"} passHref>
+          <NextLink
+            href={"https://kattens-vaern-butik.dk/"}
+            passHref
+            prefetch={false}
+          >
             <Link
               variant={"exLink"}
               isExternal
