@@ -23,7 +23,7 @@ export default function Prisliste() {
 
   return (
     <Box
-      maxW={"container.md"}
+      maxW={{base: "70ch", lg:"container.md"}}
       m="auto"
       px="1rem"
       py={{ base: "3rem", md: "6rem" }}

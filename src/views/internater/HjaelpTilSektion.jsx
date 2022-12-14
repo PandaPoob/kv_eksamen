@@ -22,14 +22,14 @@ export default function HjaelpTilSektion({ data }) {
       py={{ base: "3rem", lg: "6rem" }}
       px="1rem"
     >
-      <Box maxW={"container.lg"}>
+      <Box maxW={{base:"70ch", lg:"container.lg"}}>
         <Heading as="h2" size="heading2" textAlign={"center"}>
           Giv en hjælpende pote
         </Heading>
         <Box
           as="section"
           display="grid"
-          gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+          gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
           gap="3rem"
           alignItems={"start"}
           py="3rem"

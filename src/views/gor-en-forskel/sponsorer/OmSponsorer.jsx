@@ -9,10 +9,12 @@ export default function OmSponsorer() {
       py={"5rem"}
       px={"2rem"}
       display={"grid"}
-      gridTemplateColumns={{ base: "1fr", md: "auto auto" }}
-      justifyItems={{ base: "inherit", lg: "center" }}
+      gridTemplateColumns={{ base: "1fr", md: "1.5fr 1fr" }}
+      justifyItems={{ base: "inherit", md: "center" }}
       placeContent={"center"}
-      gap={{ base: "1rem", md: "2rem", xl: "5rem" }}
+      gap={{ base: "1rem", md: "2rem", xl: "3rem" }}
+      maxW="container.xl"
+      m="auto"
     >
       <SponsorAccord />
       <InfoBoks />

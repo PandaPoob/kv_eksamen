@@ -8,7 +8,7 @@ export default function FindOs({ data }) {
       bg={"brand.white"}
       boxShadow="md"
       borderRadius="0.3rem"
-      width="22rem"
+      width={{base: "100%", lg: "22rem"}}
       height={"auto"}
       overflow="hidden"
     >

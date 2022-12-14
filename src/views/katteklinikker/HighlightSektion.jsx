@@ -35,6 +35,8 @@ export default function HighlightSektion({ acf }) {
         gap="1rem"
         py={"2rem"}
         px="2rem"
+        maxW={"70ch"}
+        m="auto"
       >
         <Heading as={"h3"} size="heading4">
           {a.overskrift}

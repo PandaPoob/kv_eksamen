@@ -23,8 +23,8 @@ export default function BlivPlejefamilie({ sideData, imgData }) {
       >
         <Box
           display={"grid"}
-          gridTemplateColumns={{ md: "1fr 1fr" }}
-          maxW="container.xl"
+          gridTemplateColumns={{ lg: "1fr 1fr" }}
+          maxW={{base:"70ch", lg: "container.xl"}}
           gap={{ base: "2rem", lg: "4rem" }}
         >
           <FaaSucessBox />
@@ -40,8 +40,8 @@ export default function BlivPlejefamilie({ sideData, imgData }) {
       >
         <Box
           display={"grid"}
-          gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
-          maxW="container.xl"
+          gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+          maxW={{base: "70ch", lg: "container.xl"}}
           m="auto"
           gap={{ base: "2rem", lg: "4rem" }}
         >
@@ -55,7 +55,7 @@ export default function BlivPlejefamilie({ sideData, imgData }) {
         px="1rem"
         py={{ base: "3rem", lg: "6rem" }}
       >
-        <Box maxW={"container.lg"} display="grid" gap="1rem">
+        <Box maxW={{base:"70ch", lg: "container.lg"}} display="grid" gap="1rem">
           <Heading as="h3" size="heading3" textAlign={"center"}>
             Er du klar til at blive plejefamilie?
           </Heading>
