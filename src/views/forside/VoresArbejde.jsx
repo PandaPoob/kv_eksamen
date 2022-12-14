@@ -23,6 +23,7 @@ export default function VoresArbejde(props) {
         width={"100%"}
       >
         <Image
+          priority="true"
           src={useBreakpointValue({ base: infoGrafikMob, lg: infoGrafikDesk })}
           alt={"Genudsætning"}
           layout="fill"
