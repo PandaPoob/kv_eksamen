@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 //import Step1 from "../../components/efterlyst_fremlyst/formsteps/Step1";
 //import Step2 from "../../components/efterlyst_fremlyst/formsteps/Step2";
 //import Step3 from "../../components/efterlyst_fremlyst/formsteps/Step3";

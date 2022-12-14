@@ -3,7 +3,7 @@ import PageLayout from "../../components/layout/PageLayout";
 import Head from "next/head";
 import NextLink from "next/link";
 //import FremlysFormFlow from "./FremlysFormFlow";
-
+import dynamic from "next/dynamic";
 const FremlysFormFlow = dynamic(() => import("./FremlysFormFlow"));
 
 function FremlysKat() {
