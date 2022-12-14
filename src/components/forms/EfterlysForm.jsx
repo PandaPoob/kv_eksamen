@@ -2,7 +2,7 @@ import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import { SelectControl } from "formik-chakra-ui";
 import * as Yup from "yup";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import CatBreadCrumb from "../../components/efterlyst_fremlyst/formsteps/CatBreadCrumb";
 import {
   CatNameField,
@@ -147,7 +147,7 @@ function EfterlysForm({ step1State, onCallback, setCurrentStepIndex }) {
                 <AnimatePresence>
                   {values.oremaerket === "Ja" ? (
                     <Box
-                      as={motion.div}
+                      as={m.div}
                       initial={{ opacity: 0, y: "-50%" }}
                       animate={{
                         opacity: 1,
@@ -192,7 +192,7 @@ function EfterlysForm({ step1State, onCallback, setCurrentStepIndex }) {
                 <AnimatePresence>
                   {values.chippet === "Ja" ? (
                     <Box
-                      as={motion.div}
+                      as={m.div}
                       initial={{ opacity: 0, y: "-50%" }}
                       animate={{
                         opacity: 1,

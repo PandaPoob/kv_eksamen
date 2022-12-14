@@ -1,8 +1,11 @@
 import { Heading, Text, Link, Flex } from "@chakra-ui/react";
 import PageLayout from "../../components/layout/PageLayout";
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import NextLink from "next/link";
-import EfterlysFormFlow from "./EfterlysFormFlow";
+//import EfterlysFormFlow from "./EfterlysFormFlow";
+
+const EfterlysFormFlow = dynamic(() => import("./EfterlysFormFlow"));
 
 function EfterlysKat() {
   return (

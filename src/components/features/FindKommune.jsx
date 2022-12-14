@@ -20,7 +20,7 @@ import { useState, useEffect } from "react";
 import url from "../../api/url";
 import * as Yup from "yup";
 import { InputControl } from "formik-chakra-ui";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import NoResultsMsg from "../generics/NoResultsMsg";
 
 function FindKommune({ isOpen, onCloseComplete, onClose }) {
@@ -146,7 +146,7 @@ function FindKommune({ isOpen, onCloseComplete, onClose }) {
 
           {error ? (
             <Box
-              as={motion.div}
+              as={m.div}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -161,7 +161,7 @@ function FindKommune({ isOpen, onCloseComplete, onClose }) {
           {kommuneResult !== "" &&
             (kommuneResult[0].acf.kv_ikke_i_omrade ? (
               <Box
-                as={motion.div}
+                as={m.div}
                 key={kommuneResult[0].id}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -186,7 +186,7 @@ function FindKommune({ isOpen, onCloseComplete, onClose }) {
               </Box>
             ) : (
               <Box
-                as={motion.div}
+                as={m.div}
                 key={kommuneResult[0].id}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}

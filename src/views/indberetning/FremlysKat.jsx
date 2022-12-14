@@ -2,7 +2,9 @@ import { Heading, Text, Link, Flex } from "@chakra-ui/react";
 import PageLayout from "../../components/layout/PageLayout";
 import Head from "next/head";
 import NextLink from "next/link";
-import FremlysFormFlow from "./FremlysFormFlow";
+//import FremlysFormFlow from "./FremlysFormFlow";
+
+const FremlysFormFlow = dynamic(() => import("./FremlysFormFlow"));
 
 function FremlysKat() {
   return (

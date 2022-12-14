@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Button, Heading, Text } from "@chakra-ui/react";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { CheckboxSingleControl, InputControl } from "formik-chakra-ui";
 import {
   FullNameField,
@@ -123,7 +123,7 @@ function KontaktInfoForm({
               <AnimatePresence>
                 {values.emailValgt ? (
                   <Box
-                    as={motion.div}
+                    as={m.div}
                     initial={{ opacity: 0, y: "-50%" }}
                     animate={{
                       opacity: 1,
@@ -182,7 +182,7 @@ function KontaktInfoForm({
               <AnimatePresence>
                 {values.tlfValgt ? (
                   <Box
-                    as={motion.div}
+                    as={m.div}
                     initial={{ opacity: 0, y: "-50%" }}
                     animate={{
                       opacity: 1,
@@ -242,7 +242,7 @@ function KontaktInfoForm({
               <AnimatePresence>
                 {values.fbValgt ? (
                   <Box
-                    as={motion.div}
+                    as={m.div}
                     initial={{ opacity: 0, y: "-50%" }}
                     animate={{
                       opacity: 1,
