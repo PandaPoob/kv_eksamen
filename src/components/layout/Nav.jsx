@@ -1,7 +1,6 @@
 import NextLink from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavGroup from "./NavGroup";
 import { BsList } from "react-icons/bs";
@@ -82,18 +81,32 @@ function Nav({ children }) {
   const isMobile = useBreakpointValue({ base: true, navbp: false });
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isMenuLoaded, setIsMenuLoaded] = useState(false);
+  const [oldScrollPosition, setOldScrollPosition] = useState(0);
+  const [isScrolling, setIsScrolling] = useState("default");
 
-  //hide and show menu depending on scroll
-  const [hidden, setHidden] = useState(false);
-  const { scrollY } = useScroll();
   useEffect(() => {
-    return scrollY.onChange(() => update());
-  });
-  function update() {
-    if (scrollY?.current < scrollY?.prev) {
-      setHidden(false);
-    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
-      setHidden(true);
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setOldScrollPosition(position);
+      if (oldScrollPosition > window.scrollY) {
+        setIsScrolling("true");
+      } else {
+        setIsScrolling("false");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [oldScrollPosition]);
+
+  function getTopValue() {
+    // hvis vi ruller op eller lige er loaded eller basketchanged set nav til at blive vist
+    if (isScrolling === "true" || isScrolling === "default") {
+      // setBasketChanged(false)
+      return "0";
+    } else {
+      return "-5.1rem";
     }
   }
 
@@ -108,7 +121,7 @@ function Nav({ children }) {
         zIndex={"10"}
         position={"fixed"}
         w={"100%"}
-        top={hidden ? "-5.1rem" : "0"}
+        top={getTopValue()}
         left={0}
         transition={"top 0.3s"}
       >

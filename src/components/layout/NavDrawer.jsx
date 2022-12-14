@@ -11,7 +11,7 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import NavMobileGroup from "./NavMobileGroup";
-import { BsXLg, BsChevronRight, BsBoxArrowUpRight } from "react-icons/bs";
+import { BsXLg } from "react-icons/bs";
 
 function NavDrawer({ navData, isOpen, onClose, onCloseMenu }) {
   return (
