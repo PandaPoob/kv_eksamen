@@ -28,7 +28,7 @@ export default function SArticleMenu() {
       titel: "Arv",
       tekst:
         "Overvej at skrive kattene i dit testamente. Du kan gratis benytte dig af vores advokat, som kan rådgive dig i hvordan du efterlader et beløb til kattene.",
-      url: "/gor-en-forskel/kattene-i-testamente",
+      url: "/gor-en-forskel/kattene-i-testamentet",
       knaptekst: "Læs mere",
     },
     {

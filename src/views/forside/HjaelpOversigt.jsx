@@ -23,7 +23,7 @@ export default function HjaelpOversigt() {
     },
     {
       name: "Jeg kan ikke beholde min kat",
-      urlEndpoint: "/efterlysning/mistet-kat",
+      urlEndpoint: "/indlevering-af-kat",
       icon: <IoHomeOutline size={60} color="#D43B4D" />,
     },
     {
@@ -38,7 +38,7 @@ export default function HjaelpOversigt() {
     },
     {
       name: "Støttemuligheder",
-      urlEndpoint: "/støttemuligheder",
+      urlEndpoint: "/stottemuligheder",
       icon: <BsHeart size={60} color="#D43B4D" />,
     },
   ];
