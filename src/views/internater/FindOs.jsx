@@ -18,7 +18,7 @@ export default function FindOs({ data }) {
         </Heading>
         <Text>{data.adresse}</Text>
       </Box>
-      <a href={data.maplink}>
+      <a target={"_blank"} rel="noreferrer" href={data.maplink}>
         <Box
           width="100%"
           height={"12rem"}
