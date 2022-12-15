@@ -6,6 +6,8 @@ function CarouselImage({ url, alt }) {
     <Box position="relative" minH={"22rem"} width={"100%"}>
       <Image
         priority="true"
+        placeholder={"blur"}
+        blurDataURL={url}
         src={url}
         alt={alt}
         layout="fill"
