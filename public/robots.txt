@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /src/views/efterlysning/EfterlysFormFlow
 Disallow: /src/views/indberetning/FremlysFormFlow
 
-Sitemap: https://polite-tapioca-e1a9a4.netlify.app/sitemap.xml
+Sitemap: https://eksamen-kv.netlify.app/sitemap.xml
